@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import JSQMessagesViewController
+import JSQMessagesViewController  
 
 class ChatViewController: JSQMessagesViewController {
     
