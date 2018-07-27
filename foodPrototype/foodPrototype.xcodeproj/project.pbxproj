@@ -15,6 +15,7 @@
 		517F48AA20FDCDE6001EC8F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A820FDCDE6001EC8F0 /* LaunchScreen.storyboard */; };
 		51AE95B9210AE2B60019B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */; };
 		51AE95BB210AF7E10019B2EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BA210AF7E10019B2EE /* Constants.swift */; };
+		51AE95BD210B207E0019B2EE /* Model__Prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BC210B207E0019B2EE /* Model__Prototype.swift */; };
 		51FD0F35210861D50061DB4D /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F29210861D50061DB4D /* DrawingCanvasView.swift */; };
 		51FD0F36210861D50061DB4D /* CHContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F2A210861D50061DB4D /* CHContentViewController.swift */; };
 		51FD0F37210861D50061DB4D /* NavigationControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F2B210861D50061DB4D /* NavigationControllers.swift */; };
@@ -44,6 +45,7 @@
 		51AE95B7210ADC7B0019B2EE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "/Users/SongDongWook/Documents/FoodMarket/foodPrototype/Bridging-Header.h"; sourceTree = "<absolute>"; };
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AE95BA210AF7E10019B2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		51AE95BC210B207E0019B2EE /* Model__Prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model__Prototype.swift; sourceTree = "<group>"; };
 		51FD0F29210861D50061DB4D /* DrawingCanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
 		51FD0F2A210861D50061DB4D /* CHContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHContentViewController.swift; sourceTree = "<group>"; };
 		51FD0F2B210861D50061DB4D /* NavigationControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllers.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				517F48A120FDCDE3001EC8F0 /* ChatViewController.swift */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
+				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
 				517F48A620FDCDE6001EC8F0 /* Assets.xcassets */,
 				517F48A820FDCDE6001EC8F0 /* LaunchScreen.storyboard */,
 				517F48AB20FDCDE6001EC8F0 /* Info.plist */,
@@ -289,6 +292,7 @@
 				51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
 				C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */,
+				51AE95BD210B207E0019B2EE /* Model__Prototype.swift in Sources */,
 				51FD0F3C210861D50061DB4D /* FIlters.swift in Sources */,
 				51FD0F35210861D50061DB4D /* DrawingCanvasView.swift in Sources */,
 				51FD0F3E210861D50061DB4D /* CHModalViewController.swift in Sources */,
