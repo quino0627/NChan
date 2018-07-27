@@ -39,6 +39,7 @@
 		517F48A620FDCDE6001EC8F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		517F48A920FDCDE6001EC8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517F48AB20FDCDE6001EC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51AE95B7210ADC7B0019B2EE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "/Users/SongDongWook/Documents/FoodMarket/foodPrototype/Bridging-Header.h"; sourceTree = "<absolute>"; };
 		51FD0F29210861D50061DB4D /* DrawingCanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
 		51FD0F2A210861D50061DB4D /* CHContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHContentViewController.swift; sourceTree = "<group>"; };
 		51FD0F2B210861D50061DB4D /* NavigationControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllers.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		517F489320FDCDE3001EC8F0 = {
 			isa = PBXGroup;
 			children = (
+				51AE95B7210ADC7B0019B2EE /* Bridging-Header.h */,
 				517F489E20FDCDE3001EC8F0 /* foodPrototype */,
 				517F489D20FDCDE3001EC8F0 /* Products */,
 				510D5E952108CDA8007C5B9A /* Podfile */,
@@ -434,6 +436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = quino.foodPrototype;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,6 +455,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = quino.foodPrototype;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
