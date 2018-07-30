@@ -20,6 +20,14 @@ enum foodType{
     case fruit
 }
 
+enum userState{
+    case veryGood
+    case good
+    case normal
+    case bad
+    case soBad
+}
+
 struct comment{
     var commentDate: Time
     var commentWriter:user
@@ -58,7 +66,14 @@ struct user {
     var myWritingHistory = Array<post>()
     var myWishList = Array<post>()
     var belongingChatRoomArray = Array<chatRoom>()
-    var userReliability:Int //Need Improvement
+    var userReliability: userSafety
+    // 신고추가
+}
+
+struct userSafety {
+    var value : Int
+    var state : userState
+    var face : userState
 }
 
 var groupBuyingPostArray = Array<post>()
