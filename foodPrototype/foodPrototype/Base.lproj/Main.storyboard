@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ucm-Os-gU1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mnX-DU-FBp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -5149,6 +5149,22 @@
             </objects>
             <point key="canvasLocation" x="-316" y="4164"/>
         </scene>
+        <!--1-->
+        <scene sceneID="wWo-HG-QhA">
+            <objects>
+                <viewController id="e1Y-xP-Z80" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dHB-1m-u2u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MsG-mu-ggD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="1" id="tQF-lM-767"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q0a-DQ-hAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3591" y="-1540"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="pgz-mZ-i7V">
             <objects>
@@ -5184,6 +5200,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWe-Fs-A6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1354" y="2481"/>
+        </scene>
+        <!--2-->
+        <scene sceneID="F84-PZ-NRg">
+            <objects>
+                <viewController id="Z7Q-Zy-anb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J9d-qG-2ZE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hbG-jH-GHV"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="2" id="vEH-hG-jZu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rza-Qg-3YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2948" y="-1540"/>
+        </scene>
+        <!--3-->
+        <scene sceneID="QWm-l8-qdN">
+            <objects>
+                <viewController id="tkl-BP-CS0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sTx-D6-Ddy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uZh-qE-yye"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="3" id="tbz-eM-4ej"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N5p-Ka-jNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2327" y="-1540"/>
+        </scene>
+        <!--4-->
+        <scene sceneID="8zQ-co-Q5P">
+            <objects>
+                <viewController id="XNh-ir-Cux" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bRR-xC-kog">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ocA-qD-ky7"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="4" id="0AU-OP-6wJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tx8-nx-P15" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1700" y="-1540"/>
+        </scene>
+        <!--5-->
+        <scene sceneID="RRE-Dk-aAW">
+            <objects>
+                <viewController id="wOR-T7-emV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hDX-rv-8lx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bJq-EM-fcP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="5" id="bgv-Ak-ATS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Wr-ft-g83" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1066" y="-1540"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="isr-SD-pEb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EAY-Wp-tI5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gY0-4O-fIU">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="e1Y-xP-Z80" kind="relationship" relationship="viewControllers" id="zlF-OE-T0a"/>
+                        <segue destination="Z7Q-Zy-anb" kind="relationship" relationship="viewControllers" id="YhS-xO-AGP"/>
+                        <segue destination="tkl-BP-CS0" kind="relationship" relationship="viewControllers" id="SeE-pY-MKy"/>
+                        <segue destination="XNh-ir-Cux" kind="relationship" relationship="viewControllers" id="e0d-ef-m50"/>
+                        <segue destination="wOR-T7-emV" kind="relationship" relationship="viewControllers" id="Bm8-vf-e9q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YBn-cZ-Cks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1663" y="-2437"/>
         </scene>
     </scenes>
     <resources>
