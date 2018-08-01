@@ -27,6 +27,8 @@
 		51AE95B9210AE2B60019B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */; };
 		51AE95BB210AF7E10019B2EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BA210AF7E10019B2EE /* Constants.swift */; };
 		51AE95BD210B207E0019B2EE /* Model__Prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BC210B207E0019B2EE /* Model__Prototype.swift */; };
+		51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1FCB82111878E0055AEF3 /* ViewController.swift */; };
+		51C1FCBB211197EC0055AEF3 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */; };
 		51FD0F35210861D50061DB4D /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F29210861D50061DB4D /* DrawingCanvasView.swift */; };
 		51FD0F36210861D50061DB4D /* CHContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F2A210861D50061DB4D /* CHContentViewController.swift */; };
 		51FD0F37210861D50061DB4D /* NavigationControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F2B210861D50061DB4D /* NavigationControllers.swift */; };
@@ -69,6 +71,8 @@
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AE95BA210AF7E10019B2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51AE95BC210B207E0019B2EE /* Model__Prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model__Prototype.swift; sourceTree = "<group>"; };
+		51C1FCB82111878E0055AEF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		51FD0F29210861D50061DB4D /* DrawingCanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
 		51FD0F2A210861D50061DB4D /* CHContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHContentViewController.swift; sourceTree = "<group>"; };
 		51FD0F2B210861D50061DB4D /* NavigationControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllers.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */,
 				51AE95BA210AF7E10019B2EE /* Constants.swift */,
 				517F48A120FDCDE3001EC8F0 /* ChatViewController.swift */,
+				51C1FCB82111878E0055AEF3 /* ViewController.swift */,
+				51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
@@ -263,6 +269,7 @@
 				51AE95B9210AE2B60019B2EE /* GoogleService-Info.plist in Resources */,
 				510D5E962108CDA8007C5B9A /* Podfile in Resources */,
 				517F48A520FDCDE3001EC8F0 /* Main.storyboard in Resources */,
+				51C1FCBB211197EC0055AEF3 /* RemoteConfigDefaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +305,8 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -307,6 +316,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -342,6 +353,7 @@
 				51FD0F3F210861D50061DB4D /* CHControls.swift in Sources */,
 				5127F192210EF4FE008EDED3 /* HoshiTextField.swift in Sources */,
 				5127F195210EF4FE008EDED3 /* TextFieldEffects.swift in Sources */,
+				51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */,
 				5127F194210EF4FE008EDED3 /* YokoTextField.swift in Sources */,
 				51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
