@@ -50,7 +50,17 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().uiDelegate = self
         facebookLoginButton.delegate = self
+        
+        Auth.auth().addStateDidChangeListener({(user,err) in
+            if user != nil{//로그인이 되어 있으면
+                self.performSegue(withIdentifier: "Home", sender: nil)
+            }else{
+                
+            }
+        })
+        
         let statusBar = UIView()
         self.view.addSubview(statusBar)
         statusBar.snp.makeConstraints{(m) in
@@ -65,7 +75,7 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
         signIn.backgroundColor = UIColor(hex: color)
         // Do any additional setup after loading the view.
         
-        GIDSignIn.sharedInstance().uiDelegate = self
+        
        
     }
 
