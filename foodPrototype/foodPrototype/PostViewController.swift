@@ -11,7 +11,6 @@ import ImageSlideshow
 
 class PostViewController: UITableViewController {
 
-
     
     //@IBOutlet weak var food_Image: UIImageView!
     @IBOutlet weak var food_Image: ImageSlideshow!
@@ -21,9 +20,9 @@ class PostViewController: UITableViewController {
     @IBOutlet weak var user_Image: UIImageView!
     @IBOutlet weak var user_Name1: UILabel!
     @IBOutlet weak var user_Name2: UILabel!
-    @IBOutlet weak var user_Safety_Face: UIImageView!
-    @IBOutlet weak var user_Safety_State: UILabel!
-    @IBOutlet weak var user_Safety_Num: UILabel!
+//    @IBOutlet weak var user_Safety_Face: UIImageView!
+//    @IBOutlet weak var user_Safety_State: UILabel!
+//    @IBOutlet weak var user_Safety_Num: UILabel!
     var post: ExamplePost?
     
     let localSource = [ImageSource(imageString: "닭강정")!, ImageSource(imageString: "닭강정1")!, ImageSource(imageString: "닭강정2")!]
@@ -35,9 +34,9 @@ class PostViewController: UITableViewController {
         user_Image.image = UIImage(named: (post?.postWriter.userImage)!)
         user_Name1.text = post?.postWriter.userName
         user_Name2.text = post?.postWriter.userName
-        user_Safety_State.text = post?.postWriter.userSafety.state
-        user_Safety_Face.image = UIImage(named: (post?.postWriter.userSafety.face)!)
-        user_Safety_Num.text = String((post?.postWriter.userSafety.value)!)
+//        user_Safety_State.text = post?.postWriter.userSafety.state
+//        user_Safety_Face.image = UIImage(named: (post?.postWriter.userSafety.face)!)
+//        user_Safety_Num.text = String((post?.postWriter.userSafety.value)!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

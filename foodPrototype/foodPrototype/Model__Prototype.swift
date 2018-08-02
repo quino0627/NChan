@@ -8,7 +8,6 @@
 
 import Foundation
 
-typealias Time = (Year:Int, Month:Int, Day:Int, Hour:Int, Minute:Int)
 enum postClassify {
     case groupBuying
     case directDeal
@@ -21,7 +20,7 @@ enum foodType{
 }
 
 struct comment{
-    var commentDate: Time
+    var commentDate: Date
     var commentWriter:user
     var commentContent:String
     var commentReplyArray = Array<comment>()
@@ -35,7 +34,7 @@ struct productInfo{
 }
 
 struct post {
-    var postDate: Time
+    var postDate: Date
     var postWriter: user
     var postType : postClassify
     var postTitle:String
@@ -56,33 +55,33 @@ struct user {
     var myWritingHistory = Array<post>()
     var myWishList = Array<post>()
     var belongingChatRoomArray = Array<chatRoom>()
-    var userReliability: UserSafety
+//    var userReliability: UserSafety
     // 신고추가
 }
 
-struct UserSafety {
-    var value : Int
-    var face: String {
-        get{
-            if value > 100 {
-                return "my_goodgood"
-            }
-            else {
-                return "my_good"
-            }
-        }
-    }
-    var state : String {
-        get{
-            if value > 100 {
-                return "매우 좋음"
-            }
-            else {
-                return "좋음"
-            }
-        }
-    }
-}
+//struct UserSafety {
+//    var value : Int
+//    var face: String {
+//        get{
+//            if value > 100 {
+//                return "my_goodgood"
+//            }
+//            else {
+//                return "my_good"
+//            }
+//        }
+//    }
+//    var state : String {
+//        get{
+//            if value > 100 {
+//                return "매우 좋음"
+//            }
+//            else {
+//                return "좋음"
+//            }
+//        }
+//    }
+//}
 
 var groupBuyingPostArray = Array<post>()
 var directDealPostArray = Array<post>()

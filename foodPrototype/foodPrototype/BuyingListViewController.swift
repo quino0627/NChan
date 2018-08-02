@@ -18,7 +18,7 @@ struct ExampleList {
 struct ExampleUser{
     var userName: String
     var userImage: String
-    var userSafety: UserSafety
+//    var userSafety: UserSafety
 }
 
 //struct UserSafety {
@@ -106,7 +106,7 @@ class BuyingListViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sampleUser = ExampleUser(userName: "김대희", userImage: "프로필", userSafety:UserSafety(value:150))
+        let sampleUser = ExampleUser(userName: "김대희", userImage: "프로필")
         let samplePost = ExamplePost(postWriter: sampleUser,
             postTitle: "닭강정 공구팟",
             postContent: productInfo(productPicArray: ["닭강정", "닭강정1", "닭강정2"],
