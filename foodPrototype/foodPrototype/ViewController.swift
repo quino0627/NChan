@@ -54,6 +54,9 @@ class ViewController: UIViewController {
             let alert = UIAlertController(title: "공지사항", message: message, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: {(action) in exit(0)}))
             self.present(alert, animated: true, completion: nil)
+        }else{
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.present(loginVC, animated: false, completion: nil)
         }
         self.view.backgroundColor = UIColor(hex: color!)
         

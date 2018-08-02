@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510A64E62112811100B263C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510A64E52112811100B263C6 /* LoginViewController.swift */; };
 		510D5E962108CDA8007C5B9A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 510D5E952108CDA8007C5B9A /* Podfile */; };
 		5127F191210EF4FE008EDED3 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F185210EF4FD008EDED3 /* YoshikoTextField.swift */; };
 		5127F192210EF4FE008EDED3 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F187210EF4FD008EDED3 /* HoshiTextField.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510A64E52112811100B263C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		510D5E952108CDA8007C5B9A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5127F185210EF4FD008EDED3 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		5127F186210EF4FD008EDED3 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				51C1FCB82111878E0055AEF3 /* ViewController.swift */,
 				51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
+				510A64E52112811100B263C6 /* LoginViewController.swift */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
 				517F48A620FDCDE6001EC8F0 /* Assets.xcassets */,
@@ -215,6 +218,7 @@
 				517F489920FDCDE3001EC8F0 /* Frameworks */,
 				517F489A20FDCDE3001EC8F0 /* Resources */,
 				4E60BA4000E9C386A64F715B /* [CP] Embed Pods Frameworks */,
+				52C80567E334A5F6A4B0C6A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,6 +305,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-foodPrototype/Pods-foodPrototype-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
@@ -312,6 +317,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
@@ -324,6 +330,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foodPrototype/Pods-foodPrototype-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52C80567E334A5F6A4B0C6A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-foodPrototype/Pods-foodPrototype-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-foodPrototype/Pods-foodPrototype-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -351,6 +375,7 @@
 				51FD0F37210861D50061DB4D /* NavigationControllers.swift in Sources */,
 				5127F191210EF4FE008EDED3 /* YoshikoTextField.swift in Sources */,
 				51FD0F3F210861D50061DB4D /* CHControls.swift in Sources */,
+				510A64E62112811100B263C6 /* LoginViewController.swift in Sources */,
 				5127F192210EF4FE008EDED3 /* HoshiTextField.swift in Sources */,
 				5127F195210EF4FE008EDED3 /* TextFieldEffects.swift in Sources */,
 				51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */,

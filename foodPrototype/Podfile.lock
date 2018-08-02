@@ -44,10 +44,28 @@ PODS:
   - FirebaseStorage (3.0.0):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleSignIn (4.1.2):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
+    - GoogleToolboxForMac/DebugUtils (= 2.1.4)
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.2.0):
+    - GTMSessionFetcher/Full (= 1.2.0)
   - GTMSessionFetcher/Core (1.2.0)
+  - GTMSessionFetcher/Full (1.2.0):
+    - GTMSessionFetcher/Core (= 1.2.0)
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -66,6 +84,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - GoogleSignIn
   - JSQMessagesViewController
   - SnapKit
 
@@ -80,7 +99,9 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseRemoteConfig
     - FirebaseStorage
+    - GoogleSignIn
     - GoogleToolboxForMac
+    - GTMOAuth2
     - GTMSessionFetcher
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
@@ -99,7 +120,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
   FirebaseRemoteConfig: 3c57e4644bd6976b671ae0b725cd709f198bd1f5
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
+  GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
@@ -108,6 +131,6 @@ SPEC CHECKSUMS:
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 06573e48aeb4d344d616468054d3be8b5c8e4725
+PODFILE CHECKSUM: 0f96dbab2ed8acd2147cb657c0c47bc6d3f53c86
 
 COCOAPODS: 1.5.3
