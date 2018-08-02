@@ -1708,14 +1708,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_icon" translatesAutoresizingMaskIntoConstraints="NO" id="gog-p9-AVu">
-                                <rect key="frame" x="137" y="100" width="100" height="100"/>
+                                <rect key="frame" x="137" y="80" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Qul-RW-CA6"/>
                                     <constraint firstAttribute="height" constant="100" id="xxv-HN-Kay"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aqp-Cf-0aC" customClass="HoshiTextField" customModule="foodPrototype" customModuleProvider="target">
-                                <rect key="frame" x="16" y="258" width="343" height="40"/>
+                                <rect key="frame" x="16" y="220" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Yb3-Te-pjM"/>
                                 </constraints>
@@ -1732,13 +1732,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JMI-eh-tkO" customClass="HoshiTextField" customModule="foodPrototype" customModuleProvider="target">
-                                <rect key="frame" x="16" y="306" width="343" height="40"/>
+                                <rect key="frame" x="16" y="268" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PLS-n3-86b"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" red="0.9515038133" green="0.22709250449999999" blue="0.14279142019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1749,7 +1749,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYq-Ij-BJ6">
-                                <rect key="frame" x="16" y="376" width="343" height="40"/>
+                                <rect key="frame" x="16" y="338" width="343" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lXi-jV-kkX"/>
@@ -1759,7 +1759,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea9-rn-Q6Z">
-                                <rect key="frame" x="16" y="424" width="343" height="40"/>
+                                <rect key="frame" x="16" y="386" width="343" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="67O-wX-Db2"/>
@@ -1767,9 +1767,12 @@
                                 <state key="normal" title="Sign in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="DCE-KL-XEc" kind="show" id="MhP-RJ-BEn"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPH-J2-oAE" customClass="GIDSignInButton">
-                                <rect key="frame" x="31" y="472" width="312" height="48"/>
+                                <rect key="frame" x="31" y="434" width="312" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="AOz-zp-IWk"/>
@@ -1791,8 +1794,8 @@
                             <constraint firstItem="JMI-eh-tkO" firstAttribute="leading" secondItem="8Ki-LZ-DBp" secondAttribute="leading" constant="16" id="O7b-pq-pxY"/>
                             <constraint firstItem="8Ki-LZ-DBp" firstAttribute="trailing" secondItem="Ea9-rn-Q6Z" secondAttribute="trailing" constant="16" id="Uaz-kT-Ddk"/>
                             <constraint firstItem="Ea9-rn-Q6Z" firstAttribute="leading" secondItem="8Ki-LZ-DBp" secondAttribute="leading" constant="16" id="VW5-4g-Qn1"/>
-                            <constraint firstItem="gog-p9-AVu" firstAttribute="top" secondItem="8Ki-LZ-DBp" secondAttribute="top" constant="80" id="Vo3-vG-e3F"/>
-                            <constraint firstItem="Aqp-Cf-0aC" firstAttribute="top" secondItem="gog-p9-AVu" secondAttribute="bottom" constant="58" id="a5m-cC-jvE"/>
+                            <constraint firstItem="gog-p9-AVu" firstAttribute="top" secondItem="8Ki-LZ-DBp" secondAttribute="top" constant="60" id="Vo3-vG-e3F"/>
+                            <constraint firstItem="Aqp-Cf-0aC" firstAttribute="top" secondItem="gog-p9-AVu" secondAttribute="bottom" constant="40" id="a5m-cC-jvE"/>
                             <constraint firstItem="YPH-J2-oAE" firstAttribute="centerX" secondItem="Tct-pd-gEL" secondAttribute="centerX" id="af9-QV-MfE"/>
                             <constraint firstItem="8Ki-LZ-DBp" firstAttribute="trailing" secondItem="Aqp-Cf-0aC" secondAttribute="trailing" constant="16" id="e0S-JU-Rb5"/>
                             <constraint firstItem="YPH-J2-oAE" firstAttribute="top" secondItem="Ea9-rn-Q6Z" secondAttribute="bottom" constant="8" id="efl-Qf-aTJ"/>
@@ -1809,6 +1812,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NiZ-wy-r0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2045.5999999999999" y="-754.27286356821594"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="IoQ-kU-pUf">
+            <objects>
+                <viewController id="DCE-KL-XEc" customClass="SignInViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w0M-P6-rBL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3H6-Um-tNx">
+                                <rect key="frame" x="72.5" y="246" width="230" height="48"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="fFb-st-Y9R"/>
+                                    <constraint firstAttribute="height" constant="48" id="spW-lH-FUg"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VM0-km-LgF">
+                                <rect key="frame" x="72.5" y="302" width="230" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="uFq-cp-MVr"/>
+                                    <constraint firstAttribute="height" constant="50" id="urv-wt-8yW"/>
+                                </constraints>
+                                <state key="normal" title="SignIn">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInButton:" destination="DCE-KL-XEc" eventType="touchUpInside" id="beE-tm-MlZ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bic-BF-thU">
+                                <rect key="frame" x="72.5" y="190" width="230" height="48"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Awb-gU-dJH"/>
+                                    <constraint firstAttribute="width" constant="230" id="cC5-vP-y9Y"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VM0-km-LgF" firstAttribute="centerX" secondItem="w0M-P6-rBL" secondAttribute="centerX" id="9UO-ez-geR"/>
+                            <constraint firstItem="3H6-Um-tNx" firstAttribute="centerX" secondItem="w0M-P6-rBL" secondAttribute="centerX" id="cxT-Dk-AZR"/>
+                            <constraint firstItem="3H6-Um-tNx" firstAttribute="top" secondItem="Bic-BF-thU" secondAttribute="bottom" constant="8" id="pIl-6o-Syn"/>
+                            <constraint firstItem="VM0-km-LgF" firstAttribute="top" secondItem="3H6-Um-tNx" secondAttribute="bottom" constant="8" id="sQ3-Ds-wB2"/>
+                            <constraint firstItem="Bic-BF-thU" firstAttribute="top" secondItem="G1h-DD-mQV" secondAttribute="top" constant="170" id="w2F-Rd-dtW"/>
+                            <constraint firstItem="Bic-BF-thU" firstAttribute="centerX" secondItem="w0M-P6-rBL" secondAttribute="centerX" id="yu1-Fq-elR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G1h-DD-mQV"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="Bic-BF-thU" id="Dvv-Xx-Kne"/>
+                        <outlet property="password" destination="3H6-Um-tNx" id="ohZ-pl-9dI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tvn-MW-4he" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="-754.27286356821594"/>
         </scene>
         <!--option-->
         <scene sceneID="jwL-hJ-rCg">
