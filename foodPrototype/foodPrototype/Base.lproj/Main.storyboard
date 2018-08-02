@@ -1782,6 +1782,14 @@
                                     <action selector="googleSignIn:" destination="CEH-NB-dsR" eventType="valueChanged" id="ndQ-dE-f8M"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucq-Dm-BNh" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="31" y="490" width="312" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="P8h-BJ-T9x"/>
+                                    <constraint firstAttribute="width" constant="312" id="nUT-2L-ZML"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1790,21 +1798,24 @@
                             <constraint firstItem="yYq-Ij-BJ6" firstAttribute="top" secondItem="JMI-eh-tkO" secondAttribute="bottom" constant="30" id="1ib-Em-emJ"/>
                             <constraint firstItem="JMI-eh-tkO" firstAttribute="top" secondItem="Aqp-Cf-0aC" secondAttribute="bottom" constant="8" id="37C-cK-4U2"/>
                             <constraint firstItem="Ea9-rn-Q6Z" firstAttribute="top" secondItem="yYq-Ij-BJ6" secondAttribute="bottom" constant="8" id="BgF-yH-lhb"/>
+                            <constraint firstItem="Ucq-Dm-BNh" firstAttribute="leading" secondItem="8Ki-LZ-DBp" secondAttribute="leading" constant="31" id="E2W-lm-Dqs"/>
                             <constraint firstItem="gog-p9-AVu" firstAttribute="centerX" secondItem="Tct-pd-gEL" secondAttribute="centerX" id="KzD-bf-ULa"/>
                             <constraint firstItem="JMI-eh-tkO" firstAttribute="leading" secondItem="8Ki-LZ-DBp" secondAttribute="leading" constant="16" id="O7b-pq-pxY"/>
+                            <constraint firstItem="YPH-J2-oAE" firstAttribute="top" secondItem="Ea9-rn-Q6Z" secondAttribute="bottom" constant="8" id="U9E-Gh-SPc"/>
                             <constraint firstItem="8Ki-LZ-DBp" firstAttribute="trailing" secondItem="Ea9-rn-Q6Z" secondAttribute="trailing" constant="16" id="Uaz-kT-Ddk"/>
                             <constraint firstItem="Ea9-rn-Q6Z" firstAttribute="leading" secondItem="8Ki-LZ-DBp" secondAttribute="leading" constant="16" id="VW5-4g-Qn1"/>
                             <constraint firstItem="gog-p9-AVu" firstAttribute="top" secondItem="8Ki-LZ-DBp" secondAttribute="top" constant="60" id="Vo3-vG-e3F"/>
                             <constraint firstItem="Aqp-Cf-0aC" firstAttribute="top" secondItem="gog-p9-AVu" secondAttribute="bottom" constant="40" id="a5m-cC-jvE"/>
                             <constraint firstItem="YPH-J2-oAE" firstAttribute="centerX" secondItem="Tct-pd-gEL" secondAttribute="centerX" id="af9-QV-MfE"/>
                             <constraint firstItem="8Ki-LZ-DBp" firstAttribute="trailing" secondItem="Aqp-Cf-0aC" secondAttribute="trailing" constant="16" id="e0S-JU-Rb5"/>
-                            <constraint firstItem="YPH-J2-oAE" firstAttribute="top" secondItem="Ea9-rn-Q6Z" secondAttribute="bottom" constant="8" id="efl-Qf-aTJ"/>
                             <constraint firstItem="yYq-Ij-BJ6" firstAttribute="leading" secondItem="8Ki-LZ-DBp" secondAttribute="leading" constant="16" id="mQQ-VA-ZM5"/>
                             <constraint firstItem="Aqp-Cf-0aC" firstAttribute="leading" secondItem="8Ki-LZ-DBp" secondAttribute="leading" constant="16" id="nVE-eq-0H6"/>
+                            <constraint firstItem="Ucq-Dm-BNh" firstAttribute="top" secondItem="YPH-J2-oAE" secondAttribute="bottom" constant="8" id="oMX-g2-9Zk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ki-LZ-DBp"/>
                     </view>
                     <connections>
+                        <outlet property="facebookLoginButton" destination="Ucq-Dm-BNh" id="Mb2-E3-75g"/>
                         <outlet property="loginButton" destination="yYq-Ij-BJ6" id="CYH-Yt-I5g"/>
                         <outlet property="signIn" destination="Ea9-rn-Q6Z" id="wpm-a9-de7"/>
                     </connections>

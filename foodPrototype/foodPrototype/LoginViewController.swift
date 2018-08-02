@@ -9,10 +9,36 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController , GIDSignInUIDelegate{
+
+class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginButtonDelegate{
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult?, error: Error) {
+        if(result?.token == nil){
+            return
+        }
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                // ...
+                return
+            }
+            // User is signed in
+            // ...
+        }
+        FBSDKLoginManager().logOut();
+    }
+    
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signIn: UIButton!
+    
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     @IBAction func googleSignIn(_ sender: Any) {
          GIDSignIn.sharedInstance().signIn()
@@ -24,6 +50,7 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        facebookLoginButton.delegate = self
         let statusBar = UIView()
         self.view.addSubview(statusBar)
         statusBar.snp.makeConstraints{(m) in
