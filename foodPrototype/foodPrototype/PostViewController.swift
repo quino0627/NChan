@@ -7,24 +7,14 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class PostViewController: UITableViewController {
 
+
     
-//    class SongDetailViewController: UIViewController {
-//
-//        @IBOutlet weak var titleLabel: UILabel!
-//        @IBOutlet weak var artistLabel: UILabel!
-//        var song: Song?
-//
-//        override func viewWillAppear(_ animated: Bool) {
-//            titleLabel.text = song?.title
-//            artistLabel.text = song?.artist
-//        }
-//
-//    }
-    
-    @IBOutlet weak var food_Image: UIImageView!
+    //@IBOutlet weak var food_Image: UIImageView!
+    @IBOutlet weak var food_Image: ImageSlideshow!
     @IBOutlet weak var food_Price: UILabel!
     @IBOutlet weak var food_Title: UILabel!
     @IBOutlet weak var food_Contents: UILabel!
@@ -36,29 +26,48 @@ class PostViewController: UITableViewController {
     @IBOutlet weak var user_Safety_Num: UILabel!
     var post: ExamplePost?
     
+    let localSource = [ImageSource(imageString: "닭강정")!, ImageSource(imageString: "닭강정1")!, ImageSource(imageString: "닭강정2")!]
     
     override func viewWillAppear(_ animated: Bool) {
-        //outlet
-        if (post?.postContent.productPicArray.count)! > 0{
-            food_Image.image = UIImage(named: (post?.postContent.productPicArray[0])!)
-        }
         food_Price.text = post?.postContent.price
         food_Title.text = post?.postTitle
         food_Contents.text = post?.postContent.productExplanation
+        user_Image.image = UIImage(named: (post?.postWriter.userImage)!)
         user_Name1.text = post?.postWriter.userName
         user_Name2.text = post?.postWriter.userName
         user_Safety_State.text = post?.postWriter.userSafety.state
-        //user_Safety_Num.text = post?.postWriter.userSafety.value , value가 int라 애매
+        user_Safety_Face.image = UIImage(named: (post?.postWriter.userSafety.face)!)
+        user_Safety_Num.text = String((post?.postWriter.userSafety.value)!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
+        food_Image.slideshowInterval = 5.0
+        food_Image.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
+        food_Image.contentScaleMode = UIViewContentMode.scaleAspectFill
+        
+        let pageControl = UIPageControl()
+        pageControl.currentPageIndicatorTintColor = UIColor.black
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
+        food_Image.pageIndicator = pageControl
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        food_Image.activityIndicator = DefaultActivityIndicator()
+        food_Image.currentPageChanged = { page in
+            print("current page:", page)
+        }
+        
+        food_Image.setImageInputs(localSource)
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(PostViewController.didTap))
+        food_Image.addGestureRecognizer(recognizer)
     }
 
+    @objc func didTap() {
+        let fullScreenController = food_Image.presentFullScreenController(from: self)
+        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+        fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
