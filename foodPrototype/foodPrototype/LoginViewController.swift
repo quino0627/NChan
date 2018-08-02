@@ -37,12 +37,31 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signIn: UIButton!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     @IBAction func googleSignIn(_ sender: Any) {
          GIDSignIn.sharedInstance().signIn()
     }
+    
+    @IBAction func loginButtonTouched(_ sender: Any) {
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+            if(error != nil){
+                let alert = UIAlertController(title: "알림", message: "존재하지 않는 이메일이거나 비밀번호가 틀렸습니다.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+                return
+            }
+            
+            let alert = UIAlertController(title: "알림", message: "로그인완료", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     
     let remoteconfig = RemoteConfig.remoteConfig()
     var color : String!

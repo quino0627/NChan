@@ -1757,6 +1757,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTouched:" destination="CEH-NB-dsR" eventType="touchUpInside" id="eI3-c2-SHd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea9-rn-Q6Z">
                                 <rect key="frame" x="16" y="386" width="343" height="40"/>
@@ -1815,8 +1818,10 @@
                         <viewLayoutGuide key="safeArea" id="8Ki-LZ-DBp"/>
                     </view>
                     <connections>
+                        <outlet property="email" destination="Aqp-Cf-0aC" id="tKt-0S-uYb"/>
                         <outlet property="facebookLoginButton" destination="Ucq-Dm-BNh" id="Mb2-E3-75g"/>
                         <outlet property="loginButton" destination="yYq-Ij-BJ6" id="CYH-Yt-I5g"/>
+                        <outlet property="password" destination="JMI-eh-tkO" id="QMq-Jk-tn6"/>
                         <outlet property="signIn" destination="Ea9-rn-Q6Z" id="wpm-a9-de7"/>
                         <segue destination="MBL-Ud-pis" kind="show" identifier="Home" id="BOx-HZ-og0"/>
                     </connections>
@@ -4885,6 +4890,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MBL-Ud-pis" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zed-yn-wab">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
