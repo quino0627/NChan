@@ -1767,7 +1767,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="67O-wX-Db2"/>
                                 </constraints>
-                                <state key="normal" title="Sign in">
+                                <state key="normal" title="Sign up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1855,7 +1855,7 @@
                                     <constraint firstAttribute="width" constant="230" id="uFq-cp-MVr"/>
                                     <constraint firstAttribute="height" constant="50" id="urv-wt-8yW"/>
                                 </constraints>
-                                <state key="normal" title="SignIn">
+                                <state key="normal" title="Sign Up!">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1916,6 +1916,9 @@
                         <viewLayoutGuide key="safeArea" id="Xis-LK-ffi"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="bar__store" selectedImage="bar__store" id="sdv-HK-Xmx"/>
+                    <connections>
+                        <outlet property="userLabel" destination="lrL-0c-AR8" id="70i-LP-QD4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deQ-ij-h5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
