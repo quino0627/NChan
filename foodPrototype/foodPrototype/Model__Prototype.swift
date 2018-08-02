@@ -20,14 +20,6 @@ enum foodType{
     case fruit
 }
 
-enum userState{
-    case veryGood
-    case good
-    case normal
-    case bad
-    case soBad
-}
-
 struct comment{
     var commentDate: Time
     var commentWriter:user
@@ -36,10 +28,10 @@ struct comment{
 }
 
 struct productInfo{
-    var productPicArray = Array<imageFile>()
+    var productPicArray = Array<String>()
     var productType: foodType
     var productExplanation: String
-    
+    var price : String //Int 중에 고민중
 }
 
 struct post {
@@ -48,16 +40,14 @@ struct post {
     var postType : postClassify
     var postTitle:String
     var postContent:productInfo
-    var postLike: Int
     var postCommentArray = Array<comment>()
+    var postTag = Array<String>()
 }
-
-struct imageFile {}
 
 struct user {
     var userName:String
     var userNickname:String
-    var userImage:imageFile
+    var userImage: String
     var userId:String
     var userPassword:String
     var schoolCertification:Bool
@@ -66,14 +56,32 @@ struct user {
     var myWritingHistory = Array<post>()
     var myWishList = Array<post>()
     var belongingChatRoomArray = Array<chatRoom>()
-    var userReliability: userSafety
+    var userReliability: UserSafety
     // 신고추가
 }
 
-struct userSafety {
+struct UserSafety {
     var value : Int
-    var state : userState
-    var face : userState
+    var face: String {
+        get{
+            if value > 100 {
+                return "my_goodgood"
+            }
+            else {
+                return "my_good"
+            }
+        }
+    }
+    var state : String {
+        get{
+            if value > 100 {
+                return "매우 좋음"
+            }
+            else {
+                return "좋음"
+            }
+        }
+    }
 }
 
 var groupBuyingPostArray = Array<post>()

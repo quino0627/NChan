@@ -8,11 +8,114 @@
 
 import UIKit
 
-class BuyingListViewController: UIViewController {
+struct ExampleList {
+    var imageName: String
+    var title: String
+    var mainUser: String
+    var tag: String
+}
+
+struct ExampleUser{
+    var userName: String
+    var userImage: String
+    var userSafety: UserSafety
+}
+
+//struct UserSafety {
+//    var value : Int
+//    var face: String {
+//        get{
+//            if value > 100 {
+//                return "my_goodgood"
+//            }
+//            else {
+//                return "my_good"
+//            }
+//        }
+//    }
+//    var state : String {
+//        get{
+//            if value > 100 {
+//                return "매우 좋음"
+//            }
+//            else {
+//                return "좋음"
+//            }
+//        }
+//    }
+//}
+
+struct ExamplePost {
+//    var postDate: Time
+    var postWriter: ExampleUser // 수정
+//    var postType : postClassify
+    var postTitle:String
+    var postContent: productInfo
+//    var postCommentArray = Array<comment>()
+    var postTag = Array<String>()
+}
+
+//struct productInfo{
+//    var productPicArray = Array<imageFile>()
+//    var productType: foodType
+//    var productExplanation: String
+//    var price : String
+//}
+//
+//struct post {
+//    var postDate: Time
+//    var postWriter: user
+//    var postType : postClassify
+//    var postTitle:String
+//    var postContent:productInfo
+//    var postLike: Int
+//    var postCommentArray = Array<comment>()
+//    var postTag = Array<String>()
+//}
+
+class BuyingListViewController: UIViewController,UITableViewDataSource {
+    
+    @IBOutlet weak var buyingTable: UITableView!
+    
+    
+    var posts : [ExamplePost] = []
+    
+    var buyingList : [ExampleList] =  [
+        ExampleList(imageName: "pic__watermelon", title: "오거리 수박엔빵~!", mainUser: "방장: 이현우", tag: "수박")
+    ]
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return buyingList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BuyingCell", for: indexPath)
+        let item: ExampleList = buyingList[indexPath.row]
+        cell.textLabel?.text = item.title
+        cell.detailTextLabel?.text = item.tag
+        cell.imageView?.image = UIImage(named: item.imageName)
+        return cell
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let sampleUser = ExampleUser(userName: "김대희", userImage: "프로필", userSafety:UserSafety(value:150))
+        let samplePost = ExamplePost(postWriter: sampleUser,
+            postTitle: "닭강정 공구팟",
+            postContent: productInfo(productPicArray: ["닭강정", "닭강정1", "닭강정2"],
+            productType: foodType.banchan,
+            productExplanation: "닭강정이 먹고싶습니다.",
+            price: "20000"),
+            postTag: ["반찬", "고기"])
+        
+        posts.append(samplePost)
         // Do any additional setup after loading the view.
     }
 
@@ -22,14 +125,17 @@ class BuyingListViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let indexPath = tableView.indexPathForSelectedRow,
+//            let detailVC = segue.destination as?
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let indexPath = buyingTable.indexPathForSelectedRow,
+            let detailVC = segue.destination as? PostViewController {
+            let selectedPost: ExamplePost = posts[indexPath.row]
+            detailVC.post = selectedPost
+        }
     }
-    */
 
 }

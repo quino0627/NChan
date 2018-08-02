@@ -10,9 +10,48 @@ import UIKit
 
 class PostViewController: UITableViewController {
 
+    
+//    class SongDetailViewController: UIViewController {
+//
+//        @IBOutlet weak var titleLabel: UILabel!
+//        @IBOutlet weak var artistLabel: UILabel!
+//        var song: Song?
+//
+//        override func viewWillAppear(_ animated: Bool) {
+//            titleLabel.text = song?.title
+//            artistLabel.text = song?.artist
+//        }
+//
+//    }
+    
+    @IBOutlet weak var food_Image: UIImageView!
+    @IBOutlet weak var food_Price: UILabel!
+    @IBOutlet weak var food_Title: UILabel!
+    @IBOutlet weak var food_Contents: UILabel!
+    @IBOutlet weak var user_Image: UIImageView!
+    @IBOutlet weak var user_Name1: UILabel!
+    @IBOutlet weak var user_Name2: UILabel!
+    @IBOutlet weak var user_Safety_Face: UIImageView!
+    @IBOutlet weak var user_Safety_State: UILabel!
+    @IBOutlet weak var user_Safety_Num: UILabel!
+    var post: ExamplePost?
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //outlet
+        if (post?.postContent.productPicArray.count)! > 0{
+            food_Image.image = UIImage(named: (post?.postContent.productPicArray[0])!)
+        }
+        food_Price.text = post?.postContent.price
+        food_Title.text = post?.postTitle
+        food_Contents.text = post?.postContent.productExplanation
+        user_Name1.text = post?.postWriter.userName
+        user_Name2.text = post?.postWriter.userName
+        user_Safety_State.text = post?.postWriter.userSafety.state
+        //user_Safety_Num.text = post?.postWriter.userSafety.value , value가 int라 애매
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,17 +64,6 @@ class PostViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
