@@ -9,50 +9,77 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class ProductsListTableViewController: UITableViewController, AddProductsTableViewControllerDelegate {
-
-    private var productLists = [ProductList]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
     
-    func addProductsTableViewControllerDidCancel(controller: UIViewController) {
+    func addProductsTableViewControllerDidSave(controller: UIViewController, product: String) {
         controller.dismiss(animated: true, completion: nil)
-    }
-
-    func addProductsTableViewControllerDidSave(controller: UIViewController, title: String) {
-        //print(title)
-        controller.dismiss(animated: true, completion: nil)
-        let productList = ProductList(title: title)
+        let productList = ProductList(product: product)
         self.productLists.append(productList)
         
+        let productListRef = self.rootRef.child(productList.product)
+        productListRef.setValue(productList.toDictionary())
+        
+        print(product)
+      //  print(title)
+
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
+    private var productLists = [ProductList]()
+    private var rootRef :DatabaseReference!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.rootRef = Database.database().reference()
+        populateProductLists()
+
+    }
     
+    private func populateProductLists(){
+        self.rootRef.observe(.value){ snaphot in
+            
+            self.productLists.removeAll()
+            
+            let productListDictionary = snaphot.value as? [String:Any] ?? [:]
+            
+            for (key,_) in productListDictionary {
+                if let productListDictionary = productListDictionary[key] as? [String:Any]{
+                    
+                    if let productList = ProductList(productListDictionary){
+                        self.productLists.append(productList)
+                    }
+                    
+                }
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func addProductsTableViewControllerDidCancel(controller: UIViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsListTableViewCell", for: indexPath)
         let productList = self.productLists[indexPath.row]
-        cell.textLabel?.text = productList.title
+        cell.textLabel?.text = productList.product
+        
         
         return cell
     }
@@ -68,6 +95,13 @@ class ProductsListTableViewController: UITableViewController, AddProductsTableVi
             let addProductsListVC = nc.viewControllers.first as! AddProductsTableViewController
             addProductsListVC.delegate = self
             
+        }else if segue.identifier == "DetailedTableViewController"{
+            
+            guard let indexPath = self.tableView.indexPathForSelectedRow else{
+                return
+            }
+            let detailedTVC = segue.destination as! DeatiledTableViewController
+            detailedTVC.productList = self.productLists[indexPath.row]
         }
     }
 
