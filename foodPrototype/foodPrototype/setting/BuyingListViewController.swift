@@ -96,7 +96,7 @@ class BuyingListViewController: UIViewController,UITableViewDataSource {
                                                                price: "20000"),
                                       postTag: ["#반찬", "#고기"])
         let buyingUser2 = ExampleUser(userName: "송동욱", userImage: "프로필")
-        let buyingPost2 = ExamplePost(postWriter: buyingUser1,
+        let buyingPost2 = ExamplePost(postWriter: buyingUser2,
                                       postTitle: "오이소박이 공구 모집",
                                       postContent: productInfo(productPicArray: ["pic__oisobak"],
                                                                productType: foodType.banchan,
