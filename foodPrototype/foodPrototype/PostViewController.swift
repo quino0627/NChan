@@ -11,10 +11,6 @@ import ImageSlideshow
 
 class PostViewController: UITableViewController {
 
-
-    @IBAction func segmentedControl(_ sender: UISegmentedControl) {
-        
-    }
     
     @IBOutlet weak var food_Image: ImageSlideshow!
     @IBOutlet weak var food_Price: UILabel!
@@ -28,8 +24,8 @@ class PostViewController: UITableViewController {
 //    @IBOutlet weak var user_Safety_Num: UILabel!
     var post: ExamplePost?
     
-    let localSource = [ImageSource(imageString: "닭강정")!, ImageSource(imageString: "닭강정1")!, ImageSource(imageString: "닭강정2")!]
-    
+    var localSource : [ImageSource] = []
+
     override func viewWillAppear(_ animated: Bool) {
         food_Price.text = post?.postContent.price
         food_Title.text = post?.postTitle
@@ -43,6 +39,10 @@ class PostViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for image in (post?.postContent.productPicArray)! {
+            localSource.append(ImageSource(imageString: image)!)
+        }
         
         food_Image.slideshowInterval = 5.0
         food_Image.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
