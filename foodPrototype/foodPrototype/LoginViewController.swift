@@ -59,6 +59,7 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
             let alert = UIAlertController(title: "알림", message: "로그인완료", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+
         }
     }
     
@@ -72,14 +73,15 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
         GIDSignIn.sharedInstance().uiDelegate = self
         facebookLoginButton.delegate = self
         
-        Auth.auth().addStateDidChangeListener({(user,err) in
-            if user != nil{//로그인이 되어 있으면
-                self.performSegue(withIdentifier: "Home", sender: nil)
-            }else{
-                
-            }
-        })
-        
+//        Auth.auth().addStateDidChangeListener({(user,err) in
+//            if user != nil{//로그인이 되어 있으면
+//                let view = self.storyboard?.instantiateViewController(withIdentifier: "MainViewTabBarController") as! UITabBarController
+//                self.present(view, animated: true, completion: nil)
+//            }else{
+//
+//            }
+//        })
+ 
         let statusBar = UIView()
         self.view.addSubview(statusBar)
         statusBar.snp.makeConstraints{(m) in
@@ -92,12 +94,19 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
         statusBar.backgroundColor = UIColor(hex: color)
         loginButton.backgroundColor = UIColor(hex: color)
         signIn.backgroundColor = UIColor(hex: color)
+        
+        signIn.addTarget(self, action: #selector(presentsignup), for:.touchUpInside)
         // Do any additional setup after loading the view.
         
         
        
     }
-
+    
+    @objc func presentsignup(){
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignInViewController
+        self.present(view, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

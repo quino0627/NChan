@@ -28,6 +28,7 @@
 		517F48A520FDCDE3001EC8F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A320FDCDE3001EC8F0 /* Main.storyboard */; };
 		517F48A720FDCDE6001EC8F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A620FDCDE6001EC8F0 /* Assets.xcassets */; };
 		517F48AA20FDCDE6001EC8F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A820FDCDE6001EC8F0 /* LaunchScreen.storyboard */; };
+		519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */; };
 		51AE95B9210AE2B60019B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */; };
 		51AE95BB210AF7E10019B2EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BA210AF7E10019B2EE /* Constants.swift */; };
 		51AE95BD210B207E0019B2EE /* Model__Prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BC210B207E0019B2EE /* Model__Prototype.swift */; };
@@ -77,6 +78,7 @@
 		517F48A620FDCDE6001EC8F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		517F48A920FDCDE6001EC8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517F48AB20FDCDE6001EC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		51AE95B7210ADC7B0019B2EE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "/Users/SongDongWook/Documents/FoodMarket/foodPrototype/Bridging-Header.h"; sourceTree = "<absolute>"; };
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AE95BA210AF7E10019B2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				51C1FCB82111878E0055AEF3 /* ViewController.swift */,
 				51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
+				519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */,
 				517E64802112EFEB0069FD91 /* HomeController.swift */,
 				517E64822112F00C0069FD91 /* UserController.swift */,
 				510A64E52112811100B263C6 /* LoginViewController.swift */,
@@ -396,6 +399,7 @@
 				51FD0F38210861D50061DB4D /* CHPagingScrollViewController.swift in Sources */,
 				AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */,
 				517F48A220FDCDE3001EC8F0 /* ChatViewController.swift in Sources */,
+				519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */,
 				5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */,
 				5127F198210EF4FE008EDED3 /* KaedeTextField.swift in Sources */,
 				5127F197210EF4FE008EDED3 /* MadokaTextField.swift in Sources */,
