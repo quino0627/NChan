@@ -11,8 +11,11 @@ import ImageSlideshow
 
 class PostViewController: UITableViewController {
 
+
+    @IBAction func segmentedControl(_ sender: UISegmentedControl) {
+        
+    }
     
-    //@IBOutlet weak var food_Image: UIImageView!
     @IBOutlet weak var food_Image: ImageSlideshow!
     @IBOutlet weak var food_Price: UILabel!
     @IBOutlet weak var food_Title: UILabel!

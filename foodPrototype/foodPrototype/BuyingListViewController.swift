@@ -76,33 +76,65 @@ struct ExamplePost {
 class BuyingListViewController: UIViewController,UITableViewDataSource {
     
     @IBOutlet weak var buyingTable: UITableView!
-    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var posts : [ExamplePost] = []
     
     var buyingList : [ExampleList] =  [
         ExampleList(imageName: "pic__watermelon", title: "오거리 수박엔빵~!", mainUser: "방장: 이현우", tag: "수박")
-    ]
+    ] //구매중
+    
+    var boughtList : [ExampleList] = [
+        ExampleList(imageName: "pic__thebanchan" , title: "더반찬 공구팟 모집", mainUser: "방장: 변지현", tag: "#깍두기 #닭강정")
+    ] //구매완료
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return buyingList.count
+        var returnValue = 0
+        
+        switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            returnValue = buyingList.count
+        case 1:
+            returnValue = boughtList.count
+        default:
+            break
+        }
+        return returnValue
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BuyingCell", for: indexPath)
-        let item: ExampleList = buyingList[indexPath.row]
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.tag
-        cell.imageView?.image = UIImage(named: item.imageName)
+        
+        switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            let item: ExampleList = buyingList[indexPath.row]
+            cell.textLabel?.text = item.title
+            cell.detailTextLabel?.text = item.tag
+            cell.imageView?.image = UIImage(named: item.imageName)
+        case 1:
+            let item: ExampleList = boughtList[indexPath.row]
+            cell.textLabel?.text = item.title
+            cell.detailTextLabel?.text = item.tag
+            cell.imageView?.image = UIImage(named: item.imageName)
+        default:
+            break
+        }
+        
         return cell
     }
     
-    
+    @IBAction func refreshButtonTapped(sender: AnyObject){
+        buyingTable.reloadData()
+    }
 
+    @IBAction func segmentedControlActionChanged(sender: AnyObject){
+        buyingTable.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

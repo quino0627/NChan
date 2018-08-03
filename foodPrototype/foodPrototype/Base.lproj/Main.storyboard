@@ -1928,23 +1928,38 @@
                                     <outlet property="dataSource" destination="Mc5-Zf-5VB" id="Bur-rU-kEw"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pGH-4K-Uth">
-                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="otw-dt-E0D">
+                                <rect key="frame" x="0.0" y="64" width="375" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="adS-mP-TtC"/>
+                                    <constraint firstAttribute="height" constant="27" id="gyM-ea-80l"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="구매후기 대기중"/>
-                                    <segment title="구매후기 완료"/>
+                                    <segment title="구매중"/>
+                                    <segment title="구매완료"/>
                                 </segments>
+                                <connections>
+                                    <action selector="refreshButtonTappedWithSender:" destination="Mc5-Zf-5VB" eventType="valueChanged" id="FKI-nF-9VC"/>
+                                    <action selector="segmentedControl:" destination="M1K-DM-opG" eventType="valueChanged" id="a2Z-rj-3tI"/>
+                                    <action selector="segmentedControlActionChangedWithSender:" destination="Mc5-Zf-5VB" eventType="valueChanged" id="RiI-EK-IjU"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="otw-dt-E0D" firstAttribute="centerX" secondItem="w1f-Bx-e6h" secondAttribute="centerX" id="LrV-3a-PN6"/>
+                            <constraint firstItem="otw-dt-E0D" firstAttribute="top" secondItem="iFb-Pu-Tn4" secondAttribute="top" id="fMs-UL-r5M"/>
+                            <constraint firstItem="otw-dt-E0D" firstAttribute="leading" secondItem="iFb-Pu-Tn4" secondAttribute="leading" id="mjv-rk-uiZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iFb-Pu-Tn4"/>
                     </view>
                     <connections>
                         <outlet property="buyingTable" destination="L71-bg-BjW" id="WyC-ZU-F3g"/>
+                        <outlet property="segmentedControl" destination="otw-dt-E0D" id="o5Q-pK-I3L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0h-UM-4sL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="M1K-DM-opG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4348" y="2478.7106446776615"/>
         </scene>
@@ -3240,6 +3255,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="post_like_off"/>
                                                     <state key="selected" image="post_like_on"/>
+                                                    <state key="highlighted" image="post_like_on"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIC-h6-X8J">
                                                     <rect key="frame" x="172" y="22" width="15" height="21"/>
