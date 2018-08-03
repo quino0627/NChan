@@ -15,5 +15,6 @@ pod 'FBSDKLoginKit'
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
+pod 'ImageSlideshow', '~> 1.6'
 
 end
