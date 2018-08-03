@@ -1814,7 +1814,7 @@
         <scene sceneID="IoQ-kU-pUf">
             <objects>
                 <viewController storyboardIdentifier="SignupViewController" id="DCE-KL-XEc" customClass="SignInViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w0M-P6-rBL">
+                    <view key="view" contentMode="center" id="w0M-P6-rBL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1841,6 +1841,16 @@
                                     <constraint firstAttribute="height" constant="50" id="MLM-pA-8bV"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up!">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zio-3N-t9s">
+                                <rect key="frame" x="72" y="360" width="230" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DSn-Jn-jMb"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -1876,16 +1886,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zio-3N-t9s">
-                                <rect key="frame" x="72" y="360" width="230" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_camera" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-C0-Y6f">
+                                <rect key="frame" x="16" y="46" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DSn-Jn-jMb"/>
+                                    <constraint firstAttribute="width" constant="80" id="YRH-8j-9Ut"/>
+                                    <constraint firstAttribute="height" constant="80" id="wUZ-T1-jAr"/>
                                 </constraints>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1898,8 +1905,10 @@
                             <constraint firstItem="Zio-3N-t9s" firstAttribute="leading" secondItem="G1h-DD-mQV" secondAttribute="leading" constant="72" id="Oml-kn-pxY"/>
                             <constraint firstItem="G1h-DD-mQV" firstAttribute="trailing" secondItem="jw6-dl-YiG" secondAttribute="trailing" constant="16" id="QE4-6f-yPE"/>
                             <constraint firstItem="Bic-BF-thU" firstAttribute="top" secondItem="jw6-dl-YiG" secondAttribute="bottom" constant="16" id="TkR-Rx-nE2"/>
+                            <constraint firstItem="CKN-C0-Y6f" firstAttribute="top" secondItem="G1h-DD-mQV" secondAttribute="top" constant="26" id="WHz-Kc-v7f"/>
                             <constraint firstItem="Bic-BF-thU" firstAttribute="leading" secondItem="G1h-DD-mQV" secondAttribute="leading" constant="16" id="Z2B-sp-scU"/>
                             <constraint firstItem="G1h-DD-mQV" firstAttribute="trailing" secondItem="Bic-BF-thU" secondAttribute="trailing" constant="16" id="ZbE-uR-sOA"/>
+                            <constraint firstItem="CKN-C0-Y6f" firstAttribute="leading" secondItem="G1h-DD-mQV" secondAttribute="leading" constant="16" id="cGw-kk-jZU"/>
                             <constraint firstItem="jw6-dl-YiG" firstAttribute="top" secondItem="G1h-DD-mQV" secondAttribute="top" constant="114" id="eJw-9e-BhH"/>
                             <constraint firstItem="3H6-Um-tNx" firstAttribute="top" secondItem="Bic-BF-thU" secondAttribute="bottom" constant="16" id="pJ7-qC-BMA"/>
                             <constraint firstItem="VM0-km-LgF" firstAttribute="leading" secondItem="G1h-DD-mQV" secondAttribute="leading" constant="72.5" id="qih-IC-nnT"/>
@@ -1910,6 +1919,7 @@
                     <connections>
                         <outlet property="cancel" destination="Zio-3N-t9s" id="UTH-ad-M7f"/>
                         <outlet property="email" destination="Bic-BF-thU" id="Dvv-Xx-Kne"/>
+                        <outlet property="imageView" destination="CKN-C0-Y6f" id="u8D-we-Ikx"/>
                         <outlet property="name" destination="jw6-dl-YiG" id="hAG-2R-GXQ"/>
                         <outlet property="password" destination="3H6-Um-tNx" id="ohZ-pl-9dI"/>
                         <outlet property="signup" destination="VM0-km-LgF" id="B8f-tn-wgY"/>
