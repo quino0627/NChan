@@ -16,7 +16,7 @@ class ProductsListTableViewController: UITableViewController, AddProductsTableVi
     private var productLists = [Product]()
     private var rootRef :DatabaseReference!
     
- /*   func addProductsTableViewControllerDidSave(controller: UIViewController, product: Product) {
+    func addProductsTableViewControllerDidSave(controller: UIViewController, product: Product) {
         controller.dismiss(animated: true, completion: nil)
         let productList = Product(name :product.name, title :product.title, price :product.price)
         self.productLists.append(productList)
@@ -29,7 +29,7 @@ class ProductsListTableViewController: UITableViewController, AddProductsTableVi
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-    }*/
+    }
     
 
     

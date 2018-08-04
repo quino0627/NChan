@@ -39,6 +39,7 @@
 		51FD0F3F210861D50061DB4D /* CHControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F33210861D50061DB4D /* CHControls.swift */; };
 		51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F34210861D50061DB4D /* RecordButton.swift */; };
 		9D1FD3F32112C41600EF4B55 /* PostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FD3F22112C41600EF4B55 /* PostingViewController.swift */; };
+		9D45C5A32115D52800355445 /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45C5A22115D52800355445 /* AddPostTableViewController.swift */; };
 		9D804C4021140821001B3B6C /* ExampleDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D804C3F21140821001B3B6C /* ExampleDetailed.swift */; };
 		9D804C4221140A4F001B3B6C /* DeatiledTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D804C4121140A4F001B3B6C /* DeatiledTableViewController.swift */; };
 		9D9FADAF21118C4800F14618 /* GongguCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FADAE21118C4800F14618 /* GongguCell.swift */; };
@@ -90,6 +91,7 @@
 		5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB1D124379B3BD82BCC9B27 /* Pods-foodPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodPrototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodPrototype/Pods-foodPrototype.debug.xcconfig"; sourceTree = "<group>"; };
 		9D1FD3F22112C41600EF4B55 /* PostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingViewController.swift; sourceTree = "<group>"; };
+		9D45C5A22115D52800355445 /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		9D804C3F21140821001B3B6C /* ExampleDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDetailed.swift; sourceTree = "<group>"; };
 		9D804C4121140A4F001B3B6C /* DeatiledTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeatiledTableViewController.swift; sourceTree = "<group>"; };
 		9D9FADAE21118C4800F14618 /* GongguCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongguCell.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				517F48A120FDCDE3001EC8F0 /* ChatViewController.swift */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
 				9DCE0C002112F2A0004DF76D /* AddProductsTableViewController.swift */,
+				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
 				517F48A620FDCDE6001EC8F0 /* Assets.xcassets */,
@@ -375,6 +378,7 @@
 				51AE95BD210B207E0019B2EE /* Model__Prototype.swift in Sources */,
 				51FD0F3C210861D50061DB4D /* FIlters.swift in Sources */,
 				51FD0F35210861D50061DB4D /* DrawingCanvasView.swift in Sources */,
+				9D45C5A32115D52800355445 /* AddPostTableViewController.swift in Sources */,
 				51FD0F3E210861D50061DB4D /* CHModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
