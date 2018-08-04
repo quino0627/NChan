@@ -95,7 +95,12 @@ class SignupViewController: UIViewController, UINavigationControllerDelegate, UI
                         if url != nil {
                             var imageUrl:String
                             imageUrl = url!.absoluteString
-                            Database.database().reference().child("users").child(uid!).setValue(["name":self.name.text!, "profileImageUrl":imageUrl])
+                            let values = ["name":self.name.text!, "profileImageUrl":imageUrl]
+                            Database.database().reference().child("users").child(uid!).setValue(values, withCompletionBlock: { (err, ref) in
+                                if(err == nil){
+                                    self.cancelEvent()
+                                }
+                            })
                         }
                     }
                 )}
