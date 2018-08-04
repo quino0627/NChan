@@ -1710,18 +1710,42 @@
                                 </constraints>
                                 <state key="normal" title="전송"/>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3jm-AO-OsK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="70" id="HfF-SI-kSf">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HfF-SI-kSf" id="Dkq-4P-bN5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5bK-iS-YAP" id="efv-MJ-DEZ"/>
+                                    <outlet property="delegate" destination="5bK-iS-YAP" id="Yz6-Mh-C5A"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Lx4-w5-NDv" firstAttribute="top" secondItem="3jm-AO-OsK" secondAttribute="bottom" constant="8" id="0kf-fV-kbl"/>
                             <constraint firstItem="Lx4-w5-NDv" firstAttribute="leading" secondItem="cwH-Te-xnF" secondAttribute="leading" constant="16" id="Ans-gb-jny"/>
+                            <constraint firstItem="3jm-AO-OsK" firstAttribute="top" secondItem="bHg-dS-G6E" secondAttribute="top" id="GuQ-7J-3y3"/>
                             <constraint firstItem="cwH-Te-xnF" firstAttribute="bottom" secondItem="Lx4-w5-NDv" secondAttribute="bottom" constant="20" id="J5X-zZ-EED"/>
                             <constraint firstItem="cwH-Te-xnF" firstAttribute="trailing" secondItem="gHx-EJ-VF7" secondAttribute="trailing" constant="16" id="Jex-iv-mod"/>
                             <constraint firstItem="cwH-Te-xnF" firstAttribute="bottom" secondItem="gHx-EJ-VF7" secondAttribute="bottom" constant="20" id="Oc3-C1-ag4"/>
+                            <constraint firstItem="3jm-AO-OsK" firstAttribute="trailing" secondItem="cwH-Te-xnF" secondAttribute="trailing" id="bhQ-Rf-uEE"/>
+                            <constraint firstItem="3jm-AO-OsK" firstAttribute="leading" secondItem="cwH-Te-xnF" secondAttribute="leading" id="d8E-3q-zCq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cwH-Te-xnF"/>
                     </view>
                     <connections>
                         <outlet property="sendButton" destination="gHx-EJ-VF7" id="3eZ-ip-TGc"/>
+                        <outlet property="tableview" destination="3jm-AO-OsK" id="iA7-c8-mrf"/>
+                        <outlet property="textfield_message" destination="Lx4-w5-NDv" id="9pN-4G-QZb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rM-BW-U4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
