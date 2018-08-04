@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		510A64E62112811100B263C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510A64E52112811100B263C6 /* LoginViewController.swift */; };
 		510D5E962108CDA8007C5B9A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 510D5E952108CDA8007C5B9A /* Podfile */; };
-		511E835321129E9B0068D413 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511E835221129E9B0068D413 /* SignInViewController.swift */; };
+		511E835321129E9B0068D413 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511E835221129E9B0068D413 /* SignupViewController.swift */; };
 		5127F191210EF4FE008EDED3 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F185210EF4FD008EDED3 /* YoshikoTextField.swift */; };
 		5127F192210EF4FE008EDED3 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F187210EF4FD008EDED3 /* HoshiTextField.swift */; };
 		5127F193210EF4FE008EDED3 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F188210EF4FD008EDED3 /* MinoruTextField.swift */; };
@@ -21,6 +21,8 @@
 		5127F199210EF4FE008EDED3 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F18E210EF4FD008EDED3 /* AkiraTextField.swift */; };
 		5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F18F210EF4FD008EDED3 /* IsaoTextField.swift */; };
 		5127F19B210EF4FE008EDED3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5127F190210EF4FD008EDED3 /* Info.plist */; };
+		513563D921157D0000080471 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513563D821157D0000080471 /* SampleViewController.swift */; };
+		513563DB211582B100080471 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513563DA211582B100080471 /* UserModel.swift */; };
 		517E64812112EFEB0069FD91 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E64802112EFEB0069FD91 /* HomeController.swift */; };
 		517E64832112F00C0069FD91 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517E64822112F00C0069FD91 /* UserController.swift */; };
 		517F48A020FDCDE3001EC8F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */; };
@@ -56,7 +58,7 @@
 /* Begin PBXFileReference section */
 		510A64E52112811100B263C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		510D5E952108CDA8007C5B9A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		511E835221129E9B0068D413 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		511E835221129E9B0068D413 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		5127F185210EF4FD008EDED3 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		5127F186210EF4FD008EDED3 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		5127F187210EF4FD008EDED3 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		5127F18F210EF4FD008EDED3 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
 		5127F190210EF4FD008EDED3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513563D52115721600080471 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		513563D821157D0000080471 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		513563DA211582B100080471 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		517E64802112EFEB0069FD91 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		517E64822112F00C0069FD91 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		517F489C20FDCDE3001EC8F0 /* foodPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,12 +177,14 @@
 				C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */,
 				C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */,
 				517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */,
-				511E835221129E9B0068D413 /* SignInViewController.swift */,
+				511E835221129E9B0068D413 /* SignupViewController.swift */,
 				51AE95BA210AF7E10019B2EE /* Constants.swift */,
 				517F48A120FDCDE3001EC8F0 /* ChatViewController.swift */,
 				51C1FCB82111878E0055AEF3 /* ViewController.swift */,
 				51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
+				513563D821157D0000080471 /* SampleViewController.swift */,
+				513563DA211582B100080471 /* UserModel.swift */,
 				519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */,
 				517E64802112EFEB0069FD91 /* HomeController.swift */,
 				517E64822112F00C0069FD91 /* UserController.swift */,
@@ -406,6 +412,7 @@
 				5127F199210EF4FE008EDED3 /* AkiraTextField.swift in Sources */,
 				C24F81612103617000E0C2C5 /* UIViewControllerModal (1).swift in Sources */,
 				51FD0F36210861D50061DB4D /* CHContentViewController.swift in Sources */,
+				513563D921157D0000080471 /* SampleViewController.swift in Sources */,
 				5127F193210EF4FE008EDED3 /* MinoruTextField.swift in Sources */,
 				51FD0F3B210861D50061DB4D /* SwipeActionTableViewCell.swift in Sources */,
 				517F48A020FDCDE3001EC8F0 /* AppDelegate.swift in Sources */,
@@ -418,8 +425,9 @@
 				51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */,
 				5127F194210EF4FE008EDED3 /* YokoTextField.swift in Sources */,
 				51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */,
-				511E835321129E9B0068D413 /* SignInViewController.swift in Sources */,
+				511E835321129E9B0068D413 /* SignupViewController.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
+				513563DB211582B100080471 /* UserModel.swift in Sources */,
 				AD24277721119E8200020FE8 /* PostViewController.swift in Sources */,
 				C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */,
 				51AE95BD210B207E0019B2EE /* Model__Prototype.swift in Sources */,

@@ -86,7 +86,7 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
     }
     
     @objc func presentsignup(){
-        let view = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignInViewController
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
         self.present(view, animated: true, completion: nil)
     }
     

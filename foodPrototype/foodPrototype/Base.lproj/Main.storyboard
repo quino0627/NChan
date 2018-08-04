@@ -1323,6 +1323,7 @@
                         <color key="selectedImageTintColor" red="0.58823529411764708" green="0.074509803921568626" blue="0.1803921568627451" alpha="0.72658925513698636" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="lxw-hn-EWc" kind="relationship" relationship="viewControllers" id="H8G-bC-trg"/>
                         <segue destination="NZj-xJ-6g0" kind="relationship" relationship="viewControllers" id="3bK-zl-dx8"/>
                         <segue destination="0In-SS-VBY" kind="relationship" relationship="viewControllers" id="bmf-Mc-ebC"/>
                         <segue destination="w0B-J6-2pC" kind="relationship" relationship="viewControllers" id="ajE-UK-TZd"/>
@@ -1683,6 +1684,22 @@
             </objects>
             <point key="canvasLocation" x="7832" y="3190"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="aOF-GB-4CD">
+            <objects>
+                <viewController id="lxw-hn-EWc" customClass="SampleViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1CU-9B-MVJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yeB-ph-xF3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="UXf-YX-WpK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drB-Ny-vNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1342" y="928"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="Jek-hq-CwB">
             <objects>
@@ -1807,10 +1824,10 @@
             </objects>
             <point key="canvasLocation" x="8870" y="2838"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="IoQ-kU-pUf">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" id="DCE-KL-XEc" customClass="SignInViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupViewController" id="DCE-KL-XEc" customClass="SignupViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="center" id="w0M-P6-rBL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

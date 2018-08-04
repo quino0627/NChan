@@ -9,9 +9,7 @@
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    @IBAction func SignIn(_ sender: Any) {
-    }
+class SignupViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
