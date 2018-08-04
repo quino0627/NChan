@@ -58,7 +58,7 @@ class SampleViewController: UIViewController, UITableViewDelegate , UITableViewD
             m.left.equalTo(cell)
             m.height.width.equalTo(50)
         }
-        /*
+        
         URLSession.shared.dataTask(with: URL(string: array[indexPath.row].profileImageUrl!)!){ (data, response, err) in
             DispatchQueue.main.async {
                 imageView.image = UIImage(data: data!)
@@ -67,7 +67,7 @@ class SampleViewController: UIViewController, UITableViewDelegate , UITableViewD
             }
             
         }.resume()
-         */
+ 
         
         let label = UILabel()
         cell.addSubview(label)
