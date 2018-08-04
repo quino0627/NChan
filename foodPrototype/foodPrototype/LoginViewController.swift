@@ -46,23 +46,6 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
          GIDSignIn.sharedInstance().signIn()
     }
     
-    @IBAction func loginButtonTouched(_ sender: Any) {
-        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
-            if(error != nil){
-                let alert = UIAlertController(title: "알림", message: "존재하지 않는 이메일이거나 비밀번호가 틀렸습니다.", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
-                return
-            }
-            
-            let alert = UIAlertController(title: "알림", message: "로그인완료", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-
-        }
-    }
-    
     
     let remoteconfig = RemoteConfig.remoteConfig()
     var color : String!
@@ -70,17 +53,11 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        try! Auth.auth().signOut()
+        
         GIDSignIn.sharedInstance().uiDelegate = self
         facebookLoginButton.delegate = self
-        
-//        Auth.auth().addStateDidChangeListener({(user,err) in
-//            if user != nil{//로그인이 되어 있으면
-//                let view = self.storyboard?.instantiateViewController(withIdentifier: "MainViewTabBarController") as! UITabBarController
-//                self.present(view, animated: true, completion: nil)
-//            }else{
-//
-//            }
-//        })
  
         let statusBar = UIView()
         self.view.addSubview(statusBar)
@@ -97,9 +74,15 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
         
         signIn.addTarget(self, action: #selector(presentsignup), for:.touchUpInside)
         // Do any additional setup after loading the view.
+        loginButton.addTarget(self, action: #selector(loginEvent), for: .touchUpInside)
         
+        Auth.auth().addStateDidChangeListener{(auth, user) in
+        if(user != nil){
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "MainViewTabBarController") as! UITabBarController
+            self.present(view, animated: true, completion: nil)
+            }
+        }
         
-       
     }
     
     @objc func presentsignup(){
@@ -112,6 +95,15 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate, FBSDKLoginBut
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func loginEvent(){
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!){(user, err) in
+            if (err != nil){
+                let alert = UIAlertController(title: "에러", message: err.debugDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

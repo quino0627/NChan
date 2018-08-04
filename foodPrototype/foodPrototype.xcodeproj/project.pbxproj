@@ -69,6 +69,7 @@
 		5127F18E210EF4FD008EDED3 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
 		5127F18F210EF4FD008EDED3 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
 		5127F190210EF4FD008EDED3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		513563D52115721600080471 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		517E64802112EFEB0069FD91 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		517E64822112F00C0069FD91 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		517F489C20FDCDE3001EC8F0 /* foodPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +80,6 @@
 		517F48A920FDCDE6001EC8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517F48AB20FDCDE6001EC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		51AE95B7210ADC7B0019B2EE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "/Users/SongDongWook/Documents/FoodMarket/foodPrototype/Bridging-Header.h"; sourceTree = "<absolute>"; };
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AE95BA210AF7E10019B2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51AE95BC210B207E0019B2EE /* Model__Prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model__Prototype.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		517F489320FDCDE3001EC8F0 = {
 			isa = PBXGroup;
 			children = (
-				51AE95B7210ADC7B0019B2EE /* Bridging-Header.h */,
+				513563D52115721600080471 /* Bridging-Header.h */,
 				517F489E20FDCDE3001EC8F0 /* foodPrototype */,
 				517F489D20FDCDE3001EC8F0 /* Products */,
 				510D5E952108CDA8007C5B9A /* Podfile */,

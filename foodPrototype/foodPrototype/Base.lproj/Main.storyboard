@@ -1741,9 +1741,6 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="loginButtonTouched:" destination="CEH-NB-dsR" eventType="touchUpInside" id="eI3-c2-SHd"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea9-rn-Q6Z">
                                 <rect key="frame" x="16" y="430" width="343" height="40"/>
