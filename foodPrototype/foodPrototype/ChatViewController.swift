@@ -13,11 +13,14 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var sendButton: UIButton!
     
+    var uid : String?
+    var chatRoomUid: String?
     
     
     public var destinationUid: String? //나중에 내가 채팅할 대상의 uid
     override func viewDidLoad() {
         super.viewDidLoad()
+        uid = Auth.auth().currentUser?.uid
         sendButton.addTarget(self, action: #selector(createRoom), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
@@ -28,10 +31,15 @@ class ChatViewController: UIViewController {
     }
     
     @objc func createRoom(){
-        let createRoomInfo = [
-            "uid":Auth.auth().currentUser?.uid,
-            "destinationUid":destinationUid
-            
+        let createRoomInfo:Dictionary<String, Any> = [
+//            "uid":Auth.auth().currentUser?.uid,
+//            "destinationUid":destinationUid
+            "users":[
+                uid!: true,
+                destinationUid!:true
+            ]
+                
+//
         ]
         Database.database().reference().child("chatrooms").childByAutoId().setValue(createRoomInfo)
     }
