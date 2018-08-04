@@ -80,7 +80,7 @@ class SignupViewController: UIViewController, UINavigationControllerDelegate, UI
             */
             
             
-            let storageItem = Storage.storage().reference().child("userImages")
+            let storageItem = Storage.storage().reference().child("userImages").child(uid!)
             
             storageItem.putData(image!, metadata: nil) { (metadata, error) in
                 if error != nil {
