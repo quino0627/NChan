@@ -14,7 +14,7 @@ class DeatiledTableViewController: UITableViewController{
 
     
     
-    var productList :ProductList!
+    var productList :Product!
     
     
     

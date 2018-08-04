@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="18R-Wo-AEA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mnX-DU-FBp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -148,7 +148,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWp-xf-lcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3392.8000000000002" y="1693.4032983508248"/>
+            <point key="canvasLocation" x="4332" y="1693.4032983508248"/>
         </scene>
         <!--글쓰기-->
         <scene sceneID="gBL-6l-b00">
@@ -237,21 +237,19 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="twH-6Z-y1V">
                             <color key="tintColor" red="0.58823529409999997" green="0.074509803920000006" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="done:" destination="Bj3-Xu-HhV" id="1uY-XF-VuW"/>
+                                <action selector="save:" destination="Bj3-Xu-HhV" id="WBQ-ws-TH9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="contentsTextField" destination="GOK-Wt-rw9" id="6U8-OO-6em"/>
-                        <outlet property="priceTextField" destination="10W-1n-mAh" id="0Tu-8p-rda"/>
-                        <outlet property="productTextField" destination="CG9-4Q-pwS" id="ny3-8E-OmL"/>
-                        <outlet property="tagTextField" destination="4Hf-0f-tCk" id="p8P-rJ-7ez"/>
-                        <outlet property="titleTextField" destination="MAT-QW-v63" id="xqN-BG-Het"/>
+                        <outlet property="nameTextField" destination="CG9-4Q-pwS" id="xGQ-kI-PVF"/>
+                        <outlet property="priceTextField" destination="10W-1n-mAh" id="XxQ-eg-cxe"/>
+                        <outlet property="titleTextField" destination="MAT-QW-v63" id="QzE-a2-sXT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsc-wc-ZaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4421.6000000000004" y="1773.4632683658172"/>
+            <point key="canvasLocation" x="5494" y="1724"/>
         </scene>
         <!--Title-->
         <scene sceneID="N64-fr-C7x">
@@ -917,7 +915,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRT-8I-lGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2556" y="1692.5037481259371"/>
+            <point key="canvasLocation" x="3495.1999999999998" y="1692.5037481259371"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="PYw-Ge-cZ9">
@@ -1175,7 +1173,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ4-bF-NwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8104.8000000000002" y="1692.5037481259371"/>
+            <point key="canvasLocation" x="9044" y="1692.5037481259371"/>
         </scene>
         <!--진행중-->
         <scene sceneID="b7k-ig-RMx">
@@ -1334,7 +1332,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fD-Ei-Bck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5576.8000000000002" y="1692.5037481259371"/>
+            <point key="canvasLocation" x="6516" y="1692.5037481259371"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2XG-TC-NgW">
@@ -1459,7 +1457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1F-ZJ-lM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2287" y="471"/>
+            <point key="canvasLocation" x="-3246" y="72"/>
         </scene>
         <!--공동구매-->
         <scene sceneID="2s0-s9-Jdn">
@@ -1479,7 +1477,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ame-JI-PSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3392.8000000000002" y="927.88605697151434"/>
+            <point key="canvasLocation" x="4332" y="927.88605697151434"/>
         </scene>
         <!--직거래-->
         <scene sceneID="J7z-1X-CVM">
@@ -1499,7 +1497,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcD-8T-ciQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4109.6000000000004" y="927.88605697151434"/>
+            <point key="canvasLocation" x="5048.8000000000002" y="927.88605697151434"/>
         </scene>
         <!--진행중-->
         <scene sceneID="vJR-Rb-zcD">
@@ -1519,7 +1517,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUq-YN-Dtl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5576.8000000000002" y="927.88605697151434"/>
+            <point key="canvasLocation" x="6516" y="927.88605697151434"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="ai8-m2-cYk">
@@ -1539,7 +1537,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CI-nR-djD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6317.6000000000004" y="927.88605697151434"/>
+            <point key="canvasLocation" x="7256.8000000000002" y="927.88605697151434"/>
         </scene>
         <!--키워드 알림-->
         <scene sceneID="yhm-uk-Umc">
@@ -3010,7 +3008,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gId-VB-rWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4853.6000000000004" y="927.88605697151434"/>
+            <point key="canvasLocation" x="5792.8000000000002" y="927.88605697151434"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="fns-tN-79y">
@@ -4837,7 +4835,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idh-7C-AZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1508" y="1270.6146926536733"/>
+            <point key="canvasLocation" x="-568.79999999999995" y="1270.6146926536733"/>
         </scene>
         <!--Add Products Table View Controller-->
         <scene sceneID="d14-Lg-u9X">
@@ -4908,6 +4906,56 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="59" id="OSx-Fe-KjD">
+                                        <rect key="frame" x="0.0" y="191" width="375" height="59"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OSx-Fe-KjD" id="3Jh-QZ-Gsi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="가격" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9p1-bs-tk1" customClass="HoshiTextField" customModule="foodPrototype" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-8" width="375" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.58823529409999997" green="0.074509803920000006" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.58823529409999997" green="0.074509803920000006" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="356" id="7VP-mz-KmC">
+                                        <rect key="frame" x="0.0" y="250" width="375" height="356"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7VP-mz-KmC" id="1rz-Yc-P4h">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="355.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="게시글 내용을 작성해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2I-3W-wos" customClass="HoshiTextField" customModule="foodPrototype" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-8" width="375" height="348"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                            <color key="value" red="0.58823529409999997" green="0.074509803920000006" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                            <color key="value" red="0.58823529409999997" green="0.074509803920000006" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -4929,12 +4977,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ProductTextField" destination="NI3-wK-Pe4" id="5l9-cW-jf6"/>
+                        <outlet property="nameTextField" destination="NI3-wK-Pe4" id="2h2-lE-dsq"/>
+                        <outlet property="priceTextField" destination="9p1-bs-tk1" id="Bqf-F7-q5P"/>
+                        <outlet property="titleTextField" destination="0mR-rP-eXo" id="Jwk-1r-Wmt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9c-NG-S2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="648"/>
+            <point key="canvasLocation" x="1132" y="647.22638680659679"/>
         </scene>
         <!--Deatiled Table View Controller-->
         <scene sceneID="1qr-qw-OpK">
@@ -4962,12 +5012,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xC-mu-y8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-569" y="1388"/>
+            <point key="canvasLocation" x="368.80000000000001" y="1387.5562218890557"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="mj5-rD-8sN">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0h-Zz-yFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="18R-Wo-AEA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="9LU-Pq-jqv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jaq-yk-EpB">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -4978,9 +5030,8 @@
                         <segue destination="uoF-MK-n8g" kind="relationship" relationship="rootViewController" id="DDC-ai-eK5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z0h-Zz-yFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2447.1999999999998" y="1270.6146926536733"/>
+            <point key="canvasLocation" x="-1508" y="1270.6146926536733"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qSp-pz-G30">
@@ -4998,7 +5049,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG9-EY-OTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-636" y="649"/>
+            <point key="canvasLocation" x="303.19999999999999" y="648.12593703148434"/>
         </scene>
     </scenes>
     <resources>

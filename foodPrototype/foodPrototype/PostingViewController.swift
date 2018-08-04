@@ -8,13 +8,27 @@
 import Foundation
 import UIKit
 
-protocol PostingViewControllerDelegate{
-    func postingViewControllerIsDone(controller: UIViewController, title: String)
-   // func postingViewControllerDidCancel(controller: UIViewController)
-}
-
 class PostingViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: HoshiTextField!
+    @IBOutlet weak var titleTextField: HoshiTextField!
+    @IBOutlet weak var priceTextField: HoshiTextField!
+    
+    @IBAction func save(_ sender: Any) {
+        controller.dismiss(animated: true, completion: nil)
+        let productList = Product(name :product.name, title :product.title, price :product.price)
+        self.productLists.append(productList)
+        
+        let childRef = self.rootRef.child(productList.name)
+        
+        childRef.setValue(productList.toDictionary()) //firebase
+        
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,40 +41,5 @@ class PostingViewController: UIViewController {
     }
     
 
-    
-    @IBOutlet weak var productTextField: HoshiTextField!
-    var delegate :PostingViewControllerDelegate!
-    
-    @IBOutlet weak var titleTextField: HoshiTextField!
-    
-    
-    @IBOutlet weak var tagTextField: HoshiTextField!
-    
-    @IBOutlet weak var priceTextField: HoshiTextField!
-    
-    @IBOutlet weak var contentsTextField: JSQMessagesComposerTextView!
-    
-    @IBAction func done(_ sender: Any) {
-        if let title = self.titleTextField.text{
-            self.delegate.postingViewControllerIsDone(controller: self, title: title)
-            
-        }
-    }
-    
-    
-    
-
-
-    
-    
-    
-    /*    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

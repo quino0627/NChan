@@ -41,7 +41,6 @@
 		9D1FD3F32112C41600EF4B55 /* PostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FD3F22112C41600EF4B55 /* PostingViewController.swift */; };
 		9D804C4021140821001B3B6C /* ExampleDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D804C3F21140821001B3B6C /* ExampleDetailed.swift */; };
 		9D804C4221140A4F001B3B6C /* DeatiledTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D804C4121140A4F001B3B6C /* DeatiledTableViewController.swift */; };
-		9D9FADAD21118BEA00F14618 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FADAC21118BEA00F14618 /* ProductListViewController.swift */; };
 		9D9FADAF21118C4800F14618 /* GongguCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FADAE21118C4800F14618 /* GongguCell.swift */; };
 		9DC94C1F211306D6005AA023 /* ExampleProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC94C1E211306D6005AA023 /* ExampleProductList.swift */; };
 		9DCE0BFF2112EFF3004DF76D /* ProductsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE0BFE2112EFF3004DF76D /* ProductsListTableViewController.swift */; };
@@ -73,7 +72,6 @@
 		517F48A620FDCDE6001EC8F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		517F48A920FDCDE6001EC8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517F48AB20FDCDE6001EC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51AE95B7210ADC7B0019B2EE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "/Users/SongDongWook/Documents/FoodMarket/foodPrototype/Bridging-Header.h"; sourceTree = "<absolute>"; };
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AE95BA210AF7E10019B2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51AE95BC210B207E0019B2EE /* Model__Prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model__Prototype.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 		9D1FD3F22112C41600EF4B55 /* PostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingViewController.swift; sourceTree = "<group>"; };
 		9D804C3F21140821001B3B6C /* ExampleDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDetailed.swift; sourceTree = "<group>"; };
 		9D804C4121140A4F001B3B6C /* DeatiledTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeatiledTableViewController.swift; sourceTree = "<group>"; };
-		9D9FADAC21118BEA00F14618 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		9D9FADAE21118C4800F14618 /* GongguCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongguCell.swift; sourceTree = "<group>"; };
 		9DC94C1E211306D6005AA023 /* ExampleProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProductList.swift; sourceTree = "<group>"; };
 		9DCE0BFE2112EFF3004DF76D /* ProductsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListTableViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +145,6 @@
 		517F489320FDCDE3001EC8F0 = {
 			isa = PBXGroup;
 			children = (
-				51AE95B7210ADC7B0019B2EE /* Bridging-Header.h */,
 				517F489E20FDCDE3001EC8F0 /* foodPrototype */,
 				517F489D20FDCDE3001EC8F0 /* Products */,
 				510D5E952108CDA8007C5B9A /* Podfile */,
@@ -174,7 +170,6 @@
 				9D804C4121140A4F001B3B6C /* DeatiledTableViewController.swift */,
 				9D1FD3F22112C41600EF4B55 /* PostingViewController.swift */,
 				9D9FADAE21118C4800F14618 /* GongguCell.swift */,
-				9D9FADAC21118BEA00F14618 /* ProductListViewController.swift */,
 				C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */,
 				C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */,
 				517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */,
@@ -365,7 +360,6 @@
 				9D804C4021140821001B3B6C /* ExampleDetailed.swift in Sources */,
 				51FD0F3B210861D50061DB4D /* SwipeActionTableViewCell.swift in Sources */,
 				517F48A020FDCDE3001EC8F0 /* AppDelegate.swift in Sources */,
-				9D9FADAD21118BEA00F14618 /* ProductListViewController.swift in Sources */,
 				9D9FADAF21118C4800F14618 /* GongguCell.swift in Sources */,
 				51FD0F37210861D50061DB4D /* NavigationControllers.swift in Sources */,
 				5127F191210EF4FE008EDED3 /* YoshikoTextField.swift in Sources */,

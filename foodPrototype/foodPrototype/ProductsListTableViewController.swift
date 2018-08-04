@@ -13,26 +13,25 @@ import FirebaseDatabase
 
 class ProductsListTableViewController: UITableViewController, AddProductsTableViewControllerDelegate {
     
+    private var productLists = [Product]()
+    private var rootRef :DatabaseReference!
     
-    func addProductsTableViewControllerDidSave(controller: UIViewController, product: String) {
+ /*   func addProductsTableViewControllerDidSave(controller: UIViewController, product: Product) {
         controller.dismiss(animated: true, completion: nil)
-        let productList = ProductList(product: product)
+        let productList = Product(name :product.name, title :product.title, price :product.price)
         self.productLists.append(productList)
         
-        let productListRef = self.rootRef.child(productList.product)
-        productListRef.setValue(productList.toDictionary())
-        
-        print(product)
-      //  print(title)
+        let childRef = self.rootRef.child(productList.name)
+
+        childRef.setValue(productList.toDictionary()) //firebase
 
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-    }
+    }*/
     
-    private var productLists = [ProductList]()
-    private var rootRef :DatabaseReference!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +51,7 @@ class ProductsListTableViewController: UITableViewController, AddProductsTableVi
             for (key,_) in productListDictionary {
                 if let productListDictionary = productListDictionary[key] as? [String:Any]{
                     
-                    if let productList = ProductList(productListDictionary){
+                    if let productList = Product(productListDictionary){
                         self.productLists.append(productList)
                     }
                     
@@ -78,7 +77,8 @@ class ProductsListTableViewController: UITableViewController, AddProductsTableVi
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsListTableViewCell", for: indexPath)
         let productList = self.productLists[indexPath.row]
-        cell.textLabel?.text = productList.product
+        cell.textLabel?.text = productList.name
+        cell.textLabel?.text = productList.price
         
         
         return cell

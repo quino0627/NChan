@@ -10,37 +10,58 @@ import Foundation
 import UIKit
 import Firebase
 
-class ProductList{
-    var product :String
-
-    init(product :String){
-        self.product = product
-
+struct Product {
+    var name: String
+    var price: String
+    var title: String
+    
+    
+    init(name :String, title :String, price :String){
+        self.name = name
+        self.title = title
+        self.price = price
     }
     
     func toDictionary() -> [String:Any]{
-        return ["product":self.product]
+        return ["name":self.name as Any, "title": self.title as Any, "price": self.price as Any]
     }
     
     init?(_ dictionary :[String:Any]){
         
-        guard let product = dictionary["product"] as? String else{
+        guard let name = dictionary["name"] as? String else{
             return nil
         }
         
-        self.product = product
+        guard let price = dictionary["price"] as? String else{
+            return nil
+        }
+        
+        guard let title = dictionary["title"] as? String else{
+            return nil
+        }
+        
+        self.name = name
+        self.price = price
+        self.title = title
         
         
     }
+    
     
 }
 
-/*class TitleList{
-    var title : String
+
+/*struct ProductList{
+    var name: String
+    var price: String
+    var title: String
+    var products :[Product] = [Product]()
     
-    init(title :String){
-        self.title = title
-    }
+
+    
+    
     
 }*/
+
+
 

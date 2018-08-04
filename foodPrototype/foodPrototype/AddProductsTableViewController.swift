@@ -11,7 +11,7 @@ import UIKit
 
 protocol AddProductsTableViewControllerDelegate {
     
-    func addProductsTableViewControllerDidSave(controller :UIViewController, product :String)
+    func addProductsTableViewControllerDidSave(controller :UIViewController, product : Product)
     func addProductsTableViewControllerDidCancel(controller :UIViewController)
 
 }
@@ -20,21 +20,20 @@ protocol AddProductsTableViewControllerDelegate {
 class AddProductsTableViewController: UITableViewController {
     
 
-    @IBOutlet weak var ProductTextField: HoshiTextField!
+
+    @IBOutlet weak var nameTextField: HoshiTextField!
     var delegate :AddProductsTableViewControllerDelegate!
     
-    //    @IBOutlet weak var TitleTextField: HoshiTextField!
+    @IBOutlet weak var titleTextField: HoshiTextField!
+    
+    @IBOutlet weak var priceTextField: HoshiTextField!
     
     @IBAction func save() {
+        var product = Product(name: nameTextField.text!, title: titleTextField.text!, price: priceTextField.text!)
         
-    if let product = self.ProductTextField.text {
+        if let _ = self.nameTextField, let _ = self.titleTextField, let _ = self.priceTextField{
         self.delegate.addProductsTableViewControllerDidSave(controller: self, product: product)
         }
-        
-//    if let title = self.TitleTextField.text {
-//        self.delegate.addProductsTableViewControllerDidSave(controller: self, product: title)
-//        }
-        
         
     }
     
