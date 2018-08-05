@@ -991,7 +991,7 @@
                                                         <constraint firstAttribute="height" constant="50" id="Z2a-jy-9Xb"/>
                                                     </constraints>
                                                     <connections>
-                                                        <segue destination="qod-vb-pOW" kind="show" id="o93-q9-bYf"/>
+                                                        <segue destination="Mc5-Zf-5VB" kind="show" id="iac-fY-Twh"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -2169,6 +2169,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="qIb-ET-hED" kind="show" id="qS5-fB-FqV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -2176,7 +2179,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="otw-dt-E0D">
-                                <rect key="frame" x="0.0" y="20" width="375" height="28"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="adS-mP-TtC"/>
                                     <constraint firstAttribute="height" constant="27" id="gyM-ea-80l"/>
@@ -3688,9 +3691,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="qIb-ET-hED" kind="show" id="Cub-Cn-uqg"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -3698,7 +3698,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H3K-FP-Ydw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="28"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="NmQ-ut-JUp"/>
                                     <constraint firstAttribute="height" constant="27" id="Xtp-Dd-Qlx"/>
@@ -4256,8 +4256,8 @@
         <image name="프로필" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="11W-dG-TDG"/>
-        <segue reference="bpG-Ex-C7g"/>
+        <segue reference="QNz-2S-FkP"/>
+        <segue reference="gG1-7Q-Sw9"/>
         <segue reference="Jvq-RY-hvW"/>
     </inferredMetricsTieBreakers>
 </document>
