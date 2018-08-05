@@ -148,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RowCell" rowHeight="70" id="yyx-ba-TFx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RowCell" rowHeight="70" id="yyx-ba-TFx" customClass="CustomCell" customModule="foodPrototype" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyx-ba-TFx" id="aal-Xt-ASp">
@@ -168,14 +168,28 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU6-tl-Ylw">
+                                                    <rect key="frame" x="73" y="38" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="R9M-nI-h5Q" firstAttribute="centerY" secondItem="aal-Xt-ASp" secondAttribute="centerY" id="0xA-Oz-CgU"/>
+                                                <constraint firstItem="iU6-tl-Ylw" firstAttribute="bottom" secondItem="aal-Xt-ASp" secondAttribute="bottomMargin" id="1pG-mG-0YT"/>
                                                 <constraint firstItem="R9M-nI-h5Q" firstAttribute="leading" secondItem="aal-Xt-ASp" secondAttribute="leadingMargin" id="9ND-hy-Hlw"/>
                                                 <constraint firstItem="BgF-8P-Rdr" firstAttribute="top" secondItem="aal-Xt-ASp" secondAttribute="topMargin" id="Lic-8y-kyB"/>
+                                                <constraint firstItem="iU6-tl-Ylw" firstAttribute="top" secondItem="BgF-8P-Rdr" secondAttribute="bottom" constant="6" id="Qd3-Tx-tlE"/>
                                                 <constraint firstItem="BgF-8P-Rdr" firstAttribute="leading" secondItem="R9M-nI-h5Q" secondAttribute="trailing" constant="8" id="R8q-gw-2yj"/>
+                                                <constraint firstItem="iU6-tl-Ylw" firstAttribute="leading" secondItem="R9M-nI-h5Q" secondAttribute="trailing" constant="8" id="ir3-0T-qCG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageview" destination="R9M-nI-h5Q" id="23H-e8-CWy"/>
+                                            <outlet property="label_lastmessage" destination="iU6-tl-Ylw" id="6is-8L-pF1"/>
+                                            <outlet property="label_title" destination="BgF-8P-Rdr" id="xwG-hG-GNd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
