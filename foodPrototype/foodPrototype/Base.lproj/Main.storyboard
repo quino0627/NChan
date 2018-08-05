@@ -1922,9 +1922,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="qIb-ET-hED" kind="show" id="Urx-gb-6oq"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -3495,6 +3492,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="qIb-ET-hED" kind="show" id="Cub-Cn-uqg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
