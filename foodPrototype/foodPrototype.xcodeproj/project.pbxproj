@@ -38,14 +38,7 @@
 		51FD0F3E210861D50061DB4D /* CHModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F32210861D50061DB4D /* CHModalViewController.swift */; };
 		51FD0F3F210861D50061DB4D /* CHControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F33210861D50061DB4D /* CHControls.swift */; };
 		51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F34210861D50061DB4D /* RecordButton.swift */; };
-		9D1FD3F32112C41600EF4B55 /* PostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FD3F22112C41600EF4B55 /* PostingViewController.swift */; };
 		9D45C5A32115D52800355445 /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45C5A22115D52800355445 /* AddPostTableViewController.swift */; };
-		9D804C4021140821001B3B6C /* ExampleDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D804C3F21140821001B3B6C /* ExampleDetailed.swift */; };
-		9D804C4221140A4F001B3B6C /* DeatiledTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D804C4121140A4F001B3B6C /* DeatiledTableViewController.swift */; };
-		9D9FADAF21118C4800F14618 /* GongguCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FADAE21118C4800F14618 /* GongguCell.swift */; };
-		9DC94C1F211306D6005AA023 /* ExampleProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC94C1E211306D6005AA023 /* ExampleProductList.swift */; };
-		9DCE0BFF2112EFF3004DF76D /* ProductsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE0BFE2112EFF3004DF76D /* ProductsListTableViewController.swift */; };
-		9DCE0C012112F2A0004DF76D /* AddProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE0C002112F2A0004DF76D /* AddProductsTableViewController.swift */; };
 		9E4C0CA6591495005D57E011 /* Pods_foodPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */; };
 		C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22624D721071AC90033CAA6 /* model_prototype.swift */; };
 		C24F81602103617000E0C2C5 /* UIViewControllerKeyboard (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */; };
@@ -90,14 +83,7 @@
 		51FD0F34210861D50061DB4D /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB1D124379B3BD82BCC9B27 /* Pods-foodPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodPrototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodPrototype/Pods-foodPrototype.debug.xcconfig"; sourceTree = "<group>"; };
-		9D1FD3F22112C41600EF4B55 /* PostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostingViewController.swift; sourceTree = "<group>"; };
 		9D45C5A22115D52800355445 /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
-		9D804C3F21140821001B3B6C /* ExampleDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDetailed.swift; sourceTree = "<group>"; };
-		9D804C4121140A4F001B3B6C /* DeatiledTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeatiledTableViewController.swift; sourceTree = "<group>"; };
-		9D9FADAE21118C4800F14618 /* GongguCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GongguCell.swift; sourceTree = "<group>"; };
-		9DC94C1E211306D6005AA023 /* ExampleProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProductList.swift; sourceTree = "<group>"; };
-		9DCE0BFE2112EFF3004DF76D /* ProductsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListTableViewController.swift; sourceTree = "<group>"; };
-		9DCE0C002112F2A0004DF76D /* AddProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsTableViewController.swift; sourceTree = "<group>"; };
 		C22624D721071AC90033CAA6 /* model_prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model_prototype.swift; sourceTree = "<group>"; };
 		C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerKeyboard (1).swift"; sourceTree = "<group>"; };
 		C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerModal (1).swift"; sourceTree = "<group>"; };
@@ -166,19 +152,12 @@
 		517F489E20FDCDE3001EC8F0 /* foodPrototype */ = {
 			isa = PBXGroup;
 			children = (
-				9DC94C1E211306D6005AA023 /* ExampleProductList.swift */,
-				9D804C3F21140821001B3B6C /* ExampleDetailed.swift */,
-				9DCE0BFE2112EFF3004DF76D /* ProductsListTableViewController.swift */,
-				9D804C4121140A4F001B3B6C /* DeatiledTableViewController.swift */,
-				9D1FD3F22112C41600EF4B55 /* PostingViewController.swift */,
-				9D9FADAE21118C4800F14618 /* GongguCell.swift */,
 				C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */,
 				C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */,
 				517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */,
 				51AE95BA210AF7E10019B2EE /* Constants.swift */,
 				517F48A120FDCDE3001EC8F0 /* ChatViewController.swift */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
-				9DCE0C002112F2A0004DF76D /* AddProductsTableViewController.swift */,
 				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
@@ -357,27 +336,20 @@
 				5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */,
 				5127F198210EF4FE008EDED3 /* KaedeTextField.swift in Sources */,
 				5127F197210EF4FE008EDED3 /* MadokaTextField.swift in Sources */,
-				9D804C4221140A4F001B3B6C /* DeatiledTableViewController.swift in Sources */,
 				5127F199210EF4FE008EDED3 /* AkiraTextField.swift in Sources */,
 				C24F81612103617000E0C2C5 /* UIViewControllerModal (1).swift in Sources */,
 				51FD0F36210861D50061DB4D /* CHContentViewController.swift in Sources */,
-				9DC94C1F211306D6005AA023 /* ExampleProductList.swift in Sources */,
 				5127F193210EF4FE008EDED3 /* MinoruTextField.swift in Sources */,
-				9DCE0C012112F2A0004DF76D /* AddProductsTableViewController.swift in Sources */,
-				9D804C4021140821001B3B6C /* ExampleDetailed.swift in Sources */,
 				51FD0F3B210861D50061DB4D /* SwipeActionTableViewCell.swift in Sources */,
 				517F48A020FDCDE3001EC8F0 /* AppDelegate.swift in Sources */,
-				9D9FADAF21118C4800F14618 /* GongguCell.swift in Sources */,
 				51FD0F37210861D50061DB4D /* NavigationControllers.swift in Sources */,
 				5127F191210EF4FE008EDED3 /* YoshikoTextField.swift in Sources */,
 				51FD0F3F210861D50061DB4D /* CHControls.swift in Sources */,
 				5127F192210EF4FE008EDED3 /* HoshiTextField.swift in Sources */,
 				5127F195210EF4FE008EDED3 /* TextFieldEffects.swift in Sources */,
 				5127F194210EF4FE008EDED3 /* YokoTextField.swift in Sources */,
-				9DCE0BFF2112EFF3004DF76D /* ProductsListTableViewController.swift in Sources */,
 				51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
-				9D1FD3F32112C41600EF4B55 /* PostingViewController.swift in Sources */,
 				C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */,
 				51AE95BD210B207E0019B2EE /* Model__Prototype.swift in Sources */,
 				51FD0F3C210861D50061DB4D /* FIlters.swift in Sources */,
