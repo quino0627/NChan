@@ -192,6 +192,7 @@
 				513563E02115AAFB00080471 /* ChatViewController.swift */,
 				C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */,
 				C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */,
+				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
 				517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */,
 				511E835221129E9B0068D413 /* SignupViewController.swift */,
 				51AE95BA210AF7E10019B2EE /* Constants.swift */,
@@ -201,7 +202,6 @@
 				517E64802112EFEB0069FD91 /* HomeController.swift */,
 				517E64822112F00C0069FD91 /* UserController.swift */,
 				510A64E52112811100B263C6 /* LoginViewController.swift */,
-				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
 				AD24277621119E8200020FE8 /* PostViewController.swift */,
@@ -250,6 +250,13 @@
 				5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD13D01F211451C900815090 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
