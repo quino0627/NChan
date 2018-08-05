@@ -11,9 +11,25 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseDatabase
+import DKImagePickerController
+import FirebaseStorage
+
 
 
 class AddPostTableViewController: UITableViewController {
+    
+    
+    override func viewDidLoad() {
+        
+        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
+        
+        super.viewDidLoad()
+        
+        //getting a reference to the node post
+        refPost = Database.database().reference().child("post");
+        
+        
+    }
     
 
     @IBOutlet weak var nameTextField: HoshiTextField!
@@ -22,8 +38,27 @@ class AddPostTableViewController: UITableViewController {
     
     @IBOutlet weak var priceTextField: HoshiTextField!
     
+    @IBOutlet weak var contentText: UITextView!
     
     
+    
+    @IBAction func addImageClicked(_ sender: Any) {
+        
+        let pickerController = DKImagePickerController()
+        
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            print(assets)
+            for asset in assets{
+                print("this is an image: ",asset)
+               // let image = extraInfo["image"] as? UIImage
+        }
+        }
+        
+        self.present(pickerController, animated: true) {}
+        
+    }
+
 
     @IBAction func save(_ sender: Any) {
         addPost()
@@ -38,17 +73,6 @@ class AddPostTableViewController: UITableViewController {
     //defining firebase reference var
     var refPost: DatabaseReference!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
-        //getting a reference to the node post
-        refPost = Database.database().reference().child("post");
-        
-        
-    }
-    
-    
     func addPost(){
         //generating a new key inside post node
         //and also getting the generated key
@@ -58,24 +82,12 @@ class AddPostTableViewController: UITableViewController {
         let post = ["id":key,
                       "name": nameTextField.text! as String,
                       "title": titleTextField.text! as String,
-                      "price": priceTextField.text! as String
+                      "price": priceTextField.text! as String,
+                      "content": contentText.text! as String
         ]
         
         //adding the artist inside the generated unique key
         refPost.child(key).setValue(post)
     }
-    
-    /*  @IBAction func save() {
-        var product = Product(name: nameTextField.text!, title: titleTextField.text!, price: priceTextField.text!)
-        
-       if let _ = self.nameTextField, let _ = self.titleTextField, let _ = self.priceTextField{
-        self.delegate.addPostTableViewControllerDidSave(controller: self, product: product)
-        }
-        
-    }
-    
-        @IBAction func cancel() {
-        self.delegate.addPostTableViewControllerDidCancel(controller: self)
-    }*/
 
 }
