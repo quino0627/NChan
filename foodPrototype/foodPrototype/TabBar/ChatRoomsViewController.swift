@@ -14,6 +14,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var uid: String!
     var chatrooms : [ChatModel]! = []
+    var destinationUsers : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         for item in chatrooms[indexPath.row].users {
             if(item.key != self.uid){
                 destinationUid = item.key
+                destinationUsers.append(destinationUid!)
             }
         }
         Database.database().reference().child("users").child(destinationUid!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
@@ -71,10 +73,22 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             }).resume()
             let lastMessagekey = self.chatrooms[indexPath.row].comments.keys.sorted(){$0>$1}//오름차순..(설정안해주면 랜덤)
             cell.label_lastmessage.text = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.message
+            let unixTime = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.timestamp
+            cell.label_timestamp.text = unixTime?.toDayTime
             
         })
         
         return cell
+    }
+    
+    //클릭하면 그 챗방으로 간다
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let destinationUid = self.destinationUsers[indexPath.row]
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+        view.destinationUid = destinationUid
+        
+        self.navigationController?.pushViewController(view, animated: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -105,5 +119,6 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var label_lastmessage: UILabel!
     @IBOutlet weak var label_title: UILabel!
     @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var label_timestamp: UILabel!
     
 }
