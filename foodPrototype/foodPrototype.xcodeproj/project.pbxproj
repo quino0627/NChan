@@ -35,6 +35,7 @@
 		51AE95B9210AE2B60019B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */; };
 		51AE95BB210AF7E10019B2EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BA210AF7E10019B2EE /* Constants.swift */; };
 		51AE95BD210B207E0019B2EE /* Model__Prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BC210B207E0019B2EE /* Model__Prototype.swift */; };
+		51B20B8A2116B70000DFA653 /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B20B892116B70000DFA653 /* ChatRoomsViewController.swift */; };
 		51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1FCB82111878E0055AEF3 /* ViewController.swift */; };
 		51C1FCBB211197EC0055AEF3 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */; };
 		51FD0F35210861D50061DB4D /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F29210861D50061DB4D /* DrawingCanvasView.swift */; };
@@ -89,6 +90,7 @@
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AE95BA210AF7E10019B2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51AE95BC210B207E0019B2EE /* Model__Prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model__Prototype.swift; sourceTree = "<group>"; };
+		51B20B892116B70000DFA653 /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
 		51C1FCB82111878E0055AEF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		51FD0F29210861D50061DB4D /* DrawingCanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		517F489E20FDCDE3001EC8F0 /* foodPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				51B20B882116B6B000DFA653 /* TabBar */,
 				513563E22115AC0E00080471 /* Model */,
 				513563E02115AAFB00080471 /* ChatViewController.swift */,
 				C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */,
@@ -195,8 +198,6 @@
 				51C1FCB82111878E0055AEF3 /* ViewController.swift */,
 				51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
-				513563D821157D0000080471 /* SampleViewController.swift */,
-				519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */,
 				517E64802112EFEB0069FD91 /* HomeController.swift */,
 				517E64822112F00C0069FD91 /* UserController.swift */,
 				510A64E52112811100B263C6 /* LoginViewController.swift */,
@@ -212,6 +213,16 @@
 				51FD0F28210861D50061DB4D /* PilotPlant */,
 			);
 			path = foodPrototype;
+			sourceTree = "<group>";
+		};
+		51B20B882116B6B000DFA653 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				513563D821157D0000080471 /* SampleViewController.swift */,
+				519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */,
+				51B20B892116B70000DFA653 /* ChatRoomsViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		51FD0F28210861D50061DB4D /* PilotPlant */ = {
@@ -443,6 +454,7 @@
 				511E835321129E9B0068D413 /* SignupViewController.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
 				513563DB211582B100080471 /* UserModel.swift in Sources */,
+				51B20B8A2116B70000DFA653 /* ChatRoomsViewController.swift in Sources */,
 				513563E12115AAFB00080471 /* ChatViewController.swift in Sources */,
 				AD24277721119E8200020FE8 /* PostViewController.swift in Sources */,
 				C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */,

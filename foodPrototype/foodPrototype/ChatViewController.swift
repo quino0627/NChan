@@ -11,6 +11,7 @@ import Firebase
 
 class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var textfield_message: UITextField!
@@ -19,27 +20,92 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     var uid : String?
     var chatRoomUid: String?
     var comments : [ChatModel.Comment] = []
+    var userModel : UserModel?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        uid = Auth.auth().currentUser?.uid
+        sendButton.addTarget(self, action: #selector(createRoom), for: .touchUpInside)
+        checkChatRoom()
+        self.tabBarController?.tabBar.isHidden = true //채팅룸일 때 하단 바 사라지게
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    //시작
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    //종료 시 탭 바 보이게
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    @objc func keyboardWillShow(notification: Notification){
+        if let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
+            self.bottomConstraint.constant = keyboardSize.height
+        }
+        UIView.animate(withDuration: 0, animations: {
+            //바닥으로내리는코드
+            self.view.layoutIfNeeded()}, completion: {(complete) in
+                if self.comments.count>0{
+                    self.tableview.scrollToRow(at: IndexPath(item:self.comments.count-1, section:0), at: UITableViewScrollPosition.bottom, animated: true)
+                }
+        })
+    }
+    
+    @objc func keyboardWillHide(notification : Notification){
+        self.bottomConstraint.constant = 20
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let view = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
-        view.textLabel?.text = self.comments[indexPath.row].message
-        return view
+        if(self.comments[indexPath.row].uid == uid){
+            let view = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
+            view.label_message.text = self.comments[indexPath.row].message
+            view.label_message.numberOfLines = 0
+            return view
+        }else{
+            let view = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
+            view.label_name.text = userModel?.name
+            view.label_message.text = self.comments[indexPath.row].message
+            view.label_message.numberOfLines = 0;
+            
+            let url = URL(string:(self.userModel?.profileImageUrl)!)
+            URLSession.shared.dataTask(with: url!, completionHandler : { (data, response, error) in
+                DispatchQueue.main.async {
+                    view.imageview_profile.image = UIImage(data: data!)
+                    view.imageview_profile.layer.cornerRadius = view.imageview_profile.frame.width/2
+                    view.imageview_profile.clipsToBounds = true
+                }
+            }).resume()
+ 
+            return view
+            
+        }
+        
+        
+        return UITableViewCell()
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     
     public var destinationUid: String? //나중에 내가 채팅할 대상의 uid
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        uid = Auth.auth().currentUser?.uid
-        sendButton.addTarget(self, action: #selector(createRoom), for: .touchUpInside)
-        checkChatRoom()
-        // Do any additional setup after loading the view.
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -68,7 +134,9 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
                     "uid":uid!,
                     "message":textfield_message.text!
             ]
-            Database.database().reference().child("chatrooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value)
+            Database.database().reference().child("chatrooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value, withCompletionBlock:{(err, ref) in
+                self.textfield_message.text = ""
+            })
         }
     }
     
@@ -81,7 +149,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
                     if(chatModel?.users[self.destinationUid!] == true){
                         self.chatRoomUid = item.key
                         self.sendButton.isEnabled = true
-                        self.getMessageList()
+                        self.getDestinationInfo()
                     }
                 }
                 self.chatRoomUid = item.key
@@ -90,6 +158,14 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
     
     
+    }
+    
+    func getDestinationInfo(){
+        Database.database().reference().child("users").child(self.destinationUid!).observeSingleEvent(of: DataEventType.value, with : {(datasnapshot) in
+            self.userModel = UserModel()
+            self.userModel?.setValuesForKeys(datasnapshot.value as! [String:Any])
+            self.getMessageList()
+        })
     }
     
     //방 키를 받아온 다음에 실행되어야 하는 함수
@@ -101,6 +177,11 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
                 self.comments.append(comment!)
             }
             self.tableview.reloadData()
+            
+            if self.comments.count>0{
+                self.tableview.scrollToRow(at: IndexPath(item:self.comments.count-1, section:0), at: UITableViewScrollPosition.bottom, animated: true)
+            }
+            
         })
     }
     
@@ -115,4 +196,16 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     */
 
+}
+
+class MyMessageCell :UITableViewCell{
+    @IBOutlet weak var label_message: UILabel!
+    
+}
+
+class DestinationMessageCell :UITableViewCell{
+    @IBOutlet weak var label_message: UILabel!
+    @IBOutlet weak var imageview_profile: UIImageView!
+    @IBOutlet weak var label_name: UILabel!
+    
 }

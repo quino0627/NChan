@@ -10,9 +10,7 @@ import ObjectMapper
 
 
 class ChatModel: Mappable {
-    func mapping(map: Map) {
-        
-    }
+   
     
 //    var uid:String?
 //    var destinationUid:String?
@@ -20,10 +18,12 @@ class ChatModel: Mappable {
     //채팅방에 참여한 사람들
     public var comments : Dictionary<String, Comment> = [:]
     required init?(map: Map) {
+        
+    }
+    func mapping(map: Map) {
         users <- map["users"]
         comments <- map["comments"]
     }
-    
     //채팅방의 대화내용
     public class Comment :Mappable{
         public var uid : String?
