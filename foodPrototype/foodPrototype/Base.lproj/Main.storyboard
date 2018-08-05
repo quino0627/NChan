@@ -1810,15 +1810,16 @@
                             <constraint firstItem="Lx4-w5-NDv" firstAttribute="top" secondItem="3jm-AO-OsK" secondAttribute="bottom" constant="8" id="0kf-fV-kbl"/>
                             <constraint firstItem="Lx4-w5-NDv" firstAttribute="leading" secondItem="cwH-Te-xnF" secondAttribute="leading" constant="16" id="Ans-gb-jny"/>
                             <constraint firstItem="3jm-AO-OsK" firstAttribute="top" secondItem="bHg-dS-G6E" secondAttribute="top" id="GuQ-7J-3y3"/>
-                            <constraint firstItem="cwH-Te-xnF" firstAttribute="bottom" secondItem="Lx4-w5-NDv" secondAttribute="bottom" constant="20" id="J5X-zZ-EED"/>
                             <constraint firstItem="cwH-Te-xnF" firstAttribute="trailing" secondItem="gHx-EJ-VF7" secondAttribute="trailing" constant="16" id="Jex-iv-mod"/>
                             <constraint firstItem="cwH-Te-xnF" firstAttribute="bottom" secondItem="gHx-EJ-VF7" secondAttribute="bottom" constant="20" id="Oc3-C1-ag4"/>
                             <constraint firstItem="3jm-AO-OsK" firstAttribute="trailing" secondItem="cwH-Te-xnF" secondAttribute="trailing" id="bhQ-Rf-uEE"/>
                             <constraint firstItem="3jm-AO-OsK" firstAttribute="leading" secondItem="cwH-Te-xnF" secondAttribute="leading" id="d8E-3q-zCq"/>
+                            <constraint firstItem="Lx4-w5-NDv" firstAttribute="centerY" secondItem="gHx-EJ-VF7" secondAttribute="centerY" id="ddl-0H-LuB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cwH-Te-xnF"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="Oc3-C1-ag4" id="0i9-v0-H2S"/>
                         <outlet property="sendButton" destination="gHx-EJ-VF7" id="3eZ-ip-TGc"/>
                         <outlet property="tableview" destination="3jm-AO-OsK" id="iA7-c8-mrf"/>
                         <outlet property="textfield_message" destination="Lx4-w5-NDv" id="9pN-4G-QZb"/>
