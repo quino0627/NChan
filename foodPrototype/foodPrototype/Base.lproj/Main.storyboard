@@ -4179,8 +4179,7 @@
         <image name="프로필" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gG1-7Q-Sw9"/>
-        <segue reference="QNz-2S-FkP"/>
+        <segue reference="11W-dG-TDG"/>
         <segue reference="bpG-Ex-C7g"/>
         <segue reference="Jvq-RY-hvW"/>
     </inferredMetricsTieBreakers>
