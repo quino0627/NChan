@@ -2103,7 +2103,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_camera" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-C0-Y6f">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_account_circle_black_36pt" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-C0-Y6f">
                                 <rect key="frame" x="16" y="46" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="YRH-8j-9Ut"/>
@@ -3654,6 +3654,7 @@
         <image name="bar__in-process" width="30" height="30"/>
         <image name="bar__store" width="27" height="27"/>
         <image name="bar__user" width="27" height="27"/>
+        <image name="baseline_account_circle_black_36pt" width="36" height="36"/>
         <image name="like (3)" width="256" height="256"/>
         <image name="loading_icon" width="64" height="64"/>
         <image name="message_blue" width="11" height="9"/>
