@@ -66,5 +66,9 @@
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>allowed images</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>allowed images</string>
 </dict>
 </plist>

@@ -12,7 +12,7 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UITabBarControllerDelegate  {
 
     var window: UIWindow?
 
@@ -99,5 +99,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
 
 
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController is AddPostTableViewController {
+            if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "AddPostTVC") {
+                tabBarController.present(newVC, animated: true)
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    
+    
 }
 
