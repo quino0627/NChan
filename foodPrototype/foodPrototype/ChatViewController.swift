@@ -76,6 +76,12 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
             let view = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
             view.label_message.text = self.comments[indexPath.row].message
             view.label_message.numberOfLines = 0
+            //시간
+            if let time = self.comments[indexPath.row].timestamp{
+                
+            view.label_timestamp.text = time.toDayTime
+            }
+            
             return view
         }else{
             let view = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
@@ -92,6 +98,11 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
                 }
             }).resume()
  
+            if let time = self.comments[indexPath.row].timestamp{
+                
+                view.label_timestamp.text = time.toDayTime
+            }
+            
             return view
             
         }
@@ -132,7 +143,8 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         }else{
             let value :Dictionary<String, Any> = [
                     "uid":uid!,
-                    "message":textfield_message.text!
+                    "message":textfield_message.text!,
+                "timestamp" : ServerValue.timestamp()
             ]
             Database.database().reference().child("chatrooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value, withCompletionBlock:{(err, ref) in
                 self.textfield_message.text = ""
@@ -198,8 +210,20 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
 }
 
+extension Int{
+    var toDayTime :String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+        let date = Date(timeIntervalSince1970: Double(self)/1000)
+        return dateFormatter.string(from:date)
+    }
+}
+
+
 class MyMessageCell :UITableViewCell{
     @IBOutlet weak var label_message: UILabel!
+    @IBOutlet weak var label_timestamp: UILabel!
     
 }
 
@@ -207,5 +231,6 @@ class DestinationMessageCell :UITableViewCell{
     @IBOutlet weak var label_message: UILabel!
     @IBOutlet weak var imageview_profile: UIImageView!
     @IBOutlet weak var label_name: UILabel!
+    @IBOutlet weak var label_timestamp: UILabel!
     
 }
