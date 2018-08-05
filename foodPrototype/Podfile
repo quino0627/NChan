@@ -11,16 +11,14 @@ pod 'Firebase/Database'
 pod 'Firebase/RemoteConfig'
 pod 'GoogleSignIn' 
 pod 'JSQMessagesViewController'
-<<<<<<< HEAD
 pod 'FBSDKLoginKit'
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'FacebookShare'
 pod 'ImageSlideshow', '~> 1.6'
 pod 'ObjectMapper', '~> 3.1' 
-=======
 pod 'OpalImagePicker'
 pod 'DKImagePickerController'
->>>>>>> sy_branch
+
 
 end
