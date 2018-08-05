@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
 
@@ -44,5 +44,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController is AddPostTableViewController {
+            if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "AddPostTVC") {
+                tabBarController.present(newVC, animated: true)
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    
+    
 }
 

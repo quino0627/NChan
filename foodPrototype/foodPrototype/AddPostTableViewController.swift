@@ -41,8 +41,10 @@ class AddPostTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         //getting a reference to the node post
         refPost = Database.database().reference().child("post");
+        
         
     }
     

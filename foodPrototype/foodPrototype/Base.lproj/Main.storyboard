@@ -1350,7 +1350,7 @@
                         <segue destination="NZj-xJ-6g0" kind="relationship" relationship="viewControllers" id="3bK-zl-dx8"/>
                         <segue destination="0In-SS-VBY" kind="relationship" relationship="viewControllers" id="bmf-Mc-ebC"/>
                         <segue destination="pAA-yw-BHB" kind="relationship" relationship="viewControllers" id="7rO-Z1-IfB"/>
-                        <segue destination="yla-3G-yFY" kind="relationship" relationship="viewControllers" id="RK0-CP-k1x"/>
+                        <segue destination="yla-3G-yFY" kind="relationship" relationship="viewControllers" id="mQm-oh-8FE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Llj-Uo-i97" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5017,7 +5017,6 @@
         <!--Item-->
         <scene sceneID="mj5-rD-8sN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z0h-Zz-yFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="18R-Wo-AEA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="9LU-Pq-jqv"/>
                     <toolbarItems/>
@@ -5030,6 +5029,7 @@
                         <segue destination="uoF-MK-n8g" kind="relationship" relationship="rootViewController" id="DDC-ai-eK5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0h-Zz-yFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1508" y="1270.6146926536733"/>
         </scene>
@@ -5054,7 +5054,7 @@
         <!--Item-->
         <scene sceneID="IK0-od-UFh">
             <objects>
-                <tableViewController id="yla-3G-yFY" customClass="AddPostTableViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddPostTVC" id="yla-3G-yFY" customClass="AddPostTableViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pNj-sv-dwF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5211,7 +5211,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPS-yV-V1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="1061"/>
+            <point key="canvasLocation" x="2012" y="941"/>
         </scene>
     </scenes>
     <resources>
