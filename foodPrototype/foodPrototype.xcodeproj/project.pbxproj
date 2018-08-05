@@ -171,6 +171,7 @@
 				AD13D01F211451C900815090 /* setting */,
 				C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */,
 				C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */,
+				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
 				517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */,
 				511E835221129E9B0068D413 /* SignInViewController.swift */,
 				51AE95BA210AF7E10019B2EE /* Constants.swift */,
@@ -224,7 +225,6 @@
 		AD13D01F211451C900815090 /* setting */ = {
 			isa = PBXGroup;
 			children = (
-				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
 			);
 			path = setting;
 			sourceTree = "<group>";

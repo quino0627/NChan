@@ -1923,7 +1923,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="qIb-ET-hED" kind="show" id="Zgm-zK-OIx"/>
+                                            <segue destination="qIb-ET-hED" kind="show" id="Urx-gb-6oq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3364,8 +3364,32 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="41" id="PoD-Ay-2e5">
+                                        <rect key="frame" x="0.0" y="500" width="375" height="41"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PoD-Ay-2e5" id="nNf-o1-eMj">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="40.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 게시글 신고하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbC-3J-qh5">
+                                                    <rect key="frame" x="24" y="13" width="127" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="127" id="Rpo-Y4-ecm"/>
+                                                        <constraint firstAttribute="height" constant="21" id="Use-Nn-LIL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jbC-3J-qh5" firstAttribute="top" secondItem="nNf-o1-eMj" secondAttribute="topMargin" constant="2" id="R9c-jL-SB9"/>
+                                                <constraint firstItem="jbC-3J-qh5" firstAttribute="leading" secondItem="nNf-o1-eMj" secondAttribute="leadingMargin" constant="8" id="Tzw-u2-pNj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="208" id="HmZ-4m-sDt">
-                                        <rect key="frame" x="0.0" y="500" width="375" height="208"/>
+                                        <rect key="frame" x="0.0" y="541" width="375" height="208"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HmZ-4m-sDt" id="oVB-oc-V5k">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
@@ -3410,30 +3434,6 @@
                                                 <constraint firstItem="XeZ-bK-nT4" firstAttribute="leading" secondItem="oVB-oc-V5k" secondAttribute="leadingMargin" id="QA9-Ah-ldN"/>
                                                 <constraint firstItem="am4-Or-tgE" firstAttribute="top" secondItem="oVB-oc-V5k" secondAttribute="topMargin" constant="1" id="b7a-cz-MT6"/>
                                                 <constraint firstItem="XeZ-bK-nT4" firstAttribute="top" secondItem="oVB-oc-V5k" secondAttribute="topMargin" constant="1" id="ex5-nk-D8i"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="41" id="PoD-Ay-2e5">
-                                        <rect key="frame" x="0.0" y="708" width="375" height="41"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PoD-Ay-2e5" id="nNf-o1-eMj">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="40.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 게시글 신고하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbC-3J-qh5">
-                                                    <rect key="frame" x="16" y="10" width="127" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="127" id="Rpo-Y4-ecm"/>
-                                                        <constraint firstAttribute="height" constant="21" id="Use-Nn-LIL"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="jbC-3J-qh5" firstAttribute="top" secondItem="nNf-o1-eMj" secondAttribute="topMargin" constant="2" id="R9c-jL-SB9"/>
-                                                <constraint firstItem="jbC-3J-qh5" firstAttribute="leading" secondItem="nNf-o1-eMj" secondAttribute="leadingMargin" constant="8" id="Tzw-u2-pNj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
