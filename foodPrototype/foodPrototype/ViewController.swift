@@ -55,8 +55,8 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: {(action) in exit(0)}))
             self.present(alert, animated: true, completion: nil)
         }else{
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            self.present(loginVC, animated: false, completion: nil)
+            let mainView = self.storyboard?.instantiateViewController(withIdentifier: "MainViewTabBarController") as! UITabBarController
+            self.present(mainView, animated: false, completion: nil)
         }
         self.view.backgroundColor = UIColor(hex: color!)
         
