@@ -91,7 +91,6 @@ class BuyingListViewController: UIViewController,UITableViewDataSource {
         let buyingPost1 = ExamplePost(postWriter: buyingUser1,
                                       postTitle: "닭강정 공구팟",
                                       postContent: productInfo(productPicArray: ["pic__thebanchan", "닭강정", "닭강정1", "닭강정2"],
-                                                               productType: foodType.banchan,
                                                                productExplanation: "닭강정이 먹고싶습니다.",
                                                                price: "20000"),
                                       postTag: ["#반찬", "#고기"])
@@ -99,7 +98,6 @@ class BuyingListViewController: UIViewController,UITableViewDataSource {
         let buyingPost2 = ExamplePost(postWriter: buyingUser2,
                                       postTitle: "오이소박이 공구 모집",
                                       postContent: productInfo(productPicArray: ["pic__oisobak"],
-                                                               productType: foodType.banchan,
                                                                productExplanation: "오이소박이가 너무나도 먹고 싶습니다...",
                                                                price: "5000"),
                                       postTag: ["#반찬", "#채소"])
@@ -108,7 +106,6 @@ class BuyingListViewController: UIViewController,UITableViewDataSource {
         let boughtPost1 = ExamplePost(postWriter: boughtUser1,
                                       postTitle: "오거리 수박엔빵~!",
                                       postContent: productInfo(productPicArray: ["pic__watermelon","수박"],
-                                                               productType: foodType.banchan,
                                                                productExplanation: "수박이 먹고 싶은데 양이 너무 많아요 ㅜㅜ...",
                                                                price: "10000"),
                                       postTag: ["#간식", "#과일"])

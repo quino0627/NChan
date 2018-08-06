@@ -9,16 +9,16 @@
 import Foundation
 
 
-enum postClassify {
-    case groupBuying
-    case directDeal
-    case operatorPost
-}
+//enum postClassify {
+//    case groupBuying
+//    case directDeal
+//    case operatorPost
+//}
 
-enum foodType{
-    case banchan
-    case fruit
-}
+//enum foodType{
+//    case banchan
+//    case fruit
+//}
 
 struct comment{
     var commentDate: Date
@@ -29,7 +29,6 @@ struct comment{
 
 struct productInfo{
     var productPicArray = Array<String>()
-    var productType: foodType
     var productExplanation: String
     var price : String //Int 중에 고민중
 }
@@ -37,7 +36,6 @@ struct productInfo{
 struct post {
     var postDate: Date
     var postWriter: user
-    var postType : postClassify
     var postTitle:String
     var postContent:productInfo
     var postCommentArray = Array<comment>()
