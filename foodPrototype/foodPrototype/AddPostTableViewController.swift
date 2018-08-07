@@ -18,11 +18,13 @@ import FirebaseStorage
 
 class AddPostTableViewController: UITableViewController {
     
+    var uid: String?
+    
+    
     override func viewDidLoad() {
-        
-        self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
-        
+    
         super.viewDidLoad()
+        uid = Auth.auth().currentUser?.uid
         
         //getting a reference to the node post
         refPost = Database.database().reference().child("posts");
@@ -84,7 +86,7 @@ class AddPostTableViewController: UITableViewController {
                       "postProduct": productTextField.text! as String,
                       "postPrice": priceTextField.text! as String,
                       "postContent": contentText.text! as String,
-                      "uid": "uid들어가야함" as String,
+                      "uid": uid!,
                       "postMaxMan": "maxMan들어가야함" as String,
                       "postWishLocation": "wishLocation들어가야함" as String
             

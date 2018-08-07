@@ -1322,7 +1322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1s-us-ekT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="-754"/>
+            <point key="canvasLocation" x="1158" y="-645"/>
         </scene>
         <!--진행중-->
         <scene sceneID="2XG-TC-NgW">
