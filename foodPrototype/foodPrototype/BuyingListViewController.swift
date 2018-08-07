@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+
 
 struct ExampleUser{
     var userName: String
@@ -23,14 +26,24 @@ struct ExamplePost {
     var postTag = Array<String>()
 }
 
+struct ExampleFirePost {
+    var id: String?
+    var name: String?
+    var postTitle: String?
+    var content : String?
+    var price : String?
+}
 
-class BuyingListViewController: UIViewController,UITableViewDataSource {
+class BuyingListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var buyingTable: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    var uid : String?
     var buyingPosts : [ExamplePost] = []
     var boughtPosts : [ExamplePost] = []
+    var firePosts : [ExampleFirePost] = []
+    let refPost = Database.database().reference().child("posts")
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -40,7 +53,7 @@ class BuyingListViewController: UIViewController,UITableViewDataSource {
         var returnValue = 0
         
         if segmentedControl.selectedSegmentIndex == 0{
-            returnValue = buyingPosts.count
+            returnValue = firePosts.count
         }
         else {
             returnValue = boughtPosts.count
@@ -52,14 +65,11 @@ class BuyingListViewController: UIViewController,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BuyingCell", for: indexPath)
         var tags : String
         if segmentedControl.selectedSegmentIndex == 0{
-            tags = ""
-            let item: ExamplePost = buyingPosts[indexPath.row]
+            print(firePosts)
+            let item = firePosts[indexPath.row]
             cell.textLabel?.text = item.postTitle
-            for tag in item.postTag {
-                    tags += tag
-            } //태그 연결 및 스트링변환
-            cell.detailTextLabel?.text = tags
-            cell.imageView?.image = UIImage(named: item.postContent.productPicArray[0])
+            
+            cell.detailTextLabel?.text = item.price
         }
         else{
             tags = ""
@@ -83,9 +93,44 @@ class BuyingListViewController: UIViewController,UITableViewDataSource {
         buyingTable.reloadData()
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        uid = Auth.auth().currentUser?.uid
+        
+        refPost.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
+            
+            //if the reference have some values
+            if snapshot.childrenCount > 0{
+                
+                //clearing list
+                self.firePosts.removeAll()
+                
+                //iterating through all the values
+                for posts in snapshot.children.allObjects as! [DataSnapshot]{
+                    //getting values
+                    let postObject = posts.value as? [String: AnyObject]
+                    let postName = postObject?["postProduct"]
+                    let postId = postObject?["id"]
+                    let postContent = postObject?["postContent"]
+                    let postPrice = postObject?["postPrice"]
+                    let postTitle = postObject?["postMaxMan"]
+                    
+                    //creating post object with model and fetched values
+                    let post = ExampleFirePost(id: postId as! String?, name: postName as! String?, postTitle: postTitle as! String?, content: postContent as! String?, price: postPrice as! String?)
+                    
+                    
+                    //appending it to list
+                    self.firePosts.append(post)
+                    
+                }
+                
+                //reloading the tableview
+                self.buyingTable.reloadData()
+            }
+        }
+
 
         let buyingUser1 = ExampleUser(userName: "김대희", userImage: "프로필")
         let buyingPost1 = ExamplePost(postWriter: buyingUser1,
