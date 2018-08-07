@@ -14,6 +14,7 @@
 		511FE7422119365300BBAFA3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 511FE73E2119365300BBAFA3 /* Media.xcassets */; };
 		511FE7432119365300BBAFA3 /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE73F2119365300BBAFA3 /* LineLayer.swift */; };
 		511FE7442119365300BBAFA3 /* StepIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE7402119365300BBAFA3 /* StepIndicatorView.swift */; };
+		511FE746211964EE00BBAFA3 /* StepAddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE745211964EE00BBAFA3 /* StepAddPostViewController.swift */; };
 		5127F191210EF4FE008EDED3 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F185210EF4FD008EDED3 /* YoshikoTextField.swift */; };
 		5127F192210EF4FE008EDED3 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F187210EF4FD008EDED3 /* HoshiTextField.swift */; };
 		5127F193210EF4FE008EDED3 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F188210EF4FD008EDED3 /* MinoruTextField.swift */; };
@@ -70,6 +71,7 @@
 		511FE73E2119365300BBAFA3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		511FE73F2119365300BBAFA3 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
 		511FE7402119365300BBAFA3 /* StepIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepIndicatorView.swift; sourceTree = "<group>"; };
+		511FE745211964EE00BBAFA3 /* StepAddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepAddPostViewController.swift; sourceTree = "<group>"; };
 		5127F185210EF4FD008EDED3 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		5127F186210EF4FD008EDED3 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		5127F187210EF4FD008EDED3 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */,
 				51B20B892116B70000DFA653 /* ChatRoomsViewController.swift */,
 				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
+				511FE745211964EE00BBAFA3 /* StepAddPostViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				51FD0F38210861D50061DB4D /* CHPagingScrollViewController.swift in Sources */,
 				511FE7442119365300BBAFA3 /* StepIndicatorView.swift in Sources */,
 				AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */,
+				511FE746211964EE00BBAFA3 /* StepAddPostViewController.swift in Sources */,
 				519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */,
 				5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */,
 				5127F198210EF4FE008EDED3 /* KaedeTextField.swift in Sources */,
