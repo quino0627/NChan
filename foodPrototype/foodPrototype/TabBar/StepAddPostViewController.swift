@@ -83,6 +83,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         s_Scrollview_0.addSubview(ss_listView_0)
         s_Scrollview_0.addSubview(ss_listView_1)
         s_Scrollview_0.addSubview(ss_listView_2)
+        
         s_Scrollview_1.addSubview(ss_listView_0)
         s_Scrollview_1.addSubview(ss_listView_1)
         s_Scrollview_1.addSubview(ss_listView_2)
@@ -94,6 +95,9 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         
         
         s_Scrollview_0.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
+        s_Scrollview_1.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
+        s_Scrollview_2.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
+        
         scrollView.contentSize = CGSize(width: screenWidth * 3, height: screenHeight / 2)
         scrollView.isPagingEnabled = true
         
