@@ -204,7 +204,6 @@
 				517E64802112EFEB0069FD91 /* HomeController.swift */,
 				517E64822112F00C0069FD91 /* UserController.swift */,
 				510A64E52112811100B263C6 /* LoginViewController.swift */,
-				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
 				AD24277621119E8200020FE8 /* PostViewController.swift */,
@@ -224,6 +223,7 @@
 				513563D821157D0000080471 /* SampleViewController.swift */,
 				519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */,
 				51B20B892116B70000DFA653 /* ChatRoomsViewController.swift */,
+				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -370,9 +370,9 @@
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/OpalImagePicker/OpalImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/StepIndicator/StepIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -394,9 +394,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpalImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StepIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

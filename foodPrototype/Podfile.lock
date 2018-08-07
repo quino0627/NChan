@@ -137,9 +137,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ObjectMapper (3.3.0)
-  - OpalImagePicker (1.7.2)
   - Protobuf (3.6.0)
   - SnapKit (4.0.0)
+  - StepIndicator (1.0.6.1)
 
 DEPENDENCIES:
   - DKImagePickerController
@@ -156,8 +156,8 @@ DEPENDENCIES:
   - ImageSlideshow (~> 1.6)
   - JSQMessagesViewController
   - ObjectMapper (~> 3.1)
-  - OpalImagePicker
   - SnapKit
+  - StepIndicator (~> 1.0.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -191,9 +191,9 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - ObjectMapper
-    - OpalImagePicker
     - Protobuf
     - SnapKit
+    - StepIndicator
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -226,10 +226,10 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
-  OpalImagePicker: 770b495a9700fa1d02a5a3c7c8303f1ac4e6c54d
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  StepIndicator: 73b4bcc8bcf816cb98479d99ada7e85463252caa
 
-PODFILE CHECKSUM: 8a8f8642597817633454333663e3822604bc8b07
+PODFILE CHECKSUM: 88042a57f43c89ef4ad3bd1ae9eca4530ac7436e
 
 COCOAPODS: 1.5.3
