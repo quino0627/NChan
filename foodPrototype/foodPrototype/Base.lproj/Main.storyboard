@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3xU-ly-p0w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Fv-e4-C1L">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1151,7 +1151,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ4-bF-NwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3408.8000000000002" y="1692.5037481259371"/>
+            <point key="canvasLocation" x="4348" y="1692.5037481259371"/>
         </scene>
         <!--진행중-->
         <scene sceneID="b7k-ig-RMx">
@@ -1446,7 +1446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ep-KM-Yxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6376.8000000000002" y="2478.7106446776615"/>
+            <point key="canvasLocation" x="7316" y="2478.7106446776615"/>
         </scene>
         <!--option-->
         <scene sceneID="aQS-30-II0">
@@ -1660,7 +1660,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijA-VO-y0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7048.8000000000002" y="2477.8110944527739"/>
+            <point key="canvasLocation" x="7988" y="2477.8110944527739"/>
         </scene>
         <!--로그아웃 창-->
         <scene sceneID="EPh-de-7gs">
@@ -2210,7 +2210,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0h-UM-4sL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="M1K-DM-opG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4348" y="2478.7106446776615"/>
+            <point key="canvasLocation" x="5287.1999999999998" y="2478.7106446776615"/>
         </scene>
         <!--관심목록-->
         <scene sceneID="HpP-5Y-hs7">
@@ -2242,7 +2242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSI-bR-9uu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5047.1999999999998" y="2480.5097451274364"/>
+            <point key="canvasLocation" x="5986.3999999999996" y="2480.5097451274364"/>
         </scene>
         <!--내가 쓴 글-->
         <scene sceneID="wYN-BR-CVj">
@@ -2274,7 +2274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pII-eR-V7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5696.8000000000002" y="2480.5097451274364"/>
+            <point key="canvasLocation" x="6636" y="2480.5097451274364"/>
         </scene>
         <!--판매 내역-->
         <scene sceneID="RRT-4h-D2P">
@@ -2306,7 +2306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6a8-Yp-bfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="2477.8110944527739"/>
+            <point key="canvasLocation" x="3951.1999999999998" y="2477.8110944527739"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="mpo-yV-gSs">
@@ -3733,7 +3733,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26Q-Kl-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="z62-sP-6rW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4348" y="2478.7106446776615"/>
+            <point key="canvasLocation" x="5287.1999999999998" y="2478.7106446776615"/>
         </scene>
         <!--프로필-->
         <scene sceneID="9Vd-8u-guL">
@@ -4228,13 +4228,82 @@
                     <view key="view" contentMode="scaleToFill" id="0eV-fX-jnE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Tb-fD-O0e" customClass="StepIndicatorView" customModule="foodPrototype" customModuleProvider="target">
+                                <rect key="frame" x="68" y="64" width="239" height="85"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfSteps">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleStrokeWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineMargin">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineStrokeWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="directionRaw">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-bw-miL">
+                                <rect key="frame" x="0.0" y="157" width="375" height="510"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="510" id="AoR-F6-Qyx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="3xU-ly-p0w" id="FAq-83-cyn"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Tb-fD-O0e" firstAttribute="leading" secondItem="k2G-6b-gIb" secondAttribute="leading" constant="68" id="0gL-Zf-p8N"/>
+                            <constraint firstItem="9Tb-fD-O0e" firstAttribute="top" secondItem="k2G-6b-gIb" secondAttribute="top" id="A0a-t5-1AB"/>
+                            <constraint firstItem="rIT-bw-miL" firstAttribute="trailing" secondItem="k2G-6b-gIb" secondAttribute="trailing" id="Gk8-yY-T96"/>
+                            <constraint firstItem="rIT-bw-miL" firstAttribute="bottom" secondItem="k2G-6b-gIb" secondAttribute="bottom" id="NWg-B4-u4I"/>
+                            <constraint firstItem="rIT-bw-miL" firstAttribute="leading" secondItem="k2G-6b-gIb" secondAttribute="leading" id="fEH-oT-eMg"/>
+                            <constraint firstItem="k2G-6b-gIb" firstAttribute="trailing" secondItem="9Tb-fD-O0e" secondAttribute="trailing" constant="68" id="gAY-NZ-P3M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k2G-6b-gIb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Y8f-jo-Tz3"/>
+                    <connections>
+                        <outlet property="scrollView" destination="rIT-bw-miL" id="dD0-wR-yfl"/>
+                        <outlet property="stepIndicatorView" destination="9Tb-fD-O0e" id="DLX-4A-lZc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7y-Dq-GAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1563" y="1891"/>
+            <point key="canvasLocation" x="2501.5999999999999" y="1890.4047976011996"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kXI-Ue-VSV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Fv-e4-C1L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A3d-ly-GN1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3xU-ly-p0w" kind="relationship" relationship="rootViewController" id="qVE-E1-bjK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOD-nk-n4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562.4000000000001" y="1890.4047976011996"/>
         </scene>
     </scenes>
     <resources>

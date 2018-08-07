@@ -18,6 +18,6 @@ pod 'FacebookShare'
 pod 'ImageSlideshow', '~> 1.6'
 pod 'ObjectMapper', '~> 3.1' 
 pod 'DKImagePickerController'
-pod ‘StepIndicator’, '~> 1.0.6’
+pod 'StepIndicator', '~> 1.0.6'
 
 end
