@@ -12,18 +12,22 @@ import Foundation
 
 class PostModel{
     var id: String?
-    var name: String?
-    var title: String?
+    var product: String?
     var content: String?
     var price: String?
+    var maxMan: String?
+    var uid: String?
+    var wishLocation: String? //needs to be changed into array
     
-    init (id: String?, name: String?, title: String?, content: String?, price: String? ){
+    init (id: String?, product: String?, content: String?, price: String?, uid: String?, maxMan: String?, wishLocation: String?){
         
-        self.id = id
-        self.name = name
-        self.title = title
+        self.id = id //post id
+        self.product = product
+        self.uid = uid //user id
+        self.maxMan = maxMan
         self.content = content
         self.price = price
+        self.wishLocation = wishLocation
         
     }
     

@@ -4213,8 +4213,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentText" destination="IoL-t2-UBQ" id="Em4-ie-ckP"/>
-                        <outlet property="nameTextField" destination="Ab7-6D-Vbh" id="pcc-TK-cHR"/>
                         <outlet property="priceTextField" destination="KDl-YQ-YdZ" id="crE-vn-t8q"/>
+                        <outlet property="productTextField" destination="Ab7-6D-Vbh" id="jhD-hp-ysq"/>
                         <outlet property="titleTextField" destination="q5L-xb-AGc" id="zeS-de-C6X"/>
                     </connections>
                 </tableViewController>
@@ -4259,8 +4259,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="name" destination="8EK-EW-Svl" id="ino-a5-23b"/>
                                             <outlet property="price" destination="wWl-2I-H7r" id="X5z-eD-wrC"/>
+                                            <outlet property="product" destination="8EK-EW-Svl" id="xi0-pc-B46"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -30,7 +30,7 @@ class ExampleProductListViewController: UIViewController, UITableViewDelegate, U
         post = postList[indexPath.row]
         
         //adding values to labels
-        cell.name.text = post.name
+        cell.product.text = post.product
         cell.price.text = post.price
         
         return cell
@@ -54,14 +54,16 @@ class ExampleProductListViewController: UIViewController, UITableViewDelegate, U
                 for posts in snapshot.children.allObjects as! [DataSnapshot]{
                     //getting values
                     let postObject = posts.value as? [String: AnyObject]
-                    let postName = postObject?["postName"]
+                    let postProduct = postObject?["postProduct"]
                     let postId = postObject?["id"]
                     let postContent = postObject?["postContent"]
                     let postPrice = postObject?["postPrice"]
-                    let postTitle = postObject?["postTitle"]
+                    let postUid = postObject?["uid"]
+                    let postMaxMan = postObject?["postMaxMan"]
+                    let postWishLocation = postObject?["postWishLocation"]
                     
                     //creating post object with model and fetched values
-                    let post = PostModel(id: postId as! String?, name: postName as! String?, title: postTitle as! String?, content: postContent as! String?, price: postPrice as! String?)
+                    let post = PostModel(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, price: postPrice as! String?, uid: postUid as! String?, maxMan: postMaxMan as! String?, wishLocation: postWishLocation as! String?)
                     
                     //appending it to list
                     self.postList.append(post)

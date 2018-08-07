@@ -31,7 +31,9 @@ class AddPostTableViewController: UITableViewController {
     }
     
 
-    @IBOutlet weak var nameTextField: HoshiTextField!
+
+
+    @IBOutlet weak var productTextField: HoshiTextField!
     
     @IBOutlet weak var titleTextField: HoshiTextField!
     
@@ -79,10 +81,13 @@ class AddPostTableViewController: UITableViewController {
         
         //creating artist with the given values
         let post = ["id":key,
-                      "postName": nameTextField.text! as String,
-                      "postTitle": titleTextField.text! as String,
+                      "postProduct": productTextField.text! as String,
                       "postPrice": priceTextField.text! as String,
-                      "postContent": contentText.text! as String
+                      "postContent": contentText.text! as String,
+                      "uid": "uid들어가야함" as String,
+                      "postMaxMan": "maxMan들어가야함" as String,
+                      "postWishLocation": "wishLocation들어가야함" as String
+            
         ]
         
         //adding the artist inside the generated unique key

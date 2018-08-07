@@ -10,7 +10,8 @@ import UIKit
 
 class ExampleProductListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var product: UILabel!
+    
     @IBOutlet weak var price: UILabel!
     
     
