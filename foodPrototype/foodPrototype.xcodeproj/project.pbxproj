@@ -50,6 +50,9 @@
 		51FD0F3F210861D50061DB4D /* CHControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F33210861D50061DB4D /* CHControls.swift */; };
 		51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD0F34210861D50061DB4D /* RecordButton.swift */; };
 		9D45C5A32115D52800355445 /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D45C5A22115D52800355445 /* AddPostTableViewController.swift */; };
+		9DD025FD21193CA300EE2397 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD025FC21193CA300EE2397 /* PostModel.swift */; };
+		9DD026012119409300EE2397 /* ExampleProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD026002119409300EE2397 /* ExampleProductListTableViewCell.swift */; };
+		9DD02603211940AB00EE2397 /* ExampleProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD02602211940AB00EE2397 /* ExampleProductListViewController.swift */; };
 		9E4C0CA6591495005D57E011 /* Pods_foodPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */; };
 		AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24274C2111639600020FE8 /* BuyingListViewController.swift */; };
 		AD24277721119E8200020FE8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24277621119E8200020FE8 /* PostViewController.swift */; };
@@ -109,6 +112,9 @@
 		5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB1D124379B3BD82BCC9B27 /* Pods-foodPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodPrototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foodPrototype/Pods-foodPrototype.debug.xcconfig"; sourceTree = "<group>"; };
 		9D45C5A22115D52800355445 /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
+		9DD025FC21193CA300EE2397 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		9DD026002119409300EE2397 /* ExampleProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProductListTableViewCell.swift; sourceTree = "<group>"; };
+		9DD02602211940AB00EE2397 /* ExampleProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProductListViewController.swift; sourceTree = "<group>"; };
 		AD24274C2111639600020FE8 /* BuyingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyingListViewController.swift; sourceTree = "<group>"; };
 		AD24277621119E8200020FE8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C22624D721071AC90033CAA6 /* model_prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model_prototype.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 			children = (
 				513563DA211582B100080471 /* UserModel.swift */,
 				513563E32115AF9900080471 /* ChatModel.swift */,
+				9DD025FC21193CA300EE2397 /* PostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +208,8 @@
 				51C1FCB82111878E0055AEF3 /* ViewController.swift */,
 				51C1FCBA211197EC0055AEF3 /* RemoteConfigDefaults.plist */,
 				517F48A320FDCDE3001EC8F0 /* Main.storyboard */,
+				9DD026002119409300EE2397 /* ExampleProductListTableViewCell.swift */,
+				9DD02602211940AB00EE2397 /* ExampleProductListViewController.swift */,
 				517E64802112EFEB0069FD91 /* HomeController.swift */,
 				517E64822112F00C0069FD91 /* UserController.swift */,
 				510A64E52112811100B263C6 /* LoginViewController.swift */,
@@ -366,11 +375,11 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/OpalImagePicker/OpalImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -390,11 +399,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpalImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -440,8 +449,10 @@
 				519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */,
 				5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */,
 				5127F198210EF4FE008EDED3 /* KaedeTextField.swift in Sources */,
+				9DD026012119409300EE2397 /* ExampleProductListTableViewCell.swift in Sources */,
 				5127F197210EF4FE008EDED3 /* MadokaTextField.swift in Sources */,
 				513563E42115AF9900080471 /* ChatModel.swift in Sources */,
+				9DD02603211940AB00EE2397 /* ExampleProductListViewController.swift in Sources */,
 				5127F199210EF4FE008EDED3 /* AkiraTextField.swift in Sources */,
 				C24F81612103617000E0C2C5 /* UIViewControllerModal (1).swift in Sources */,
 				51FD0F36210861D50061DB4D /* CHContentViewController.swift in Sources */,
@@ -461,6 +472,7 @@
 				511E835321129E9B0068D413 /* SignupViewController.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
 				513563DB211582B100080471 /* UserModel.swift in Sources */,
+				9DD025FD21193CA300EE2397 /* PostModel.swift in Sources */,
 				51B20B8A2116B70000DFA653 /* ChatRoomsViewController.swift in Sources */,
 				513563E12115AAFB00080471 /* ChatViewController.swift in Sources */,
 				AD24277721119E8200020FE8 /* PostViewController.swift in Sources */,

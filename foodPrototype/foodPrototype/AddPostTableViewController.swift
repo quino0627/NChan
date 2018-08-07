@@ -18,7 +18,6 @@ import FirebaseStorage
 
 class AddPostTableViewController: UITableViewController {
     
-    
     override func viewDidLoad() {
         
         self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
@@ -26,7 +25,7 @@ class AddPostTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //getting a reference to the node post
-        refPost = Database.database().reference().child("post");
+        refPost = Database.database().reference().child("posts");
         
         
     }
@@ -80,10 +79,10 @@ class AddPostTableViewController: UITableViewController {
         
         //creating artist with the given values
         let post = ["id":key,
-                      "name": nameTextField.text! as String,
-                      "title": titleTextField.text! as String,
-                      "price": priceTextField.text! as String,
-                      "content": contentText.text! as String
+                      "postName": nameTextField.text! as String,
+                      "postTitle": titleTextField.text! as String,
+                      "postPrice": priceTextField.text! as String,
+                      "postContent": contentText.text! as String
         ]
         
         //adding the artist inside the generated unique key
