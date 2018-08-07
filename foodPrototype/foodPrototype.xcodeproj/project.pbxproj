@@ -53,6 +53,9 @@
 		9E4C0CA6591495005D57E011 /* Pods_foodPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */; };
 		AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24274C2111639600020FE8 /* BuyingListViewController.swift */; };
 		AD24277721119E8200020FE8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24277621119E8200020FE8 /* PostViewController.swift */; };
+		AD2DF8EA211993A1008474FD /* SellingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8E9211993A1008474FD /* SellingListViewController.swift */; };
+		AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */; };
+		AD2DF8EF21199525008474FD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EE21199525008474FD /* ListTableViewCell.swift */; };
 		C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22624D721071AC90033CAA6 /* model_prototype.swift */; };
 		C24F81602103617000E0C2C5 /* UIViewControllerKeyboard (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */; };
 		C24F81612103617000E0C2C5 /* UIViewControllerModal (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */; };
@@ -111,6 +114,9 @@
 		9D45C5A22115D52800355445 /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		AD24274C2111639600020FE8 /* BuyingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyingListViewController.swift; sourceTree = "<group>"; };
 		AD24277621119E8200020FE8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		AD2DF8E9211993A1008474FD /* SellingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingListViewController.swift; sourceTree = "<group>"; };
+		AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingExampleModel.swift; sourceTree = "<group>"; };
+		AD2DF8EE21199525008474FD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		C22624D721071AC90033CAA6 /* model_prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model_prototype.swift; sourceTree = "<group>"; };
 		C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerKeyboard (1).swift"; sourceTree = "<group>"; };
 		C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerModal (1).swift"; sourceTree = "<group>"; };
@@ -189,12 +195,12 @@
 		517F489E20FDCDE3001EC8F0 /* foodPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				AD2DF8E62119932B008474FD /* Setting */,
 				51B20B882116B6B000DFA653 /* TabBar */,
 				513563E22115AC0E00080471 /* Model */,
 				513563E02115AAFB00080471 /* ChatViewController.swift */,
 				C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */,
 				C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */,
-				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
 				517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */,
 				511E835221129E9B0068D413 /* SignupViewController.swift */,
 				51AE95BA210AF7E10019B2EE /* Constants.swift */,
@@ -253,6 +259,18 @@
 				5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD2DF8E62119932B008474FD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AD2DF8EE21199525008474FD /* ListTableViewCell.swift */,
+				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
+				AD2DF8E9211993A1008474FD /* SellingListViewController.swift */,
+				AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */,
+			);
+			name = Setting;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +452,7 @@
 				517E64832112F00C0069FD91 /* UserController.swift in Sources */,
 				51FD0F3A210861D50061DB4D /* CHPickerViewController.swift in Sources */,
 				51FD0F38210861D50061DB4D /* CHPagingScrollViewController.swift in Sources */,
+				AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */,
 				AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */,
 				519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */,
 				5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */,
@@ -455,10 +474,12 @@
 				5127F195210EF4FE008EDED3 /* TextFieldEffects.swift in Sources */,
 				51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */,
 				5127F194210EF4FE008EDED3 /* YokoTextField.swift in Sources */,
+				AD2DF8EA211993A1008474FD /* SellingListViewController.swift in Sources */,
 				51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */,
 				511E835321129E9B0068D413 /* SignupViewController.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
 				513563DB211582B100080471 /* UserModel.swift in Sources */,
+				AD2DF8EF21199525008474FD /* ListTableViewCell.swift in Sources */,
 				51B20B8A2116B70000DFA653 /* ChatRoomsViewController.swift in Sources */,
 				513563E12115AAFB00080471 /* ChatViewController.swift in Sources */,
 				AD24277721119E8200020FE8 /* PostViewController.swift in Sources */,
