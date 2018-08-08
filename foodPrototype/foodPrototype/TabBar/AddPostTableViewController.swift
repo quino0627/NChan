@@ -124,15 +124,15 @@ class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
     func addPost(){
         
         let key = refPost.childByAutoId().key
-        print(key)
         for image in imageArray {
-            let refImage = refPost.child("ImageUrl")
+            let refImage = refPost.child(key).child("ImageUrl")
             let autoID = refImage.childByAutoId().key
-            let childRefStorage = refStorage.child("postImages").child(key)
+            let childRefStorage = refStorage.child("postImages").child(autoID)
             let image = UIImageJPEGRepresentation(image, 0.8)
 
             childRefStorage.putData(image!, metadata: nil) { (metadata, error) in
                 if error != nil {
+                    print("this is error: ",error!)
                     print("Couldn't Upload Image")
                 } else {
                     print("Uploaded")
@@ -152,7 +152,7 @@ class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
                                         "postProduct": self.productTextField.text! as String,
                                         "postPrice": self.priceTextField.text! as String,
                                         "postContent": self.contentText.text! as String,
-                                        "uid": "",//"uid": uid!,
+                                        "uid": self.uid!,
                                 "postMaxMan": "maxMan들어가야함" as String,
                                 "postWishLocation": "wishLocation들어가야함" as String
                             ]
@@ -161,7 +161,7 @@ class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
                             
                             //adding the artist inside the generated unique key
                             self.refPost.child(key).setValue(post)
-                            refImage.child(autoID).setValue(imageValue)
+                            refImage.updateChildValues(imageValue)
                             
                         }
                     }
