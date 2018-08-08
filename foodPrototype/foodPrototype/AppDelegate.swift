@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UITabB
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
+        
         return true
     }
     
@@ -100,6 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UITabB
 
 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
         if viewController is AddPostTableViewController {
             if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "AddPostTVC") {
                 tabBarController.present(newVC, animated: true)
@@ -109,6 +111,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UITabB
         
         return true
     }
+ 
+    
+/*    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+
+        let isModalView = viewController is AddPostTableViewController
+        
+        if isModalView {
+          let addPostTableViewController = UINavigationController(rootViewController: AddPostTableViewController)
+            self.present(addPostTableViewController, animated: true, completion: nil)
+            
+            return false
+        } else {
+            return true
+        }
+        
+        
+    }*/
+    
+
     
     
     
