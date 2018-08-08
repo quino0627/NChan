@@ -44,7 +44,7 @@ class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
         
         //getting a reference to the node post
         refPost = Database.database().reference().child("posts");
-        refStorage = Storage.storage().reference().child("posts");
+        refStorage = Storage.storage().reference();
         
     }
     
