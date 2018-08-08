@@ -164,7 +164,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
                         self.getDestinationInfo()
                     }
                 }
-                self.chatRoomUid = item.key
+                //self.chatRoomUid = item.key
             }
         })
         

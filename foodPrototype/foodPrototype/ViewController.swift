@@ -56,6 +56,7 @@ class ViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }else{
             let mainView = self.storyboard?.instantiateViewController(withIdentifier: "MainViewTabBarController") as! UITabBarController
+            mainView.delegate = UIApplication.shared.delegate as! AppDelegate
             self.present(mainView, animated: false, completion: nil)
         }
         self.view.backgroundColor = UIColor(hex: color!)
