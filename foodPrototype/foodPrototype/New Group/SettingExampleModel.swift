@@ -7,21 +7,23 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
 
-struct ExampleUser{
-    var userName: String
-    var userImage: String
-}
-
-struct ExamplePost {
-    //    var postDate: Time
-    var postWriter: ExampleUser // 수정
-    //    var postType : postClassify
-    var postTitle:String
-    var postContent: productInfo
-    //    var postCommentArray = Array<comment>()
-    var postTag = Array<String>()
-}
+//struct ExampleUser{
+//    var userName: String
+//    var userImage: String
+//}
+//
+//struct ExamplePost {
+//    //    var postDate: Time
+//    var postWriter: ExampleUser // 수정
+//    //    var postType : postClassify
+//    var postTitle:String
+//    var postContent: productInfo
+//    //    var postCommentArray = Array<comment>()
+//    var postTag = Array<String>()
+//}
 
 struct ExampleFirePost {
     var id: String?
@@ -30,6 +32,12 @@ struct ExampleFirePost {
     var maxMan: String?
     var price: String?
     var wishLocation: String?
-//    var uploadTime: Strimg?
-    var uid: String?
+//    var uploadTime: String?
+//    var user: ExampleFireUser?
+}
+
+class ExampleFireUser: NSObject {
+    @objc var name : String?
+    @objc var profileImageUrl : String?
+    @objc var uid : String?
 }

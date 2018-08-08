@@ -213,7 +213,6 @@
 				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
-				AD24277621119E8200020FE8 /* PostViewController.swift */,
 				517F48A620FDCDE6001EC8F0 /* Assets.xcassets */,
 				517F48A820FDCDE6001EC8F0 /* LaunchScreen.storyboard */,
 				517F48AB20FDCDE6001EC8F0 /* Info.plist */,
@@ -268,6 +267,7 @@
 				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
 				AD2DF8E9211993A1008474FD /* SellingListViewController.swift */,
 				AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */,
+				AD24277621119E8200020FE8 /* PostViewController.swift */,
 			);
 			name = Setting;
 			path = "New Group";
