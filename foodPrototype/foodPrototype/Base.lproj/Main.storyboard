@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9ko-mr-xhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Fv-e4-C1L">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1253,7 +1253,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ4-bF-NwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3408.8000000000002" y="1692.5037481259371"/>
+            <point key="canvasLocation" x="4348" y="1692.5037481259371"/>
         </scene>
         <!--진행중-->
         <scene sceneID="b7k-ig-RMx">
@@ -1548,7 +1548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ep-KM-Yxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6376.8000000000002" y="2478.7106446776615"/>
+            <point key="canvasLocation" x="7316" y="2478.7106446776615"/>
         </scene>
         <!--option-->
         <scene sceneID="aQS-30-II0">
@@ -1857,7 +1857,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijA-VO-y0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7048.8000000000002" y="2477.8110944527739"/>
+            <point key="canvasLocation" x="7988" y="2477.8110944527739"/>
         </scene>
         <!--로그아웃 창-->
         <scene sceneID="EPh-de-7gs">
@@ -2326,6 +2326,184 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deQ-ij-h5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="11041" y="3448"/>
+        </scene>
+        <!--구매내역-->
+        <scene sceneID="hWI-yD-1eW">
+            <objects>
+                <viewController title="구매내역" id="Mc5-Zf-5VB" customClass="BuyingListViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w1f-Bx-e6h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L71-bg-BjW">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="567" id="RKM-cx-jVk"/>
+                                    <constraint firstAttribute="width" constant="375" id="e1h-bt-fgh"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BuyingCell" textLabel="OAU-md-Cxh" detailTextLabel="ByS-SJ-nVz" style="IBUITableViewCellStyleSubtitle" id="nD0-Ef-LSu">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nD0-Ef-LSu" id="hOu-7p-0Zj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OAU-md-Cxh">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ByS-SJ-nVz">
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Mc5-Zf-5VB" id="Bur-rU-kEw"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="otw-dt-E0D">
+                                <rect key="frame" x="0.0" y="20" width="375" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="adS-mP-TtC"/>
+                                    <constraint firstAttribute="height" constant="27" id="gyM-ea-80l"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="구매중"/>
+                                    <segment title="구매완료"/>
+                                </segments>
+                                <connections>
+                                    <action selector="refreshButtonTappedWithSender:" destination="Mc5-Zf-5VB" eventType="valueChanged" id="FKI-nF-9VC"/>
+                                    <action selector="segmentedControl:" destination="M1K-DM-opG" eventType="valueChanged" id="a2Z-rj-3tI"/>
+                                    <action selector="segmentedControlActionChangedWithSender:" destination="Mc5-Zf-5VB" eventType="valueChanged" id="RiI-EK-IjU"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="otw-dt-E0D" firstAttribute="centerX" secondItem="w1f-Bx-e6h" secondAttribute="centerX" id="LrV-3a-PN6"/>
+                            <constraint firstItem="L71-bg-BjW" firstAttribute="leading" secondItem="iFb-Pu-Tn4" secondAttribute="leading" id="bH5-2R-pQ8"/>
+                            <constraint firstItem="otw-dt-E0D" firstAttribute="top" secondItem="iFb-Pu-Tn4" secondAttribute="top" id="fMs-UL-r5M"/>
+                            <constraint firstItem="otw-dt-E0D" firstAttribute="leading" secondItem="iFb-Pu-Tn4" secondAttribute="leading" id="mjv-rk-uiZ"/>
+                            <constraint firstAttribute="bottom" secondItem="L71-bg-BjW" secondAttribute="bottom" id="myj-5m-20t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iFb-Pu-Tn4"/>
+                    </view>
+                    <connections>
+                        <outlet property="buyingTable" destination="L71-bg-BjW" id="WyC-ZU-F3g"/>
+                        <outlet property="segmentedControl" destination="otw-dt-E0D" id="o5Q-pK-I3L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0h-UM-4sL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="M1K-DM-opG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5287.1999999999998" y="2478.7106446776615"/>
+        </scene>
+        <!--관심목록-->
+        <scene sceneID="HpP-5Y-hs7">
+            <objects>
+                <viewController title="관심목록" id="glf-8F-rix" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6dA-l8-KTr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYk-Tb-pwG">
+                                <rect key="frame" x="0.0" y="129" width="375" height="489"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="0Ll-Kd-BTD" kind="embed" id="vVE-AQ-7h7"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="68C-xp-SHN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="공동구매"/>
+                                    <segment title="직거래"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TEY-UO-TmJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSI-bR-9uu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5986.3999999999996" y="2480.5097451274364"/>
+        </scene>
+        <!--내가 쓴 글-->
+        <scene sceneID="wYN-BR-CVj">
+            <objects>
+                <viewController title="내가 쓴 글" id="d5Z-sZ-gvq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vBx-EC-ZVX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-cP-6DC">
+                                <rect key="frame" x="0.0" y="129" width="375" height="489"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="bMD-Wk-E4a" kind="embed" id="ntr-Mp-M5X"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aDM-ab-myD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="공동구매"/>
+                                    <segment title="직거래"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JqG-ft-vK7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pII-eR-V7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6636" y="2480.5097451274364"/>
+        </scene>
+        <!--판매 내역-->
+        <scene sceneID="RRT-4h-D2P">
+            <objects>
+                <viewController title="판매 내역" id="YsE-wb-g9O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y5g-IZ-gLx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tf4-KV-0ze">
+                                <rect key="frame" x="124" y="81" width="127" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="판매 중"/>
+                                    <segment title="판매 완료"/>
+                                </segments>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCA-A4-P7v">
+                                <rect key="frame" x="0.0" y="129" width="375" height="489"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="jal-uc-9og" kind="embed" id="8Nu-e6-fad"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iw5-5v-S8u"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6a8-Yp-bfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3951.1999999999998" y="2477.8110944527739"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="9l8-pj-3Qd">
@@ -3543,6 +3721,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26Q-Kl-DXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="z62-sP-6rW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+            <point key="canvasLocation" x="5287.1999999999998" y="2478.7106446776615"/>
             <point key="canvasLocation" x="3476" y="2479"/>
         </scene>
         <!--프로필-->
@@ -4096,6 +4275,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPS-yV-V1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1578" y="1164"/>
+        </scene>
+        <!--Step Add Post View Controller-->
+        <scene sceneID="ZrW-YI-mM2">
+            <objects>
+                <viewController id="3xU-ly-p0w" customClass="StepAddPostViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0eV-fX-jnE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tb-fD-O0e" customClass="StepIndicatorView" customModule="foodPrototype" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="64" width="250" height="85"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="DZy-gD-tdG"/>
+                                    <constraint firstAttribute="width" constant="250" id="Nnt-xQ-9Fq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfSteps">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentStep">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleStrokeWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineMargin">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineStrokeWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="directionRaw">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-bw-miL">
+                                <rect key="frame" x="0.0" y="157" width="375" height="510"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="510" id="AoR-F6-Qyx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="3xU-ly-p0w" id="FAq-83-cyn"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Tb-fD-O0e" firstAttribute="centerX" secondItem="0eV-fX-jnE" secondAttribute="centerX" id="9P1-3A-JH1"/>
+                            <constraint firstItem="rIT-bw-miL" firstAttribute="trailing" secondItem="k2G-6b-gIb" secondAttribute="trailing" id="Gk8-yY-T96"/>
+                            <constraint firstItem="rIT-bw-miL" firstAttribute="bottom" secondItem="k2G-6b-gIb" secondAttribute="bottom" id="NWg-B4-u4I"/>
+                            <constraint firstItem="9Tb-fD-O0e" firstAttribute="top" secondItem="k2G-6b-gIb" secondAttribute="top" id="c63-yU-bhT"/>
+                            <constraint firstItem="rIT-bw-miL" firstAttribute="leading" secondItem="k2G-6b-gIb" secondAttribute="leading" id="fEH-oT-eMg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k2G-6b-gIb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y8f-jo-Tz3"/>
+                    <connections>
+                        <outlet property="scrollView" destination="rIT-bw-miL" id="dD0-wR-yfl"/>
+                        <outlet property="stepIndicatorView" destination="9Tb-fD-O0e" id="DLX-4A-lZc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7y-Dq-GAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2501.5999999999999" y="1890.4047976011996"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kXI-Ue-VSV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Fv-e4-C1L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A3d-ly-GN1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3xU-ly-p0w" kind="relationship" relationship="rootViewController" id="qVE-E1-bjK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOD-nk-n4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562.4000000000001" y="1890.4047976011996"/>
         </scene>
         <!--프로필-->
         <scene sceneID="VX0-x8-cML">

@@ -10,6 +10,11 @@
 		510A64E62112811100B263C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510A64E52112811100B263C6 /* LoginViewController.swift */; };
 		510D5E962108CDA8007C5B9A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 510D5E952108CDA8007C5B9A /* Podfile */; };
 		511E835321129E9B0068D413 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511E835221129E9B0068D413 /* SignupViewController.swift */; };
+		511FE7412119365300BBAFA3 /* AnnularLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE73D2119365300BBAFA3 /* AnnularLayer.swift */; };
+		511FE7422119365300BBAFA3 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 511FE73E2119365300BBAFA3 /* Media.xcassets */; };
+		511FE7432119365300BBAFA3 /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE73F2119365300BBAFA3 /* LineLayer.swift */; };
+		511FE7442119365300BBAFA3 /* StepIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE7402119365300BBAFA3 /* StepIndicatorView.swift */; };
+		511FE746211964EE00BBAFA3 /* StepAddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511FE745211964EE00BBAFA3 /* StepAddPostViewController.swift */; };
 		5127F191210EF4FE008EDED3 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F185210EF4FD008EDED3 /* YoshikoTextField.swift */; };
 		5127F192210EF4FE008EDED3 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F187210EF4FD008EDED3 /* HoshiTextField.swift */; };
 		5127F193210EF4FE008EDED3 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5127F188210EF4FD008EDED3 /* MinoruTextField.swift */; };
@@ -62,6 +67,11 @@
 		510A64E52112811100B263C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		510D5E952108CDA8007C5B9A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		511E835221129E9B0068D413 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		511FE73D2119365300BBAFA3 /* AnnularLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnularLayer.swift; sourceTree = "<group>"; };
+		511FE73E2119365300BBAFA3 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		511FE73F2119365300BBAFA3 /* LineLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
+		511FE7402119365300BBAFA3 /* StepIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepIndicatorView.swift; sourceTree = "<group>"; };
+		511FE745211964EE00BBAFA3 /* StepAddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepAddPostViewController.swift; sourceTree = "<group>"; };
 		5127F185210EF4FD008EDED3 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		5127F186210EF4FD008EDED3 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		5127F187210EF4FD008EDED3 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
@@ -138,6 +148,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		511FE73C2119365300BBAFA3 /* StepIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				511FE73D2119365300BBAFA3 /* AnnularLayer.swift */,
+				511FE73E2119365300BBAFA3 /* Media.xcassets */,
+				511FE73F2119365300BBAFA3 /* LineLayer.swift */,
+				511FE7402119365300BBAFA3 /* StepIndicatorView.swift */,
+			);
+			path = StepIndicator;
+			sourceTree = "<group>";
+		};
 		5127F184210EF4FD008EDED3 /* TextFieldEffects */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +225,6 @@
 				517E64802112EFEB0069FD91 /* HomeController.swift */,
 				517E64822112F00C0069FD91 /* UserController.swift */,
 				510A64E52112811100B263C6 /* LoginViewController.swift */,
-				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
 				AD24277621119E8200020FE8 /* PostViewController.swift */,
@@ -212,6 +232,7 @@
 				517F48A820FDCDE6001EC8F0 /* LaunchScreen.storyboard */,
 				517F48AB20FDCDE6001EC8F0 /* Info.plist */,
 				51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */,
+				511FE73C2119365300BBAFA3 /* StepIndicator */,
 				5127F184210EF4FD008EDED3 /* TextFieldEffects */,
 				51FD0F28210861D50061DB4D /* PilotPlant */,
 			);
@@ -224,6 +245,8 @@
 				513563D821157D0000080471 /* SampleViewController.swift */,
 				519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */,
 				51B20B892116B70000DFA653 /* ChatRoomsViewController.swift */,
+				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
+				511FE745211964EE00BBAFA3 /* StepAddPostViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -318,6 +341,7 @@
 			files = (
 				517F48AA20FDCDE6001EC8F0 /* LaunchScreen.storyboard in Resources */,
 				517F48A720FDCDE6001EC8F0 /* Assets.xcassets in Resources */,
+				511FE7422119365300BBAFA3 /* Media.xcassets in Resources */,
 				5127F19B210EF4FE008EDED3 /* Info.plist in Resources */,
 				51AE95B9210AE2B60019B2EE /* GoogleService-Info.plist in Resources */,
 				510D5E962108CDA8007C5B9A /* Podfile in Resources */,
@@ -369,9 +393,9 @@
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/OpalImagePicker/OpalImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/StepIndicator/StepIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -392,9 +416,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpalImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StepIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -434,12 +458,15 @@
 				517E64832112F00C0069FD91 /* UserController.swift in Sources */,
 				51FD0F3A210861D50061DB4D /* CHPickerViewController.swift in Sources */,
 				51FD0F38210861D50061DB4D /* CHPagingScrollViewController.swift in Sources */,
+				511FE7442119365300BBAFA3 /* StepIndicatorView.swift in Sources */,
 				AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */,
+				511FE746211964EE00BBAFA3 /* StepAddPostViewController.swift in Sources */,
 				519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */,
 				5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */,
 				5127F198210EF4FE008EDED3 /* KaedeTextField.swift in Sources */,
 				5127F197210EF4FE008EDED3 /* MadokaTextField.swift in Sources */,
 				513563E42115AF9900080471 /* ChatModel.swift in Sources */,
+				511FE7432119365300BBAFA3 /* LineLayer.swift in Sources */,
 				5127F199210EF4FE008EDED3 /* AkiraTextField.swift in Sources */,
 				C24F81612103617000E0C2C5 /* UIViewControllerModal (1).swift in Sources */,
 				51FD0F36210861D50061DB4D /* CHContentViewController.swift in Sources */,
@@ -455,6 +482,7 @@
 				5127F195210EF4FE008EDED3 /* TextFieldEffects.swift in Sources */,
 				51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */,
 				5127F194210EF4FE008EDED3 /* YokoTextField.swift in Sources */,
+				511FE7412119365300BBAFA3 /* AnnularLayer.swift in Sources */,
 				51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */,
 				511E835321129E9B0068D413 /* SignupViewController.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
