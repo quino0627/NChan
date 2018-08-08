@@ -13,41 +13,29 @@ import Firebase
 import FirebaseDatabase
 import DKImagePickerController
 import FirebaseStorage
+import ImagePicker
 
-
-/*
-let now = Date()
-let pastDate = Date(timeIntervalSinceNow: -60 * 60 * 24 * 7)
-
-extension Date {
-    func timeAgoDisplay() -> String {
-        let secondsAgo = Int(Date().timeIntervalSince(self))
-        
-        let minute = 60
-        let hour = 60 * minute
-        let day = 24 * hour
-        let week = 7 * day
-        
-        if secondsAgo < minute{
-            return "\(secondsAgo) 초 전"
-        } else if secondsAgo < hour {
-            return "\(secondsAgo / minute) 분 전"
-        } else if secondsAgo < day{
-            return "\(secondsAgo / hour) 시간 전"
-        } else if secondsAgo < week {
-            return "\(secondsAgo / day) 일 전"
-        }
-        return "\(secondsAgo / week) 주 전"
-    }
-}
-
-*/
-
-
-class AddPostTableViewController: UITableViewController {
+class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
     
+    var imagePickerController : ImagePickerController!
     var uid: String?
     var timestamp: Double!
+    
+    //defining firebase reference var
+    var refPost: DatabaseReference!
+    var refStorage: StorageReference!
+    
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        return
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePickerController.dismiss(animated: true, completion: nil)
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        return
+    }
     
     override func viewDidLoad() {
     
@@ -56,6 +44,7 @@ class AddPostTableViewController: UITableViewController {
         
         //getting a reference to the node post
         refPost = Database.database().reference().child("posts");
+        refStorage = Storage.storage().reference().child("posts");
         
     }
     
@@ -72,7 +61,7 @@ class AddPostTableViewController: UITableViewController {
     
     @IBAction func addImageClicked(_ sender: Any) {
         
-        let pickerController = DKImagePickerController()
+ /*       let pickerController = DKImagePickerController()
         
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
             print("didSelectAssets")
@@ -83,8 +72,12 @@ class AddPostTableViewController: UITableViewController {
         }
         }
         
-        self.present(pickerController, animated: true) {}
+        self.present(pickerController, animated: true) {}*/
         
+        let imagePickerController = ImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.imageLimit = 3
+        present(imagePickerController, animated: true, completion: nil)
     }
 
 
@@ -97,9 +90,6 @@ class AddPostTableViewController: UITableViewController {
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    //defining firebase reference var
-    var refPost: DatabaseReference!
     
     func addPost(){
         //generating a new key inside post node
