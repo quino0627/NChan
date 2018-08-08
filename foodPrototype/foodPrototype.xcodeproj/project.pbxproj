@@ -101,6 +101,7 @@
 		517F48A920FDCDE6001EC8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517F48AB20FDCDE6001EC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		51A666F4211ADDE900376D0E /* foodPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = foodPrototype.entitlements; sourceTree = "<group>"; };
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AE95BA210AF7E10019B2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51AE95BC210B207E0019B2EE /* Model__Prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model__Prototype.swift; sourceTree = "<group>"; };
@@ -217,6 +218,7 @@
 		517F489E20FDCDE3001EC8F0 /* foodPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				51A666F4211ADDE900376D0E /* foodPrototype.entitlements */,
 				51B20B882116B6B000DFA653 /* TabBar */,
 				513563E22115AC0E00080471 /* Model */,
 				513563E02115AAFB00080471 /* ChatViewController.swift */,
@@ -322,6 +324,14 @@
 				TargetAttributes = {
 					517F489B20FDCDE3001EC8F0 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -657,7 +667,9 @@
 			baseConfigurationReference = 7DB1D124379B3BD82BCC9B27 /* Pods-foodPrototype.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = foodPrototype/foodPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7J4HAGSSU;
 				INFOPLIST_FILE = foodPrototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -676,7 +688,9 @@
 			baseConfigurationReference = D7C5C88261756C73EBC7061C /* Pods-foodPrototype.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = foodPrototype/foodPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F7J4HAGSSU;
 				INFOPLIST_FILE = foodPrototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

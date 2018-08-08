@@ -40,6 +40,9 @@ PODS:
   - Firebase/Database (5.5.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.0.2)
+  - Firebase/Messaging (5.5.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (= 3.1.0)
   - Firebase/RemoteConfig (5.5.0):
     - Firebase/Core
     - FirebaseRemoteConfig (= 3.0.1)
@@ -72,6 +75,11 @@ PODS:
   - FirebaseInstanceID (3.2.0):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
+  - FirebaseMessaging (3.1.0):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - GoogleUtilities/Reachability (~> 5.2)
+    - Protobuf (~> 3.1)
   - FirebaseRemoteConfig (3.0.1):
     - FirebaseABTesting (~> 2.0)
     - FirebaseAnalytics (~> 5.1)
@@ -151,6 +159,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Messaging
   - Firebase/RemoteConfig
   - Firebase/Storage
   - GoogleSignIn
@@ -179,6 +188,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseRemoteConfig
     - FirebaseStorage
     - GoogleAppMeasurement
@@ -215,6 +225,7 @@ SPEC CHECKSUMS:
   FirebaseCore: ee4b35cf8c8e781da296cc7c15125e4608bb954d
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
   FirebaseInstanceID: 8cd2c6cfe7b9ab65ce7e248f6da7f26f6775b9be
+  FirebaseMessaging: f67b3719f520ee200da0e20ce577fe2bce0c01d0
   FirebaseRemoteConfig: 7b6d675dfb11f0e0e638caee00908b06af150d56
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleAppMeasurement: e785bdb86d3d280abc778156cec323a975f11d1d
@@ -234,6 +245,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   StepIndicator: 73b4bcc8bcf816cb98479d99ada7e85463252caa
 
-PODFILE CHECKSUM: f198aa67fa71712364440e3bd25a1bc2af4b9ae4
+PODFILE CHECKSUM: d531da1c5b7002a5f680f31ad5c61f5373c603b3
 
 COCOAPODS: 1.5.3
