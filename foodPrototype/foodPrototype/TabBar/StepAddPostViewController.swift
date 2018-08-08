@@ -21,10 +21,23 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
     var ss_listView_0 = UIView()
     var ss_listView_1 = UIView()
     var ss_listView_2 = UIView()
+    var ss_listView_3 = UIView()
+    var ss_listView_4 = UIView()
     
-    var sss_listText_0 = UILabel()
-    var sss_listText_1 = UILabel()
-    var sss_listText_2 = UILabel()
+    var sss_listText_content = UILabel()
+    var sss_listText_maxMan = UILabel()
+    var sss_listText_Price = UILabel()
+    var sss_listInput_content = UITextField()
+    var sss_listInput_maxMan = UITextField()
+    var sss_listInput_Price = UITextField()
+    
+    var sss_listText_hopePlace = UILabel()
+    var sss_listText_more = UILabel()
+    var sss_listInput_hopePlace = UITextField()
+    var sss_listInput_more = UITextField()
+    
+    
+    
     // 뷰 전체 폭 길이
     let screenWidth = UIScreen.main.bounds.size.width
     
@@ -61,24 +74,52 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         s_Scrollview_2.backgroundColor = UIColor(hex: "#34495e")
         
         ss_listView_0.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/2 )
-        ss_listView_1.frame = CGRect(x: 0, y: screenHeight/2, width:screenWidth, height : screenHeight/2 )
-        ss_listView_2.frame = CGRect(x: 0, y: screenHeight, width: screenWidth, height: screenHeight/2 )
+        ss_listView_1.frame = CGRect(x: 0, y: 100, width:screenWidth, height : screenHeight/2 )
+        ss_listView_2.frame = CGRect(x: 0, y: 200, width: screenWidth, height: screenHeight/2 )
+        ss_listView_3.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/2 )
+        ss_listView_4.frame = CGRect(x: 0, y: 100, width: screenWidth, height: screenHeight/2 )
         
-        sss_listText_0.frame = CGRect(x: 10,y: 10, width: 200, height: 25)
-        sss_listText_0.text = "scroll Test List View1"
-        sss_listText_0.font = sss_listText_0.font.withSize(20)
+        sss_listText_content.frame = CGRect(x: 10,y: 10, width: 200, height: 25)
+        sss_listText_content.text = "공구하고자 하는 물건"
+        sss_listText_content.font = sss_listText_content.font.withSize(20)
+        sss_listText_maxMan.frame = CGRect(x: 10, y: 10, width:200, height:25)
+        sss_listText_maxMan.text = "최대 인원수"
+        sss_listText_maxMan.font = sss_listText_maxMan.font.withSize(20)
+        sss_listText_Price.frame = CGRect(x: 10, y: 10, width: 200, height: 25)
+        sss_listText_Price.text = "예상 가격"
+        sss_listText_Price.font = sss_listText_Price.font.withSize(20)
         
-        sss_listText_1.frame = CGRect(x: 10, y: 10, width:200, height:25)
-        sss_listText_1.text = "scroll Test List View2"
-        sss_listText_1.font = sss_listText_1.font.withSize(20)
+        sss_listText_hopePlace.frame = CGRect(x: 10, y: 10, width: 200, height: 25)
+        sss_listText_hopePlace.text = "거래를 희망하는 장소(선택 사항)"
+        sss_listText_hopePlace.font = sss_listText_Price.font.withSize(20)
+        sss_listText_more.frame = CGRect(x: 10, y: 10, width: 200, height: 25)
+        sss_listText_more.text = "추가 설명(선택 사항)"
+        sss_listText_more.font = sss_listText_Price.font.withSize(20)
         
-        sss_listText_2.frame = CGRect(x: 10, y: 10, width: 200, height: 25)
-        sss_listText_2.text = "scroll Test List View3"
-        sss_listText_2.font = sss_listText_2.font.withSize(20)
+        sss_listInput_content.frame = CGRect(x: 0, y: 50, width: 200, height: 25)
+        sss_listInput_content.placeholder = "Sample Placeholder1"
+        sss_listInput_maxMan.frame = CGRect(x: 0, y: 50, width: 200, height: 25)
+        sss_listInput_maxMan.placeholder = "Sample Placeholder2"
+        sss_listInput_Price.frame = CGRect(x: 0, y: 50, width: 200, height: 25)
+        sss_listInput_Price.placeholder = "Sample Placeholder3"
         
-        ss_listView_0.addSubview(sss_listText_0)
-        ss_listView_1.addSubview(sss_listText_1)
-        ss_listView_2.addSubview(sss_listText_2)
+        sss_listInput_hopePlace.frame = CGRect(x: 0, y: 50, width: 200, height: 25)
+        sss_listInput_hopePlace.placeholder = "Sample Placeholder4"
+        sss_listInput_more.frame = CGRect(x: 0, y: 50, width: 200, height: 25)
+        sss_listInput_more.placeholder = "Sample Placeholder5"
+        
+        ss_listView_0.addSubview(sss_listText_content)
+        ss_listView_1.addSubview(sss_listText_maxMan)
+        ss_listView_2.addSubview(sss_listText_Price)
+        ss_listView_0.addSubview(sss_listInput_content)
+        ss_listView_1.addSubview(sss_listInput_maxMan)
+        ss_listView_2.addSubview(sss_listInput_Price)
+        
+        ss_listView_3.addSubview(sss_listText_hopePlace)
+        ss_listView_4.addSubview(sss_listText_more)
+        ss_listView_3.addSubview(sss_listInput_hopePlace)
+        ss_listView_4.addSubview(sss_listInput_more)
+        
         
         s_Scrollview_0.addSubview(ss_listView_0)
         s_Scrollview_0.addSubview(ss_listView_1)
@@ -88,13 +129,17 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         s_Scrollview_1.addSubview(ss_listView_1)
         s_Scrollview_1.addSubview(ss_listView_2)
         
+        s_Scrollview_2.addSubview(ss_listView_3)
+        s_Scrollview_2.addSubview(ss_listView_4)
+        
+        
         scrollView.addSubview(s_Scrollview_0)
         scrollView.addSubview(s_Scrollview_1)
         scrollView.addSubview(s_Scrollview_2)
         
         
         
-        s_Scrollview_0.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
+        
         s_Scrollview_1.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
         s_Scrollview_2.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
         
@@ -127,7 +172,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
                 //함수화
             }
             else if i==2 {
-                label.text = "제목, 가격, 최대 인원수"
+                label.text = ""
             }
             else if i==3{
                 label.text = "희망 구매 사이트, 회망 거래 위치, 추가 기술"

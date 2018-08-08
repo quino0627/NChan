@@ -4229,9 +4229,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Tb-fD-O0e" customClass="StepIndicatorView" customModule="foodPrototype" customModuleProvider="target">
-                                <rect key="frame" x="68" y="64" width="239" height="85"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tb-fD-O0e" customClass="StepIndicatorView" customModule="foodPrototype" customModuleProvider="target">
+                                <rect key="frame" x="62.5" y="64" width="250" height="85"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="DZy-gD-tdG"/>
+                                    <constraint firstAttribute="width" constant="250" id="Nnt-xQ-9Fq"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSteps">
                                         <integer key="value" value="3"/>
@@ -4256,7 +4260,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-bw-miL">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-bw-miL">
                                 <rect key="frame" x="0.0" y="157" width="375" height="510"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="510" id="AoR-F6-Qyx"/>
@@ -4268,12 +4272,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9Tb-fD-O0e" firstAttribute="leading" secondItem="k2G-6b-gIb" secondAttribute="leading" constant="68" id="0gL-Zf-p8N"/>
-                            <constraint firstItem="9Tb-fD-O0e" firstAttribute="top" secondItem="k2G-6b-gIb" secondAttribute="top" id="A0a-t5-1AB"/>
+                            <constraint firstItem="9Tb-fD-O0e" firstAttribute="centerX" secondItem="0eV-fX-jnE" secondAttribute="centerX" id="9P1-3A-JH1"/>
                             <constraint firstItem="rIT-bw-miL" firstAttribute="trailing" secondItem="k2G-6b-gIb" secondAttribute="trailing" id="Gk8-yY-T96"/>
                             <constraint firstItem="rIT-bw-miL" firstAttribute="bottom" secondItem="k2G-6b-gIb" secondAttribute="bottom" id="NWg-B4-u4I"/>
+                            <constraint firstItem="9Tb-fD-O0e" firstAttribute="top" secondItem="k2G-6b-gIb" secondAttribute="top" id="c63-yU-bhT"/>
                             <constraint firstItem="rIT-bw-miL" firstAttribute="leading" secondItem="k2G-6b-gIb" secondAttribute="leading" id="fEH-oT-eMg"/>
-                            <constraint firstItem="k2G-6b-gIb" firstAttribute="trailing" secondItem="9Tb-fD-O0e" secondAttribute="trailing" constant="68" id="gAY-NZ-P3M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k2G-6b-gIb"/>
                     </view>
