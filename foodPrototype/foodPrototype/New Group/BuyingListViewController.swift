@@ -30,13 +30,13 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
         
             let item = buyingPosts[indexPath.row]
-            cell.listImage.image = nil
+//            cell.listImage.image = nil
             cell.listProduct.text = item.product
             cell.listPrice.text = item.price
             cell.listPlace.text = item.wishLocation
             cell.listTime.text = nil
-//            let data = try? Data(contentsOf: URL(string: (item.user?.profileImageUrl)!)!)
-//            cell.listImage.image = UIImage(data: data!)
+        let data = try? Data(contentsOf: URL(string: (item.user?.profileImageUrl!)!)!)
+            cell.listImage.image = UIImage(data: data!)
 
             return cell
     }
@@ -54,7 +54,6 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
         super.viewDidLoad()
         
 //        uid = Auth.auth().currentUser?.uid
-        
         refPost.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
             
             //if the reference have some values
@@ -75,7 +74,18 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                     let postWishLocation = postObject?["postWishLocation"]
                     let postUid = postObject?["uid"]
                     var postUser : ExampleFireUser?
-
+                    
+                    Database.database().reference().child("users").observe(DataEventType.value, with: { (snapshot) in
+                        for user in snapshot.children.allObjects as! [DataSnapshot]{
+                            let pchild = user.value as? [String:AnyObject]
+                            let pUser = ExampleFireUser()
+                            if pchild?["uid"] as! String == postUid as! String{
+                                pUser.name = pchild?["name"] as! String
+                                pUser.profileImageUrl = pchild?["profileImageUrl"] as! String
+                                pUser.uid = pchild?["uid"] as! String
+                            }
+                        }
+                    })
 //                    postUid?.observe(DataEventType.value, with: { (snapshot) in
 //                        for child in snapshot.children{
 //                            let pchild = child as! DataSnapshot
@@ -86,7 +96,7 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
 //                    })
 
                     //creating post object with model and fetched values
-                    let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?)
+                    let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: postUser)
                     
                         self.buyingPosts.append(post)
                 }

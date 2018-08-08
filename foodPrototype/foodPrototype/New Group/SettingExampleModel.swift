@@ -33,7 +33,7 @@ struct ExampleFirePost {
     var price: String?
     var wishLocation: String?
 //    var uploadTime: String?
-//    var user: ExampleFireUser?
+    var user: ExampleFireUser?
 }
 
 class ExampleFireUser: NSObject {

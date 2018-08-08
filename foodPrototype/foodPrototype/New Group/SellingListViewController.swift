@@ -102,6 +102,17 @@ class SellingListViewController: UIViewController,UITableViewDataSource, UITable
                     let postUid = postObject?["uid"]
                     var postUser : ExampleFireUser?
                 
+                    Database.database().reference().child("users").observe(DataEventType.value, with: { (snapshot) in
+                        for user in snapshot.children.allObjects as! [DataSnapshot]{
+                            let pchild = user.value as? [String:AnyObject]
+                            let pUser = ExampleFireUser()
+                            if pchild?["uid"] as! String == postUid as! String{
+                                pUser.name = pchild?["name"] as! String
+                                pUser.profileImageUrl = pchild?["profileImageUrl"] as! String
+                                pUser.uid = pchild?["uid"] as! String
+                            }
+                        }
+                    })
 //                    postUid?.observe(DataEventType.value, with: { (snapshot) in
 //                        for child in snapshot.children{
 //                            let pchild = child as! DataSnapshot
@@ -112,7 +123,7 @@ class SellingListViewController: UIViewController,UITableViewDataSource, UITable
 //                    })
                     
                     //creating post object with model and fetched values
-                    let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?)
+                    let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: postUser)
                     
                     if self.segmentedControl.selectedSegmentIndex == 0{
                         self.buyingPosts.append(post)
