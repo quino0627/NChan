@@ -65,6 +65,7 @@
 		AD2DF8EA211993A1008474FD /* SellingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8E9211993A1008474FD /* SellingListViewController.swift */; };
 		AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */; };
 		AD2DF8EF21199525008474FD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EE21199525008474FD /* ListTableViewCell.swift */; };
+		AD613342211C06B0000F3A5A /* JointPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */; };
 		C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22624D721071AC90033CAA6 /* model_prototype.swift */; };
 		C24F81602103617000E0C2C5 /* UIViewControllerKeyboard (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */; };
 		C24F81612103617000E0C2C5 /* UIViewControllerModal (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */; };
@@ -136,6 +137,7 @@
 		AD2DF8E9211993A1008474FD /* SellingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingListViewController.swift; sourceTree = "<group>"; };
 		AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingExampleModel.swift; sourceTree = "<group>"; };
 		AD2DF8EE21199525008474FD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JointPurchaseViewController.swift; sourceTree = "<group>"; };
 		C22624D721071AC90033CAA6 /* model_prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model_prototype.swift; sourceTree = "<group>"; };
 		C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerKeyboard (1).swift"; sourceTree = "<group>"; };
 		C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerModal (1).swift"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		517F489E20FDCDE3001EC8F0 /* foodPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				AD613340211C0674000F3A5A /* JointPurchase */,
 				51A666F4211ADDE900376D0E /* foodPrototype.entitlements */,
 				AD2DF8E62119932B008474FD /* Setting */,
 				51B20B882116B6B000DFA653 /* TabBar */,
@@ -308,6 +311,14 @@
 			);
 			name = Setting;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		AD613340211C0674000F3A5A /* JointPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */,
+			);
+			path = JointPurchase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,7 +440,6 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
@@ -454,7 +464,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
@@ -507,6 +516,7 @@
 				AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */,
 				AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */,
 				511FE746211964EE00BBAFA3 /* StepAddPostViewController.swift in Sources */,
+				AD613342211C06B0000F3A5A /* JointPurchaseViewController.swift in Sources */,
 				519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */,
 				5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */,
 				5127F198210EF4FE008EDED3 /* KaedeTextField.swift in Sources */,

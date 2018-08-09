@@ -45,8 +45,8 @@ class SellingListViewController: UIViewController,UITableViewDataSource, UITable
             cell.listPrice.text = item.price
             cell.listPlace.text = item.wishLocation
             cell.listTime.text = nil
-            let data = try? Data(contentsOf: URL(string: (item.user?.profileImageUrl)!)!)
-            cell.listImage.image = UIImage(data: data!)
+//            let data = try? Data(contentsOf: URL(string: (item.user?.profileImageUrl)!)!)
+//            cell.listImage.image = UIImage(data: data!)
         }
         else{
             let item = boughtPosts[indexPath.row]
