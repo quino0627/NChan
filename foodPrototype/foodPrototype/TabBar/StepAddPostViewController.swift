@@ -268,6 +268,9 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         
         present(imagePickerController, animated: true, completion: nil)
     }
+//    @objc func didDoneButtonPressed(){
+//
+//    }
     
     
     func addPost(){

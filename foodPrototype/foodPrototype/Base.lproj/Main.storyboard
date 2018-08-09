@@ -2753,16 +2753,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채팅으로 거래하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhz-4Y-lmz">
-                                                    <rect key="frame" x="236" y="22" width="123" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="123" id="Ri1-hL-Zhg"/>
-                                                        <constraint firstAttribute="height" constant="21" id="jGL-DF-oQ9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHt-rB-UJb">
                                                     <rect key="frame" x="16" y="7" width="50" height="50"/>
                                                     <constraints>
@@ -2783,16 +2773,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3e-bo-IJo">
+                                                    <rect key="frame" x="264" y="18" width="95" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="8nb-vh-fO5"/>
+                                                        <constraint firstAttribute="width" constant="95" id="hhh-s2-OL9"/>
+                                                    </constraints>
+                                                    <state key="normal" title="채팅방 입장하기"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="dIC-h6-X8J" firstAttribute="leading" secondItem="lBm-S6-jMk" secondAttribute="trailing" constant="1" id="1PM-rC-NkR"/>
                                                 <constraint firstItem="MHt-rB-UJb" firstAttribute="top" secondItem="hYo-8D-ZP3" secondAttribute="top" constant="7" id="Dna-y8-fLl"/>
                                                 <constraint firstItem="MHt-rB-UJb" firstAttribute="leading" secondItem="hYo-8D-ZP3" secondAttribute="leading" constant="16" id="Ig1-Gf-Xie"/>
-                                                <constraint firstItem="qhz-4Y-lmz" firstAttribute="top" secondItem="hYo-8D-ZP3" secondAttribute="topMargin" constant="11" id="OV2-wj-iw1"/>
                                                 <constraint firstItem="dIC-h6-X8J" firstAttribute="top" secondItem="hYo-8D-ZP3" secondAttribute="topMargin" constant="11" id="STq-h8-V9L"/>
-                                                <constraint firstItem="qhz-4Y-lmz" firstAttribute="trailing" secondItem="hYo-8D-ZP3" secondAttribute="trailingMargin" id="fcd-vh-Mjm"/>
                                                 <constraint firstItem="lBm-S6-jMk" firstAttribute="leading" secondItem="MHt-rB-UJb" secondAttribute="trailing" constant="19" id="mKk-1b-4fS"/>
+                                                <constraint firstItem="n3e-bo-IJo" firstAttribute="centerY" secondItem="hYo-8D-ZP3" secondAttribute="centerY" id="pxb-hT-zGd"/>
                                                 <constraint firstItem="lBm-S6-jMk" firstAttribute="top" secondItem="hYo-8D-ZP3" secondAttribute="topMargin" constant="11" id="w7U-4b-wae"/>
+                                                <constraint firstItem="n3e-bo-IJo" firstAttribute="trailing" secondItem="hYo-8D-ZP3" secondAttribute="trailingMargin" id="w80-0O-w69"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -3027,6 +3025,7 @@
                         </sections>
                     </tableView>
                     <connections>
+                        <outlet property="InviteButton" destination="n3e-bo-IJo" id="pr5-uA-qvJ"/>
                         <outlet property="food_Contents" destination="bH4-LI-kWl" id="W33-ix-CZf"/>
                         <outlet property="food_Image" destination="Wh1-CX-JwA" id="eNd-K2-9rD"/>
                         <outlet property="food_Price" destination="lBm-S6-jMk" id="Ttm-g4-oQK"/>
@@ -3844,7 +3843,11 @@
                         <viewLayoutGuide key="safeArea" id="k2G-6b-gIb"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y8f-jo-Tz3">
-                        <barButtonItem key="rightBarButtonItem" title="완료" id="QDt-BO-AkI"/>
+                        <barButtonItem key="rightBarButtonItem" title="게시" id="Loz-lt-dtF">
+                            <connections>
+                                <action selector="barButtonPressed:" destination="3xU-ly-p0w" id="Vcg-HL-kVT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="rIT-bw-miL" id="dD0-wR-yfl"/>
