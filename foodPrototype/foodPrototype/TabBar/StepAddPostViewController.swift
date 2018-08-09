@@ -198,12 +198,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
     }
     
     func didDoneButtonPressed(){
-        if(){
-            
-        }
-        else{
-            dismiss(animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-        }
+        
     }
     
 }
