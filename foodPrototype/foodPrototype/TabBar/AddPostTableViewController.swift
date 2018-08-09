@@ -11,7 +11,6 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseDatabase
-import DKImagePickerController
 import FirebaseStorage
 import ImagePicker
 
@@ -80,16 +79,6 @@ class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
         
         present(imagePickerController, animated: true, completion: nil)
     }
-    
-    /*    @IBAction func addImageClicked(_ sender: Any) {
-    
-        let imagePickerController = ImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.imageLimit = 3
-
-        present(imagePickerController, animated: true, completion: nil)
-    }*/
-
 
     @IBAction func save(_ sender: Any) {
         addPost()
@@ -124,6 +113,8 @@ class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
     func addPost(){
         
         let key = refPost.childByAutoId().key
+        var imageValue = [String:String]()
+        
         for image in imageArray {
             let refImage = refPost.child(key).child("ImageUrl")
             let autoID = refImage.childByAutoId().key
@@ -143,11 +134,12 @@ class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
                         }
                         if url != nil {
                             var imageUrl:String
+                            
                             imageUrl = url!.absoluteString
                             
-                            /*let values = ["name":self.name.text!, "profileImageUrl":imageUrl, "uid":Auth.auth().currentUser?.uid]*/
+                            print("this is imageUrl: ", imageUrl)
                             
-                            
+            
                             let post = ["id":key,
                                         "postProduct": self.productTextField.text! as String,
                                         "postPrice": self.priceTextField.text! as String,
@@ -156,12 +148,14 @@ class AddPostTableViewController: UITableViewController, ImagePickerDelegate {
                                 "postMaxMan": "maxMan들어가야함" as String,
                                 "postWishLocation": "wishLocation들어가야함" as String
                             ]
-                            
-                            let imageValue = [autoID : imageUrl]
-                            
-                            //adding the artist inside the generated unique key
+                            imageValue[autoID] = imageUrl
+    
+                            print("this is imageValue",imageValue)
+                 
+                            //adding the post inside the generated unique key
                             self.refPost.child(key).setValue(post)
-                            refImage.updateChildValues(imageValue)
+                            refImage.setValue(imageValue)
+
                             
                         }
                     }
