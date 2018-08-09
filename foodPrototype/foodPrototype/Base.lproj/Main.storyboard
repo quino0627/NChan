@@ -3576,14 +3576,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyC-XW-jHG">
-                                                    <rect key="frame" x="16" y="13" width="71" height="64"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.png" translatesAutoresizingMaskIntoConstraints="NO" id="sM4-qD-JGB">
+                                                    <rect key="frame" x="145" y="12" width="84" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="my_camera"/>
-                                                    <connections>
-                                                        <action selector="addImageClicked:" destination="yla-3G-yFY" eventType="touchUpInside" id="fHl-8b-WFU"/>
-                                                    </connections>
-                                                </button>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -3700,6 +3696,7 @@
                         <barButtonItem key="rightBarButtonItem" title="save" id="Y91-Dy-6Iv"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addImage" destination="sM4-qD-JGB" id="Kvg-CO-eVB"/>
                         <outlet property="contentText" destination="IoL-t2-UBQ" id="Em4-ie-ckP"/>
                         <outlet property="priceTextField" destination="KDl-YQ-YdZ" id="crE-vn-t8q"/>
                         <outlet property="productTextField" destination="Ab7-6D-Vbh" id="jhD-hp-ysq"/>
@@ -3708,7 +3705,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPS-yV-V1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159" y="1157"/>
+            <point key="canvasLocation" x="1117.5999999999999" y="1154.5727136431785"/>
         </scene>
         <!--Item-->
         <scene sceneID="SoN-m5-SZL">
@@ -4248,6 +4245,7 @@
         <image name="bar__user" width="27" height="27"/>
         <image name="baseline_account_circle_black_36pt" width="36" height="36"/>
         <image name="baseline_create_black_36pt" width="36" height="36"/>
+        <image name="camera.png" width="76" height="55"/>
         <image name="like (3)" width="256" height="256"/>
         <image name="loading_icon" width="64" height="64"/>
         <image name="message_blue" width="11" height="9"/>
