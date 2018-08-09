@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3xU-ly-p0w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9ko-mr-xhV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVs-MN-etw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1284" y="2759"/>
+            <point key="canvasLocation" x="-1442" y="2513"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1Sd-jj-9GU">
@@ -1612,7 +1612,7 @@
             </objects>
             <point key="canvasLocation" x="-2309.5999999999999" y="1702.3988005997003"/>
         </scene>
-        <!--Sample View Controller-->
+        <!--삭제-->
         <scene sceneID="aOF-GB-4CD">
             <objects>
                 <viewController id="lxw-hn-EWc" customClass="SampleViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
@@ -1622,7 +1622,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yeB-ph-xF3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0uh-7I-16g"/>
+                    <navigationItem key="navigationItem" title="삭제" id="2bz-z8-E4Q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drB-Ny-vNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3856,7 +3856,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7y-Dq-GAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2103" y="1890"/>
+            <point key="canvasLocation" x="-702" y="2494"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kXI-Ue-VSV">
@@ -4246,7 +4246,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kiH-Ul-jGc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5YN-49-G3U"/>
+                    <navigationItem key="navigationItem" id="5YN-49-G3U">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pS3-hd-nnj">
+                            <connections>
+                                <segue destination="3xU-ly-p0w" kind="presentation" id="Mg9-bk-072"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buyingTable" destination="qpp-kc-zxF" id="LqN-W7-Fx9"/>
                     </connections>
