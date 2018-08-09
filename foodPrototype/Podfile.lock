@@ -40,14 +40,10 @@ PODS:
   - Firebase/Database (5.4.1):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.0.2)
-<<<<<<< HEAD
-  - Firebase/Messaging (5.5.0):
+  - Firebase/Messaging (5.4.1):
     - Firebase/CoreOnly
-    - FirebaseMessaging (= 3.1.0)
-  - Firebase/RemoteConfig (5.5.0):
-=======
+    - FirebaseMessaging (= 3.0.3)
   - Firebase/RemoteConfig (5.4.1):
->>>>>>> MergeTest3
     - Firebase/Core
     - FirebaseRemoteConfig (= 3.0.0)
   - Firebase/Storage (5.4.1):
@@ -69,21 +65,14 @@ PODS:
   - FirebaseDatabase (5.0.2):
     - FirebaseCore (~> 5.0)
     - leveldb-library (~> 1.18)
-<<<<<<< HEAD
-  - FirebaseInstanceID (3.2.0):
-    - FirebaseCore (~> 5.1)
-    - GoogleUtilities/Environment (~> 5.2)
-  - FirebaseMessaging (3.1.0):
-    - FirebaseCore (~> 5.0)
-    - FirebaseInstanceID (~> 3.0)
-    - GoogleUtilities/Reachability (~> 5.2)
-    - Protobuf (~> 3.1)
-  - FirebaseRemoteConfig (3.0.1):
-=======
   - FirebaseInstanceID (3.1.1):
     - FirebaseCore (~> 5.0)
+  - FirebaseMessaging (3.0.3):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
   - FirebaseRemoteConfig (3.0.0):
->>>>>>> MergeTest3
     - FirebaseABTesting (~> 2.0)
     - FirebaseAnalytics (~> 5.0)
     - FirebaseCore (~> 5.0)
@@ -101,6 +90,8 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
+  - GoogleToolboxForMac/Logger (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
@@ -108,25 +99,6 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.4)
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
-<<<<<<< HEAD
-  - GoogleUtilities/AppDelegateSwizzler (5.2.2):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (5.2.2)
-  - GoogleUtilities/Logger (5.2.2):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (5.2.2):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/Network (5.2.2):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (5.2.2)"
-  - GoogleUtilities/Reachability (5.2.2):
-    - GoogleUtilities/Logger
-=======
->>>>>>> MergeTest3
   - GTMOAuth2 (1.1.6):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.2.0):
@@ -148,7 +120,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ObjectMapper (3.3.0)
-  - Protobuf (3.6.1)
+  - Protobuf (3.6.0)
   - SnapKit (4.0.0)
   - StepIndicator (1.0.6.1)
 
@@ -222,21 +194,12 @@ SPEC CHECKSUMS:
   FirebaseAuth: 096e457cdd4274412a66c4a35874787e411f5a03
   FirebaseCore: 4c28e3b9708ba48a765e76515f913a71596eb5dd
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
-<<<<<<< HEAD
-  FirebaseInstanceID: 8cd2c6cfe7b9ab65ce7e248f6da7f26f6775b9be
-  FirebaseMessaging: f67b3719f520ee200da0e20ce577fe2bce0c01d0
-  FirebaseRemoteConfig: 7b6d675dfb11f0e0e638caee00908b06af150d56
-=======
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
+  FirebaseMessaging: f43eb0c0e1da096e659de6f713038e74862a62cd
   FirebaseRemoteConfig: 3c57e4644bd6976b671ae0b725cd709f198bd1f5
->>>>>>> MergeTest3
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
-<<<<<<< HEAD
-  GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
-=======
->>>>>>> MergeTest3
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
@@ -246,7 +209,7 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
-  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   StepIndicator: 73b4bcc8bcf816cb98479d99ada7e85463252caa
 

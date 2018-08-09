@@ -79,11 +79,6 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
                             let pchild = user.value as? [String:AnyObject]
                             let pUser = ExampleFireUser()
                             if pchild!["uid"] as! String == postUid as! String{
-
-                                print("---------------------------------------------------------------")
-                                print(pchild!["uid"] as! String)
-                                print(postUid as! String)
-                                print("---------------------------------------------------------------")
                                 pUser.name = pchild?["name"] as? String
                                 pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
                                 pUser.uid = pchild?["uid"] as? String
