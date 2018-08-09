@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9ko-mr-xhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Fv-e4-C1L">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -4097,8 +4097,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k2G-6b-gIb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Y8f-jo-Tz3"/>
+                    <navigationItem key="navigationItem" id="Y8f-jo-Tz3">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="QDt-BO-AkI"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="DoneButton" destination="QDt-BO-AkI" id="1Zs-wY-4YL"/>
                         <outlet property="scrollView" destination="rIT-bw-miL" id="dD0-wR-yfl"/>
                         <outlet property="stepIndicatorView" destination="9Tb-fD-O0e" id="DLX-4A-lZc"/>
                     </connections>
