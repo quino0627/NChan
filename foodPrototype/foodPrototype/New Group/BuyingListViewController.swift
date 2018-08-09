@@ -35,8 +35,8 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
             cell.listPrice.text = item.price
             cell.listPlace.text = item.wishLocation
             cell.listTime.text = nil
-            let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
-            cell.listImage.image = UIImage(data: data!)
+//            let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
+//            cell.listImage.image = UIImage(data: data!)
 //            print(item.user?.name)
 //            print("HIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHI")
             return cell
