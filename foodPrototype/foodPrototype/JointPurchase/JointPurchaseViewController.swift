@@ -1,47 +1,46 @@
 //
-//  BuyingListViewController.swift
+//  JointPurchaseViewController.swift
 //  foodPrototype
 //
-//  Created by cscoi005 on 2018. 8. 1..
+//  Created by cscoi005 on 2018. 8. 9..
 //  Copyright © 2018년 송. All rights reserved.
 //
 
 import UIKit
 import Firebase
 import FirebaseDatabase
+class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
-class BuyingListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-    
     @IBOutlet weak var buyingTable: UITableView!
 
-//    var uid : String?
+    //    var uid : String?
     var buyingPosts : [ExampleFirePost] = [] //post에 성공, 진행중, 실패에 대한 변수 넣어야 할듯.
     let refPost = Database.database().reference().child("posts")
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return buyingPosts.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
-        
-            let item = buyingPosts[indexPath.row]
-//            cell.listImage.image = nil
-            cell.listProduct.text = item.product
-            cell.listPrice.text = item.price
-            cell.listPlace.text = item.wishLocation
-            cell.listTime.text = nil
-//            let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
-//            cell.listImage.image = UIImage(data: data!)
-//            print(item.user?.name)
-//            print("HIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHI")
-            return cell
+
+        let item = buyingPosts[indexPath.row]
+        //            cell.listImage.image = nil
+        cell.listProduct.text = item.product
+        cell.listPrice.text = item.price
+        cell.listPlace.text = item.wishLocation
+        cell.listTime.text = nil
+//        let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
+//        cell.listImage.image = UIImage(data: data!)
+        //            print(item.user?.name)
+        //            print("HIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHI")
+        return cell
     }
-    
+
     @IBAction func refreshButtonTapped(sender: AnyObject){
         buyingTable.reloadData()
     }
@@ -49,20 +48,20 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
     @IBAction func segmentedControlActionChanged(sender: AnyObject){
         buyingTable.reloadData()
     }
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        uid = Auth.auth().currentUser?.uid
+
+        //        uid = Auth.auth().currentUser?.uid
         refPost.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
-            
+
             //if the reference have some values
             if snapshot.childrenCount > 0{
 
                 //clearing list
-                    self.buyingPosts.removeAll()
-                
+                self.buyingPosts.removeAll()
+
                 //iterating through all the values
                 for posts in snapshot.children.allObjects as! [DataSnapshot]{
                     //getting values
@@ -80,7 +79,7 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                             let pchild = user.value as? [String:AnyObject]
                             let pUser = ExampleFireUser()
                             if pchild!["uid"] as! String == postUid as! String{
-                                
+
                                 print("---------------------------------------------------------------")
                                 print(pchild!["uid"] as! String)
                                 print(postUid as! String)
@@ -94,9 +93,9 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                         }
                     })
                     //creating post object with model and fetched values
-                        self.buyingPosts.append(post)
+                    self.buyingPosts.append(post)
                 }
-                
+
                 //reloading the tableview
                 self.buyingTable.reloadData()
             }
@@ -107,12 +106,12 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let indexPath = buyingTable.indexPathForSelectedRow,
-                let detailVC = segue.destination as? PostViewController {
-                let selectedPost :ExampleFirePost = buyingPosts[indexPath.row]
-                detailVC.post = selectedPost
-            }
+        if let indexPath = buyingTable.indexPathForSelectedRow,
+            let detailVC = segue.destination as? PostViewController {
+            let selectedPost :ExampleFirePost = buyingPosts[indexPath.row]
+            detailVC.post = selectedPost
+        }
     }
 }
