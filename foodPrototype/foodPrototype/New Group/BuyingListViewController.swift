@@ -35,9 +35,10 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
             cell.listPrice.text = item.price
             cell.listPlace.text = item.wishLocation
             cell.listTime.text = nil
-        let data = try? Data(contentsOf: URL(string: (item.user?.profileImageUrl!)!)!)
+            let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
             cell.listImage.image = UIImage(data: data!)
-
+//            print(item.user?.name)
+//            print("HIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHI")
             return cell
     }
     
@@ -73,31 +74,26 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                     let postPrice = postObject?["postPrice"]
                     let postWishLocation = postObject?["postWishLocation"]
                     let postUid = postObject?["uid"]
-                    var postUser : ExampleFireUser?
-                    
+                    var post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: nil)
                     Database.database().reference().child("users").observe(DataEventType.value, with: { (snapshot) in
                         for user in snapshot.children.allObjects as! [DataSnapshot]{
                             let pchild = user.value as? [String:AnyObject]
                             let pUser = ExampleFireUser()
-                            if pchild?["uid"] as! String == postUid as! String{
-                                pUser.name = pchild?["name"] as! String
-                                pUser.profileImageUrl = pchild?["profileImageUrl"] as! String
-                                pUser.uid = pchild?["uid"] as! String
+                            if pchild!["uid"] as! String == postUid as! String{
+                                
+                                print("---------------------------------------------------------------")
+                                print(pchild!["uid"] as! String)
+                                print(postUid as! String)
+                                print("---------------------------------------------------------------")
+                                pUser.name = pchild?["name"] as? String
+                                pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
+                                pUser.uid = pchild?["uid"] as? String
+                                post.user = pUser
+                                print(post.user?.name)
                             }
                         }
                     })
-//                    postUid?.observe(DataEventType.value, with: { (snapshot) in
-//                        for child in snapshot.children{
-//                            let pchild = child as! DataSnapshot
-//                            let pUser = ExampleFireUser()
-//                            pUser.setValuesForKeys(pchild.value as! [String : Any])
-//                            postUser = pUser
-//                        }
-//                    })
-
                     //creating post object with model and fetched values
-                    let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: postUser)
-                    
                         self.buyingPosts.append(post)
                 }
                 
@@ -105,35 +101,6 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                 self.buyingTable.reloadData()
             }
         }
-
-
-//        let buyingUser1 = ExampleUser(userName: "김대희", userImage: "프로필")
-//        let buyingPost1 = ExamplePost(postWriter: buyingUser1,
-//                                      postTitle: "닭강정 공구팟",
-//                                      postContent: productInfo(productPicArray: ["pic__thebanchan", "닭강정", "닭강정1", "닭강정2"],
-//                                                               productExplanation: "닭강정이 먹고싶습니다.",
-//                                                               price: "20000"),
-//                                      postTag: ["#반찬", "#고기"])
-//        let buyingUser2 = ExampleUser(userName: "송동욱", userImage: "프로필")
-//        let buyingPost2 = ExamplePost(postWriter: buyingUser2,
-//                                      postTitle: "오이소박이 공구 모집",
-//                                      postContent: productInfo(productPicArray: ["pic__oisobak"],
-//                                                               productExplanation: "오이소박이가 너무나도 먹고 싶습니다...",
-//                                                               price: "5000"),
-//                                      postTag: ["#반찬", "#채소"])
-//
-//        let boughtUser1 = ExampleUser(userName: "정소영", userImage: "프로필")
-//        let boughtPost1 = ExamplePost(postWriter: boughtUser1,
-//                                      postTitle: "오거리 수박엔빵~!",
-//                                      postContent: productInfo(productPicArray: ["pic__watermelon","수박"],
-//                                                               productExplanation: "수박이 먹고 싶은데 양이 너무 많아요 ㅜㅜ...",
-//                                                               price: "10000"),
-//                                      postTag: ["#간식", "#과일"])
-//        buyingPosts.append(buyingPost1)
-//        buyingPosts.append(buyingPost2)
-//        boughtPosts.append(boughtPost1)
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
