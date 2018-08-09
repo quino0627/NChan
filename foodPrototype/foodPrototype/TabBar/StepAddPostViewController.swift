@@ -13,6 +13,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var stepIndicatorView:StepIndicatorView!
     @IBOutlet weak var scrollView:UIScrollView!
+    @IBOutlet weak var DoneButton: UIBarButtonItem!
     
     var s_Scrollview_0 = UIScrollView()
     var s_Scrollview_1 = UIScrollView()
@@ -194,6 +195,15 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageIndex = scrollView.contentOffset.x / scrollView.frame.size.width
         stepIndicatorView.currentStep = Int(pageIndex)
+    }
+    
+    func didDoneButtonPressed(){
+        if(){
+            
+        }
+        else{
+            dismiss(animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        }
     }
     
 }
