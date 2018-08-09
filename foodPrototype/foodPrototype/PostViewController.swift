@@ -22,17 +22,17 @@ class PostViewController: UITableViewController {
 //    @IBOutlet weak var user_Safety_Face: UIImageView!
 //    @IBOutlet weak var user_Safety_State: UILabel!
 //    @IBOutlet weak var user_Safety_Num: UILabel!
-    var post: ExampleFirePost?
+    var post: ExamplePost?
     
     var localSource : [ImageSource] = []
 
     override func viewWillAppear(_ animated: Bool) {
-        food_Price.text = post?.price
-        food_Title.text = post?.product
-        food_Contents.text = post?.content
-//        user_Image.image = UIImage(named: (post?.postWriter.userImage)!)
-//        user_Name1.text = post?.postWriter.userName
-//        user_Name2.text = post?.postWriter.userName
+        food_Price.text = post?.postContent.price
+        food_Title.text = post?.postTitle
+        food_Contents.text = post?.postContent.productExplanation
+        user_Image.image = UIImage(named: (post?.postWriter.userImage)!)
+        user_Name1.text = post?.postWriter.userName
+        user_Name2.text = post?.postWriter.userName
 //        user_Safety_State.text = post?.postWriter.userSafety.state
 //        user_Safety_Face.image = UIImage(named: (post?.postWriter.userSafety.face)!)
 //        user_Safety_Num.text = String((post?.postWriter.userSafety.value)!)
@@ -40,9 +40,9 @@ class PostViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        for image in (post?.postContent.productPicArray)! {
-//            localSource.append(ImageSource(imageString: image)!)
-//        }
+        for image in (post?.postContent.productPicArray)! {
+            localSource.append(ImageSource(imageString: image)!)
+        }
         
         food_Image.slideshowInterval = 5.0
         food_Image.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
