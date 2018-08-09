@@ -12,6 +12,4 @@ class UserModel: NSObject {
     @objc var name : String?
     @objc var profileImageUrl : String?
     @objc var uid : String?
-    @objc var pushToken :String?
-    
 }
