@@ -14,7 +14,6 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var stepIndicatorView:StepIndicatorView!
     @IBOutlet weak var scrollView:UIScrollView!
     @IBOutlet weak var DoneButton: UIBarButtonItem!
-    
     var s_Scrollview_0 = UIScrollView()
     var s_Scrollview_1 = UIScrollView()
     var s_Scrollview_2 = UIScrollView()
@@ -197,9 +196,18 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         stepIndicatorView.currentStep = Int(pageIndex)
     }
     
-    func didDoneButtonPressed(){
-        
+    @IBAction func barButtonPressed(_ sender: Any) {
+        var isAllInputFilled = sss_listInput_content.text != "" || sss_listInput_maxMan.text != "" || sss_listInput_Price.text != ""
+        print("Basdf")
+        if (isAllInputFilled) {
+            self.dismiss(animated: true, completion: nil)
+        }else{
+            print("QQQQQQQQ")
+        }
     }
+//    @objc func didDoneButtonPressed(){
+//
+//    }
     
 }
 
