@@ -35,8 +35,8 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
             cell.listPrice.text = item.price
             cell.listPlace.text = item.wishLocation
             cell.listTime.text = nil
-//            let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
-//            cell.listImage.image = UIImage(data: data!)
+            let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
+            cell.listImage.image = UIImage(data: data!)
 //            print(item.user?.name)
 //            print("HIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHI")
             return cell
@@ -65,7 +65,6 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                     let postPrice = postObject?["postPrice"]
                     let postWishLocation = postObject?["postWishLocation"]
                     let postUid = postObject?["uid"]
-                    var postUser : ExampleFireUser?
 
                     Database.database().reference().child("users").child(postUid as! String).observe(DataEventType.value, with: { (snapshot) in
                         let pchild = snapshot.value as? [String: AnyObject]
@@ -74,12 +73,14 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                         pUser.name = pchild?["name"] as? String
                         pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
                         pUser.uid = pchild?["uid"] as? String
-                        postUser = pUser
+                        let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: pUser)
+                        self.buyingPosts.append(post)
+                        self.buyingTable.reloadData()
                     })
                     
-                    let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: postUser)
 
-                        self.buyingPosts.append(post)
+
+
                 }
                 
                 //reloading the tableview
