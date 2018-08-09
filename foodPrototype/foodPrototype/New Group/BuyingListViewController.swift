@@ -42,15 +42,6 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
             return cell
     }
     
-    @IBAction func refreshButtonTapped(sender: AnyObject){
-        buyingTable.reloadData()
-    }
-
-    @IBAction func segmentedControlActionChanged(sender: AnyObject){
-        buyingTable.reloadData()
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,41 +65,20 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                     let postPrice = postObject?["postPrice"]
                     let postWishLocation = postObject?["postWishLocation"]
                     let postUid = postObject?["uid"]
-                    let postUser : ExampleFireUser?
-                                        var post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: nil)
-//                    Database.database().reference().child("users/\(postUid)").observe(DataEventType.value, with: { (snapshot) in
-//                        let pchild = (snapshot.children.allObjects as! DataSnapshot).value as? [String:AnyObject]
-//                        let pUser = ExampleFireUser()
-//                        
-//                        pUser.name = pchild?["name"] as? String
-//                        pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
-//                        pUser.uid = pchild?["uid"] as? String
-//                        post.user = pUser
-//                        print(post.user?.name)
-//                    })
-                    //creating post object with model and fetched values
+                    var postUser : ExampleFireUser?
 
+                    Database.database().reference().child("users").child(postUid as! String).observe(DataEventType.value, with: { (snapshot) in
+                        let pchild = snapshot.value as? [String: AnyObject]
+                        let pUser = ExampleFireUser()
+                        
+                        pUser.name = pchild?["name"] as? String
+                        pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
+                        pUser.uid = pchild?["uid"] as? String
+                        postUser = pUser
+                    })
                     
-                    
-//                    Database.database().reference().child("users").observe(DataEventType.value, with: { (snapshot) in
-//                        for user in snapshot.children.allObjects as! [DataSnapshot]{
-//                            let pchild = user.value as? [String:AnyObject]
-//                            let pUser = ExampleFireUser()
-//                            if pchild!["uid"] as! String == postUid as! String{
-//
-//                                print("---------------------------------------------------------------")
-//                                print(pchild!["uid"] as! String)
-//                                print(postUid as! String)
-//                                print("---------------------------------------------------------------")
-//                                pUser.name = pchild?["name"] as? String
-//                                pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
-//                                pUser.uid = pchild?["uid"] as? String
-//                                post.user = pUser
-//                                print(post.user?.name)
-//                            }
-//                        }
-//                    })
-                    //creating post object with model and fetched values
+                    let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: postUser)
+
                         self.buyingPosts.append(post)
                 }
                 
@@ -116,6 +86,8 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                 self.buyingTable.reloadData()
             }
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
