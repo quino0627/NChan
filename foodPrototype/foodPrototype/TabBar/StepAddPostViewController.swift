@@ -8,12 +8,35 @@
 
 import UIKit
 import SnapKit
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
+import ImagePicker
 
-class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
+class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePickerDelegate{
+    
+    var imagePickerController : ImagePickerController!
+    var uid: String?
+    var timestamp: Double!
+    var imageArray : [UIImage] = []
+    
+    //defining firebase reference var
+    var refPost: DatabaseReference!
+    var refStorage: StorageReference!
     
     @IBOutlet weak var stepIndicatorView:StepIndicatorView!
     @IBOutlet weak var scrollView:UIScrollView!
-    @IBOutlet weak var DoneButton: UIBarButtonItem!
+//    @IBOutlet weak var DoneButton: UIBarButtonItem!
+    @IBAction func barButtonPressed(_ sender: Any) {
+        addPost()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     var s_Scrollview_0 = UIScrollView()
     var s_Scrollview_1 = UIScrollView()
@@ -24,6 +47,10 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
     var ss_listView_2 = UIView()
     var ss_listView_3 = UIView()
     var ss_listView_4 = UIView()
+    
+    //이미지 관련
+    var ss_listView_5 = UIView()
+    var addImage = UIImageView()
     
     var sss_listText_content = UILabel()
     var sss_listText_maxMan = UILabel()
@@ -49,8 +76,40 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
     
     private var isScrollViewInitialized = false
     
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        return
+    }
+    
+    func doneButtonDidPress (_ imagePicker: ImagePickerController, images: [UIImage]) {
+        // print(images)
+        for image in images {
+            print(image)
+            addImage.image = image
+            imageArray.append(image)
+            
+            print("good")
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        uid = Auth.auth().currentUser?.uid
+        
+        addImage.isUserInteractionEnabled = true
+        addImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker)))
+        
+        //getting a reference to the node post
+        refPost = Database.database().reference().child("posts");
+        refStorage = Storage.storage().reference();
+        
+        
         //Customization by coding:
         //self.stepIndicatorView.numberOfSteps = 5
         //self.stepIndicatorView.currentStep = 0
@@ -79,6 +138,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         ss_listView_2.frame = CGRect(x: 0, y: 200, width: screenWidth, height: screenHeight/2 )
         ss_listView_3.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/2 )
         ss_listView_4.frame = CGRect(x: 0, y: 100, width: screenWidth, height: screenHeight/2 )
+        ss_listView_5.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/2)
         
         sss_listText_content.frame = CGRect(x: 10,y: 10, width: 200, height: 25)
         sss_listText_content.text = "공구하고자 하는 물건"
@@ -109,6 +169,8 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         sss_listInput_more.frame = CGRect(x: 0, y: 50, width: 200, height: 25)
         sss_listInput_more.placeholder = "Sample Placeholder5"
         
+        addImage.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        
         ss_listView_0.addSubview(sss_listText_content)
         ss_listView_1.addSubview(sss_listText_maxMan)
         ss_listView_2.addSubview(sss_listText_Price)
@@ -121,10 +183,11 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         ss_listView_3.addSubview(sss_listInput_hopePlace)
         ss_listView_4.addSubview(sss_listInput_more)
         
+        ss_listView_5.addSubview(addImage)
         
-        s_Scrollview_0.addSubview(ss_listView_0)
-        s_Scrollview_0.addSubview(ss_listView_1)
-        s_Scrollview_0.addSubview(ss_listView_2)
+        s_Scrollview_0.addSubview(ss_listView_5)
+//        s_Scrollview_0.addSubview(ss_listView_1)
+//        s_Scrollview_0.addSubview(ss_listView_2)
         
         s_Scrollview_1.addSubview(ss_listView_0)
         s_Scrollview_1.addSubview(ss_listView_1)
@@ -197,9 +260,75 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate {
         stepIndicatorView.currentStep = Int(pageIndex)
     }
     
-    func didDoneButtonPressed(){
+    @objc func imagePicker(){
+        
+        let imagePickerController = ImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.imageLimit = 3
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    
+    func addPost(){
+        
+        print("print addPost")
+        
+        let key = refPost.childByAutoId().key
+        var imageValue = [String:String]()
+        
+        for image in imageArray {
+            let refImage = refPost.child(key).child("ImageUrl")
+            let autoID = refImage.childByAutoId().key
+            let childRefStorage = refStorage.child("postImages").child(autoID)
+            let image = UIImageJPEGRepresentation(image, 0.8)
+            
+            childRefStorage.putData(image!, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print("this is error: ",error!)
+                    print("Couldn't Upload Image")
+                } else {
+                    print("Uploaded")
+                    childRefStorage.downloadURL(completion: { (url, error) in
+                        if error != nil {
+                            print(error!)
+                            return
+                        }
+                        if url != nil {
+                            var imageUrl:String
+                            
+                            imageUrl = url!.absoluteString
+                            
+                            print("this is imageUrl: ", imageUrl)
+                            
+                            
+                            let post = ["id":key,
+                                        "postProduct": self.sss_listInput_content.text! as String,
+                                        "postPrice": self.sss_listInput_Price.text! as String,
+                                        "postContent": self.sss_listInput_content.text! as String,
+                                        "uid": self.uid!,
+                                        "postMaxMan": self.sss_listInput_maxMan.text! as String,
+                                        "postWishLocation": self.sss_listInput_hopePlace.text! as String
+                            ]
+                            imageValue[autoID] = imageUrl
+                            
+                            print("this is imageValue",imageValue)
+                            
+                            //adding the post inside the generated unique key
+                            self.refPost.child(key).setValue(post)
+                            refImage.setValue(imageValue)
+                            
+                            
+                        }
+                    }
+                    )}
+            }
+            
+            
+        }
         
     }
+
     
 }
 
