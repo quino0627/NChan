@@ -35,21 +35,12 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
             cell.listPrice.text = item.price
             cell.listPlace.text = item.wishLocation
             cell.listTime.text = nil
-//            let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
-//            cell.listImage.image = UIImage(data: data!)
+            let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
+            cell.listImage.image = UIImage(data: data!)
 //            print(item.user?.name)
 //            print("HIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHI")
             return cell
     }
-    
-    @IBAction func refreshButtonTapped(sender: AnyObject){
-        buyingTable.reloadData()
-    }
-
-    @IBAction func segmentedControlActionChanged(sender: AnyObject){
-        buyingTable.reloadData()
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,33 +65,30 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                     let postPrice = postObject?["postPrice"]
                     let postWishLocation = postObject?["postWishLocation"]
                     let postUid = postObject?["uid"]
-                    var post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: nil)
-                    Database.database().reference().child("users").observe(DataEventType.value, with: { (snapshot) in
-                        for user in snapshot.children.allObjects as! [DataSnapshot]{
-                            let pchild = user.value as? [String:AnyObject]
-                            let pUser = ExampleFireUser()
-                            if pchild!["uid"] as! String == postUid as! String{
-                                
-                                print("---------------------------------------------------------------")
-                                print(pchild!["uid"] as! String)
-                                print(postUid as! String)
-                                print("---------------------------------------------------------------")
-                                pUser.name = pchild?["name"] as? String
-                                pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
-                                pUser.uid = pchild?["uid"] as? String
-                                post.user = pUser
-                                print(post.user?.name)
-                            }
-                        }
-                    })
-                    //creating post object with model and fetched values
+
+                    Database.database().reference().child("users").child(postUid as! String).observe(DataEventType.value, with: { (snapshot) in
+                        let pchild = snapshot.value as? [String: AnyObject]
+                        let pUser = ExampleFireUser()
+                        
+                        pUser.name = pchild?["name"] as? String
+                        pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
+                        pUser.uid = pchild?["uid"] as? String
+                        let post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: pUser)
                         self.buyingPosts.append(post)
+                        self.buyingTable.reloadData()
+                    })
+                    
+
+
+
                 }
                 
                 //reloading the tableview
                 self.buyingTable.reloadData()
             }
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,20 +9,69 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
-class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var buyingTable: UITableView!
-
+    @IBOutlet weak var searchbar: UISearchBar!
+    
+    //about search
+    var filteredData: [String]!
+    var product_name_array = [String]()
+    
     //    var uid : String?
     var buyingPosts : [ExampleFirePost] = [] //post에 성공, 진행중, 실패에 대한 변수 넣어야 할듯.
     let refPost = Database.database().reference().child("posts")
 
+    //about searchB
+    func searchBar(_ searchbar: UISearchBar, textDidChange searchText: String){
+        filteredData = searchText.isEmpty ? product_name_array : product_name_array.filter({ (dataString: String) -> Bool in
+            return dataString.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        
+        buyingTable.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchbar.showsCancelButton = true //취소버튼 보이기
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchbar.showsCancelButton = false
+        self.searchbar.text = ""
+        self.searchbar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("search text: ", self.searchbar.text!)
+        
+        let refreshAlert = UIAlertController(title: "검색결과", message: self.searchbar.text!, preferredStyle: UIAlertControllerStyle.alert)
+        refreshAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action: UIAlertAction!) in
+            print("검색확인")
+            
+            self.searchbar.showsCancelButton = false
+            self.searchbar.text = ""
+            self.searchbar.resignFirstResponder()
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil) // 작성된 다이얼로그 생성
+    }
+    
+    func refresh(_ sender: AnyObject) {
+        print("refresh table")
+        
+        self.product_name_array.removeAll()
+        
+        buyingTable.reloadData()
+        
+        //여기서부터 다시해야함
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return buyingPosts.count
+        return self.filteredData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +101,17 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //about search
+        self.buyingTable.dataSource = self
+        self.buyingTable.delegate = self
+        self.searchbar.delegate = self
+        self.searchbar.placeholder = " 상품이름을 입력하세요"
+        
+        self.filteredData = self.product_name_array
+        
+        
+        
         //        uid = Auth.auth().currentUser?.uid
         refPost.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
 
@@ -74,16 +133,12 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
                     let postWishLocation = postObject?["postWishLocation"]
                     let postUid = postObject?["uid"]
                     var post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: nil)
+                    
                     Database.database().reference().child("users").observe(DataEventType.value, with: { (snapshot) in
                         for user in snapshot.children.allObjects as! [DataSnapshot]{
                             let pchild = user.value as? [String:AnyObject]
                             let pUser = ExampleFireUser()
                             if pchild!["uid"] as! String == postUid as! String{
-
-                                print("---------------------------------------------------------------")
-                                print(pchild!["uid"] as! String)
-                                print(postUid as! String)
-                                print("---------------------------------------------------------------")
                                 pUser.name = pchild?["name"] as? String
                                 pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
                                 pUser.uid = pchild?["uid"] as? String
@@ -92,6 +147,8 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
                             }
                         }
                     })
+                    
+                    self.product_name_array.append(postProduct as! String)
                     //creating post object with model and fetched values
                     self.buyingPosts.append(post)
                 }
@@ -108,6 +165,7 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if let indexPath = buyingTable.indexPathForSelectedRow,
             let detailVC = segue.destination as? PostViewController {
             let selectedPost :ExampleFirePost = buyingPosts[indexPath.row]

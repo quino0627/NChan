@@ -66,6 +66,7 @@
 		AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */; };
 		AD2DF8EF21199525008474FD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EE21199525008474FD /* ListTableViewCell.swift */; };
 		AD613342211C06B0000F3A5A /* JointPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */; };
+		AD613344211C0D14000F3A5A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD613343211C0D14000F3A5A /* ProfileViewController.swift */; };
 		C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22624D721071AC90033CAA6 /* model_prototype.swift */; };
 		C24F81602103617000E0C2C5 /* UIViewControllerKeyboard (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */; };
 		C24F81612103617000E0C2C5 /* UIViewControllerModal (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */; };
@@ -138,6 +139,7 @@
 		AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingExampleModel.swift; sourceTree = "<group>"; };
 		AD2DF8EE21199525008474FD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JointPurchaseViewController.swift; sourceTree = "<group>"; };
+		AD613343211C0D14000F3A5A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C22624D721071AC90033CAA6 /* model_prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model_prototype.swift; sourceTree = "<group>"; };
 		C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerKeyboard (1).swift"; sourceTree = "<group>"; };
 		C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerModal (1).swift"; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				5127F184210EF4FD008EDED3 /* TextFieldEffects */,
 				51FD0F28210861D50061DB4D /* PilotPlant */,
 				5184A6CD211BF9050000D585 /* InviteChatViewController.swift */,
+				AD613343211C0D14000F3A5A /* ProfileViewController.swift */,
 			);
 			path = foodPrototype;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				517E64832112F00C0069FD91 /* UserController.swift in Sources */,
 				51FD0F3A210861D50061DB4D /* CHPickerViewController.swift in Sources */,
 				51FD0F38210861D50061DB4D /* CHPagingScrollViewController.swift in Sources */,
+				AD613344211C0D14000F3A5A /* ProfileViewController.swift in Sources */,
 				5184A6CE211BF9050000D585 /* InviteChatViewController.swift in Sources */,
 				511FE7442119365300BBAFA3 /* StepIndicatorView.swift in Sources */,
 				AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */,

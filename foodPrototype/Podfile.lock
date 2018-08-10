@@ -40,10 +40,17 @@ PODS:
   - Firebase/Database (5.5.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.0.2)
+<<<<<<< HEAD
   - Firebase/Messaging (5.5.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (= 3.1.0)
   - Firebase/RemoteConfig (5.5.0):
+=======
+  - Firebase/Messaging (5.4.1):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (= 3.0.3)
+  - Firebase/RemoteConfig (5.4.1):
+>>>>>>> DaeHui2
     - Firebase/Core
     - FirebaseRemoteConfig (= 3.0.1)
   - Firebase/Storage (5.5.0):
@@ -72,15 +79,25 @@ PODS:
   - FirebaseDatabase (5.0.2):
     - FirebaseCore (~> 5.0)
     - leveldb-library (~> 1.18)
+<<<<<<< HEAD
   - FirebaseInstanceID (3.2.0):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
   - FirebaseMessaging (3.1.0):
+=======
+  - FirebaseInstanceID (3.1.1):
+    - FirebaseCore (~> 5.0)
+  - FirebaseMessaging (3.0.3):
+>>>>>>> DaeHui2
     - FirebaseCore (~> 5.0)
     - FirebaseInstanceID (~> 3.0)
-    - GoogleUtilities/Reachability (~> 5.2)
+    - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+<<<<<<< HEAD
   - FirebaseRemoteConfig (3.0.1):
+=======
+  - FirebaseRemoteConfig (3.0.0):
+>>>>>>> DaeHui2
     - FirebaseABTesting (~> 2.0)
     - FirebaseAnalytics (~> 5.1)
     - FirebaseCore (~> 5.1)
@@ -105,11 +122,19 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
+<<<<<<< HEAD
+=======
+  - GoogleToolboxForMac/Logger (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+>>>>>>> DaeHui2
   - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
     - GoogleToolboxForMac/DebugUtils (= 2.1.4)
     - GoogleToolboxForMac/Defines (= 2.1.4)
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+<<<<<<< HEAD
   - GoogleUtilities/AppDelegateSwizzler (5.2.1):
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
@@ -125,6 +150,8 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.2.1)"
   - GoogleUtilities/Reachability (5.2.1):
     - GoogleUtilities/Logger
+=======
+>>>>>>> DaeHui2
   - GTMOAuth2 (1.1.6):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.2.0):
@@ -224,14 +251,23 @@ SPEC CHECKSUMS:
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: ee4b35cf8c8e781da296cc7c15125e4608bb954d
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
+<<<<<<< HEAD
   FirebaseInstanceID: 8cd2c6cfe7b9ab65ce7e248f6da7f26f6775b9be
   FirebaseMessaging: f67b3719f520ee200da0e20ce577fe2bce0c01d0
   FirebaseRemoteConfig: 7b6d675dfb11f0e0e638caee00908b06af150d56
+=======
+  FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
+  FirebaseMessaging: f43eb0c0e1da096e659de6f713038e74862a62cd
+  FirebaseRemoteConfig: 3c57e4644bd6976b671ae0b725cd709f198bd1f5
+>>>>>>> DaeHui2
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleAppMeasurement: e785bdb86d3d280abc778156cec323a975f11d1d
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+<<<<<<< HEAD
   GoogleUtilities: 8d9fa00248c475b606fd20b562242060a20117a2
+=======
+>>>>>>> DaeHui2
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
