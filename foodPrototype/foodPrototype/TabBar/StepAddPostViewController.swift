@@ -16,7 +16,7 @@ import ImagePicker
 class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePickerDelegate{
     
     var imagePickerController : ImagePickerController!
-    var uid: String?
+    var uid = Auth.auth().currentUser?.uid
     var timestamp: Double!
     var imageArray : [UIImage] = []
     var users = Dictionary<String,Bool>()
@@ -31,10 +31,14 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     @IBAction func barButtonPressed(_ sender: Any) {
         let postKeyForChat = addPost()
         print(postKeyForChat)
-        uid = Auth.auth().currentUser?.uid
         users[uid!] = true
         let nsDic = users as NSDictionary
-        let values = ["users": nsDic, "postId": postKeyForChat] as [String : Any]
+        let chatValue = ["aaaaaaaaa":[
+            "uid" : uid,
+            "message" : "채팅방을 개설합니다.",
+            "timestamp" : ServerValue.timestamp()
+            ]] as [String : Any]
+        let values = ["users": nsDic, "postId": postKeyForChat, "comments": chatValue] as [String : Any]
         Database.database().reference().child("chatrooms").childByAutoId().setValue(values)
         
 //        Database.database().reference().child("chatrooms").childByAutoId().child("postId").setValue(postKeyForChat)

@@ -15,6 +15,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     var uid: String!
     var chatrooms : [ChatModel]! = []
     var destinationUsers : [String] = []
+    var keys : [String] = []
     
     var postId: String?
     
@@ -30,13 +31,14 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     func getChatroomsList(){
         Database.database().reference().child("chatrooms").queryOrdered(byChild: "users/"+uid).queryEqual(toValue: true).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             self.chatrooms.removeAll()//데이터가 쌓이는 것을 방지하는 코드
-            print(datasnapshot)
-            print("ㄴ 데이터스냅샷")
+//            print(datasnapshot)
+//            print("ㄴ 데이터스냅샷")
             for item in datasnapshot.children.allObjects as! [DataSnapshot]{
                 if let chatroomdic = item.value as? [String:AnyObject]{
-                    print(chatroomdic)
-                    print("ㄴchatroomdic")
+//                    print(chatroomdic)
+//                    print("ㄴchatroomdic")
                     let chatModel = ChatModel(JSON: chatroomdic)
+                    self.keys.append(item.key)
                     self.chatrooms.append(chatModel!)
                     //print(chatModel?.postId as Any)
                     //self.postId = chatModel?.postId
@@ -62,18 +64,19 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         self.postId = chatrooms[indexPath.row].postId
         Database.database().reference().child("posts").child(self.postId!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             var postModel:PostModel?
+            print(datasnapshot)
             //for item in datasnapshot.value.children.allObjects as! [DataSnapshot]{}
             if let postdic = datasnapshot.value as? [String: AnyObject]{
                 print(postdic)
-                
+                print("ㄴ포스트딕")
                 postModel = PostModel(JSON: postdic)
             }
-//            print(postModel?.id as Any!)
+//            print(postModel?.id)
 //            print(postModel?.postContent)
 //            print(postModel?.postMaxMan)
 //            print(postModel?.postPrice)
 //            print(postModel?.ImageUrl as Any)
-            //print(postModel?.postContent)
+//            print(postModel?.postContent)
             cell.label_title.text = postModel?.postContent
             Database.database().reference().child("posts").child((postModel?.id)!).child("ImageUrl").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
                 let value = datasnapshot.value as? NSDictionary
@@ -129,10 +132,13 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
 //                    cell.imageview.layer.masksToBounds = true
 //                }
 //            }).resume()
-            //let lastMessagekey = self.chatrooms[indexPath.row].comments.keys.sorted(){$0>$1}//오름차순..(설정안해주면 랜덤)
-            cell.label_lastmessage.text = ""//self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.message
-            //let unixTime = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.timestamp
-            cell.label_timestamp.text = ""//unixTime?.toDayTime
+            if(self.chatrooms[indexPath.row].comments.keys.count == 0){
+                return
+            }
+            let lastMessagekey = self.chatrooms[indexPath.row].comments.keys.sorted(){$0>$1}//오름차순..(설정안해주면 랜덤)
+            cell.label_lastmessage.text = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.message
+            let unixTime = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.timestamp
+            cell.label_timestamp.text = unixTime?.toDayTime
             
         })
         
@@ -144,7 +150,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.deselectRow(at: indexPath, animated: true)
         let destinationUid = self.destinationUsers[indexPath.row]
         let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
-        view.destinationUid = destinationUid
+        view.destinationRoom = self.keys[indexPath.row]
         
         self.navigationController?.pushViewController(view, animated: true)
     }
