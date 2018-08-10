@@ -19,6 +19,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     var uid: String?
     var timestamp: Double!
     var imageArray : [UIImage] = []
+    var users = Dictionary<String,Bool>()
     
     //defining firebase reference var
     var refPost: DatabaseReference!
@@ -89,6 +90,13 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             
             print("good")
         }
+        
+        //채팅방 개서ㅕㄹ하는 부분
+//        uid = Auth.auth().currentUser?.uid
+//        users[uid!] = true
+//        let nsDic = users as NSDictionary
+//        Database.database().reference().child("chatrooms").childByAutoId().child("users").setValue(nsDic)
+//
         
         imagePicker.dismiss(animated: true, completion: nil)
     }
@@ -331,7 +339,13 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         }
         
     }
-
+    
+    func createRoom(){
+        uid = Auth.auth().currentUser?.uid
+        users[uid!] = true
+        let nsDic = users as NSDictionary
+        Database.database().reference().child("chatrooms").childByAutoId().child("users").setValue(nsDic)
+    }
     
 }
 
