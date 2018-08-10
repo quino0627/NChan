@@ -60,20 +60,42 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         var myUid :String?
         
         self.postId = chatrooms[indexPath.row].postId
-        print(self.postId)
         Database.database().reference().child("posts").child(self.postId!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             var postModel:PostModel?
-            print(self.postId as String?)
-            print(datasnapshot)
-            print("ㄴ포스트 데이터스냅샷")
-            
+            //for item in datasnapshot.value.children.allObjects as! [DataSnapshot]{}
             if let postdic = datasnapshot.value as? [String: AnyObject]{
                 print(postdic)
-                postModel = PostModel(JSON: postdic)
                 
+                postModel = PostModel(JSON: postdic)
             }
+//            print(postModel?.id as Any!)
+//            print(postModel?.postContent)
+//            print(postModel?.postMaxMan)
+//            print(postModel?.postPrice)
+//            print(postModel?.ImageUrl as Any)
+            //print(postModel?.postContent)
             cell.label_title.text = postModel?.postContent
-            
+            Database.database().reference().child("posts").child((postModel?.id)!).child("ImageUrl").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+                let value = datasnapshot.value as? NSDictionary
+                print(type(of: value))
+                print(value?.allValues[0] as! String)
+                let url = URL(string: value?.allValues[0] as! String)
+                URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+                    DispatchQueue.main.sync {
+                        cell.imageview.image = UIImage(data:data!)
+                        cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
+                        cell.imageview.layer.masksToBounds = true
+                    }
+                }).resume()
+            })
+//            let url = URL(string: postModel?.ImageUrl.value!)
+//            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+//                DispatchQueue.main.sync{
+//                    cell.imageview.image = UIImage(data:data!)
+//                    cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
+//                    cell.imageview.layer.masksToBounds = true
+//                }
+//            }).resume()
             
         })
         
@@ -99,14 +121,14 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             
             //cell.label_title.text = userModel.name
             //cell.label_title.text = postContent
-            let url = URL(string: userModel.profileImageUrl!)
-            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
-                DispatchQueue.main.sync{
-                    cell.imageview.image = UIImage(data:data!)
-                    cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
-                    cell.imageview.layer.masksToBounds = true
-                }
-            }).resume()
+//            let url = URL(string: userModel.profileImageUrl!)
+//            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+//                DispatchQueue.main.sync{
+//                    cell.imageview.image = UIImage(data:data!)
+//                    cell.imageview.layer.cornerRadius = cell.imageview.frame.width/2
+//                    cell.imageview.layer.masksToBounds = true
+//                }
+//            }).resume()
             //let lastMessagekey = self.chatrooms[indexPath.row].comments.keys.sorted(){$0>$1}//오름차순..(설정안해주면 랜덤)
             cell.label_lastmessage.text = ""//self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.message
             //let unixTime = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.timestamp
