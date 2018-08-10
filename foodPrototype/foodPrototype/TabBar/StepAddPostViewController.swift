@@ -29,11 +29,20 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     @IBOutlet weak var scrollView:UIScrollView!
 //    @IBOutlet weak var DoneButton: UIBarButtonItem!
     @IBAction func barButtonPressed(_ sender: Any) {
-        addPost()
+        let postKeyForChat = addPost()
+        print(postKeyForChat)
+        uid = Auth.auth().currentUser?.uid
+        users[uid!] = true
+        let nsDic = users as NSDictionary
+        let values = ["users": nsDic, "postId": postKeyForChat] as [String : Any]
+        Database.database().reference().child("chatrooms").childByAutoId().child("users").setValue(values)
+        
+//        Database.database().reference().child("chatrooms").childByAutoId().child("postId").setValue(postKeyForChat)
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -81,6 +90,8 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         return
     }
     
+    
+    //피커안에 있는거
     func doneButtonDidPress (_ imagePicker: ImagePickerController, images: [UIImage]) {
         // print(images)
         for image in images {
@@ -91,12 +102,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             print("good")
         }
         
-        //채팅방 개서ㅕㄹ하는 부분
-//        uid = Auth.auth().currentUser?.uid
-//        users[uid!] = true
-//        let nsDic = users as NSDictionary
-//        Database.database().reference().child("chatrooms").childByAutoId().child("users").setValue(nsDic)
-//
+       // 채팅방 개서ㅕㄹ하는 부분
         
         imagePicker.dismiss(animated: true, completion: nil)
     }
@@ -281,7 +287,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
 //    }
     
     
-    func addPost(){
+    func addPost()->String{
         
         print("print addPost")
         
@@ -337,7 +343,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             
             
         }
-        
+        return key
     }
     
     func createRoom(){
