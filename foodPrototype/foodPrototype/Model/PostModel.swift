@@ -28,6 +28,7 @@ class PostModel{
         self.content = content
         self.price = price
         self.wishLocation = wishLocation
+
         
     }
     

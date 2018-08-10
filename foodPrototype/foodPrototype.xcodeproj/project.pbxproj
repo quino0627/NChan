@@ -706,7 +706,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = foodPrototype/foodPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F7J4HAGSSU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = foodPrototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -727,7 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = foodPrototype/foodPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F7J4HAGSSU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = foodPrototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

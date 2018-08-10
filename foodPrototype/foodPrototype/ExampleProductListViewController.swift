@@ -62,6 +62,7 @@ class ExampleProductListViewController: UIViewController, UITableViewDelegate, U
                     let postMaxMan = postObject?["postMaxMan"]
                     let postWishLocation = postObject?["postWishLocation"]
                     
+                    
                     //creating post object with model and fetched values
                     let post = PostModel(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, price: postPrice as! String?, uid: postUid as! String?, maxMan: postMaxMan as! String?, wishLocation: postWishLocation as! String?)
                     
