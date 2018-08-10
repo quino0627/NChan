@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import ImageSlideshow
 
 //struct ExampleUser{
 //    var userName: String
@@ -26,6 +27,7 @@ import FirebaseDatabase
 //}
 
 struct ExampleFirePost {
+    var images: [ImageSource]?
     var id: String?
     var product: String?
     var content: String?

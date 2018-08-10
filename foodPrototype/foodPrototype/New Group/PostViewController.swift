@@ -9,6 +9,7 @@
 import UIKit
 import ImageSlideshow
 import Firebase
+import Parse
 
 class PostViewController: UITableViewController {
 
@@ -26,26 +27,23 @@ class PostViewController: UITableViewController {
 //    @IBOutlet weak var user_Safety_State: UILabel!
 //    @IBOutlet weak var user_Safety_Num: UILabel!
     var post: ExampleFirePost?
-    
-    
-    var localSource : [ImageSource] = []
+    var localSource : [ImageSource]?
 
     override func viewWillAppear(_ animated: Bool) {
         food_Price.text = post?.price
         food_Title.text = post?.product
         food_Contents.text = post?.content
-//        user_Image.image = UIImage(named: (post?.postWriter.userImage)!)
-//        user_Name1.text = post?.postWriter.userName
-//        user_Name2.text = post?.postWriter.userName
+        let data = try? Data(contentsOf: URL(string: (post?.user!.profileImageUrl!)!)!)
+        user_Image.image = UIImage(data: data!)
+        user_Name1.text = post?.user?.name
+        user_Name2.text = post?.user?.name
 //        user_Safety_State.text = post?.postWriter.userSafety.state
 //        user_Safety_Face.image = UIImage(named: (post?.postWriter.userSafety.face)!)
 //        user_Safety_Num.text = String((post?.postWriter.userSafety.value)!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        for image in (post?.postContent.productPicArray)! {
-//            localSource.append(ImageSource(imageString: image)!)
-//        }
+
         
         food_Image.slideshowInterval = 5.0
         food_Image.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
@@ -61,7 +59,7 @@ class PostViewController: UITableViewController {
             print("current page:", page)
         }
         
-        food_Image.setImageInputs(localSource)
+        food_Image.setImageInputs(localSource!)
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(PostViewController.didTap))
         food_Image.addGestureRecognizer(recognizer)

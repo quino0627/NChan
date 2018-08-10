@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import ImageSlideshow
+
 class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var buyingTable: UITableView!
@@ -78,15 +80,13 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
 
         let item = buyingPosts[indexPath.row]
-        //            cell.listImage.image = nil
         cell.listProduct.text = item.product
         cell.listPrice.text = item.price
         cell.listPlace.text = item.wishLocation
         cell.listTime.text = nil
-//        let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
-//        cell.listImage.image = UIImage(data: data!)
-        //            print(item.user?.name)
-        //            print("HIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHIHI")
+        let data = try? Data(contentsOf: URL(string: (item.user!.profileImageUrl!))!)
+        cell.listImage.image = UIImage(data: data!)
+
         return cell
     }
 
@@ -110,9 +110,6 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
         
         self.filteredData = self.product_name_array
         
-        
-        
-        //        uid = Auth.auth().currentUser?.uid
         refPost.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
 
             //if the reference have some values
@@ -125,6 +122,7 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
                 for posts in snapshot.children.allObjects as! [DataSnapshot]{
                     //getting values
                     let postObject = posts.value as? [String: AnyObject]
+                    
                     let postProduct = postObject?["postProduct"]
                     let postId = postObject?["id"]
                     let postContent = postObject?["postContent"]
@@ -132,29 +130,31 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
                     let postPrice = postObject?["postPrice"]
                     let postWishLocation = postObject?["postWishLocation"]
                     let postUid = postObject?["uid"]
-                    var post = ExampleFirePost(id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: nil)
                     
-                    Database.database().reference().child("users").observe(DataEventType.value, with: { (snapshot) in
-                        for user in snapshot.children.allObjects as! [DataSnapshot]{
-                            let pchild = user.value as? [String:AnyObject]
-                            let pUser = ExampleFireUser()
-                            if pchild!["uid"] as! String == postUid as! String{
-                                pUser.name = pchild?["name"] as? String
-                                pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
-                                pUser.uid = pchild?["uid"] as? String
-                                post.user = pUser
-                                print(post.user?.name)
-                            }
-                        }
+                    let postImagesUrl = postObject?["ImageUrl"] as? [String: String]
+                    var postImages : [ImageSource?] = []
+                    for images in (postImagesUrl?.values)! {
+                        let dimage = try? Data(contentsOf: URL(string: (images))!)
+                        postImages.append(ImageSource(image: UIImage(data: dimage!)!))
+                    }
+                    
+                    Database.database().reference().child("users").child(postUid as! String).observe(DataEventType.value, with: { (snapshot) in
+                        let pchild = snapshot.value as? [String: AnyObject]
+                        let pUser = ExampleFireUser()
+                        
+                        pUser.name = pchild?["name"] as? String
+                        pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
+                        pUser.uid = pchild?["uid"] as? String
+                        let post = ExampleFirePost(images: postImages as? [ImageSource], id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: pUser)
+                        
+                        self.product_name_array.append(postProduct as! String)
+                        self.buyingPosts.append(post)
+                        
+                        self.buyingTable.reloadData()
                     })
-                    
-                    self.product_name_array.append(postProduct as! String)
-                    //creating post object with model and fetched values
-                    self.buyingPosts.append(post)
+
                 }
 
-                //reloading the tableview
-                self.buyingTable.reloadData()
             }
         }
     }
