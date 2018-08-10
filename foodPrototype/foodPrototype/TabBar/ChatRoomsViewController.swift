@@ -27,14 +27,20 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func getChatroomsList(){
         Database.database().reference().child("chatrooms").queryOrdered(byChild: "users/"+uid).queryEqual(toValue: true).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+            self.chatrooms.removeAll()//데이터가 쌓이는 것을 방지하는 코드
             for item in datasnapshot.children.allObjects as! [DataSnapshot]{
-                self.chatrooms.removeAll()//데이터가 쌓이는 것을 방지하는 코드
+                
                 if let chatroomdic = item.value as? [String:AnyObject]{
                     let chatModel = ChatModel(JSON: chatroomdic)
                     self.chatrooms.append(chatModel!)
+                    print("Append!")
+                    print(chatModel?.users)
+                    print(self.chatrooms)
+                    print("")
                 }
             }
             self.tableview.reloadData()
+            print(self.chatrooms.count)
         })
     }
     
