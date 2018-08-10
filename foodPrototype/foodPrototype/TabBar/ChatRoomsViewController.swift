@@ -16,6 +16,8 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     var chatrooms : [ChatModel]! = []
     var destinationUsers : [String] = []
     
+    var postId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.uid = Auth.auth().currentUser?.uid
@@ -28,18 +30,20 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     func getChatroomsList(){
         Database.database().reference().child("chatrooms").queryOrdered(byChild: "users/"+uid).queryEqual(toValue: true).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             self.chatrooms.removeAll()//데이터가 쌓이는 것을 방지하는 코드
+            print(datasnapshot)
+            print("ㄴ 데이터스냅샷")
             for item in datasnapshot.children.allObjects as! [DataSnapshot]{
                 if let chatroomdic = item.value as? [String:AnyObject]{
+                    print(chatroomdic)
+                    print("ㄴchatroomdic")
                     let chatModel = ChatModel(JSON: chatroomdic)
                     self.chatrooms.append(chatModel!)
-                    print("Append!")
-                    print(chatModel?.users)
-                    print(self.chatrooms)
-                    print("")
+                    //print(chatModel?.postId as Any)
+                    //self.postId = chatModel?.postId
                 }
             }
             self.tableview.reloadData()
-            print(self.chatrooms.count)
+            //print(self.chatrooms.count)
         })
     }
     
@@ -52,22 +56,49 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableview.dequeueReusableCell(withIdentifier: "RowCell", for: indexPath) as! CustomCell
         
         //두번째동영상
-        //상대에 대한 정보 가져오기
-        var destinationUid :String?
+        //포스트에 대한 정보 가져오기
+        var myUid :String?
+        
+        self.postId = chatrooms[indexPath.row].postId
+        print(self.postId)
+        Database.database().reference().child("posts").child(self.postId!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+            var postModel:PostModel?
+            print(self.postId as String?)
+            print(datasnapshot)
+            print("ㄴ포스트 데이터스냅샷")
+            
+            if let postdic = datasnapshot.value as? [String: AnyObject]{
+                print(postdic)
+                postModel = PostModel(JSON: postdic)
+                
+            }
+            cell.label_title.text = postModel?.postContent
+            
+            
+        })
+        
+//        observeSingleEvent(of: DataEventType.value , with: {(datasnapshot) in
+//            var postTitle :String?  = ""
+//            print(datasnapshot)
+//                cell.label_title.text = ""
+//            })
+        
         for item in chatrooms[indexPath.row].users {
-            if(item.key != self.uid){
-                destinationUid = item.key
-                destinationUsers.append(destinationUid!)
+            if(item.key == self.uid){
+                myUid = item.key
+                destinationUsers.append(myUid!)
             }
         }
-        Database.database().reference().child("users").child(destinationUid!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+        Database.database().reference().child("users").child(myUid!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             //상대방 정보 가져오는 코드
-            let userModel = UserModel()
+            let userModel = UserModel() //= UserModel()
+            
             //1차원으로 된 정보는 아래 코드로 한번에 담을 수 있지만 2차 3차의 경우 objectmapper을 써야 한다.
             userModel.setValuesForKeys(datasnapshot.value as! [String:AnyObject])
             
             
-            cell.label_title.text = userModel.name
+            //cell.label_title.text = userModel.name
+            //cell.label_title.text = postContent
             let url = URL(string: userModel.profileImageUrl!)
             URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
                 DispatchQueue.main.sync{
@@ -76,10 +107,10 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                     cell.imageview.layer.masksToBounds = true
                 }
             }).resume()
-            let lastMessagekey = self.chatrooms[indexPath.row].comments.keys.sorted(){$0>$1}//오름차순..(설정안해주면 랜덤)
-            cell.label_lastmessage.text = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.message
-            let unixTime = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.timestamp
-            cell.label_timestamp.text = unixTime?.toDayTime
+            //let lastMessagekey = self.chatrooms[indexPath.row].comments.keys.sorted(){$0>$1}//오름차순..(설정안해주면 랜덤)
+            cell.label_lastmessage.text = ""//self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.message
+            //let unixTime = self.chatrooms[indexPath.row].comments[lastMessagekey[0]]?.timestamp
+            cell.label_timestamp.text = ""//unixTime?.toDayTime
             
         })
         

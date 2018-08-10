@@ -100,17 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UITabB
     }
 
 
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        
-        if viewController is AddPostTableViewController {
-            if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "AddPostTVC") {
-                tabBarController.present(newVC, animated: true)
-                return false
-            }
-        }
-        
-        return true
-    }
+    
  
     
 /*    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
