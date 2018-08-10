@@ -8,6 +8,7 @@
 
 import UIKit
 import ImageSlideshow
+import Firebase
 
 class PostViewController: UITableViewController {
 
@@ -19,10 +20,13 @@ class PostViewController: UITableViewController {
     @IBOutlet weak var user_Image: UIImageView!
     @IBOutlet weak var user_Name1: UILabel!
     @IBOutlet weak var user_Name2: UILabel!
-//    @IBOutlet weak var user_Safety_Face: UIImageView!
+    @IBOutlet weak var InviteButton: UIButton!
+    
+    //    @IBOutlet weak var user_Safety_Face: UIImageView!
 //    @IBOutlet weak var user_Safety_State: UILabel!
 //    @IBOutlet weak var user_Safety_Num: UILabel!
     var post: ExampleFirePost?
+    
     
     var localSource : [ImageSource] = []
 
@@ -39,7 +43,6 @@ class PostViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 //        for image in (post?.postContent.productPicArray)! {
 //            localSource.append(ImageSource(imageString: image)!)
 //        }
@@ -62,6 +65,8 @@ class PostViewController: UITableViewController {
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(PostViewController.didTap))
         food_Image.addGestureRecognizer(recognizer)
+        
+        InviteButton.addTarget(self, action: #selector(touchedButton), for: .touchUpInside)
     }
 
     @objc func didTap() {
@@ -75,6 +80,12 @@ class PostViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func touchedButton(){
+        print("포스트 아이디 프린트")
+        print(post?.id as Any)
+        var myUid = Auth.auth().currentUser?.uid
+        //users[myUid!] = true
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
