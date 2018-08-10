@@ -14,9 +14,12 @@ class ChatModel: Mappable {
     
 //    var uid:String?
 //    var destinationUid:String?
+    public var postId:String?
+    
     public var users:Dictionary<String, Bool> = [:]
     //채팅방에 참여한 사람들
     public var comments : Dictionary<String, Comment> = [:]
+    
     required init?(map: Map) {
         
     }
