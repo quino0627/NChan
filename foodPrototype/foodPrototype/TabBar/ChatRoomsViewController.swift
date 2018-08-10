@@ -29,7 +29,6 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         Database.database().reference().child("chatrooms").queryOrdered(byChild: "users/"+uid).queryEqual(toValue: true).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             self.chatrooms.removeAll()//데이터가 쌓이는 것을 방지하는 코드
             for item in datasnapshot.children.allObjects as! [DataSnapshot]{
-                
                 if let chatroomdic = item.value as? [String:AnyObject]{
                     let chatModel = ChatModel(JSON: chatroomdic)
                     self.chatrooms.append(chatModel!)
