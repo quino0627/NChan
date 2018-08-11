@@ -9,14 +9,20 @@
 import UIKit
 
 class ProfileViewController: UITableViewController {
+    
+    
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var name1: UILabel!
+    @IBOutlet weak var name2: UILabel!
 
-//    @IBOutlet weak var userImage: UIImageView!
-//    @IBOutlet weak var userName: UILabel!
-//    @IBOutlet weak var signinDate: UILabel!
-//    @IBOutlet weak var postNum: UILabel!
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//    }
+    var user : ExampleFireUser?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        name1.text = user?.name
+        name2.text = user?.name
+        let data = try? Data(contentsOf: URL(string: (user?.profileImageUrl)!)!)
+        userImage.image = UIImage(data: data!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +40,6 @@ class ProfileViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

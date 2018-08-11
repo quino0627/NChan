@@ -85,6 +85,13 @@ class PostViewController: UITableViewController {
         //users[myUid!] = true
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? ProfileViewController{
+            let user = post?.user
+            detailVC.user = user
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
