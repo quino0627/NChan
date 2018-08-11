@@ -30,11 +30,18 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     @IBOutlet weak var scrollView:UIScrollView!
 //    @IBOutlet weak var DoneButton: UIBarButtonItem!
     
-
+    //deleting selected images
+    @objc func deleteButtonPressed(sender: UIButton){
+        print(sender)
+        ImageAndButton.remove(at: sender.tag)
+        print("deleted")
+        print(sender.tag)
+        self.dismiss(animated: true, completion: nil)
+    }
     
     //화면안의 버튼 눌렀을때
-    @objc func isSavedButtonPressed(){
-        
+    @objc func isSavedButtonPressed(sender: UIButton){
+        print(sender.tag)
         
         //다 채워졌는지확인
         let isAllInputFilled = sss_listInput_content.text != "" || sss_listInput_maxMan.text != "" || sss_listInput_Price.text != ""
@@ -92,12 +99,20 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     //이미지 관련
     var ss_listView_5 = UIView()
     
-    var addImage = UIButton()//바꿔
+    var sss_imageView = UIView() //delete button
     
+    var addImage = UIButton()
+    
+    var ImageAndButton : Array<UIView> = []
     var Images: Array<UIImageView> = []
+    var Buttons: Array<UIButton> = []
+    
     var imageViewArray: [UIImage] = []
     
     var image = UIImage(named: "whitecamera.png") //버튼이미지
+    var cancelImage = UIImage(named: "cancel.png")
+    
+    var deleteButton = UIButton() //delete button
     
     var sss_listText_content = UILabel()
     var sss_listText_maxMan = UILabel()
@@ -128,15 +143,55 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     
     //피커안에 있는거
     func doneButtonDidPress (_ imagePicker: ImagePickerController, images: [UIImage]) {
-        // print(images)
-        for image in images {
-            print(image)
-           // addImage.image = image
-            imageArray.append(image)
-
-            print("good")
+       
+        // INIT IMAGE ARRAY
+        Images = []
+        
+        for view in ss_listView_5.subviews {
+            view.removeFromSuperview()
         }
         
+        ss_listView_5.addSubview(addImage)
+        
+        for (index, image) in images.enumerated() {
+            if index >= 3 {
+                break
+            }
+            
+            print(image)
+            ImageAndButton.append(UIView())
+            Images.append(UIImageView())
+            Buttons.append(UIButton())
+            
+            Buttons[index].isEnabled = true
+            
+            Images[index].image = image
+            
+            Buttons[index].frame = CGRect(x: 0, y: 100 * (index), width: 50, height: 50)
+            Images[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
+            
+            ImageAndButton[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
+            
+            Buttons[index].tag = index
+            Buttons[index].setBackgroundImage(cancelImage, for: .normal)
+            // Buttons[index].addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside) deleteButtonPressed
+            Buttons[index].addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
+            
+            //ImageAndButton[index].addSubview(Images[index])
+            //ImageAndButton[index].addSubview(Buttons[index])
+
+            ss_listView_5.addSubview(Images[index])
+            ss_listView_5.addSubview(Buttons[index])
+            
+            imageArray.append(image)
+            
+            print(Buttons[index].frame)
+            //print(ImageAndButton[index].frame)
+            print(Images[index].frame)
+            
+            print("good")
+        }
+        /*
         imageViewArray = imageArray
     
         for i in 0 ... ((imageArray.count - 1 >= 4) ? 3 : imageArray.count - 1) {
@@ -144,15 +199,14 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             Images[i].image = imageViewArray[i]
             Images[i].frame = CGRect(x: 0, y: 100 * (i), width: 100, height: 100)
             ss_listView_5.addSubview(Images[i])
-            print(imageViewArray[i])
+          //  print(imageViewArray[i])
+            
+            Button[i]
+            
             print(i, imageArray.count)
         }
-        
+        */
        
-        
-        if imageArray.count >= 4{
-            addImage.isEnabled = false
-        }
         print("count:",(imageArray.count))
         
        // 채팅방 개서ㅕㄹ하는 부분
@@ -324,6 +378,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             }
             else{
                 //label.text = "Uploaded"
+                button.tag = 1
                 button.setTitle("저장", for: .normal)
                 button.backgroundColor = UIColor(hex: "#2ecc71")
                 button.addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
