@@ -3410,9 +3410,10 @@
                         </sections>
                     </tableView>
                     <connections>
-                        <outlet property="postNum" destination="8me-aT-PnQ" id="qTN-Lu-eeO"/>
+                        <outlet property="name1" destination="LZ2-b1-kx1" id="B1g-rU-EEM"/>
+                        <outlet property="name2" destination="9ke-zA-tdI" id="gsp-A1-tfs"/>
                         <outlet property="signinDate" destination="O0g-TX-ak3" id="B51-lJ-Jab"/>
-                        <outlet property="userImage" destination="YHW-1o-mFS" id="die-Td-eEu"/>
+                        <outlet property="userImage" destination="YHW-1o-mFS" id="Juz-vd-a7g"/>
                         <outlet property="userName" destination="LZ2-b1-kx1" id="TRN-i9-4dj"/>
                         <outlet property="user_Name2" destination="9ke-zA-tdI" id="JhZ-10-Bj0"/>
                     </connections>
@@ -4222,7 +4223,7 @@
         <image name="프로필" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dfa-NU-fng"/>
+        <segue reference="zRl-MB-XYl"/>
         <segue reference="Jvq-RY-hvW"/>
     </inferredMetricsTieBreakers>
 </document>

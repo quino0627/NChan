@@ -151,6 +151,7 @@ class SellingListViewController: UIViewController,UITableViewDataSource, UITable
                 let detailVC = segue.destination as? PostViewController {
                 let selectedPost :ExampleFirePost = soldPosts[indexPath.row]
                 detailVC.post = selectedPost
+                detailVC.localSource = selectedPost.images
             }
         }
     }
