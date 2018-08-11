@@ -36,6 +36,7 @@
 		517F48A520FDCDE3001EC8F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A320FDCDE3001EC8F0 /* Main.storyboard */; };
 		517F48A720FDCDE6001EC8F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A620FDCDE6001EC8F0 /* Assets.xcassets */; };
 		517F48AA20FDCDE6001EC8F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A820FDCDE6001EC8F0 /* LaunchScreen.storyboard */; };
+		5184A6CE211BF9050000D585 /* InviteChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184A6CD211BF9050000D585 /* InviteChatViewController.swift */; };
 		519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */; };
 		51AE95B9210AE2B60019B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */; };
 		51AE95BB210AF7E10019B2EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BA210AF7E10019B2EE /* Constants.swift */; };
@@ -61,6 +62,11 @@
 		9E4C0CA6591495005D57E011 /* Pods_foodPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */; };
 		AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24274C2111639600020FE8 /* BuyingListViewController.swift */; };
 		AD24277721119E8200020FE8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24277621119E8200020FE8 /* PostViewController.swift */; };
+		AD2DF8EA211993A1008474FD /* SellingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8E9211993A1008474FD /* SellingListViewController.swift */; };
+		AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */; };
+		AD2DF8EF21199525008474FD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EE21199525008474FD /* ListTableViewCell.swift */; };
+		AD613342211C06B0000F3A5A /* JointPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */; };
+		AD613344211C0D14000F3A5A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD613343211C0D14000F3A5A /* ProfileViewController.swift */; };
 		C22624D821071AC90033CAA6 /* model_prototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22624D721071AC90033CAA6 /* model_prototype.swift */; };
 		C24F81602103617000E0C2C5 /* UIViewControllerKeyboard (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */; };
 		C24F81612103617000E0C2C5 /* UIViewControllerModal (1).swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */; };
@@ -100,7 +106,9 @@
 		517F48A620FDCDE6001EC8F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		517F48A920FDCDE6001EC8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517F48AB20FDCDE6001EC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5184A6CD211BF9050000D585 /* InviteChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteChatViewController.swift; sourceTree = "<group>"; };
 		519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		51A666F4211ADDE900376D0E /* foodPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = foodPrototype.entitlements; sourceTree = "<group>"; };
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		51AE95BA210AF7E10019B2EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51AE95BC210B207E0019B2EE /* Model__Prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model__Prototype.swift; sourceTree = "<group>"; };
@@ -127,6 +135,11 @@
 		9DD02602211940AB00EE2397 /* ExampleProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProductListViewController.swift; sourceTree = "<group>"; };
 		AD24274C2111639600020FE8 /* BuyingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyingListViewController.swift; sourceTree = "<group>"; };
 		AD24277621119E8200020FE8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		AD2DF8E9211993A1008474FD /* SellingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingListViewController.swift; sourceTree = "<group>"; };
+		AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingExampleModel.swift; sourceTree = "<group>"; };
+		AD2DF8EE21199525008474FD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JointPurchaseViewController.swift; sourceTree = "<group>"; };
+		AD613343211C0D14000F3A5A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C22624D721071AC90033CAA6 /* model_prototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model_prototype.swift; sourceTree = "<group>"; };
 		C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerKeyboard (1).swift"; sourceTree = "<group>"; };
 		C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerModal (1).swift"; sourceTree = "<group>"; };
@@ -217,12 +230,14 @@
 		517F489E20FDCDE3001EC8F0 /* foodPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				AD613340211C0674000F3A5A /* JointPurchase */,
+				51A666F4211ADDE900376D0E /* foodPrototype.entitlements */,
+				AD2DF8E62119932B008474FD /* Setting */,
 				51B20B882116B6B000DFA653 /* TabBar */,
 				513563E22115AC0E00080471 /* Model */,
 				513563E02115AAFB00080471 /* ChatViewController.swift */,
 				C24F815E2103617000E0C2C5 /* UIViewControllerKeyboard (1).swift */,
 				C24F815F2103617000E0C2C5 /* UIViewControllerModal (1).swift */,
-				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
 				517F489F20FDCDE3001EC8F0 /* AppDelegate.swift */,
 				511E835221129E9B0068D413 /* SignupViewController.swift */,
 				51AE95BA210AF7E10019B2EE /* Constants.swift */,
@@ -236,7 +251,6 @@
 				510A64E52112811100B263C6 /* LoginViewController.swift */,
 				C22624D721071AC90033CAA6 /* model_prototype.swift */,
 				51AE95BC210B207E0019B2EE /* Model__Prototype.swift */,
-				AD24277621119E8200020FE8 /* PostViewController.swift */,
 				517F48A620FDCDE6001EC8F0 /* Assets.xcassets */,
 				517F48A820FDCDE6001EC8F0 /* LaunchScreen.storyboard */,
 				517F48AB20FDCDE6001EC8F0 /* Info.plist */,
@@ -244,6 +258,8 @@
 				511FE73C2119365300BBAFA3 /* StepIndicator */,
 				5127F184210EF4FD008EDED3 /* TextFieldEffects */,
 				51FD0F28210861D50061DB4D /* PilotPlant */,
+				5184A6CD211BF9050000D585 /* InviteChatViewController.swift */,
+				AD613343211C0D14000F3A5A /* ProfileViewController.swift */,
 			);
 			path = foodPrototype;
 			sourceTree = "<group>";
@@ -287,6 +303,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD2DF8E62119932B008474FD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AD2DF8EE21199525008474FD /* ListTableViewCell.swift */,
+				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
+				AD2DF8E9211993A1008474FD /* SellingListViewController.swift */,
+				AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */,
+				AD24277621119E8200020FE8 /* PostViewController.swift */,
+			);
+			name = Setting;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		AD613340211C0674000F3A5A /* JointPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */,
+			);
+			path = JointPurchase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +359,14 @@
 				TargetAttributes = {
 					517F489B20FDCDE3001EC8F0 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -407,6 +452,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/StepIndicator/StepIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMultiSelect/SwiftMultiSelect.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -432,6 +478,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StepIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMultiSelect.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -471,9 +518,13 @@
 				517E64832112F00C0069FD91 /* UserController.swift in Sources */,
 				51FD0F3A210861D50061DB4D /* CHPickerViewController.swift in Sources */,
 				51FD0F38210861D50061DB4D /* CHPagingScrollViewController.swift in Sources */,
+				AD613344211C0D14000F3A5A /* ProfileViewController.swift in Sources */,
+				5184A6CE211BF9050000D585 /* InviteChatViewController.swift in Sources */,
 				511FE7442119365300BBAFA3 /* StepIndicatorView.swift in Sources */,
+				AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */,
 				AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */,
 				511FE746211964EE00BBAFA3 /* StepAddPostViewController.swift in Sources */,
+				AD613342211C06B0000F3A5A /* JointPurchaseViewController.swift in Sources */,
 				519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */,
 				5127F19A210EF4FE008EDED3 /* IsaoTextField.swift in Sources */,
 				5127F198210EF4FE008EDED3 /* KaedeTextField.swift in Sources */,
@@ -498,11 +549,13 @@
 				51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */,
 				5127F194210EF4FE008EDED3 /* YokoTextField.swift in Sources */,
 				511FE7412119365300BBAFA3 /* AnnularLayer.swift in Sources */,
+				AD2DF8EA211993A1008474FD /* SellingListViewController.swift in Sources */,
 				51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */,
 				511E835321129E9B0068D413 /* SignupViewController.swift in Sources */,
 				51FD0F39210861D50061DB4D /* CHViews.swift in Sources */,
 				513563DB211582B100080471 /* UserModel.swift in Sources */,
 				9DD025FD21193CA300EE2397 /* PostModel.swift in Sources */,
+				AD2DF8EF21199525008474FD /* ListTableViewCell.swift in Sources */,
 				51B20B8A2116B70000DFA653 /* ChatRoomsViewController.swift in Sources */,
 				513563E12115AAFB00080471 /* ChatViewController.swift in Sources */,
 				AD24277721119E8200020FE8 /* PostViewController.swift in Sources */,
@@ -657,7 +710,9 @@
 			baseConfigurationReference = 7DB1D124379B3BD82BCC9B27 /* Pods-foodPrototype.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = foodPrototype/foodPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = foodPrototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -676,7 +731,9 @@
 			baseConfigurationReference = D7C5C88261756C73EBC7061C /* Pods-foodPrototype.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = foodPrototype/foodPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = foodPrototype/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

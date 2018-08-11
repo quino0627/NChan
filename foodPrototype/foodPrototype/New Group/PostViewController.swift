@@ -8,6 +8,8 @@
 
 import UIKit
 import ImageSlideshow
+import Firebase
+//import Parse
 
 class PostViewController: UITableViewController {
 
@@ -19,30 +21,29 @@ class PostViewController: UITableViewController {
     @IBOutlet weak var user_Image: UIImageView!
     @IBOutlet weak var user_Name1: UILabel!
     @IBOutlet weak var user_Name2: UILabel!
-//    @IBOutlet weak var user_Safety_Face: UIImageView!
+    @IBOutlet weak var InviteButton: UIButton!
+    
+    //    @IBOutlet weak var user_Safety_Face: UIImageView!
 //    @IBOutlet weak var user_Safety_State: UILabel!
 //    @IBOutlet weak var user_Safety_Num: UILabel!
-    var post: ExamplePost?
-    
-    var localSource : [ImageSource] = []
+    var post: ExampleFirePost?
+    var localSource : [ImageSource]?
 
     override func viewWillAppear(_ animated: Bool) {
-        food_Price.text = post?.postContent.price
-        food_Title.text = post?.postTitle
-        food_Contents.text = post?.postContent.productExplanation
-        user_Image.image = UIImage(named: (post?.postWriter.userImage)!)
-        user_Name1.text = post?.postWriter.userName
-        user_Name2.text = post?.postWriter.userName
+        food_Price.text = post?.price
+        food_Title.text = post?.product
+        food_Contents.text = post?.content
+        let data = try? Data(contentsOf: URL(string: (post?.user!.profileImageUrl!)!)!)
+        user_Image.image = UIImage(data: data!)
+        user_Name1.text = post?.user?.name
+        user_Name2.text = post?.user?.name
 //        user_Safety_State.text = post?.postWriter.userSafety.state
 //        user_Safety_Face.image = UIImage(named: (post?.postWriter.userSafety.face)!)
 //        user_Safety_Num.text = String((post?.postWriter.userSafety.value)!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for image in (post?.postContent.productPicArray)! {
-            localSource.append(ImageSource(imageString: image)!)
-        }
+
         
         food_Image.slideshowInterval = 5.0
         food_Image.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
@@ -58,10 +59,12 @@ class PostViewController: UITableViewController {
             print("current page:", page)
         }
         
-        food_Image.setImageInputs(localSource)
+        food_Image.setImageInputs(localSource!)
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(PostViewController.didTap))
         food_Image.addGestureRecognizer(recognizer)
+        
+        InviteButton.addTarget(self, action: #selector(touchedButton), for: .touchUpInside)
     }
 
     @objc func didTap() {
@@ -75,7 +78,44 @@ class PostViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func touchedButton(){
+        print("포스트 아이디 프린트")
+        print(post?.id as Any)
+        var myUid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("chatrooms").queryOrdered(byChild: "postId").queryEqual(toValue: post?.id).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+            let value = datasnapshot.value as? NSDictionary
+            //let userList = value?["users"]
+            let chatroomKey = value?.allKeys[0] as! String
+            //let originChatMember = value?.value(forKey: chatroomKey)
+            let inputValue:Dictionary<String,Any> = [myUid!:true]
+            Database.database().reference().child("chatrooms").child(chatroomKey).child("users").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+                var originChatMember = datasnapshot.value as? NSMutableDictionary
+                originChatMember![myUid] = true
+                print("챗룸 데이터스냅샷")
+                print(originChatMember)
+                print(type(of: originChatMember))
+                Database.database().reference().child("chatrooms").child(chatroomKey).child("users").setValue(originChatMember)
+            })
+            //
+            print("start")
+            //print(userList)
+            //print(originChatMember)
+            //print(value?.allKeys[0] as! String)
+//            print(type(of: datasnapshot))
+//            print(type(of: datasnapshot.value))
+            print("datasnapshot")
+        })
+        
+        //users[myUid!] = true
+    }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? ProfileViewController{
+            let user = post?.user
+            detailVC.user = user
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
