@@ -21,5 +21,6 @@ pod 'ObjectMapper', '~> 3.1'
 pod 'ImagePicker'
 pod 'DKImagePickerController'
 pod 'StepIndicator', '~> 1.0.6'
+pod 'SwiftMultiSelect'
 
 end

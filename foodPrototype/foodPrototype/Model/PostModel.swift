@@ -8,28 +8,41 @@
 
 //need to be updated
 
-import Foundation
+import UIKit
+import ObjectMapper
 
-class PostModel{
-    var id: String?
-    var product: String?
-    var content: String?
-    var price: String?
-    var maxMan: String?
-    var uid: String?
-    var wishLocation: String? //needs to be changed into array
+class PostModel: Mappable{
+    required init?(map: Map) {
+    }
     
-    init (id: String?, product: String?, content: String?, price: String?, uid: String?, maxMan: String?, wishLocation: String?){
-        
-        self.id = id //post id
-        self.product = product
-        self.uid = uid //user id
-        self.maxMan = maxMan
-        self.content = content
-        self.price = price
-        self.wishLocation = wishLocation
-
-        
+    public var id: String?
+    public var postContent: String?
+    public var postPrice: String?
+    public var postMaxMan: String?
+    public var postProduct: String?
+    public var uid: String?
+    public var postWishLocation: String? //needs to be changed into array
+    public var ImageUrl:Dictionary<String,Image> = [:]
+    
+    public func mapping(map: Map){
+        id <- map["id"]
+        postContent <- map["postContent"]
+        postPrice <- map["price"]
+        postMaxMan <- map["postMaxMan"]
+        uid <- map["uid"]
+        postWishLocation <- map["postWishLocation"]
+        ImageUrl <- map["ImageUrl"]
+        postProduct <- map["postProduct"]
+    }
+    
+    
+    public class Image : Mappable{
+        public var imageUrl : Dictionary<String, String> = [:]
+        public required init?(map: Map) {
+        }
+        public func mapping(map: Map){
+            imageUrl <- map["imageUrl"]
+        }
     }
     
 
