@@ -127,6 +127,7 @@ PODS:
   - Protobuf (3.6.0)
   - SnapKit (4.0.0)
   - StepIndicator (1.0.6.1)
+  - SwiftMultiSelect (0.2.4)
 
 DEPENDENCIES:
   - DKImagePickerController
@@ -148,6 +149,7 @@ DEPENDENCIES:
   - Parse
   - SnapKit
   - StepIndicator (~> 1.0.6)
+  - SwiftMultiSelect
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -184,6 +186,7 @@ SPEC REPOS:
     - Protobuf
     - SnapKit
     - StepIndicator
+    - SwiftMultiSelect
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -219,7 +222,12 @@ SPEC CHECKSUMS:
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   StepIndicator: 73b4bcc8bcf816cb98479d99ada7e85463252caa
+  SwiftMultiSelect: 50e4c628935492d30d3c45ab88901502c3eb52f4
 
+<<<<<<< HEAD
 PODFILE CHECKSUM: a1ae02d0affb088fbde931f9fc95463c377cc529
+=======
+PODFILE CHECKSUM: 3a9e536a274cfb03be3cceb273ca32afb60740b9
+>>>>>>> Chatting
 
 COCOAPODS: 1.5.3
