@@ -3412,7 +3412,6 @@
                     <connections>
                         <outlet property="name1" destination="LZ2-b1-kx1" id="B1g-rU-EEM"/>
                         <outlet property="name2" destination="9ke-zA-tdI" id="gsp-A1-tfs"/>
-                        <outlet property="postNum" destination="8me-aT-PnQ" id="wcQ-zh-KcO"/>
                         <outlet property="signinDate" destination="O0g-TX-ak3" id="B51-lJ-Jab"/>
                         <outlet property="userImage" destination="YHW-1o-mFS" id="Juz-vd-a7g"/>
                         <outlet property="userName" destination="LZ2-b1-kx1" id="TRN-i9-4dj"/>
