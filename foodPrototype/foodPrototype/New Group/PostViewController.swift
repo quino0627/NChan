@@ -9,7 +9,7 @@
 import UIKit
 import ImageSlideshow
 import Firebase
-import Parse
+//import Parse
 
 class PostViewController: UITableViewController {
 
