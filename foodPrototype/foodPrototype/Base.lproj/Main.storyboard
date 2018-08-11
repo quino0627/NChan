@@ -1446,7 +1446,7 @@
             </objects>
             <point key="canvasLocation" x="7832" y="3190"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--채팅방-->
         <scene sceneID="k4T-gY-oQE">
             <objects>
                 <viewController storyboardIdentifier="ChatViewController" id="5bK-iS-YAP" customClass="ChatViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
@@ -1598,8 +1598,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cwH-Te-xnF"/>
                     </view>
+                    <navigationItem key="navigationItem" title="채팅방" id="t6l-3g-VmD"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="Oc3-C1-ag4" id="0i9-v0-H2S"/>
+                        <outlet property="chatRoomTitle" destination="t6l-3g-VmD" id="qd1-Cx-fKd"/>
                         <outlet property="sendButton" destination="gHx-EJ-VF7" id="3eZ-ip-TGc"/>
                         <outlet property="tableview" destination="3jm-AO-OsK" id="iA7-c8-mrf"/>
                         <outlet property="textfield_message" destination="Lx4-w5-NDv" id="9pN-4G-QZb"/>
