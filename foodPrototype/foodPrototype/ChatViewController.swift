@@ -30,7 +30,10 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         uid = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
-            self.users = datasnapshot.value as! [String: AnyObject]
+            self.users = (datasnapshot.value as! [String: AnyObject])
+//            print("----유저스----")
+//            print(self.users?.keys)
+//            print(self.users)
         })
         sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         getMessageList()
@@ -103,6 +106,10 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("----유저스----")
+        print(self.users?.keys)
+        print(self.users)
+        
         if(self.comments[indexPath.row].uid == uid){
             let view = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
             view.label_message.text = self.comments[indexPath.row].message
@@ -115,9 +122,14 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
             
             return view
         }else{
-            let destinationUser = users![self.comments[indexPath.row].uid!]
+            print(self.comments[indexPath.row].uid!)
+            print(indexPath.row)
+           
+            print("============코멘트 유아이디")
+            let destinationUser = users![self.comments[indexPath.row].uid! as String]
+             print(destinationUser)
             let view = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
-            view.label_name.text = destinationUser!["userName"] as! String
+            view.label_name.text = destinationUser!["name"] as! String
             view.label_message.text = self.comments[indexPath.row].message
             view.label_message.numberOfLines = 0;
             

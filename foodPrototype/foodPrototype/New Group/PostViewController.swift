@@ -91,11 +91,14 @@ class PostViewController: UITableViewController {
             //let originChatMember = value?.value(forKey: chatroomKey)
             let inputValue:Dictionary<String,Any> = [myUid!:true]
             Database.database().reference().child("chatrooms").child(chatroomKey).child("users").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
-                let originChatMember = datasnapshot.value as? NSDictionary
+                var originChatMember = datasnapshot.value as? NSMutableDictionary
+                originChatMember![myUid] = true
                 print("챗룸 데이터스냅샷")
                 print(originChatMember)
+                print(type(of: originChatMember))
+                Database.database().reference().child("chatrooms").child(chatroomKey).child("users").setValue(originChatMember)
             })
-            //Database.database().reference().child("chatrooms").child(chatroomKey).child("users").setValue(inputValue)
+            //
             print("start")
             //print(userList)
             //print(originChatMember)
