@@ -50,7 +50,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
                 "message" : "채팅방을 개설합니다.",
                 "timestamp" : ServerValue.timestamp()
                 ]] as [String : Any]
-            let values = ["users": nsDic, "postId": postKeyForChat, "comments": chatValue] as [String : Any]
+            let values = ["users": nsDic, "postId": postKeyForChat/*, "comments": chatValue*/] as [String : Any]
             Database.database().reference().child("chatrooms").childByAutoId().setValue(values)
             
             
