@@ -34,30 +34,23 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     
     //화면안의 버튼 눌렀을때
     @objc func isSavedButtonPressed(){
-    @IBAction func barButtonPressed(_ sender: Any) {
-        let postKeyForChat = addPost()
-        print(postKeyForChat)
-        users[uid!] = true
-        let nsDic = users as NSDictionary
-        let chatValue = ["ZZZZZZZZ":[
-            "uid" : uid,
-            "message" : "채팅방을 개설합니다.",
-            "timestamp" : ServerValue.timestamp()
-            ]] as [String : Any]
-        let values = ["users": nsDic, "postId": postKeyForChat, "comments": chatValue] as [String : Any]
-        Database.database().reference().child("chatrooms").childByAutoId().setValue(values)
+        
         
         //다 채워졌는지확인
-        var isAllInputFilled = sss_listInput_content.text != "" || sss_listInput_maxMan.text != "" || sss_listInput_Price.text != ""
+        let isAllInputFilled = sss_listInput_content.text != "" || sss_listInput_maxMan.text != "" || sss_listInput_Price.text != ""
         print("Basdf")
         if (isAllInputFilled) {
             
             let postKeyForChat = addPost()
-            print(postKeyForChat)
-            uid = Auth.auth().currentUser?.uid
+            //print(postKeyForChat)
             users[uid!] = true
             let nsDic = users as NSDictionary
-            let values = ["users": nsDic, "postId": postKeyForChat] as [String : Any]
+            let chatValue = ["ZZZZZZZZ":[
+                "uid" : uid,
+                "message" : "채팅방을 개설합니다.",
+                "timestamp" : ServerValue.timestamp()
+                ]] as [String : Any]
+            let values = ["users": nsDic, "postId": postKeyForChat, "comments": chatValue] as [String : Any]
             Database.database().reference().child("chatrooms").childByAutoId().setValue(values)
             
             
