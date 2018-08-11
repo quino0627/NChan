@@ -84,6 +84,27 @@ class PostViewController: UITableViewController {
         print("포스트 아이디 프린트")
         print(post?.id as Any)
         var myUid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("chatrooms").queryOrdered(byChild: "postId").queryEqual(toValue: post?.id).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+            let value = datasnapshot.value as? NSDictionary
+            //let userList = value?["users"]
+            let chatroomKey = value?.allKeys[0] as! String
+            //let originChatMember = value?.value(forKey: chatroomKey)
+            let inputValue:Dictionary<String,Any> = [myUid!:true]
+            Database.database().reference().child("chatrooms").child(chatroomKey).child("users").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+                let originChatMember = datasnapshot.value as? NSDictionary
+                print("챗룸 데이터스냅샷")
+                print(originChatMember)
+            })
+            //Database.database().reference().child("chatrooms").child(chatroomKey).child("users").setValue(inputValue)
+            print("start")
+            //print(userList)
+            //print(originChatMember)
+            //print(value?.allKeys[0] as! String)
+//            print(type(of: datasnapshot))
+//            print(type(of: datasnapshot.value))
+            print("datasnapshot")
+        })
+        
         //users[myUid!] = true
     }
 
