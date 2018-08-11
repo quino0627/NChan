@@ -33,7 +33,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         print(postKeyForChat)
         users[uid!] = true
         let nsDic = users as NSDictionary
-        let chatValue = ["aaaaaaaaa":[
+        let chatValue = ["ZZZZZZZZ":[
             "uid" : uid,
             "message" : "채팅방을 개설합니다.",
             "timestamp" : ServerValue.timestamp()

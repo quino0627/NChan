@@ -233,7 +233,9 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
                // let comment_motify? = ChatModel.Comment(JSON: item.value as! [String:AnyObject])
                 //comment_motify?.readUsers
                 self.comments.append(comment!)
+                print(comment?.message)
             }
+            
             
             let nsDic = readUserDic as NSDictionary
             
