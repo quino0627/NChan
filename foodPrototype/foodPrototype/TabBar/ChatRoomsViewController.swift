@@ -67,8 +67,8 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             print(datasnapshot)
             //for item in datasnapshot.value.children.allObjects as! [DataSnapshot]{}
             if let postdic = datasnapshot.value as? [String: AnyObject]{
-                print(postdic)
-                print("ㄴ포스트딕")
+//                print(postdic)
+//                print("ㄴ포스트딕")
                 postModel = PostModel(JSON: postdic)
             }
 //            print(postModel?.id)

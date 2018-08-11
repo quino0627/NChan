@@ -97,6 +97,8 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(comments.count)
+        print("ㄴ코멘트 카운트")
         return comments.count
     }
     
@@ -216,16 +218,21 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     //방 키를 받아온 다음에 실행되어야 하는 함수
     func getMessageList(){
-        
+        print(self.destinationRoom)
+        print("ㄴ 데스티네이션 룸")
         databaseRef = Database.database().reference().child("chatrooms").child(self.destinationRoom!).child("comments")
+        
         observe = databaseRef?.observe(DataEventType.value, with: {(datasnapshot) in
             self.comments.removeAll()
+            print(datasnapshot.value)
+            print("데이터스냅샷.value")
             var readUserDic : Dictionary<String,AnyObject> = [:]
             for item in datasnapshot.children.allObjects as! [DataSnapshot]{
-              let key = item.key as String
-                //let comment = ChatModel.Comment(JSON: item.value as! [String:AnyObject])
+                let key = item.key as String
+                let comment = ChatModel.Comment(JSON: item.value as! [String:AnyObject])
                // let comment_motify? = ChatModel.Comment(JSON: item.value as! [String:AnyObject])
                 //comment_motify?.readUsers
+                self.comments.append(comment!)
             }
             
             let nsDic = readUserDic as NSDictionary
