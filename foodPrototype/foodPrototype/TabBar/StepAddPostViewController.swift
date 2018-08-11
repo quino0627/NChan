@@ -55,10 +55,11 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             
             
             self.dismiss(animated: true, completion: nil)
+            
         }else{
             print("QQQQQQQQ")
             
-            let alert = UIAlertController(title: "Your Title", message: "필수 항목을 모두 기입해주세요", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "안내", message: "필수 항목을 모두 기입해주세요", preferredStyle: UIAlertControllerStyle.alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler : nil)
             alert.addAction(defaultAction)
@@ -91,21 +92,12 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     //이미지 관련
     var ss_listView_5 = UIView()
     
-    var addImage = UIImageView()
-    var Image1 = UIImageView()
-    var Image2 = UIImageView()
-    var Image3 = UIImageView()
+    var addImage = UIButton()//바꿔
     
-    var image = UIImage(named: "whitecamera.png")
+    var Images: Array<UIImageView> = []
+    var imageViewArray: [UIImage] = []
     
-    var image1 = UIImage() as Any
-    var image2 = UIImage() as Any
-    var image3 = UIImage() as Any
-    
-    
-    
-
-    //addImage.image = image
+    var image = UIImage(named: "whitecamera.png") //버튼이미지
     
     var sss_listText_content = UILabel()
     var sss_listText_maxMan = UILabel()
@@ -118,13 +110,6 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     var sss_listText_more = UILabel()
     var sss_listInput_hopePlace = UITextField()
     var sss_listInput_more = UITextField()
-    
-    //button
-//    var ss_listView_6 = UIView()
-//    var sss_listButton = UIButton()
-    //화면안에 저장 버튼 누르게
-    
-    
     
     // 뷰 전체 폭 길이
     let screenWidth = UIScreen.main.bounds.size.width
@@ -148,22 +133,27 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             print(image)
            // addImage.image = image
             imageArray.append(image)
-            
-            //animating
-/*            self.addImage.animationImages = imageArray as? [UIImage];
-            self.addImage.animationDuration = 5.0
-            self.addImage.startAnimating() */
 
             print("good")
         }
-    
- //       for i in 1 ... imageArray.count {
- //           Image[i].image = imageArray[i]
- //       }
         
-        Image1.image = imageArray[0]
-        Image2.image = imageArray[1]
-        Image3.image = imageArray[2]
+        imageViewArray = imageArray
+    
+        for i in 0 ... ((imageArray.count - 1 >= 4) ? 3 : imageArray.count - 1) {
+            Images.append(UIImageView())
+            Images[i].image = imageViewArray[i]
+            Images[i].frame = CGRect(x: 0, y: 100 * (i), width: 100, height: 100)
+            ss_listView_5.addSubview(Images[i])
+            print(imageViewArray[i])
+            print(i, imageArray.count)
+        }
+        
+       
+        
+        if imageArray.count >= 4{
+            addImage.isEnabled = false
+        }
+        print("count:",(imageArray.count))
         
        // 채팅방 개서ㅕㄹ하는 부분
         
@@ -178,7 +168,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         uid = Auth.auth().currentUser?.uid
-        addImage.image = image //초기 이미지
+        addImage.setBackgroundImage(image, for: .normal) //초기 이미지
         
         addImage.isUserInteractionEnabled = true
         addImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker)))
@@ -241,14 +231,6 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         sss_listText_more.font = sss_listText_Price.font.withSize(20)
         
         
-//        sss_listButton.frame = CGRect(x: 10, y: 10, width: 200, height: 25)
-//        sss_listButton.setTitle("저장", for: .normal)
-//        sss_listButton.backgroundColor = UIColor(hex: "#2ecc71")
-//        sss_listButton.addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
-        //self.view.addSubview(sss_listButton)
-        
-        
-        
         sss_listInput_content.frame = CGRect(x: 10, y: 50, width: screenWidth, height: 25)
         sss_listInput_content.placeholder = "품목을 기입해주세요"
         sss_listInput_maxMan.frame = CGRect(x: 10, y: 50, width: screenWidth, height: 25)
@@ -263,10 +245,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         
         addImage.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         addImage.center = CGPoint(x: self.scrollView.frame.width / 2.0 , y: self.scrollView.frame.height / 2.0)
-        Image1.frame = CGRect(x: 0, y: 100, width: 100, height: 100)
-        Image2.frame = CGRect(x: 0, y: 200, width: 100, height: 100)
-        Image3.frame = CGRect(x: 0, y: 300, width: 100, height: 100)
-        
+
         
         ss_listView_0.addSubview(sss_listText_content)
         ss_listView_1.addSubview(sss_listText_maxMan)
@@ -280,13 +259,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         ss_listView_3.addSubview(sss_listInput_hopePlace)
         ss_listView_4.addSubview(sss_listInput_more)
         
-//        ss_listView_6.addSubview(sss_listButton)
-        
         ss_listView_5.addSubview(addImage)
-        ss_listView_5.addSubview(Image1)
-        ss_listView_5.addSubview(Image2)
-        ss_listView_5.addSubview(Image3)
-        
         
         s_Scrollview_0.addSubview(ss_listView_5)
         
@@ -380,7 +353,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         
         let imagePickerController = ImagePickerController()
         imagePickerController.delegate = self
-        imagePickerController.imageLimit = 3
+        imagePickerController.imageLimit = 4
         
         present(imagePickerController, animated: true, completion: nil)
     }
@@ -396,11 +369,16 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         let key = refPost.childByAutoId().key
         var imageValue = [String:String]()
         
-        for image in imageArray {
+        for (index, image) in imageArray.enumerated() {
+            //4개로 제한두는 부분
+            if index == 4 {
+             break
+            }
+            
             let refImage = refPost.child(key).child("ImageUrl")
             let autoID = refImage.childByAutoId().key
             let childRefStorage = refStorage.child("postImages").child(autoID)
-            let image = UIImageJPEGRepresentation(image, 0.8)
+            let image = UIImageJPEGRepresentation(image, 0.2)
             
             childRefStorage.putData(image!, metadata: nil) { (metadata, error) in
                 if error != nil {
