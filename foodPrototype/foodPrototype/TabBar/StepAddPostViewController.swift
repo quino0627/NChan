@@ -15,11 +15,11 @@ import ImagePicker
 import ImageSlideshow
 
 class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePickerDelegate{
-    
+
     var imagePickerController : ImagePickerController!
     var uid = Auth.auth().currentUser?.uid
     var timestamp: Double!
-    var imageArray : NSMutableArray = []
+    var imageArray : [UIImage] = []
     var users = Dictionary<String,Bool>()
     
     //defining firebase reference var
@@ -46,7 +46,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             users[uid!] = true
             let nsDic = users as NSDictionary
             let chatValue = ["ZZZZZZZZ":[
-                "uid" : uid,
+                "uid" : uid as Any,
                 "message" : "채팅방을 개설합니다.",
                 "timestamp" : ServerValue.timestamp()
                 ]] as [String : Any]
@@ -72,14 +72,10 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     }
     
     
-    
-    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
     
     var s_Scrollview_0 = UIScrollView()
     var s_Scrollview_1 = UIScrollView()
@@ -94,8 +90,19 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     
     //이미지 관련
     var ss_listView_5 = UIView()
+    
     var addImage = UIImageView()
-    let image = UIImage(named: "whitecamera.png")
+    var Image1 = UIImageView()
+    var Image2 = UIImageView()
+    var Image3 = UIImageView()
+    
+    var image = UIImage(named: "whitecamera.png")
+    
+    var image1 = UIImage() as Any
+    var image2 = UIImage() as Any
+    var image3 = UIImage() as Any
+    
+    
     
 
     //addImage.image = image
@@ -139,16 +146,24 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         // print(images)
         for image in images {
             print(image)
-            addImage.image = image
-            imageArray.add(image)
+           // addImage.image = image
+            imageArray.append(image)
             
             //animating
-            self.addImage.animationImages = imageArray as? [UIImage];
+/*            self.addImage.animationImages = imageArray as? [UIImage];
             self.addImage.animationDuration = 5.0
-            self.addImage.startAnimating()
-            
+            self.addImage.startAnimating() */
+
             print("good")
         }
+    
+ //       for i in 1 ... imageArray.count {
+ //           Image[i].image = imageArray[i]
+ //       }
+        
+        Image1.image = imageArray[0]
+        Image2.image = imageArray[1]
+        Image3.image = imageArray[2]
         
        // 채팅방 개서ㅕㄹ하는 부분
         
@@ -204,8 +219,9 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         ss_listView_2.frame = CGRect(x: 0, y: 200, width: screenWidth, height: screenHeight/2 )
         ss_listView_3.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/2 )
         ss_listView_4.frame = CGRect(x: 0, y: 100, width: screenWidth, height: screenHeight/2 )
-        ss_listView_5.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/2)
-//        ss_listView_6.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight/2)
+        //이미지
+        ss_listView_5.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        
         
         sss_listText_content.frame = CGRect(x: 10,y: 10, width: screenWidth, height: 25)
         sss_listText_content.text = "공구하고자 하는 물건"
@@ -245,8 +261,12 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         sss_listInput_more.frame = CGRect(x: 10, y: 50, width: screenWidth, height: 25)
         sss_listInput_more.placeholder = "추가사항을 기입해주세요"
         
-        addImage.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        addImage.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         addImage.center = CGPoint(x: self.scrollView.frame.width / 2.0 , y: self.scrollView.frame.height / 2.0)
+        Image1.frame = CGRect(x: 0, y: 100, width: 100, height: 100)
+        Image2.frame = CGRect(x: 0, y: 200, width: 100, height: 100)
+        Image3.frame = CGRect(x: 0, y: 300, width: 100, height: 100)
+        
         
         ss_listView_0.addSubview(sss_listText_content)
         ss_listView_1.addSubview(sss_listText_maxMan)
@@ -263,10 +283,12 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
 //        ss_listView_6.addSubview(sss_listButton)
         
         ss_listView_5.addSubview(addImage)
+        ss_listView_5.addSubview(Image1)
+        ss_listView_5.addSubview(Image2)
+        ss_listView_5.addSubview(Image3)
+        
         
         s_Scrollview_0.addSubview(ss_listView_5)
-//        s_Scrollview_0.addSubview(ss_listView_1)
-//        s_Scrollview_0.addSubview(ss_listView_2)
         
         s_Scrollview_1.addSubview(ss_listView_0)
         s_Scrollview_1.addSubview(ss_listView_1)
@@ -378,7 +400,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             let refImage = refPost.child(key).child("ImageUrl")
             let autoID = refImage.childByAutoId().key
             let childRefStorage = refStorage.child("postImages").child(autoID)
-            let image = UIImageJPEGRepresentation(image as! UIImage, 0.8)
+            let image = UIImageJPEGRepresentation(image, 0.8)
             
             childRefStorage.putData(image!, metadata: nil) { (metadata, error) in
                 if error != nil {
