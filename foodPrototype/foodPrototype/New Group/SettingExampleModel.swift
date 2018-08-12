@@ -9,7 +9,6 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
-import ImageSlideshow
 
 //struct ExampleUser{
 //    var userName: String
@@ -27,7 +26,7 @@ import ImageSlideshow
 //}
 
 struct ExampleFirePost {
-    var images: [ImageSource]?
+    var images: [String:String]?
     var id: String?
     var product: String?
     var content: String?
@@ -35,11 +34,5 @@ struct ExampleFirePost {
     var price: String?
     var wishLocation: String?
 //    var uploadTime: String?
-    var user: ExampleFireUser?
-}
-
-class ExampleFireUser: NSObject {
-    @objc var name : String?
-    @objc var profileImageUrl : String?
-    @objc var uid : String?
+    var user: UserModel?
 }

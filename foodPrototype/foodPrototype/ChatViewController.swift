@@ -13,6 +13,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var chatRoomTitle: UINavigationItem!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var textfield_message: UITextField!
     @IBOutlet weak var sendButton: UIButton!
