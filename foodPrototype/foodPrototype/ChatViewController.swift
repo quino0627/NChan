@@ -317,7 +317,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         }
         
         let endTrade = UIAlertAction(title: "거래가 종료되었어요!", style: .default) { action in
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true) 
         }
         
         actionSheet.addAction(exitRoom)
