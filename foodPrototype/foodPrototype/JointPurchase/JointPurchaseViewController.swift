@@ -81,7 +81,7 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
         cell.listPrice.text = item.price
         cell.listPlace.text = item.wishLocation
         cell.listTime.text = nil
-         let data = try? Data(contentsOf: URL(string: (item.images?.first?.value)!)!)
+        let data = try? Data(contentsOf: URL(string: (item.images?.first?.value)!)!) //물어보기
         cell.listImage.image = UIImage(data: data!)
 
         return cell
@@ -126,6 +126,9 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
 
                 //if the reference have some values
                 if snapshot.childrenCount > 0{
+                    
+                    
+                    self.buyingPosts.removeAll()
                     
                     
                     //iterating through all the values

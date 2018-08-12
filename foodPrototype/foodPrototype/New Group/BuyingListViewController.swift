@@ -14,7 +14,7 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
     
     @IBOutlet weak var buyingTable: UITableView!
 
-    var buyingPosts : [ExampleFirePost] = [] //post에 성공, 진행중, 실패에 대한 변수 넣어야 할듯.
+    var buyingPosts : [PostModel] = [] //post에 성공, 진행중, 실패에 대한 변수 넣어야 할듯.
     let refPost = Database.database().reference().child("posts")
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,11 +29,11 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
         
             let item = buyingPosts[indexPath.row]
-            cell.listProduct.text = item.product
-            cell.listPrice.text = item.price
-            cell.listPlace.text = item.wishLocation
+            cell.listProduct.text = item.postProduct
+            cell.listPrice.text = item.postPrice
+            cell.listPlace.text = item.postWishLocation
             cell.listTime.text = nil
-            let data = try? Data(contentsOf: URL(string: (item.images?.first?.value)!)!)
+            let data = try? Data(contentsOf: URL(string: (item.ImageUrl.first?.value)!)!)
             cell.listImage.image = UIImage(data: data!)
             return cell
     }
@@ -54,28 +54,11 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
                     //getting values
                     let postObject = posts.value as? [String: AnyObject]
                     
-                    let postProduct = postObject?["postProduct"]
-                    let postId = postObject?["id"]
-                    let postContent = postObject?["postContent"]
-                    let postMaxMan = postObject?["postMaxMan"]
-                    let postPrice = postObject?["postPrice"]
-                    let postWishLocation = postObject?["postWishLocation"]
-                    let postUid = postObject?["uid"]
-                    let postImagesUrl = postObject?["ImageUrl"] as? [String: String]
+                    let postProduct = PostModel(JSON: postObject!)
 
+                    self.buyingPosts.append(postProduct!)
                     
-                    Database.database().reference().child("users").child(postUid as! String).observe(DataEventType.value, with: { (snapshot) in
-                        let pchild = snapshot.value as? [String: AnyObject]
-                        let pUser = UserModel()
-                        
-                        pUser.name = pchild?["name"] as? String
-                        pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
-                        pUser.uid = pchild?["uid"] as? String
-                        let post = ExampleFirePost(images: postImagesUrl ,id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: pUser)
-                        
-                        self.buyingPosts.append(post)
-                        self.buyingTable.reloadData()
-                    })
+                    self.buyingTable.reloadData()
                 }
             }
         })
@@ -89,7 +72,7 @@ class BuyingListViewController: UIViewController,UITableViewDataSource, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let indexPath = buyingTable.indexPathForSelectedRow,
                 let detailVC = segue.destination as? PostViewController {
-                let selectedPost :ExampleFirePost = buyingPosts[indexPath.row]
+                let selectedPost :PostModel = buyingPosts[indexPath.row]
                 detailVC.post = selectedPost
             }
     }
