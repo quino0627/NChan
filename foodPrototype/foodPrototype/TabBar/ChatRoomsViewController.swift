@@ -77,7 +77,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
 //            print(postModel?.postPrice)
 //            print(postModel?.ImageUrl as Any)
 //            print(postModel?.postContent)
-            cell.label_title.text = postModel?.postContent
+            cell.label_title.text = postModel?.postProduct
             Database.database().reference().child("posts").child((postModel?.id)!).child("ImageUrl").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
                 let value = datasnapshot.value as? NSDictionary
                 print(type(of: value))
