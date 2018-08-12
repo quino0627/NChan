@@ -24,6 +24,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.uid = Auth.auth().currentUser?.uid
         self.getChatroomsList()
+        self.tableview.reloadData()
         // Do any additional setup after loading the view.
     }
 
@@ -64,19 +65,19 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.postId = chatrooms[indexPath.row].postId
         Database.database().reference().child("posts").child(self.postId!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
-            print(datasnapshot)
+            //print(datasnapshot)
             //for item in datasnapshot.value.children.allObjects as! [DataSnapshot]{}
             if let postdic = datasnapshot.value as? [String: AnyObject]{
 //                print(postdic)
 //                print("ㄴ포스트딕")
                 self.postModel = PostModel(JSON: postdic)
             }
-            print(self.postModel?.id)
-            print(self.postModel?.postContent)
-            print(self.postModel?.postMaxMan)
-            print(self.postModel?.postPrice)
-            print(self.postModel?.ImageUrl as Any)
-            print(self.postModel?.postContent)
+//            print(self.postModel?.id)
+//            print(self.postModel?.postContent)
+//            print(self.postModel?.postMaxMan)
+//            print(self.postModel?.postPrice)
+//            print(self.postModel?.ImageUrl as Any)
+//            print(self.postModel?.postContent)
             cell.label_title.text = self.postModel?.postProduct
             
             Database.database().reference().child("posts").child((self.postModel?.id)!).child("ImageUrl").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
@@ -152,10 +153,10 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         let destinationUid = self.destinationUsers[indexPath.row]
         let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
         view.destinationRoom = self.keys[indexPath.row]
-        print(indexPath.row)
-        print(self.keys[indexPath.row])
-        print(postModel?.id)
-        print("인덱스패쓰")
+//        print(indexPath.row)
+//        print(self.keys[indexPath.row])
+//        print(postModel?.id)
+//        print("인덱스패쓰")
 
         self.navigationController?.pushViewController(view, animated: true)
     }

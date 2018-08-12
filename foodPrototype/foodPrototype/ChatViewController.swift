@@ -26,8 +26,9 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     var chatRoomUid: String?
     var comments : [ChatModel.Comment] = []
     var users : [String : AnyObject]?
+    var postId :String?
+    var postProduct : String?
     //var userModel : UserModel?
-    var post:PostModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         uid = Auth.auth().currentUser?.uid
@@ -39,6 +40,28 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         })
         sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         getMessageList()
+        
+        Database.database().reference().child("chatrooms").child(self.destinationRoom!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+            let value = datasnapshot.value as? NSDictionary
+            self.postId = value?["postId"] as? String
+            print(self.destinationRoom!)
+            print(value)
+            print("밸류")
+            print(self.postId)
+            print("포스트아이디")
+            
+            self.postProduct = value?["postProduct"] as? String
+            print(self.postProduct)
+            self.chatRoomTitle.title = self.postProduct
+            Database.database().reference().child("posts").child(self.postId!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+                let value = datasnapshot.value as? NSDictionary
+                self.postProduct = value?["postProduct"] as? String
+                print(self.postProduct)
+                self.chatRoomTitle.title = self.postProduct
+            })
+        })
+        
+        
         
         
         self.tabBarController?.tabBar.isHidden = true //채팅룸일 때 하단 바 사라지게
@@ -102,15 +125,15 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(comments.count)
-        print("ㄴ코멘트 카운트")
+        //print(comments.count)
+        //print("ㄴ코멘트 카운트")
         return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("----유저스----")
-        print(self.users?.keys)
-        print(self.users)
+        //print("----유저스----")
+        //print(self.users?.keys)
+        //print(self.users)
         
         if(self.comments[indexPath.row].uid == uid){
             let view = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
@@ -124,12 +147,12 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
             
             return view
         }else{
-            print(self.comments[indexPath.row].uid!)
-            print(indexPath.row)
+            //print(self.comments[indexPath.row].uid!)
+            //print(indexPath.row)
            
-            print("============코멘트 유아이디")
+            //print("============코멘트 유아이디")
             let destinationUser = users![self.comments[indexPath.row].uid! as String]
-             print(destinationUser)
+             //print(destinationUser)
             let view = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
             view.label_name.text = destinationUser!["name"] as! String
             view.label_message.text = self.comments[indexPath.row].message
@@ -314,10 +337,16 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         let exitRoom = UIAlertAction(title: "거래하지 않고 이 방 나가기", style: .destructive) { action in
             self.navigationController?.popViewController(animated: true)
+            let value : Dictionary<String,Bool> = [ self.uid! : false ]
+            Database.database().reference().child("chatrooms").child(self.destinationRoom!).child("users").updateChildValues(value)
         }
         
         let endTrade = UIAlertAction(title: "거래가 종료되었어요!", style: .default) { action in
             self.navigationController?.popViewController(animated: true)
+            
+            Database.database().reference().child("chatrooms").child(self.destinationRoom!).removeValue()
+            Database.database().reference().child("posts").child(self.postId!).removeValue()
+            
         }
         
         actionSheet.addAction(exitRoom)
