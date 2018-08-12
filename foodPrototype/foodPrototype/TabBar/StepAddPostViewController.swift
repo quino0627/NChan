@@ -33,10 +33,15 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     //deleting selected images
     @objc func deleteButtonPressed(sender: UIButton){
         print(sender)
-        ImageAndButton.remove(at: sender.tag)
+  //      Images.remove(at: sender.tag)
+  //      Buttons.remove(at: sender.tag)
+ //       imageArray.remove(at: sender.tag)
         print("deleted")
         print(sender.tag)
-        self.dismiss(animated: true, completion: nil)
+ //       Images[sender.tag].removeFromSuperview()
+ //       Buttons[sender.tag].removeFromSuperview()
+        
+        
     }
     
     //화면안의 버튼 눌렀을때
@@ -99,8 +104,6 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     //이미지 관련
     var ss_listView_5 = UIView()
     
-    var sss_imageView = UIView() //delete button
-    
     var addImage = UIButton()
     
     var ImageAndButton : Array<UIView> = []
@@ -159,7 +162,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             }
             
             print(image)
-            ImageAndButton.append(UIView())
+      //      ImageAndButton.append(UIView())
             Images.append(UIImageView())
             Buttons.append(UIButton())
             
@@ -170,24 +173,15 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             Buttons[index].frame = CGRect(x: 0, y: 100 * (index), width: 50, height: 50)
             Images[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
             
-            ImageAndButton[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
             
             Buttons[index].tag = index
             Buttons[index].setBackgroundImage(cancelImage, for: .normal)
-            // Buttons[index].addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside) deleteButtonPressed
-            Buttons[index].addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
-            
-            //ImageAndButton[index].addSubview(Images[index])
-            //ImageAndButton[index].addSubview(Buttons[index])
+            Buttons[index].addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
 
             ss_listView_5.addSubview(Images[index])
             ss_listView_5.addSubview(Buttons[index])
             
             imageArray.append(image)
-            
-            print(Buttons[index].frame)
-            //print(ImageAndButton[index].frame)
-            print(Images[index].frame)
             
             print("good")
         }
@@ -433,7 +427,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             let refImage = refPost.child(key).child("ImageUrl")
             let autoID = refImage.childByAutoId().key
             let childRefStorage = refStorage.child("postImages").child(autoID)
-            let image = UIImageJPEGRepresentation(image, 0.2)
+            let image = UIImageJPEGRepresentation(image, 0.05)
             
             childRefStorage.putData(image!, metadata: nil) { (metadata, error) in
                 if error != nil {

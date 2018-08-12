@@ -480,6 +480,32 @@
             <point key="canvasLocation" x="4348" y="1692.5037481259371"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="id1-Nh-8Kq">
+            <objects>
+                <viewController id="7ws-52-hXP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q8W-fO-CLG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-ig-oBV">
+                                <rect key="frame" x="0.0" y="257" width="375" height="410"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7ws-52-hXP" id="Oa3-1A-YhV"/>
+                                    <outlet property="delegate" destination="7ws-52-hXP" id="qfk-YV-ipz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mgu-S9-K7k"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMN-Yc-krB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6325.6000000000004" y="1356.9715142428786"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tLF-Zp-qyz">
             <objects>
                 <viewController id="9ko-mr-xhV" customClass="ViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
@@ -2963,7 +2989,6 @@
         <image name="bar__user" width="27" height="27"/>
         <image name="baseline_account_circle_black_36pt" width="36" height="36"/>
         <image name="chat" width="34" height="34"/>
-        <image name="like (3)" width="256" height="256"/>
         <image name="loading_icon" width="64" height="64"/>
         <image name="main" width="29" height="29"/>
         <image name="message_blue" width="11" height="9"/>
@@ -2977,7 +3002,6 @@
         <image name="my_notification" width="32" height="32"/>
         <image name="my_option" width="32" height="32"/>
         <image name="my_shopping" width="48" height="48"/>
-        <image name="outline_chat_black_36pt" width="36" height="36"/>
         <image name="post_like_off" width="128" height="128"/>
         <image name="post_like_on" width="128" height="128"/>
         <image name="배민찬로고" width="144" height="144"/>
@@ -2986,6 +3010,6 @@
         <image name="프로필" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dfa-NU-fng"/>
+        <segue reference="mlz-ep-uRt"/>
     </inferredMetricsTieBreakers>
 </document>
