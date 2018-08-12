@@ -64,7 +64,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.postId = chatrooms[indexPath.row].postId
         Database.database().reference().child("posts").child(self.postId!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
-            print(datasnapshot)
+            //print(datasnapshot)
             //for item in datasnapshot.value.children.allObjects as! [DataSnapshot]{}
             if let postdic = datasnapshot.value as? [String: AnyObject]{
 //                print(postdic)
@@ -152,10 +152,10 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         let destinationUid = self.destinationUsers[indexPath.row]
         let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
         view.destinationRoom = self.keys[indexPath.row]
-        print(indexPath.row)
-        print(self.keys[indexPath.row])
-        print(postModel?.id)
-        print("인덱스패쓰")
+//        print(indexPath.row)
+//        print(self.keys[indexPath.row])
+//        print(postModel?.id)
+//        print("인덱스패쓰")
 
         self.navigationController?.pushViewController(view, animated: true)
     }
