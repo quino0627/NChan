@@ -1674,7 +1674,7 @@
         <scene sceneID="u3b-EJ-IJg">
             <objects>
                 <tableViewController id="qIb-ET-hED" customClass="PostViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uDK-fZ-mSK">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uDK-fZ-mSK" userLabel="postTable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2941,7 +2941,7 @@
                                             <outlet property="listPrice" destination="c0W-IY-cGV" id="sG9-MD-ozP"/>
                                             <outlet property="listProduct" destination="ClG-1L-s0j" id="nkD-Gi-8WV"/>
                                             <outlet property="listTime" destination="4gV-YV-pbH" id="pUP-Or-E3A"/>
-                                            <segue destination="qIb-ET-hED" kind="show" id="mlz-ep-uRt"/>
+                                            <segue destination="qIb-ET-hED" kind="show" id="3Cy-vp-CZn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3266,6 +3266,6 @@
         <image name="프로필" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mlz-ep-uRt"/>
+        <segue reference="3Cy-vp-CZn"/>
     </inferredMetricsTieBreakers>
 </document>
