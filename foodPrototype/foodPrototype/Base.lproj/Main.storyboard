@@ -1006,11 +1006,11 @@
             </objects>
             <point key="canvasLocation" x="2036" y="105.69715142428787"/>
         </scene>
-        <!--공동구매-->
+        <!--홈-->
         <scene sceneID="J7z-1X-CVM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NZj-xJ-6g0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="공동구매" image="bar__store" id="bvf-9a-Kz6"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="main" selectedImage="main" id="bvf-9a-Kz6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P9c-4s-3s9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -3441,11 +3441,11 @@
             </objects>
             <point key="canvasLocation" x="-1343.2" y="927.88605697151434"/>
         </scene>
-        <!--Chat-->
+        <!--채팅-->
         <scene sceneID="0SG-Dy-jTs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zdR-5A-uQF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="outline_chat_black_36pt" selectedImage="outline_chat_black_36pt" id="La1-Fa-dfi"/>
+                    <tabBarItem key="tabBarItem" title="채팅" image="chat" selectedImage="chat" id="La1-Fa-dfi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rAS-dz-Sff">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -3962,8 +3962,10 @@
         <image name="bar__store" width="27" height="27"/>
         <image name="bar__user" width="27" height="27"/>
         <image name="baseline_account_circle_black_36pt" width="36" height="36"/>
+        <image name="chat" width="34" height="34"/>
         <image name="like (3)" width="256" height="256"/>
         <image name="loading_icon" width="64" height="64"/>
+        <image name="main" width="29" height="29"/>
         <image name="message_blue" width="11" height="9"/>
         <image name="message_gray" width="12" height="8"/>
         <image name="my_buy" width="48" height="48"/>
@@ -3975,7 +3977,6 @@
         <image name="my_notification" width="32" height="32"/>
         <image name="my_option" width="32" height="32"/>
         <image name="my_shopping" width="48" height="48"/>
-        <image name="outline_chat_black_36pt" width="36" height="36"/>
         <image name="pic__thebanchan" width="295" height="295"/>
         <image name="post_like_off" width="128" height="128"/>
         <image name="post_like_on" width="128" height="128"/>
