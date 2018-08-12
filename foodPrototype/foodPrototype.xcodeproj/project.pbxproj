@@ -37,6 +37,7 @@
 		517F48A720FDCDE6001EC8F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A620FDCDE6001EC8F0 /* Assets.xcassets */; };
 		517F48AA20FDCDE6001EC8F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517F48A820FDCDE6001EC8F0 /* LaunchScreen.storyboard */; };
 		5184A6CE211BF9050000D585 /* InviteChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5184A6CD211BF9050000D585 /* InviteChatViewController.swift */; };
+		518A8A0921204F900095DA9D /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518A8A0821204F900095DA9D /* MyPageTableViewController.swift */; };
 		519CE5702113FD8C00A7A809 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */; };
 		51AE95B9210AE2B60019B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */; };
 		51AE95BB210AF7E10019B2EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AE95BA210AF7E10019B2EE /* Constants.swift */; };
@@ -108,6 +109,7 @@
 		517F48A920FDCDE6001EC8F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517F48AB20FDCDE6001EC8F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5184A6CD211BF9050000D585 /* InviteChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteChatViewController.swift; sourceTree = "<group>"; };
+		518A8A0821204F900095DA9D /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
 		519CE56F2113FD8C00A7A809 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		51A666F4211ADDE900376D0E /* foodPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = foodPrototype.entitlements; sourceTree = "<group>"; };
 		51AE95B8210AE2B60019B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				51B20B892116B70000DFA653 /* ChatRoomsViewController.swift */,
 				9D45C5A22115D52800355445 /* AddPostTableViewController.swift */,
 				511FE745211964EE00BBAFA3 /* StepAddPostViewController.swift */,
+				518A8A0821204F900095DA9D /* MyPageTableViewController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				5127F192210EF4FE008EDED3 /* HoshiTextField.swift in Sources */,
 				5127F195210EF4FE008EDED3 /* TextFieldEffects.swift in Sources */,
 				51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */,
+				518A8A0921204F900095DA9D /* MyPageTableViewController.swift in Sources */,
 				5127F194210EF4FE008EDED3 /* YokoTextField.swift in Sources */,
 				511FE7412119365300BBAFA3 /* AnnularLayer.swift in Sources */,
 				AD2DF8EA211993A1008474FD /* SellingListViewController.swift in Sources */,
