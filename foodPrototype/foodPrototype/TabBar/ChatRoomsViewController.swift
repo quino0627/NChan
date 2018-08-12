@@ -24,6 +24,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.uid = Auth.auth().currentUser?.uid
         self.getChatroomsList()
+        self.tableview.reloadData()
         // Do any additional setup after loading the view.
     }
 
