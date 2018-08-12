@@ -14,7 +14,7 @@ class ProfileViewController: UITableViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var name1: UILabel!
     @IBOutlet weak var name2: UILabel!
-    var user : ExampleFireUser?
+    var user : UserModel?
     
     override func viewWillAppear(_ animated: Bool) {
         name1.text = user?.name

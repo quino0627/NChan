@@ -9,11 +9,25 @@
 import UIKit
 import ImageSlideshow
 import Firebase
-//import Parse
 
-class PostViewController: UITableViewController {
+class PostViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return colletion_product.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCollectionViewCell", for: indexPath) as! PostCollectionViewCell
+        
+        cell.img.image = colletion_images[indexPath.row]
+        cell.product.text = colletion_product[indexPath.row]
+        
+        return cell
+    }
+    
 
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var food_Image: ImageSlideshow!
     @IBOutlet weak var food_Price: UILabel!
     @IBOutlet weak var food_Title: UILabel!
@@ -27,8 +41,11 @@ class PostViewController: UITableViewController {
 //    @IBOutlet weak var user_Safety_State: UILabel!
 //    @IBOutlet weak var user_Safety_Num: UILabel!
     var post: ExampleFirePost?
-    var localSource : [ImageSource]?
+    var localSource : [ImageSource] = []
 
+    var colletion_images : [UIImage] = []
+    var colletion_product : [String] = []
+    
     override func viewWillAppear(_ animated: Bool) {
         food_Price.text = post?.price
         food_Title.text = post?.product
@@ -44,7 +61,7 @@ class PostViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        //the part of imageSlideshow
         food_Image.slideshowInterval = 5.0
         food_Image.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
         food_Image.contentScaleMode = UIViewContentMode.scaleAspectFill
@@ -59,12 +76,36 @@ class PostViewController: UITableViewController {
             print("current page:", page)
         }
         
-        food_Image.setImageInputs(localSource!)
+        for image in (post?.images?.values)! {
+            let data = try? Data(contentsOf: URL(string: image)!)
+            localSource.append(ImageSource(image: UIImage(data: data!)!))
+        }
+        food_Image.setImageInputs(localSource)
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(PostViewController.didTap))
         food_Image.addGestureRecognizer(recognizer)
         
         InviteButton.addTarget(self, action: #selector(touchedButton), for: .touchUpInside)
+        
+        //the part of all posts of user
+        Database.database().reference().child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: post?.user?.uid).observeSingleEvent(of: DataEventType.value) { (datasnapshot) in
+            
+            for posts in datasnapshot.children.allObjects as! [DataSnapshot]{
+                let postObject = posts.value as? [String: AnyObject]
+                
+                let postImage = (postObject?["ImageUrl"] as? [String: String])?.first?.value
+                let data = try? Data(contentsOf: URL(string: postImage!)!)
+
+                self.colletion_images.append(UIImage(data: data!)!)
+                self.colletion_product.append(postObject?["postProduct"] as! String)
+                print("images")
+                print(self.colletion_images.count)
+                self.collectionView.reloadData()
+            }
+            print("product")
+            print(self.colletion_product.count)
+            
+        }
     }
 
     @objc func didTap() {
