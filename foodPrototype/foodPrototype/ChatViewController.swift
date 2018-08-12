@@ -27,6 +27,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     var comments : [ChatModel.Comment] = []
     var users : [String : AnyObject]?
     var postId :String?
+    var postProduct : String?
     //var userModel : UserModel?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,28 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         })
         sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         getMessageList()
+        
+        Database.database().reference().child("chatrooms").child(self.destinationRoom!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+            let value = datasnapshot.value as? NSDictionary
+            self.postId = value?["postId"] as? String
+            print(self.destinationRoom!)
+            print(value)
+            print("밸류")
+            print(self.postId)
+            print("포스트아이디")
+            
+            self.postProduct = value?["postProduct"] as? String
+            print(self.postProduct)
+            self.chatRoomTitle.title = self.postProduct
+            Database.database().reference().child("posts").child(self.postId!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+                let value = datasnapshot.value as? NSDictionary
+                self.postProduct = value?["postProduct"] as? String
+                print(self.postProduct)
+                self.chatRoomTitle.title = self.postProduct
+            })
+        })
+        
+        
         
         
         self.tabBarController?.tabBar.isHidden = true //채팅룸일 때 하단 바 사라지게
@@ -320,18 +343,9 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         let endTrade = UIAlertAction(title: "거래가 종료되었어요!", style: .default) { action in
             self.navigationController?.popViewController(animated: true)
-            Database.database().reference().child("chatrooms").child(self.destinationRoom!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
-                let value = datasnapshot.value as? NSDictionary
-                self.postId = value?["postId"] as? String
-                print(self.destinationRoom!)
-                print(value)
-                print("밸류")
-                print(self.postId)
-                print("포스트아이디")
-                Database.database().reference().child("chatrooms").child(self.destinationRoom!).removeValue()
-                Database.database().reference().child("posts").child(self.postId!).removeValue()
-            })
             
+            Database.database().reference().child("chatrooms").child(self.destinationRoom!).removeValue()
+            Database.database().reference().child("posts").child(self.postId!).removeValue()
             
         }
         

@@ -71,12 +71,12 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
 //                print("ㄴ포스트딕")
                 self.postModel = PostModel(JSON: postdic)
             }
-            print(self.postModel?.id)
-            print(self.postModel?.postContent)
-            print(self.postModel?.postMaxMan)
-            print(self.postModel?.postPrice)
-            print(self.postModel?.ImageUrl as Any)
-            print(self.postModel?.postContent)
+//            print(self.postModel?.id)
+//            print(self.postModel?.postContent)
+//            print(self.postModel?.postMaxMan)
+//            print(self.postModel?.postPrice)
+//            print(self.postModel?.ImageUrl as Any)
+//            print(self.postModel?.postContent)
             cell.label_title.text = self.postModel?.postProduct
             
             Database.database().reference().child("posts").child((self.postModel?.id)!).child("ImageUrl").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in

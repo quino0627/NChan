@@ -81,9 +81,9 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
         cell.listPrice.text = item.price
         cell.listPlace.text = item.wishLocation
         cell.listTime.text = nil
-         let data = try? Data(contentsOf: URL(string: (item.images?.first?.value)!)!)
+        let data = try? Data(contentsOf: URL(string: (item.images?.first?.value)!)!)
         cell.listImage.image = UIImage(data: data!)
-
+        
         return cell
     }
 
