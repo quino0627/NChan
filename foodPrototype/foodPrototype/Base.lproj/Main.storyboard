@@ -136,21 +136,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고려대학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvV-GO-xlY">
-                                                    <rect key="frame" x="127" y="74" width="74" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="WEb-Ja-xKL"/>
-                                                        <constraint firstAttribute="width" constant="74" id="gdj-L3-bfm"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="프로필" translatesAutoresizingMaskIntoConstraints="NO" id="vdb-cZ-pGH">
                                                     <rect key="frame" x="16" y="23" width="72" height="72"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="Ish-NS-6Xw"/>
-                                                        <constraint firstAttribute="width" constant="72" id="Zqj-OY-NZj"/>
+                                                        <constraint firstAttribute="width" constant="72" id="A8t-M2-GI1"/>
+                                                        <constraint firstAttribute="height" constant="72" id="sk4-7R-5Fi"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김대희" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UB9-n7-UKL">
@@ -163,26 +153,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxQ-ZJ-cW0">
-                                                    <rect key="frame" x="65" y="67" width="30" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Er1-B9-Tli"/>
-                                                        <constraint firstAttribute="height" constant="24" id="SmY-cu-uqW"/>
-                                                    </constraints>
-                                                    <state key="normal" image="my_camera"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zvV-GO-xlY" firstAttribute="leading" secondItem="kxQ-ZJ-cW0" secondAttribute="trailing" constant="32" id="3Ba-5z-o8U"/>
-                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="top" secondItem="yTc-QM-v1z" secondAttribute="topMargin" constant="12" id="9yy-TT-nTF"/>
-                                                <constraint firstItem="UB9-n7-UKL" firstAttribute="leading" secondItem="vdb-cZ-pGH" secondAttribute="trailing" constant="39" id="DPU-LG-itG"/>
+                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="leading" secondItem="yTc-QM-v1z" secondAttribute="leadingMargin" id="BT6-zB-Mpn"/>
+                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="leading" secondItem="yTc-QM-v1z" secondAttribute="leadingMargin" id="DE7-qQ-Cue"/>
                                                 <constraint firstItem="UB9-n7-UKL" firstAttribute="top" secondItem="yTc-QM-v1z" secondAttribute="topMargin" constant="12" id="FE9-cL-e3P"/>
-                                                <constraint firstItem="kxQ-ZJ-cW0" firstAttribute="leading" secondItem="yTc-QM-v1z" secondAttribute="leadingMargin" constant="49" id="VMt-Xe-lwD"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zvV-GO-xlY" secondAttribute="bottom" constant="14" id="iqB-np-tqV"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vdb-cZ-pGH" secondAttribute="bottom" constant="14" id="r1F-uF-h7x"/>
-                                                <constraint firstItem="kxQ-ZJ-cW0" firstAttribute="top" secondItem="yTc-QM-v1z" secondAttribute="topMargin" constant="56" id="sQN-KW-RHL"/>
-                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="leading" secondItem="yTc-QM-v1z" secondAttribute="leadingMargin" id="wbQ-nb-1o6"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="kxQ-ZJ-cW0" secondAttribute="bottom" constant="18" id="wuR-sQ-dJp"/>
+                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="centerY" secondItem="yTc-QM-v1z" secondAttribute="centerY" id="Ncu-VT-jNK"/>
+                                                <constraint firstItem="UB9-n7-UKL" firstAttribute="leading" secondItem="vdb-cZ-pGH" secondAttribute="trailing" constant="39" id="dgK-Ux-VgD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2979,7 +2956,6 @@
         <image name="message_gray" width="12" height="8"/>
         <image name="more" width="32" height="32"/>
         <image name="my_buy" width="48" height="48"/>
-        <image name="my_camera" width="54" height="46"/>
         <image name="my_certification" width="32" height="32"/>
         <image name="my_delete" width="16" height="16"/>
         <image name="my_good" width="16" height="16"/>
