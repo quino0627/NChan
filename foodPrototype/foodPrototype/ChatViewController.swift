@@ -11,6 +11,7 @@ import Firebase
 
 class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
+    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var chatRoomTitle: UINavigationItem!
@@ -26,7 +27,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     var comments : [ChatModel.Comment] = []
     var users : [String : AnyObject]?
     //var userModel : UserModel?
-    
+    var post:PostModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         uid = Auth.auth().currentUser?.uid
@@ -307,6 +308,25 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     */
 
+    @IBAction func moreButtonTouched(_ sender: Any) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        let exitRoom = UIAlertAction(title: "거래하지 않고 이 방 나가기", style: .destructive) { action in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        let endTrade = UIAlertAction(title: "거래가 종료되었어요!", style: .default) { action in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        actionSheet.addAction(exitRoom)
+        actionSheet.addAction(endTrade)
+        actionSheet.addAction(cancel)
+        
+        present(actionSheet, animated: true, completion: nil)
+        
+    }
 }
 
 extension Int{

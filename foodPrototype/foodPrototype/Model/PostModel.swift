@@ -22,7 +22,7 @@ class PostModel: Mappable{
     public var postProduct: String?
     public var uid: String?
     public var postWishLocation: String? //needs to be changed into array
-    public var ImageUrl:Dictionary<String,Image> = [:]
+    public var ImageUrl:Dictionary<String,String> = [:]
     
     public func mapping(map: Map){
         id <- map["id"]

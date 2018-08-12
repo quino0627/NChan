@@ -1107,7 +1107,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cwH-Te-xnF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="채팅방" id="t6l-3g-VmD"/>
+                    <navigationItem key="navigationItem" title="채팅방" id="t6l-3g-VmD">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="more" landscapeImage="more" id="E9m-iq-WGy">
+                            <connections>
+                                <action selector="moreButtonTouched:" destination="5bK-iS-YAP" id="bIj-Na-juW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomConstraint" destination="Oc3-C1-ag4" id="0i9-v0-H2S"/>
                         <outlet property="chatRoomTitle" destination="t6l-3g-VmD" id="qd1-Cx-fKd"/>
@@ -2963,11 +2969,11 @@
         <image name="bar__user" width="27" height="27"/>
         <image name="baseline_account_circle_black_36pt" width="36" height="36"/>
         <image name="chat" width="34" height="34"/>
-        <image name="like (3)" width="256" height="256"/>
         <image name="loading_icon" width="64" height="64"/>
         <image name="main" width="29" height="29"/>
         <image name="message_blue" width="11" height="9"/>
         <image name="message_gray" width="12" height="8"/>
+        <image name="more" width="32" height="32"/>
         <image name="my_buy" width="48" height="48"/>
         <image name="my_camera" width="54" height="46"/>
         <image name="my_certification" width="32" height="32"/>
@@ -2977,7 +2983,6 @@
         <image name="my_notification" width="32" height="32"/>
         <image name="my_option" width="32" height="32"/>
         <image name="my_shopping" width="48" height="48"/>
-        <image name="outline_chat_black_36pt" width="36" height="36"/>
         <image name="post_like_off" width="128" height="128"/>
         <image name="post_like_on" width="128" height="128"/>
         <image name="배민찬로고" width="144" height="144"/>

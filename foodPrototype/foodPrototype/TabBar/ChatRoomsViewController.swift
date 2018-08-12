@@ -9,16 +9,17 @@
 import UIKit
 import Firebase
 
-class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    
     @IBOutlet weak var tableview: UITableView!
     
     var uid: String!
     var chatrooms : [ChatModel]! = []
     var destinationUsers : [String] = []
     var keys : [String] = []
-    
+    var postModel:PostModel?
     var postId: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.uid = Auth.auth().currentUser?.uid
@@ -63,22 +64,22 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.postId = chatrooms[indexPath.row].postId
         Database.database().reference().child("posts").child(self.postId!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
-            var postModel:PostModel?
             print(datasnapshot)
             //for item in datasnapshot.value.children.allObjects as! [DataSnapshot]{}
             if let postdic = datasnapshot.value as? [String: AnyObject]{
 //                print(postdic)
 //                print("ㄴ포스트딕")
-                postModel = PostModel(JSON: postdic)
+                self.postModel = PostModel(JSON: postdic)
             }
-//            print(postModel?.id)
-//            print(postModel?.postContent)
-//            print(postModel?.postMaxMan)
-//            print(postModel?.postPrice)
-//            print(postModel?.ImageUrl as Any)
-//            print(postModel?.postContent)
-            cell.label_title.text = postModel?.postProduct
-            Database.database().reference().child("posts").child((postModel?.id)!).child("ImageUrl").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+            print(self.postModel?.id)
+            print(self.postModel?.postContent)
+            print(self.postModel?.postMaxMan)
+            print(self.postModel?.postPrice)
+            print(self.postModel?.ImageUrl as Any)
+            print(self.postModel?.postContent)
+            cell.label_title.text = self.postModel?.postProduct
+            
+            Database.database().reference().child("posts").child((self.postModel?.id)!).child("ImageUrl").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
                 let value = datasnapshot.value as? NSDictionary
                 print(type(of: value))
                 print(value?.allValues[0] as! String)
@@ -153,8 +154,9 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         view.destinationRoom = self.keys[indexPath.row]
         print(indexPath.row)
         print(self.keys[indexPath.row])
+        print(postModel?.id)
         print("인덱스패쓰")
-        
+
         self.navigationController?.pushViewController(view, animated: true)
     }
     
