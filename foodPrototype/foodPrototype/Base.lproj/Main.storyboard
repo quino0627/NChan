@@ -994,7 +994,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.58823529411764708" green="0.074509803921568626" blue="0.1803921568627451" alpha="0.72658925513698636" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="0.72658925513698636" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="NZj-xJ-6g0" kind="relationship" relationship="viewControllers" id="3bK-zl-dx8"/>
