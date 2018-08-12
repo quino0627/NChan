@@ -18,6 +18,7 @@ class SettingsTableViewController: UITableViewController {
             do {
                 try Auth.auth().signOut()
                 print("Logout")
+                
             } catch  {
                 print("Error")
             }
@@ -26,14 +27,21 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Auth.auth().addStateDidChangeListener({(user, err) in
-            if user == nil{ //로그인이 되어 있지 않을 경우 로그인 테이블의 label을 '로그인'으로 변경한다.
-                self.loginButton.text = "로그인"
-            
-            }else{//로그인이 되어 있을 경우 로그인 테이블의 label을 '로그아웃'으로 변경한다.
-                self.loginButton.text = "로그아웃"
-            }
-        })
+//        Auth.auth().addStateDidChangeListener({(user, err) in
+//            if user == nil{ //로그인이 되어 있지 않을 경우 로그인 테이블의 label을 '로그인'으로 변경한다.
+//                self.loginButton.text = "로그인"
+//
+//            }else{//로그인이 되어 있을 경우 로그인 테이블의 label을 '로그아웃'으로 변경한다.
+//                self.loginButton.text = "로그아웃"
+//            }
+//        })
+        
+        if Auth.auth().currentUser != nil {
+            self.loginButton.text = "로그아웃"
+        }else{
+            self.loginButton.text = "로그인"
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -112,5 +120,5 @@ class SettingsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
