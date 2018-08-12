@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="-1442" y="2513"/>
         </scene>
-        <!--Table View Controller-->
+        <!--My Page Table View Controller-->
         <scene sceneID="PYw-Ge-cZ9">
             <objects>
-                <tableViewController storyboardIdentifier="MyPage" id="j9S-0a-kaF" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyPage" id="j9S-0a-kaF" customClass="MyPageTableViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAB-9g-KEv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,6 +474,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileImage" destination="vdb-cZ-pGH" id="dWr-5L-Icu"/>
+                        <outlet property="profileName" destination="UB9-n7-UKL" id="hrO-Vx-bio"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ4-bF-NwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
