@@ -16,8 +16,8 @@ class SellingListViewController: UIViewController,UITableViewDataSource, UITable
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     //    var uid : String?
-    var sellingPosts : [ExampleFirePost] = [] //post에 성공, 진행중, 실패에 대한 변수 넣어야 할듯, 진행중/ 완료일때에 따른 변수 넣기
-    var soldPosts : [ExampleFirePost] = []
+    var sellingPosts : [PostModel] = [] //post에 성공, 진행중, 실패에 대한 변수 넣어야 할듯, 진행중/ 완료일때에 따른 변수 넣기
+    var soldPosts : [PostModel] = []
     let refPost = Database.database().reference().child("posts")
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,20 +40,20 @@ class SellingListViewController: UIViewController,UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
         if segmentedControl.selectedSegmentIndex == 0{
             let item = sellingPosts[indexPath.row]
-            cell.listProduct.text = item.product
-            cell.listPrice.text = item.price
-            cell.listPlace.text = item.wishLocation
+            cell.listProduct.text = item.postProduct
+            cell.listPrice.text = item.postPrice
+            cell.listPlace.text = item.postWishLocation
             cell.listTime.text = nil
-            let data = try? Data(contentsOf: URL(string: (item.images?.first?.value)!)!)
+            let data = try? Data(contentsOf: URL(string: (item.ImageUrl.first?.value)!)!)
             cell.listImage.image = UIImage(data: data!)
         }
         else{
             let item = soldPosts[indexPath.row]
-            cell.listProduct.text = item.product
-            cell.listPrice.text = item.price
-            cell.listPlace.text = item.wishLocation
+            cell.listProduct.text = item.postProduct
+            cell.listPrice.text = item.postPrice
+            cell.listPlace.text = item.postWishLocation
             cell.listTime.text = nil
-            let data = try? Data(contentsOf: URL(string: (item.images?.first?.value)!)!)
+            let data = try? Data(contentsOf: URL(string: (item.ImageUrl.first?.value)!)!)
             cell.listImage.image = UIImage(data: data!)
             
         }
@@ -86,46 +86,24 @@ class SellingListViewController: UIViewController,UITableViewDataSource, UITable
                     
                 }
                 //iterating through all the values
+                //iterating through all the values
                 for posts in snapshot.children.allObjects as! [DataSnapshot]{
                     //getting values
                     let postObject = posts.value as? [String: AnyObject]
-                    let postProduct = postObject?["postProduct"]
-                    let postId = postObject?["id"]
-                    let postContent = postObject?["postContent"]
-                    let postMaxMan = postObject?["postMaxMan"]
-                    let postPrice = postObject?["postPrice"]
-                    let postWishLocation = postObject?["postWishLocation"]
-                    let postUid = postObject?["uid"]
-                    let postImagesUrl = postObject?["ImageUrl"] as? [String: String]
-
                     
-                    Database.database().reference().child("users").child(postUid as! String).observe(DataEventType.value, with: { (snapshot) in
-                        let pchild = snapshot.value as? [String: AnyObject]
-                        let pUser = UserModel()
-                        
-                        pUser.name = pchild?["name"] as? String
-                        pUser.profileImageUrl = pchild?["profileImageUrl"] as? String
-                        pUser.uid = pchild?["uid"] as? String
-                        let post = ExampleFirePost(images: postImagesUrl ,id: postId as! String?, product: postProduct as! String?, content: postContent as! String?, maxMan: postMaxMan as! String?, price: postPrice as! String?, wishLocation: postWishLocation as! String?, user: pUser)
+                    let postProduct = PostModel(JSON: postObject!)
                         
                         
                         if self.segmentedControl.selectedSegmentIndex == 0{
-                        self.sellingPosts.append(post)
+                            self.sellingPosts.append(postProduct!)
                         }
                         else{
-                            self.soldPosts.append(post)
+                            self.soldPosts.append(postProduct!)
                         }
                         self.buyingTable.reloadData()
-                    })
-                    
-
+                    }
                 }
-
-            }
         })
-        
-        
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -137,14 +115,14 @@ class SellingListViewController: UIViewController,UITableViewDataSource, UITable
         if segmentedControl.selectedSegmentIndex == 0{
             if let indexPath = buyingTable.indexPathForSelectedRow,
                 let detailVC = segue.destination as? PostViewController {
-                let selectedPost :ExampleFirePost = sellingPosts[indexPath.row]
+                let selectedPost :PostModel = sellingPosts[indexPath.row]
                 detailVC.post = selectedPost
             }
         }
         else{
             if let indexPath = buyingTable.indexPathForSelectedRow,
                 let detailVC = segue.destination as? PostViewController {
-                let selectedPost :ExampleFirePost = soldPosts[indexPath.row]
+                let selectedPost :PostModel = soldPosts[indexPath.row]
                 detailVC.post = selectedPost
             }
         }
