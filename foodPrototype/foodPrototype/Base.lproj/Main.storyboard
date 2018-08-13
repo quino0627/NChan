@@ -444,8 +444,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Tlf-4h-Kiq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="my_option" id="Xeb-Kb-G6d">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting__icon" id="Xeb-Kb-G6d">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="XDO-pv-P64" kind="show" id="P8x-60-nNJ"/>
                             </connections>
@@ -2961,16 +2961,16 @@
         <image name="my_good" width="16" height="16"/>
         <image name="my_like" width="48" height="48"/>
         <image name="my_notification" width="32" height="32"/>
-        <image name="my_option" width="32" height="32"/>
         <image name="my_shopping" width="48" height="48"/>
         <image name="post_like_off" width="128" height="128"/>
         <image name="post_like_on" width="128" height="128"/>
+        <image name="setting__icon" width="35" height="35"/>
         <image name="배민찬로고" width="144" height="144"/>
         <image name="빈체크박스" width="256" height="256"/>
         <image name="집밥반찬로고" width="101" height="97"/>
         <image name="프로필" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dfa-NU-fng"/>
+        <segue reference="mlz-ep-uRt"/>
     </inferredMetricsTieBreakers>
 </document>
