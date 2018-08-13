@@ -15,12 +15,16 @@ class MyPageTableViewController: UITableViewController {
     let uid = Auth.auth().currentUser?.uid
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.reloadData()
         print(self.uid)
         print("유아이디")
+        if self.uid != nil{
         Database.database().reference().child("users").child(uid!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             let value = datasnapshot.value as! NSDictionary
             self.profileName.text = value["name"] as! String
+            
             let ssss = value["profileImageUrl"] as! String
+            
             print(ssss)
             print("ㄴㄴㄴㄴ")
             //let url = URL(string: value.allValues[0] as! String)
@@ -31,9 +35,12 @@ class MyPageTableViewController: UITableViewController {
                     self.profileImage.layer.cornerRadius = self.profileImage.frame.width/2
                     self.profileImage.layer.masksToBounds = true
                 }
+                
             }).resume()
             
-        })        // Uncomment the following line to preserve selection between presentations
+            
+        })
+        }// Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.

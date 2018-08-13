@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>641407592753-ohq47rivemj8glkvj6uhobh64nhjd6ig.apps.googleusercontent.com</string>
+	<string>641407592753-bfua4kk5oqa4rkcct39300dte086l5lp.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.641407592753-ohq47rivemj8glkvj6uhobh64nhjd6ig</string>
+	<string>com.googleusercontent.apps.641407592753-bfua4kk5oqa4rkcct39300dte086l5lp</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCOH1sv27ReeSUhCrBCzDBdoS_iH5fgGRw</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>quino.foodPrototype</string>
+	<string>quino.food</string>
 	<key>PROJECT_ID</key>
 	<string>kuchan-35361</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:641407592753:ios:349662c338e2a1ea</string>
+	<string>1:641407592753:ios:c4553816a3f67071</string>
 	<key>DATABASE_URL</key>
 	<string>https://kuchan-35361.firebaseio.com</string>
 </dict>
