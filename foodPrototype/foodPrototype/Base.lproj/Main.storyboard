@@ -2929,7 +2929,7 @@
                         <viewLayoutGuide key="safeArea" id="kiH-Ul-jGc"/>
                     </view>
                     <navigationItem key="navigationItem" id="5YN-49-G3U">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pS3-hd-nnj">
+                        <barButtonItem key="rightBarButtonItem" title="글쓰기" id="pS3-hd-nnj">
                             <connections>
                                 <segue destination="3xU-ly-p0w" kind="presentation" id="Mg9-bk-072"/>
                             </connections>
