@@ -63,6 +63,7 @@
 		9E4C0CA6591495005D57E011 /* Pods_foodPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8924F036F4FCF58A92AE06 /* Pods_foodPrototype.framework */; };
 		AD24274D2111639600020FE8 /* BuyingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24274C2111639600020FE8 /* BuyingListViewController.swift */; };
 		AD24277721119E8200020FE8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24277621119E8200020FE8 /* PostViewController.swift */; };
+		AD25053521216540007A017E /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25053421216540007A017E /* PostController.swift */; };
 		AD2DF8EA211993A1008474FD /* SellingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8E9211993A1008474FD /* SellingListViewController.swift */; };
 		AD2DF8ED211993D6008474FD /* SettingExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */; };
 		AD2DF8EF21199525008474FD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF8EE21199525008474FD /* ListTableViewCell.swift */; };
@@ -138,6 +139,7 @@
 		9DD02602211940AB00EE2397 /* ExampleProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProductListViewController.swift; sourceTree = "<group>"; };
 		AD24274C2111639600020FE8 /* BuyingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyingListViewController.swift; sourceTree = "<group>"; };
 		AD24277621119E8200020FE8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		AD25053421216540007A017E /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		AD2DF8E9211993A1008474FD /* SellingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingListViewController.swift; sourceTree = "<group>"; };
 		AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingExampleModel.swift; sourceTree = "<group>"; };
 		AD2DF8EE21199525008474FD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			children = (
 				AD24277621119E8200020FE8 /* PostViewController.swift */,
 				AD873ADF211EF546007CB647 /* PostCollectionViewCell.swift */,
+				AD25053421216540007A017E /* PostController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				51C1FCB92111878E0055AEF3 /* ViewController.swift in Sources */,
 				518A8A0921204F900095DA9D /* MyPageTableViewController.swift in Sources */,
 				5127F194210EF4FE008EDED3 /* YokoTextField.swift in Sources */,
+				AD25053521216540007A017E /* PostController.swift in Sources */,
 				511FE7412119365300BBAFA3 /* AnnularLayer.swift in Sources */,
 				AD2DF8EA211993A1008474FD /* SellingListViewController.swift in Sources */,
 				51FD0F40210861D50061DB4D /* RecordButton.swift in Sources */,
