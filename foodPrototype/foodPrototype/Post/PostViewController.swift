@@ -32,7 +32,6 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var user_Image: UIImageView!
     @IBOutlet weak var user_Name1: UILabel!
     @IBOutlet weak var user_Name2: UILabel!
-    
 //    @IBOutlet weak var user_Safety_Face: UIImageView!
 //    @IBOutlet weak var user_Safety_State: UILabel!
 //    @IBOutlet weak var user_Safety_Num: UILabel!

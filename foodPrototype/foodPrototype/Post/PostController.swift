@@ -54,7 +54,9 @@ class PostController: UIViewController {
                 ]
                 Database.database().reference().child("chatrooms").child(chatroomKey).child("users").setValue(originChatMember)
                 Database.database().reference().child("chatrooms").child(chatroomKey).child("comments").childByAutoId().setValue(enterMessage)
-                
+                let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+                view.destinationRoom = chatroomKey
+                self.navigationController?.pushViewController(view, animated: true)
             })
             //
             print("start")
