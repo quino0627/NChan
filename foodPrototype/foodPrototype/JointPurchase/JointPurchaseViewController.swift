@@ -75,15 +75,17 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
-
         let item = filteredData[indexPath.row]
+        let url = URL(string: (item.ImageUrl.first?.value)!)
         cell.listProduct.text = item.postProduct
         cell.listPrice.text = item.postPrice
         cell.listPlace.text = item.postWishLocation
         cell.listTime.text = nil
-            let data = try? Data(contentsOf: URL(string: (item.ImageUrl.first?.value)!)!) //물어보기
-        cell.listImage.image = UIImage(data: data!)
-
+        URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+            DispatchQueue.main.sync {
+                cell.listImage.image = UIImage(data: data!)
+            }
+        }).resume()
         return cell
     }
 

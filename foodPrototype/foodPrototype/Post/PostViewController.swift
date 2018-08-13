@@ -44,16 +44,12 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
 
     var colletion_images : [UIImage] = []
     var colletion_product : [String] = []
-    var user = UserModel()
+    var user : NSDictionary?
     
     override func viewWillAppear(_ animated: Bool) {
         food_Price.text = post?.postPrice
         food_Title.text = post?.postProduct
         food_Contents.text = post?.postContent
-        let data = try? Data(contentsOf: URL(string: (user.profileImageUrl!))!)
-        user_Image.image = UIImage(data: data!)
-        user_Name1.text = user.name
-        user_Name2.text = user.name
   //        user_Safety_State.text = post?.postWriter.userSafety.state
 //        user_Safety_Face.image = UIImage(named: (post?.postWriter.userSafety.face)!)
 //        user_Safety_Num.text = String((post?.postWriter.userSafety.value)!)
@@ -103,13 +99,50 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
             
             self.collectionView.reloadData()
         }
-        Database.database().reference().child("users").child("/\(post?.uid)").observeSingleEvent(of: DataEventType.value) { (datasnapshot) in
-            let userModel = UserModel()
-            userModel.setValuesForKeys(datasnapshot.value as! [String: Any])
-            self.user = userModel
-            self.tableView.reloadData()
+        Database.database().reference().child("users").child((post?.uid)!).observeSingleEvent(of: DataEventType.value) { (datasnapshot) in
+            let user = datasnapshot.value as! NSDictionary
+            let url = URL(string: user["profileImageUrl"] as! String)
+            self.user_Name1.text = user["name"] as! String
+            self.user_Name2.text = user["name"] as! String
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+                DispatchQueue.main.sync {
+                    self.user_Image.image = UIImage(data: data!)
+                    self.user_Image.layer.cornerRadius = self.user_Image.frame.width/2
+                    self.user_Image.layer.masksToBounds = true
+                }
+            }).resume()
         }
 
+//        class MyPageTableViewController: UITableViewController {
+//            @IBOutlet weak var profileImage: UIImageView!
+//            @IBOutlet weak var profileName: UILabel!
+//            let uid = Auth.auth().currentUser?.uid
+//            override func viewDidLoad() {
+//                super.viewDidLoad()
+//                print(self.uid)
+//                print("유아이디")
+//                Database.database().reference().child("users").child(uid!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+//                    let value = datasnapshot.value as! NSDictionary
+//                    self.profileName.text = value["name"] as! String
+//                    let ssss = value["profileImageUrl"] as! String
+//                    print(ssss)
+//                    print("ㄴㄴㄴㄴ")
+//                    //let url = URL(string: value.allValues[0] as! String)
+//                    let url = URL(string: ssss as! String)
+//                    URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+//                        DispatchQueue.main.sync {
+//                            self.profileImage.image = UIImage(data:data!)
+//                            self.profileImage.layer.cornerRadius = self.profileImage.frame.width/2
+//                            self.profileImage.layer.masksToBounds = true
+//                        }
+//                    }).resume()
+//
+//                })        // Uncomment the following line to preserve selection between presentations
+//                // self.clearsSelectionOnViewWillAppear = false
+//
+//                // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+//                // self.navigationItem.rightBarButtonItem = self.editButtonItem
+//            }
         
     }
 
@@ -158,8 +191,8 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVC = segue.destination as? ProfileViewController{
-            let user = self.user
-            detailVC.user = user
+            let uid = self.post?.uid
+            detailVC.uid = uid
         }
     }
 
