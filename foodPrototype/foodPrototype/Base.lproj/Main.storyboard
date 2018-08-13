@@ -947,7 +947,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lx4-w5-NDv">
                                 <rect key="frame" x="16" y="617" width="289" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="289" id="2Yd-xr-S65"/>
                                     <constraint firstAttribute="height" constant="30" id="pPN-wR-ILA"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -1078,6 +1077,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lx4-w5-NDv" firstAttribute="top" secondItem="3jm-AO-OsK" secondAttribute="bottom" constant="8" id="0kf-fV-kbl"/>
+                            <constraint firstItem="gHx-EJ-VF7" firstAttribute="leading" secondItem="Lx4-w5-NDv" secondAttribute="trailing" constant="8" id="2JG-vk-h1y"/>
                             <constraint firstItem="Lx4-w5-NDv" firstAttribute="leading" secondItem="cwH-Te-xnF" secondAttribute="leading" constant="16" id="Ans-gb-jny"/>
                             <constraint firstItem="3jm-AO-OsK" firstAttribute="top" secondItem="bHg-dS-G6E" secondAttribute="top" id="GuQ-7J-3y3"/>
                             <constraint firstItem="cwH-Te-xnF" firstAttribute="trailing" secondItem="gHx-EJ-VF7" secondAttribute="trailing" constant="16" id="Jex-iv-mod"/>
