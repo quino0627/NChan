@@ -2502,7 +2502,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-bw-miL">
                                 <rect key="frame" x="0.0" y="157" width="375" height="510"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="AoR-F6-Qyx"/>
+                                    <constraint firstAttribute="height" constant="500" id="AoR-F6-Qyx"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="3xU-ly-p0w" id="FAq-83-cyn"/>
@@ -2516,6 +2516,7 @@
                             <constraint firstItem="rIT-bw-miL" firstAttribute="bottom" secondItem="k2G-6b-gIb" secondAttribute="bottom" id="NWg-B4-u4I"/>
                             <constraint firstItem="9Tb-fD-O0e" firstAttribute="top" secondItem="k2G-6b-gIb" secondAttribute="top" constant="44" id="c63-yU-bhT"/>
                             <constraint firstItem="rIT-bw-miL" firstAttribute="leading" secondItem="k2G-6b-gIb" secondAttribute="leading" id="fEH-oT-eMg"/>
+                            <constraint firstItem="rIT-bw-miL" firstAttribute="top" secondItem="k2G-6b-gIb" secondAttribute="top" constant="147" id="rey-xL-76S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k2G-6b-gIb"/>
                     </view>
