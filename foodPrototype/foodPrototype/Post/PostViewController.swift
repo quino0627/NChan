@@ -25,6 +25,7 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
         return cell
     }
 
+    @IBOutlet weak var usercell: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var food_Image: ImageSlideshow!
     @IBOutlet weak var food_Price: UILabel!
