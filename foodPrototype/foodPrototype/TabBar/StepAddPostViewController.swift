@@ -14,7 +14,7 @@ import FirebaseStorage
 import ImagePicker
 import ImageSlideshow
 
-class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePickerDelegate{
+class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePickerDelegate, UITextFieldDelegate{
 
     var imagePickerController : ImagePickerController!
     var uid = Auth.auth().currentUser?.uid
@@ -25,7 +25,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     //defining firebase reference var
     var refPost: DatabaseReference!
     var refStorage: StorageReference!
-    
+
     @IBOutlet weak var stepIndicatorView:StepIndicatorView!
     @IBOutlet weak var scrollView:UIScrollView!
 //    @IBOutlet weak var DoneButton: UIBarButtonItem!
@@ -33,10 +33,10 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     //deleting selected images
     @objc func deleteButtonPressed(sender: UIButton){
         print(sender)
-        ImageAndButton.remove(at: sender.tag)
+  //      ImageAndButton.remove(at: sender.tag)
         print("deleted")
-        print(sender.tag)
-        self.dismiss(animated: true, completion: nil)
+ //       print(sender.tag)
+ //       self.dismiss(animated: true, completion: nil)
     }
     
     //화면안의 버튼 눌렀을때
@@ -108,10 +108,11 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     
     var imageViewArray: [UIImage] = []
     
-    var cameraImage = UIImage(named: "whitecamera.png") //버튼이미지
-    var cancelImage = UIImage(named: "cancel.png")
+    var cameraImage = UIImage(named: "background__camera.png") //버튼이미지
+    var cancelImage = UIImage(named: "cancel (1).png")
     
-    var deleteButton = UIButton() //delete button
+   // var button = UIButton() //save button
+    var saveButton = UIButton()
     
     var sss_listText_content = UILabel()
     var sss_listText_maxMan = UILabel()
@@ -153,7 +154,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         ss_listView_5.addSubview(addImage)
         
         for (index, image) in images.enumerated() {
-            if index >= 3 {
+            if index >= 4 {
                 break
             }
             
@@ -166,15 +167,15 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             
             Images[index].image = image
             
-            Buttons[index].frame = CGRect(x: 0, y: 100 * (index), width: 50, height: 50)
-            Images[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
+            Buttons[index].frame = CGRect(x: 100 * (index), y: 0, width: 20, height: 20)
+            Images[index].frame = CGRect(x: 100 * (index), y: 0, width: 100, height: 100)
             
-            ImageAndButton[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
+          //  ImageAndButton[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
             
             Buttons[index].tag = index
             Buttons[index].setBackgroundImage(cancelImage, for: .normal)
             // Buttons[index].addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside) deleteButtonPressed
-            Buttons[index].addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
+            Buttons[index].addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
             
             //ImageAndButton[index].addSubview(Images[index])
             //ImageAndButton[index].addSubview(Buttons[index])
@@ -216,7 +217,46 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
     }
+    //키보드
+/*    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+        } else {
+        }
+        return true
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+        
+    }*/
+    
+    //키보드-2
+    @objc func keyboardWillShow(_ sender: Notification) {
+        self.view.frame.origin.y = -150 // Move view 150 points upward
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0 // Move view to original position
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
+    
+    
+
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -230,7 +270,29 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         refPost = Database.database().reference().child("posts");
         refStorage = Storage.storage().reference();
         
+        //키보드
+        sss_listInput_content.returnKeyType = .done
+        sss_listInput_maxMan.returnKeyType = .done
+        sss_listInput_Price.returnKeyType = .done
+        sss_listInput_hopePlace.returnKeyType = .done
+        sss_listInput_more.returnKeyType = .done
+
+        sss_listInput_content.delegate = self
+        sss_listInput_maxMan.delegate = self
+        sss_listInput_Price.delegate = self
+        sss_listInput_hopePlace.delegate = self
+        sss_listInput_more.delegate = self
         
+        sss_listInput_maxMan.keyboardType = UIKeyboardType.decimalPad
+        sss_listInput_Price.keyboardType = UIKeyboardType.decimalPad
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        
+        
+
+    
         //Customization by coding:
         //self.stepIndicatorView.numberOfSteps = 5
         //self.stepIndicatorView.currentStep = 0
@@ -289,6 +351,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         sss_listInput_maxMan.frame = CGRect(x: 10, y: 50, width: screenWidth, height: 25)
         sss_listInput_maxMan.placeholder = "최대 인원을 기입해주세요"
         sss_listInput_Price.frame = CGRect(x: 10, y: 50, width: screenWidth, height: 25)
+    
         sss_listInput_Price.placeholder = "예상 가격을 기입해주세요"
         
         sss_listInput_hopePlace.frame = CGRect(x: 10, y: 50, width: screenWidth, height: 25)
@@ -298,6 +361,16 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         
         addImage.frame = CGRect(x:0, y: 0, width: s_Scrollview_0.frame.width, height:s_Scrollview_0.frame.width)
         addImage.center = CGPoint(x: s_Scrollview_0.frame.width / 2.0 , y: s_Scrollview_0.frame.width / 2.0)
+        
+        saveButton.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+        saveButton.tag = 1
+        saveButton.setTitle("저장", for: .normal)
+        saveButton.backgroundColor = UIColor(hex: "#2ecc71")
+        saveButton.addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
+        saveButton.center = CGPoint(x: s_Scrollview_0.frame.width / 2.0 , y: s_Scrollview_0.frame.width / 1.5)
+ //       saveButton.layer.cornerRadius = saveButton.frame.height / 2
+ //       saveButton.clipsToBounds = true
+        saveButton.layer.cornerRadius = 5.0
 
         
         ss_listView_0.addSubview(sss_listText_content)
@@ -322,6 +395,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         
         s_Scrollview_2.addSubview(ss_listView_3)
         s_Scrollview_2.addSubview(ss_listView_4)
+        s_Scrollview_2.addSubview(saveButton) //
         
  //       s_Scrollview_3.addSubview(ss_listView_6)
         
@@ -335,7 +409,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         
         
         s_Scrollview_1.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
-        s_Scrollview_2.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
+       // s_Scrollview_2.contentSize = CGSize(width: screenWidth, height: screenHeight * 1.5)
         
         scrollView.contentSize = CGSize(width: screenWidth * 3, height: screenHeight / 2)
         scrollView.isPagingEnabled = true
@@ -360,38 +434,38 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         self.scrollView.contentSize = CGSize(width: self.scrollView.frame.width * CGFloat(self.stepIndicatorView.numberOfSteps + 1), height: self.scrollView.frame.height)
         for i in 1...self.stepIndicatorView.numberOfSteps + 1  {
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
-            let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.width/2, height: 100))
+          //  let button = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.frame.width/2, height: 100))
             
             if i == 1 {
-               label.text = "사진을 올려주세요"
+               //label.text = "사진을 올려주세요"
                 
                 //함수화
                         }
             else if i==2 {
-               label.text = "필수항목"
+               //label.text = "필수항목"
                 
             }
             else if i==3{
-              label.text = "선택항목"
-                
+             // label.text = "선택항목"
+             //   label.text = "Uploaded"
+             //   button.tag = 1
+             //   button.setTitle("저장", for: .normal)
+             //   button.backgroundColor = UIColor(hex: "#2ecc71")
+             //   button.addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
             }
             else{
-                //label.text = "Uploaded"
-                button.tag = 1
-                button.setTitle("저장", for: .normal)
-                button.backgroundColor = UIColor(hex: "#2ecc71")
-                button.addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
+
 
             }
 
-            label.textAlignment = NSTextAlignment.center
-            label.font = UIFont.systemFont(ofSize: 35)
-            label.textColor = UIColor(hex: "#2ecc71")
-            label.center = CGPoint(x: self.scrollView.frame.width / 2.0 * (CGFloat(i - 1) * 2.0 + 1.0), y: (self.scrollView.frame.height * 0.3))
-            button.center = CGPoint(x: self.scrollView.frame.width / 2.0 * (CGFloat(4 - 1) * 2.0 + 1.0), y: self.scrollView.frame.height / 2.0)
+           // label.textAlignment = NSTextAlignment.center
+           // label.font = UIFont.systemFont(ofSize: 35)
+           // label.textColor = UIColor(hex: "#2ecc71")
+           // label.center = CGPoint(x: self.scrollView.frame.width / 2.0 * (CGFloat(i - 1) * 2.0 + 1.0), y: (self.scrollView.frame.height * 0.3))
+           // button.center = CGPoint(x: self.scrollView.frame.width / 2.0 * (CGFloat(3 - 1) * 2.0 + 1.0), y: self.scrollView.frame.height / 2.0)
                 
             self.scrollView.addSubview(label)
-            self.scrollView.addSubview(button)
+            //self.scrollView.addSubview(button)
 
         }
     }

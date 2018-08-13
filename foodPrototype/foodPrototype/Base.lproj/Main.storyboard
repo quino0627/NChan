@@ -2393,9 +2393,9 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-bw-miL">
-                                <rect key="frame" x="0.0" y="157" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="167" width="375" height="500"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="AoR-F6-Qyx"/>
+                                    <constraint firstAttribute="height" constant="500" id="AoR-F6-Qyx"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="3xU-ly-p0w" id="FAq-83-cyn"/>
@@ -2403,14 +2403,19 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="9Tb-fD-O0e" firstAttribute="centerX" secondItem="0eV-fX-jnE" secondAttribute="centerX" id="9P1-3A-JH1"/>
                             <constraint firstItem="rIT-bw-miL" firstAttribute="trailing" secondItem="k2G-6b-gIb" secondAttribute="trailing" id="Gk8-yY-T96"/>
                             <constraint firstItem="rIT-bw-miL" firstAttribute="bottom" secondItem="k2G-6b-gIb" secondAttribute="bottom" id="NWg-B4-u4I"/>
                             <constraint firstItem="9Tb-fD-O0e" firstAttribute="top" secondItem="k2G-6b-gIb" secondAttribute="top" constant="44" id="c63-yU-bhT"/>
                             <constraint firstItem="rIT-bw-miL" firstAttribute="leading" secondItem="k2G-6b-gIb" secondAttribute="leading" id="fEH-oT-eMg"/>
+                            <constraint firstItem="rIT-bw-miL" firstAttribute="top" secondItem="k2G-6b-gIb" secondAttribute="top" constant="147" id="rey-xL-76S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k2G-6b-gIb"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6eh-IM-Xzy" appends="YES" id="P64-ak-5P0"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Y8f-jo-Tz3">
                         <barButtonItem key="rightBarButtonItem" title="게시" id="Loz-lt-dtF">
@@ -2425,6 +2430,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7y-Dq-GAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6eh-IM-Xzy">
+                    <connections>
+                        <action selector="keyboardDismiss:" destination="3xU-ly-p0w" id="KZi-l3-ryx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-702" y="2494"/>
         </scene>
