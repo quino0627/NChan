@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="-1442" y="2513"/>
         </scene>
-        <!--Table View Controller-->
+        <!--My Page Table View Controller-->
         <scene sceneID="PYw-Ge-cZ9">
             <objects>
-                <tableViewController storyboardIdentifier="MyPage" id="j9S-0a-kaF" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyPage" id="j9S-0a-kaF" customClass="MyPageTableViewController" customModule="foodPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAB-9g-KEv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,21 +136,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고려대학교" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvV-GO-xlY">
-                                                    <rect key="frame" x="127" y="74" width="74" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="WEb-Ja-xKL"/>
-                                                        <constraint firstAttribute="width" constant="74" id="gdj-L3-bfm"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="프로필" translatesAutoresizingMaskIntoConstraints="NO" id="vdb-cZ-pGH">
                                                     <rect key="frame" x="16" y="23" width="72" height="72"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="Ish-NS-6Xw"/>
-                                                        <constraint firstAttribute="width" constant="72" id="Zqj-OY-NZj"/>
+                                                        <constraint firstAttribute="width" constant="72" id="A8t-M2-GI1"/>
+                                                        <constraint firstAttribute="height" constant="72" id="sk4-7R-5Fi"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="김대희" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UB9-n7-UKL">
@@ -163,26 +153,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxQ-ZJ-cW0">
-                                                    <rect key="frame" x="65" y="67" width="30" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Er1-B9-Tli"/>
-                                                        <constraint firstAttribute="height" constant="24" id="SmY-cu-uqW"/>
-                                                    </constraints>
-                                                    <state key="normal" image="my_camera"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zvV-GO-xlY" firstAttribute="leading" secondItem="kxQ-ZJ-cW0" secondAttribute="trailing" constant="32" id="3Ba-5z-o8U"/>
-                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="top" secondItem="yTc-QM-v1z" secondAttribute="topMargin" constant="12" id="9yy-TT-nTF"/>
-                                                <constraint firstItem="UB9-n7-UKL" firstAttribute="leading" secondItem="vdb-cZ-pGH" secondAttribute="trailing" constant="39" id="DPU-LG-itG"/>
+                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="leading" secondItem="yTc-QM-v1z" secondAttribute="leadingMargin" id="BT6-zB-Mpn"/>
+                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="leading" secondItem="yTc-QM-v1z" secondAttribute="leadingMargin" id="DE7-qQ-Cue"/>
                                                 <constraint firstItem="UB9-n7-UKL" firstAttribute="top" secondItem="yTc-QM-v1z" secondAttribute="topMargin" constant="12" id="FE9-cL-e3P"/>
-                                                <constraint firstItem="kxQ-ZJ-cW0" firstAttribute="leading" secondItem="yTc-QM-v1z" secondAttribute="leadingMargin" constant="49" id="VMt-Xe-lwD"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zvV-GO-xlY" secondAttribute="bottom" constant="14" id="iqB-np-tqV"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vdb-cZ-pGH" secondAttribute="bottom" constant="14" id="r1F-uF-h7x"/>
-                                                <constraint firstItem="kxQ-ZJ-cW0" firstAttribute="top" secondItem="yTc-QM-v1z" secondAttribute="topMargin" constant="56" id="sQN-KW-RHL"/>
-                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="leading" secondItem="yTc-QM-v1z" secondAttribute="leadingMargin" id="wbQ-nb-1o6"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="kxQ-ZJ-cW0" secondAttribute="bottom" constant="18" id="wuR-sQ-dJp"/>
+                                                <constraint firstItem="vdb-cZ-pGH" firstAttribute="centerY" secondItem="yTc-QM-v1z" secondAttribute="centerY" id="Ncu-VT-jNK"/>
+                                                <constraint firstItem="UB9-n7-UKL" firstAttribute="leading" secondItem="vdb-cZ-pGH" secondAttribute="trailing" constant="39" id="dgK-Ux-VgD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -467,13 +444,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Tlf-4h-Kiq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="my_option" id="Xeb-Kb-G6d">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting__icon" id="Xeb-Kb-G6d">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="XDO-pv-P64" kind="show" id="P8x-60-nNJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileImage" destination="vdb-cZ-pGH" id="dWr-5L-Icu"/>
+                        <outlet property="profileName" destination="UB9-n7-UKL" id="hrO-Vx-bio"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ4-bF-NwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -966,7 +947,6 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lx4-w5-NDv">
                                 <rect key="frame" x="16" y="617" width="289" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="289" id="2Yd-xr-S65"/>
                                     <constraint firstAttribute="height" constant="30" id="pPN-wR-ILA"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -1097,6 +1077,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Lx4-w5-NDv" firstAttribute="top" secondItem="3jm-AO-OsK" secondAttribute="bottom" constant="8" id="0kf-fV-kbl"/>
+                            <constraint firstItem="gHx-EJ-VF7" firstAttribute="leading" secondItem="Lx4-w5-NDv" secondAttribute="trailing" constant="8" id="2JG-vk-h1y"/>
                             <constraint firstItem="Lx4-w5-NDv" firstAttribute="leading" secondItem="cwH-Te-xnF" secondAttribute="leading" constant="16" id="Ans-gb-jny"/>
                             <constraint firstItem="3jm-AO-OsK" firstAttribute="top" secondItem="bHg-dS-G6E" secondAttribute="top" id="GuQ-7J-3y3"/>
                             <constraint firstItem="cwH-Te-xnF" firstAttribute="trailing" secondItem="gHx-EJ-VF7" secondAttribute="trailing" constant="16" id="Jex-iv-mod"/>
@@ -1107,7 +1088,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cwH-Te-xnF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="채팅방" id="t6l-3g-VmD"/>
+                    <navigationItem key="navigationItem" title="채팅방" id="t6l-3g-VmD">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="more" landscapeImage="more" id="E9m-iq-WGy">
+                            <connections>
+                                <action selector="moreButtonTouched:" destination="5bK-iS-YAP" id="bIj-Na-juW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomConstraint" destination="Oc3-C1-ag4" id="0i9-v0-H2S"/>
                         <outlet property="chatRoomTitle" destination="t6l-3g-VmD" id="qd1-Cx-fKd"/>
@@ -2963,29 +2950,27 @@
         <image name="bar__user" width="27" height="27"/>
         <image name="baseline_account_circle_black_36pt" width="36" height="36"/>
         <image name="chat" width="34" height="34"/>
-        <image name="like (3)" width="256" height="256"/>
         <image name="loading_icon" width="64" height="64"/>
         <image name="main" width="29" height="29"/>
         <image name="message_blue" width="11" height="9"/>
         <image name="message_gray" width="12" height="8"/>
+        <image name="more" width="32" height="32"/>
         <image name="my_buy" width="48" height="48"/>
-        <image name="my_camera" width="54" height="46"/>
         <image name="my_certification" width="32" height="32"/>
         <image name="my_delete" width="16" height="16"/>
         <image name="my_good" width="16" height="16"/>
         <image name="my_like" width="48" height="48"/>
         <image name="my_notification" width="32" height="32"/>
-        <image name="my_option" width="32" height="32"/>
         <image name="my_shopping" width="48" height="48"/>
-        <image name="outline_chat_black_36pt" width="36" height="36"/>
         <image name="post_like_off" width="128" height="128"/>
         <image name="post_like_on" width="128" height="128"/>
+        <image name="setting__icon" width="35" height="35"/>
         <image name="배민찬로고" width="144" height="144"/>
         <image name="빈체크박스" width="256" height="256"/>
         <image name="집밥반찬로고" width="101" height="97"/>
         <image name="프로필" width="118" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dfa-NU-fng"/>
+        <segue reference="mlz-ep-uRt"/>
     </inferredMetricsTieBreakers>
 </document>

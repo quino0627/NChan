@@ -60,7 +60,6 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             let values = ["users": nsDic, "postId": postKeyForChat/*, "comments": chatValue*/] as [String : Any]
             Database.database().reference().child("chatrooms").childByAutoId().setValue(values)
             
-            
             self.dismiss(animated: true, completion: nil)
             
         }else{
@@ -109,7 +108,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     
     var imageViewArray: [UIImage] = []
     
-    var image = UIImage(named: "whitecamera.png") //버튼이미지
+    var cameraImage = UIImage(named: "whitecamera.png") //버튼이미지
     var cancelImage = UIImage(named: "cancel.png")
     
     var deleteButton = UIButton() //delete button
@@ -222,7 +221,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         uid = Auth.auth().currentUser?.uid
-        addImage.setBackgroundImage(image, for: .normal) //초기 이미지
+        addImage.setBackgroundImage(cameraImage, for: .normal) //초기 이미지
         
         addImage.isUserInteractionEnabled = true
         addImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker)))
@@ -297,8 +296,8 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         sss_listInput_more.frame = CGRect(x: 10, y: 50, width: screenWidth, height: 25)
         sss_listInput_more.placeholder = "추가사항을 기입해주세요"
         
-        addImage.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        addImage.center = CGPoint(x: self.scrollView.frame.width / 2.0 , y: self.scrollView.frame.height / 2.0)
+        addImage.frame = CGRect(x:0, y: 0, width: s_Scrollview_0.frame.width, height:s_Scrollview_0.frame.width)
+        addImage.center = CGPoint(x: s_Scrollview_0.frame.width / 2.0 , y: s_Scrollview_0.frame.width / 2.0)
 
         
         ss_listView_0.addSubview(sss_listText_content)
