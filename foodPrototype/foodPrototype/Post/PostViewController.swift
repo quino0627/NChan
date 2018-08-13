@@ -132,10 +132,17 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
             Database.database().reference().child("chatrooms").child(chatroomKey).child("users").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
                 var originChatMember = datasnapshot.value as? NSMutableDictionary
                 originChatMember![myUid] = true
-                print("챗룸 데이터스냅샷")
-                print(originChatMember)
-                print(type(of: originChatMember))
+//                print("챗룸 데이터스냅샷")
+//                print(originChatMember)
+//                print(type(of: originChatMember))
+                var enterMessage:Dictionary<String, Any> = [
+                    "message": "입장하였습니다.",
+                    "timestamp":ServerValue.timestamp(),
+                    "uid":myUid
+                ]
                 Database.database().reference().child("chatrooms").child(chatroomKey).child("users").setValue(originChatMember)
+                Database.database().reference().child("chatrooms").child(chatroomKey).child("comments").childByAutoId().setValue(enterMessage)
+                
             })
             //
             print("start")

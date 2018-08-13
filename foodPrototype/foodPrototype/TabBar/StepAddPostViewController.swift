@@ -60,7 +60,6 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             let values = ["users": nsDic, "postId": postKeyForChat/*, "comments": chatValue*/] as [String : Any]
             Database.database().reference().child("chatrooms").childByAutoId().setValue(values)
             
-            
             self.dismiss(animated: true, completion: nil)
             
         }else{
