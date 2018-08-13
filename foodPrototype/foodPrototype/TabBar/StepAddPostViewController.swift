@@ -25,7 +25,10 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     //defining firebase reference var
     var refPost: DatabaseReference!
     var refStorage: StorageReference!
-
+    @IBAction func keyDismiss(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     @IBOutlet weak var stepIndicatorView:StepIndicatorView!
     @IBOutlet weak var scrollView:UIScrollView!
 //    @IBOutlet weak var DoneButton: UIBarButtonItem!
