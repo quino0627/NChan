@@ -27,7 +27,7 @@ class PostModel: Mappable{
     public func mapping(map: Map){
         id <- map["id"]
         postContent <- map["postContent"]
-        postPrice <- map["price"]
+        postPrice <- map["postPrice"]
         postMaxMan <- map["postMaxMan"]
         uid <- map["uid"]
         postWishLocation <- map["postWishLocation"]

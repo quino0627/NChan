@@ -13,10 +13,6 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     @IBOutlet weak var tableview: UITableView!
-    @IBOutlet weak var label_title: UILabel!
-    @IBOutlet weak var label_lastmessage: UILabel!
-    @IBOutlet weak var imageview: UIImageView!
-
     
     var uid: String!
     var chatrooms : [ChatModel]! = []

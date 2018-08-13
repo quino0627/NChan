@@ -26,7 +26,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RowCell" rowHeight="70" id="yyx-ba-TFx" customClass="CustomCell" customModule="foodPrototype" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyx-ba-TFx" id="aal-Xt-ASp">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyx-ba-TFx" id="aal-Xt-ASp" customClass="CustomCell" customModule="foodPrototype" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -68,7 +68,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageview" destination="R9M-nI-h5Q" id="DGM-gH-aHW"/>
+                                            <outlet property="label_lastmessage" destination="iU6-tl-Ylw" id="pVv-S0-g6O"/>
                                             <outlet property="label_timestamp" destination="hyC-2Z-Vdi" id="EaT-Om-v6v"/>
+                                            <outlet property="label_title" destination="BgF-8P-Rdr" id="RY6-q4-nq8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -94,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sbt-v0-cmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="1693"/>
+            <point key="canvasLocation" x="136.80000000000001" y="1692.5037481259371"/>
         </scene>
         <!--Title-->
         <scene sceneID="N64-fr-C7x">
@@ -1817,7 +1820,7 @@
                                         <rect key="frame" x="0.0" y="476" width="375" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ugk-PM-Eno" id="010-za-JnZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="40.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="40.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 게시글 신고하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Srz-QE-lDx">
@@ -2864,7 +2867,6 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="WOI-ig-gWW" id="z0H-Ad-GIh"/>
-                                    <outlet property="delegate" destination="WOI-ig-gWW" id="JY9-OK-4qw"/>
                                 </connections>
                             </tableView>
                         </subviews>

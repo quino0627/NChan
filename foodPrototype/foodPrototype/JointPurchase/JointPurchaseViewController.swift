@@ -135,6 +135,7 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
                         
                         let postProduct = PostModel(JSON: postObject!)
                         
+                        
                         self.buyingPosts.append(postProduct!)
                             
                             self.filteredData = self.buyingPosts

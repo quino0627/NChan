@@ -16,7 +16,9 @@ class PostController: UIViewController {
     @IBOutlet weak var container : UIView!
     var post: PostModel?
     
+    
     override func viewWillAppear(_ animated: Bool) {
+        
         food_Price.text = post?.postPrice
     }
     
