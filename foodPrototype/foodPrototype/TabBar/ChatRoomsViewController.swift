@@ -153,10 +153,11 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         let destinationUid = self.destinationUsers[indexPath.row]
         let view = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
         view.destinationRoom = self.keys[indexPath.row]
+        
 //        print(indexPath.row)
-//        print(self.keys[indexPath.row])
+        print(self.keys[indexPath.row])
 //        print(postModel?.id)
-//        print("인덱스패쓰")
+        print("인덱스패쓰")
 
         self.navigationController?.pushViewController(view, animated: true)
     }
