@@ -31,16 +31,17 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     //var userModel : UserModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //self.tableview.reloadData()
         uid = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             self.users = (datasnapshot.value as! [String: AnyObject])
-//            print("----유저스----")
-//            print(self.users?.keys)
-//            print(self.users)
+            print("----유저스----")
+            print(self.users?.keys)
+            print(self.users)
+            self.getMessageList()
         })
         sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
-        getMessageList()
+        
         
         Database.database().reference().child("chatrooms").child(self.destinationRoom!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             let value = datasnapshot.value as? NSDictionary
@@ -149,10 +150,10 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
             
             return view
         }else{
-            //print(self.comments[indexPath.row].uid!)
-            //print(indexPath.row)
-           
-            //print("============코멘트 유아이디")
+            print(self.comments[indexPath.row].uid!)
+            print(indexPath.row)
+            print("============코멘트 유아이디")
+            print(users)
             let destinationUser = users![self.comments[indexPath.row].uid! as String]
              //print(destinationUser)
             let view = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
