@@ -167,7 +167,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             
             Images[index].image = image
             
-            Buttons[index].frame = CGRect(x: 100 * (index), y: 0, width: 50, height: 50)
+            Buttons[index].frame = CGRect(x: 100 * (index), y: 0, width: 20, height: 20)
             Images[index].frame = CGRect(x: 100 * (index), y: 0, width: 100, height: 100)
             
           //  ImageAndButton[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
@@ -218,7 +218,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         imagePicker.dismiss(animated: true, completion: nil)
     }
     //키보드
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+/*    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             textView.resignFirstResponder()
         } else {
@@ -232,7 +232,32 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         
         return true
         
+    }*/
+    
+    //키보드-2
+    @objc func keyboardWillShow(_ sender: Notification) {
+        self.view.frame.origin.y = -150 // Move view 150 points upward
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0 // Move view to original position
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    
+
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -247,15 +272,26 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         refStorage = Storage.storage().reference();
         
         //키보드
+        sss_listInput_content.returnKeyType = .done
+        sss_listInput_maxMan.returnKeyType = .done
+        sss_listInput_Price.returnKeyType = .done
+        sss_listInput_hopePlace.returnKeyType = .done
+        sss_listInput_more.returnKeyType = .done
+
         sss_listInput_content.delegate = self
         sss_listInput_maxMan.delegate = self
         sss_listInput_Price.delegate = self
         sss_listInput_hopePlace.delegate = self
         sss_listInput_more.delegate = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
         
         
-        
+        self.sss_listInput_maxMan.keyboardType = UIKeyboardType.decimalPad
+        sss_listInput_Price.keyboardType = UIKeyboardType.decimalPad
+    
         //Customization by coding:
         //self.stepIndicatorView.numberOfSteps = 5
         //self.stepIndicatorView.currentStep = 0
