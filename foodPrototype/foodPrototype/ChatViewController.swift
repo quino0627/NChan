@@ -31,6 +31,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
     //var userModel : UserModel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         uid = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
             self.users = (datasnapshot.value as! [String: AnyObject])
@@ -135,6 +136,7 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         //print(self.users?.keys)
         //print(self.users)
         
+        
         if(self.comments[indexPath.row].uid == uid){
             let view = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
             view.label_message.text = self.comments[indexPath.row].message
@@ -184,7 +186,9 @@ class ChatViewController: UIViewController , UITableViewDelegate, UITableViewDat
         return UITableViewAutomaticDimension
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.isUserInteractionEnabled = false;
+    }
     public var destinationUid: String? //나중에 내가 채팅할 대상의 uid
     
 
