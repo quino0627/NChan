@@ -249,10 +249,9 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        
         self.view.endEditing(true)
-        
     }
+    
     
     
 
@@ -284,13 +283,15 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         sss_listInput_hopePlace.delegate = self
         sss_listInput_more.delegate = self
         
+        sss_listInput_maxMan.keyboardType = UIKeyboardType.decimalPad
+        sss_listInput_Price.keyboardType = UIKeyboardType.decimalPad
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
         
         
-        self.sss_listInput_maxMan.keyboardType = UIKeyboardType.decimalPad
-        sss_listInput_Price.keyboardType = UIKeyboardType.decimalPad
+
     
         //Customization by coding:
         //self.stepIndicatorView.numberOfSteps = 5
