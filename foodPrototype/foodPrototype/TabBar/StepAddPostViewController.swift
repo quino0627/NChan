@@ -299,8 +299,8 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         //Customization by coding:
         //self.stepIndicatorView.numberOfSteps = 5
         //self.stepIndicatorView.currentStep = 0
-        self.stepIndicatorView.circleColor = UIColor(red: 150.0/255.0, green: 19.0/255.0, blue: 46.0/255.0, alpha: 0.7)
-        self.stepIndicatorView.circleTintColor = UIColor(red: 150.0/255.0, green: 19.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+        self.stepIndicatorView.circleColor = UIColor(red: 82/255.0, green: 182/255.0, blue: 172/255.0, alpha: 0.7)
+        self.stepIndicatorView.circleTintColor = UIColor(red: 82/255.0, green: 182/255.0, blue: 172/255.0, alpha: 1.0)
         //self.stepIndicatorView.circleStrokeWidth = 3.0
         //self.stepIndicatorView.circleRadius = 10.0
         //self.stepIndicatorView.lineColor = self.stepIndicatorView.circleColor
