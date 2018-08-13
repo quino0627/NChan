@@ -24,7 +24,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.uid = Auth.auth().currentUser?.uid
         self.getChatroomsList()
-        self.tableview.reloadData()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -83,7 +83,7 @@ class ChatRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             Database.database().reference().child("posts").child((self.postModel?.id)!).child("ImageUrl").observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
                 let value = datasnapshot.value as? NSDictionary
                 print(type(of: value))
-                print(value?.allValues[0] as! String)
+                //print(value?.allValues[0] as! String)
                 let url = URL(string: value?.allValues[0] as! String)
                 URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
                     DispatchQueue.main.sync {
