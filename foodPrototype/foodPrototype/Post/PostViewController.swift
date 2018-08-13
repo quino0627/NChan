@@ -24,9 +24,8 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
         
         return cell
     }
-    
 
-    
+    @IBOutlet weak var usercell: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var food_Image: ImageSlideshow!
     @IBOutlet weak var food_Price: UILabel!
@@ -37,24 +36,21 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var user_Name2: UILabel!
     @IBOutlet weak var InviteButton: UIButton!
     
-    //    @IBOutlet weak var user_Safety_Face: UIImageView!
+//    @IBOutlet weak var user_Safety_Face: UIImageView!
 //    @IBOutlet weak var user_Safety_State: UILabel!
 //    @IBOutlet weak var user_Safety_Num: UILabel!
-    var post: ExampleFirePost?
+    var post: PostModel?
     var localSource : [ImageSource] = []
 
     var colletion_images : [UIImage] = []
     var colletion_product : [String] = []
+    var user : NSDictionary?
     
     override func viewWillAppear(_ animated: Bool) {
-        food_Price.text = post?.price
-        food_Title.text = post?.product
-        food_Contents.text = post?.content
-        let data = try? Data(contentsOf: URL(string: (post?.user!.profileImageUrl!)!)!)
-        user_Image.image = UIImage(data: data!)
-        user_Name1.text = post?.user?.name
-        user_Name2.text = post?.user?.name
-//        user_Safety_State.text = post?.postWriter.userSafety.state
+        food_Price.text = post?.postPrice
+        food_Title.text = post?.postProduct
+        food_Contents.text = post?.postContent
+  //        user_Safety_State.text = post?.postWriter.userSafety.state
 //        user_Safety_Face.image = UIImage(named: (post?.postWriter.userSafety.face)!)
 //        user_Safety_Num.text = String((post?.postWriter.userSafety.value)!)
     }
@@ -76,7 +72,7 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
             print("current page:", page)
         }
         
-        for image in (post?.images?.values)! {
+        for image in (post?.ImageUrl.values)! {
             let data = try? Data(contentsOf: URL(string: image)!)
             localSource.append(ImageSource(image: UIImage(data: data!)!))
         }
@@ -88,7 +84,7 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
         InviteButton.addTarget(self, action: #selector(touchedButton), for: .touchUpInside)
         
         //the part of all posts of user
-        Database.database().reference().child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: post?.user?.uid).observeSingleEvent(of: DataEventType.value) { (datasnapshot) in
+        Database.database().reference().child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: post?.uid).observeSingleEvent(of: DataEventType.value) { (datasnapshot) in
             
             for posts in datasnapshot.children.allObjects as! [DataSnapshot]{
                 let postObject = posts.value as? [String: AnyObject]
@@ -98,14 +94,56 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
 
                 self.colletion_images.append(UIImage(data: data!)!)
                 self.colletion_product.append(postObject?["postProduct"] as! String)
-                print("images")
-                print(self.colletion_images.count)
-                self.collectionView.reloadData()
+                
             }
-            print("product")
-            print(self.colletion_product.count)
             
+            self.collectionView.reloadData()
         }
+        Database.database().reference().child("users").child((post?.uid)!).observeSingleEvent(of: DataEventType.value) { (datasnapshot) in
+            let user = datasnapshot.value as! NSDictionary
+            let url = URL(string: user["profileImageUrl"] as! String)
+            self.user_Name1.text = user["name"] as! String
+            self.user_Name2.text = user["name"] as! String
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+                DispatchQueue.main.sync {
+                    self.user_Image.image = UIImage(data: data!)
+                    self.user_Image.layer.cornerRadius = self.user_Image.frame.width/2
+                    self.user_Image.layer.masksToBounds = true
+                }
+            }).resume()
+        }
+
+//        class MyPageTableViewController: UITableViewController {
+//            @IBOutlet weak var profileImage: UIImageView!
+//            @IBOutlet weak var profileName: UILabel!
+//            let uid = Auth.auth().currentUser?.uid
+//            override func viewDidLoad() {
+//                super.viewDidLoad()
+//                print(self.uid)
+//                print("유아이디")
+//                Database.database().reference().child("users").child(uid!).observeSingleEvent(of: DataEventType.value, with: {(datasnapshot) in
+//                    let value = datasnapshot.value as! NSDictionary
+//                    self.profileName.text = value["name"] as! String
+//                    let ssss = value["profileImageUrl"] as! String
+//                    print(ssss)
+//                    print("ㄴㄴㄴㄴ")
+//                    //let url = URL(string: value.allValues[0] as! String)
+//                    let url = URL(string: ssss as! String)
+//                    URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, err) in
+//                        DispatchQueue.main.sync {
+//                            self.profileImage.image = UIImage(data:data!)
+//                            self.profileImage.layer.cornerRadius = self.profileImage.frame.width/2
+//                            self.profileImage.layer.masksToBounds = true
+//                        }
+//                    }).resume()
+//
+//                })        // Uncomment the following line to preserve selection between presentations
+//                // self.clearsSelectionOnViewWillAppear = false
+//
+//                // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+//                // self.navigationItem.rightBarButtonItem = self.editButtonItem
+//            }
+        
     }
 
     @objc func didTap() {
@@ -160,63 +198,10 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVC = segue.destination as? ProfileViewController{
-            let user = post?.user
-            detailVC.user = user
+            let uid = self.post?.uid
+            detailVC.uid = uid
         }
     }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
