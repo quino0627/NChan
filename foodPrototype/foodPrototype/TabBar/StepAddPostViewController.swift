@@ -170,8 +170,8 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
             
             Images[index].image = image
             
-            Buttons[index].frame = CGRect(x: 100 * (index), y: 0, width: 20, height: 20)
-            Images[index].frame = CGRect(x: 100 * (index), y: 0, width: 100, height: 100)
+            Buttons[index].frame = CGRect(x: 100 * (index) + 10 * (index), y: 0, width: 20, height: 20)
+            Images[index].frame = CGRect(x: 100 * (index) + 10 * (index), y: 0, width: 100, height: 100)
             
           //  ImageAndButton[index].frame = CGRect(x: 0, y: 100 * (index), width: 100, height: 100)
             
