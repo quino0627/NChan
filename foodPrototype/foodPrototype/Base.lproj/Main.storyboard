@@ -68,10 +68,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageview" destination="R9M-nI-h5Q" id="23H-e8-CWy"/>
-                                            <outlet property="label_lastmessage" destination="iU6-tl-Ylw" id="6is-8L-pF1"/>
                                             <outlet property="label_timestamp" destination="hyC-2Z-Vdi" id="EaT-Om-v6v"/>
-                                            <outlet property="label_title" destination="BgF-8P-Rdr" id="xwG-hG-GNd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -375,21 +372,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZ4-bF-NwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4348" y="1692.5037481259371"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6hZ-fi-0xP">
-            <objects>
-                <viewController id="WZg-Oj-MRR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OKK-MY-eNv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.32156862749999998" green="0.71372549019999998" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="GED-ze-Jez"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UWX-Ha-H71" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5494" y="1743"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tLF-Zp-qyz">
@@ -1655,7 +1637,7 @@
                     <connections>
                         <outlet property="InviteButton" destination="lBy-ZB-IYr" id="dUu-JJ-Nm2"/>
                         <outlet property="container" destination="yqq-mc-5qD" id="Gth-8U-DX8"/>
-                        <outlet property="food_Price" destination="ice-hV-DeN" id="hBf-BX-J20"/>
+                        <outlet property="food_Price" destination="ice-hV-DeN" id="FE0-p0-9AY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19H-V4-X9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2792,9 +2774,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qpp-kc-zxF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="nxZ-Uc-Qa9">
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" text="" id="nxZ-Uc-Qa9">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="barTintColor" red="0.32156862749999998" green="0.71372549019999998" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
@@ -2870,17 +2853,18 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="listImage" destination="QeK-jW-IgZ" id="sLW-D2-rft"/>
-                                            <outlet property="listPlace" destination="0KC-hS-vEm" id="vF8-eS-cIY"/>
-                                            <outlet property="listPrice" destination="c0W-IY-cGV" id="sG9-MD-ozP"/>
-                                            <outlet property="listProduct" destination="ClG-1L-s0j" id="nkD-Gi-8WV"/>
-                                            <outlet property="listTime" destination="4gV-YV-pbH" id="pUP-Or-E3A"/>
+                                            <outlet property="listImage" destination="QeK-jW-IgZ" id="R4y-hB-3OP"/>
+                                            <outlet property="listPlace" destination="0KC-hS-vEm" id="Sce-8u-d8S"/>
+                                            <outlet property="listPrice" destination="c0W-IY-cGV" id="eUL-h3-P47"/>
+                                            <outlet property="listProduct" destination="ClG-1L-s0j" id="dHR-HS-boN"/>
+                                            <outlet property="listTime" destination="4gV-YV-pbH" id="oVu-T2-ftA"/>
                                             <segue destination="OgN-to-zRJ" kind="show" id="wUM-oH-JMd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="WOI-ig-gWW" id="z0H-Ad-GIh"/>
+                                    <outlet property="delegate" destination="WOI-ig-gWW" id="JY9-OK-4qw"/>
                                 </connections>
                             </tableView>
                         </subviews>

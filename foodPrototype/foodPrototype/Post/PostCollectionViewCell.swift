@@ -12,4 +12,5 @@ class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var product: UILabel!
+    
 }
