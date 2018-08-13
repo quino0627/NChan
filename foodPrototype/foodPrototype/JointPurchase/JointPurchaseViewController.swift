@@ -129,10 +129,7 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
                 //if the reference have some values
                 if snapshot.childrenCount > 0{
                     
-                    
                     self.buyingPosts.removeAll()
-                    
-                    
                     //iterating through all the values
                     for posts in snapshot.children.allObjects as! [DataSnapshot]{
                         //getting values

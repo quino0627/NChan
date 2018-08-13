@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     }
 
     func displayWelcome(){
-        let color = remoteConfig["splash_background"].stringValue
+        let color = "#FFFFFF"
         let caps = remoteConfig["splash_message_caps"].boolValue
         let message = remoteConfig["splash_message"].stringValue
         if(caps){
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             mainView.delegate = UIApplication.shared.delegate as! AppDelegate
             self.present(mainView, animated: false, completion: nil)
         }
-        self.view.backgroundColor = UIColor(hex: color!)
+        self.view.backgroundColor = UIColor(hex: color)
         
     }
     
