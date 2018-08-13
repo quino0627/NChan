@@ -80,8 +80,10 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
         cell.listPrice.text = item.postPrice
         cell.listPlace.text = item.postWishLocation
         cell.listTime.text = nil
+        if (item.ImageUrl.first != nil) {
         let data = try? Data(contentsOf: URL(string: (item.ImageUrl.first?.value)!)!)
         cell.listImage.image = UIImage(data: data!)
+        }
         return cell
     }
 
@@ -157,15 +159,11 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let indexPath = buyingTable.indexPathForSelectedRow,
-            let detailVC = segue.destination as? PostViewController {
+            let detailVC = segue.destination as? PostController {
             let selectedPost :PostModel = filteredData[indexPath.row]
             detailVC.post = selectedPost
+            gpost = selectedPost
         }
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//
-//        load_buyingList_data()
-//
-//    }
 }

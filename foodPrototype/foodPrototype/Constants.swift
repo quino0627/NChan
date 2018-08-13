@@ -17,5 +17,7 @@ struct Constants
     }
 }
 
+var gpost: PostModel?
+
 // Whenever you now need access to the reference for chat data, you can use:
 // Constants.refs.databaseChats
