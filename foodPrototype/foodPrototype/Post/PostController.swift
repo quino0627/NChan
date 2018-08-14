@@ -11,6 +11,7 @@ import Firebase
 
 class PostController: UIViewController {
 
+    @IBOutlet weak var heart: UIButton!
     @IBOutlet weak var food_Price: UILabel!
     @IBOutlet weak var InviteButton: UIButton!
     @IBOutlet weak var container : UIView!
@@ -19,6 +20,8 @@ class PostController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        heart.layer.cornerRadius = 5.0
+        InviteButton.layer.cornerRadius = 5.0
         food_Price.text = post?.postPrice
     }
     

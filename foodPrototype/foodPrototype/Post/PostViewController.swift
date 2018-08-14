@@ -21,7 +21,9 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
         
         cell.img.image = colletion_images[indexPath.row]
         cell.product.text = colletion_product[indexPath.row]
-        
+        cell.img.layer.cornerRadius = 5.0
+        cell.img.layer.borderWidth = 1.0
+        cell.img.layer.borderColor = UIColor.white.cgColor
         return cell
     }
     
@@ -58,7 +60,7 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
             localSource.append(ImageSource(image: UIImage(data: data!)!))
         }
         food_Image.setImageInputs(localSource)
-
+        
         
         Database.database().reference().child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: gpost?.uid).observeSingleEvent(of: DataEventType.value) { (datasnapshot) in
             
