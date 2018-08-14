@@ -138,15 +138,17 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
                         
                         self.buyingPosts.append(postProduct!)
                             
-                            self.filteredData = self.buyingPosts
-                            
-                            self.buyingTable.reloadData()
-                            
-                            self.refreshControl.endRefreshing()
-                        }
                         
-                    }
+                        }
                     
+                    
+                    }
+                self.filteredData = self.buyingPosts.reversed()
+
+                self.buyingTable.reloadData()
+                
+                self.refreshControl.endRefreshing()
+
                 })
         }
     }

@@ -26,6 +26,7 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
     }
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var food_Place: UILabel!
     @IBOutlet weak var food_Image: ImageSlideshow!
     @IBOutlet weak var food_Title: UILabel!
     @IBOutlet weak var food_Contents: UILabel!
@@ -80,6 +81,7 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
             }).resume()
         }
         
+        food_Place.text = gpost?.postWishLocation
         food_Title.text = gpost?.postProduct
         food_Contents.text = gpost?.postContent
   //        user_Safety_State.text = post?.postWriter.userSafety.state

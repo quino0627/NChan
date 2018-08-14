@@ -1939,6 +1939,7 @@
                         <outlet property="collectionView" destination="IAK-ls-DtA" id="rRz-UR-PS9"/>
                         <outlet property="food_Contents" destination="bH4-LI-kWl" id="W33-ix-CZf"/>
                         <outlet property="food_Image" destination="Wh1-CX-JwA" id="eNd-K2-9rD"/>
+                        <outlet property="food_Place" destination="jbC-3J-qh5" id="F9f-Pk-Xv9"/>
                         <outlet property="food_Title" destination="GCa-vW-Dr5" id="x1X-hX-cUH"/>
                         <outlet property="user_Image" destination="rln-3j-cxN" id="Gow-HQ-hBR"/>
                         <outlet property="user_Name1" destination="GWe-Qp-aMb" id="EcP-tv-y5A"/>
