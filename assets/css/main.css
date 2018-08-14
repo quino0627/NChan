@@ -3442,3 +3442,8 @@ body.index #main {
   height: 50%;
   margin: 0 0 5em 0;
 }
+
+.profile__image {
+  display: flex;
+  justify-content: space-around;
+}
