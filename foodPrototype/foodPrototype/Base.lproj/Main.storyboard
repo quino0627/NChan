@@ -1713,9 +1713,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매우 좋음" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xg2-zg-sDH">
-                                                    <rect key="frame" x="294" y="52" width="63.5" height="20.5"/>
+                                                    <rect key="frame" x="289.5" y="52" width="63.5" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20.5" id="CfG-RL-fWm"/>
+                                                        <constraint firstAttribute="height" constant="21" id="9XJ-il-WQ4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1727,14 +1727,14 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="tPg-hx-Yhn" secondAttribute="trailing" constant="6" id="7bb-gs-Gua"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cGZ-yU-tbB" secondAttribute="trailing" constant="6" id="B5t-OC-qCn"/>
                                                 <constraint firstItem="rln-3j-cxN" firstAttribute="leading" secondItem="U3K-ag-rsY" secondAttribute="leadingMargin" id="ElZ-uf-8kc"/>
+                                                <constraint firstItem="xg2-zg-sDH" firstAttribute="top" secondItem="cGZ-yU-tbB" secondAttribute="bottom" constant="8" id="LbJ-UJ-kKj"/>
                                                 <constraint firstItem="cGZ-yU-tbB" firstAttribute="leading" secondItem="U3K-ag-rsY" secondAttribute="leadingMargin" constant="187" id="Lbk-22-4v0"/>
                                                 <constraint firstItem="GWe-Qp-aMb" firstAttribute="leading" secondItem="rln-3j-cxN" secondAttribute="trailing" constant="5" id="NLn-Ux-upD"/>
                                                 <constraint firstItem="cGZ-yU-tbB" firstAttribute="top" secondItem="Rdv-PZ-YMc" secondAttribute="bottom" constant="8" id="Sv3-Cc-8HI"/>
-                                                <constraint firstItem="xg2-zg-sDH" firstAttribute="top" secondItem="cGZ-yU-tbB" secondAttribute="bottom" constant="8" id="UrD-NR-9dE"/>
-                                                <constraint firstItem="xg2-zg-sDH" firstAttribute="leading" secondItem="rln-3j-cxN" secondAttribute="trailing" constant="218" id="YNx-p7-1i4"/>
                                                 <constraint firstItem="Rdv-PZ-YMc" firstAttribute="leading" secondItem="rln-3j-cxN" secondAttribute="trailing" constant="127" id="hxg-9V-u7s"/>
                                                 <constraint firstItem="rln-3j-cxN" firstAttribute="top" secondItem="U3K-ag-rsY" secondAttribute="topMargin" constant="5" id="mSJ-lt-ANI"/>
                                                 <constraint firstItem="tPg-hx-Yhn" firstAttribute="leading" secondItem="Rdv-PZ-YMc" secondAttribute="trailing" constant="57" id="pOE-M6-nl7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xg2-zg-sDH" secondAttribute="trailing" constant="6" id="rPM-UB-HmC"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cGZ-yU-tbB" secondAttribute="bottom" constant="34" id="xnO-j1-dyB"/>
                                                 <constraint firstItem="cGZ-yU-tbB" firstAttribute="top" secondItem="tPg-hx-Yhn" secondAttribute="bottom" constant="8" id="yyN-pT-GYO"/>
                                             </constraints>
@@ -1953,7 +1953,7 @@
                 </view>
                 <tapGestureRecognizer id="7hf-XO-jTN"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="4018"/>
+            <point key="canvasLocation" x="1688.8" y="4017.3913043478265"/>
         </scene>
         <!--구매내역-->
         <scene sceneID="f0I-g3-HFG">
