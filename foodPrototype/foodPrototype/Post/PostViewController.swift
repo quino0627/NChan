@@ -24,6 +24,14 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.isUserInteractionEnabled = false
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.isUserInteractionEnabled = false
+    }
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var food_Image: ImageSlideshow!
@@ -115,6 +123,7 @@ class PostViewController: UITableViewController, UICollectionViewDataSource, UIC
 
         
     }
+
 
     @objc func didTap() {
         let fullScreenController = food_Image.presentFullScreenController(from: self)

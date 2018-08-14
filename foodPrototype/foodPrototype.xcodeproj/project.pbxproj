@@ -314,7 +314,6 @@
 		AD2DF8E62119932B008474FD /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				AD2DF8EE21199525008474FD /* ListTableViewCell.swift */,
 				AD24274C2111639600020FE8 /* BuyingListViewController.swift */,
 				AD2DF8E9211993A1008474FD /* SellingListViewController.swift */,
 				AD2DF8EC211993D6008474FD /* SettingExampleModel.swift */,
@@ -326,6 +325,7 @@
 		AD613340211C0674000F3A5A /* JointPurchase */ = {
 			isa = PBXGroup;
 			children = (
+				AD2DF8EE21199525008474FD /* ListTableViewCell.swift */,
 				AD613341211C06B0000F3A5A /* JointPurchaseViewController.swift */,
 			);
 			path = JointPurchase;

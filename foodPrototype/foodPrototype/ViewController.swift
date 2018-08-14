@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         box.snp.makeConstraints{(make) in
             make.center.equalTo(self.view)}
-        box.image = #imageLiteral(resourceName: "loading_icon")
+        box.image = #imageLiteral(resourceName: "AppIcon2")
     }
 
     func displayWelcome(){
