@@ -1814,8 +1814,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeZ-bK-nT4">
                                                     <rect key="frame" x="21.000000000000004" y="7" width="42.333333333333343" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42.333333333333343" id="g2W-xI-0LU"/>
-                                                        <constraint firstAttribute="height" constant="21" id="iWs-py-Mrz"/>
+                                                        <constraint firstAttribute="height" constant="21" id="rYQ-v1-zfS"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1878,10 +1877,9 @@
                                                     </connections>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님의 다른 판매 상품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="am4-Or-tgE">
-                                                    <rect key="frame" x="71" y="8" width="131" height="21"/>
+                                                    <rect key="frame" x="83" y="8" width="131" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Nlo-8L-R6Q"/>
-                                                        <constraint firstAttribute="width" constant="131" id="ynq-eD-RIh"/>
+                                                        <constraint firstAttribute="height" constant="21" id="rbk-zY-NXr"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1889,16 +1887,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="am4-Or-tgE" firstAttribute="leading" secondItem="XeZ-bK-nT4" secondAttribute="trailing" constant="7.6666666666666572" id="5en-Cx-kkG"/>
                                                 <constraint firstItem="IAK-ls-DtA" firstAttribute="top" secondItem="4g8-L0-kPV" secondAttribute="bottom" constant="2" id="7yq-kA-vJs"/>
                                                 <constraint firstAttribute="bottom" secondItem="IAK-ls-DtA" secondAttribute="bottom" constant="40.5" id="85v-pC-lTI"/>
-                                                <constraint firstItem="XeZ-bK-nT4" firstAttribute="top" secondItem="oVB-oc-V5k" secondAttribute="topMargin" constant="-1" id="E4Z-id-0Br"/>
-                                                <constraint firstItem="IAK-ls-DtA" firstAttribute="top" secondItem="XeZ-bK-nT4" secondAttribute="bottom" constant="11" id="KKy-pv-86g"/>
+                                                <constraint firstItem="am4-Or-tgE" firstAttribute="top" secondItem="oVB-oc-V5k" secondAttribute="topMargin" id="BHU-tT-Wbn"/>
+                                                <constraint firstItem="XeZ-bK-nT4" firstAttribute="leading" secondItem="oVB-oc-V5k" secondAttribute="leading" constant="21" id="OQl-2U-Uxs"/>
                                                 <constraint firstAttribute="trailing" secondItem="4g8-L0-kPV" secondAttribute="trailing" constant="16" id="XPj-uq-Zcc"/>
-                                                <constraint firstItem="IAK-ls-DtA" firstAttribute="top" secondItem="am4-Or-tgE" secondAttribute="bottom" constant="10" id="orn-3I-mPe"/>
-                                                <constraint firstItem="XeZ-bK-nT4" firstAttribute="leading" secondItem="oVB-oc-V5k" secondAttribute="leadingMargin" constant="13.000000000000004" id="r2Z-ww-J8y"/>
+                                                <constraint firstItem="XeZ-bK-nT4" firstAttribute="top" secondItem="oVB-oc-V5k" secondAttribute="top" constant="7" id="ZvU-4y-Bj2"/>
+                                                <constraint firstItem="am4-Or-tgE" firstAttribute="leading" secondItem="XeZ-bK-nT4" secondAttribute="trailing" constant="19.670000000000002" id="dgG-Ja-Mfb"/>
                                                 <constraint firstItem="IAK-ls-DtA" firstAttribute="leading" secondItem="oVB-oc-V5k" secondAttribute="leading" id="sjt-pi-VMA"/>
-                                                <constraint firstItem="am4-Or-tgE" firstAttribute="top" secondItem="oVB-oc-V5k" secondAttribute="topMargin" id="z2v-up-k8C"/>
                                                 <constraint firstAttribute="trailing" secondItem="IAK-ls-DtA" secondAttribute="trailing" id="zW3-43-Mpd"/>
                                             </constraints>
                                         </tableViewCellContentView>
