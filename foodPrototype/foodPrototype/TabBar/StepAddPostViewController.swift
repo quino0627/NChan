@@ -287,7 +287,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         sss_listInput_more.delegate = self
         
         sss_listInput_maxMan.keyboardType = UIKeyboardType.decimalPad
-        sss_listInput_Price.keyboardType = UIKeyboardType.decimalPad
+        //sss_listInput_Price.keyboardType = UIKeyboardType.decimalPad
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         
