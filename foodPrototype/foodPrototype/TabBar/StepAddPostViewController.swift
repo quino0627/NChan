@@ -368,7 +368,7 @@ class StepAddPostViewController: UIViewController,UIScrollViewDelegate , ImagePi
         saveButton.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
         saveButton.tag = 1
         saveButton.setTitle("저장", for: .normal)
-        saveButton.backgroundColor = UIColor(hex: "#2ecc71")
+        saveButton.backgroundColor = UIColor(hex: "#ED722F")
         saveButton.addTarget(self, action: #selector(isSavedButtonPressed), for: .touchUpInside)
         saveButton.center = CGPoint(x: s_Scrollview_0.frame.width / 2.0 , y: s_Scrollview_0.frame.width / 1.5)
  //       saveButton.layer.cornerRadius = saveButton.frame.height / 2

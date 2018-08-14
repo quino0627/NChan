@@ -15,6 +15,8 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
     @IBOutlet weak var buyingTable: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     
+
+ 
     var refreshControl: UIRefreshControl!
     
     //about search
@@ -76,13 +78,16 @@ class JointPurchaseViewController: UIViewController,UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
         let item = filteredData[indexPath.row]
+        cell.layer.cornerRadius = 5.0
         cell.listProduct.text = item.postProduct
         cell.listPrice.text = item.postPrice
         cell.listPlace.text = item.postWishLocation
         cell.listTime.text = nil
         if (item.ImageUrl.first != nil) {
         let data = try? Data(contentsOf: URL(string: (item.ImageUrl.first?.value)!)!)
-        cell.listImage.image = UIImage(data: data!)
+            cell.listImage.image = UIImage(data: data!)
+            cell.listImage.layer.cornerRadius = 5.0
+        
         }
         return cell
     }

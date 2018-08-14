@@ -25,6 +25,8 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        Auth.auth().addStateDidChangeListener({(user, err) in
@@ -52,6 +54,10 @@ class SettingsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.isUserInteractionEnabled = false;
     }
 
     // MARK: - Table view data source
